@@ -1,0 +1,79 @@
+Actuator is a device that creates mechanical motion by converting various forms of energy to rotating or linear mechanical energy.
+
+Aging is the reduction of insulation life due to thermal, voltage and other stress.
+
+Alternator is electromechanical device that converts mechanical energy to electrical energy in the form of alternating current.
+
+Ampere is SI base unit of electric current.
+
+Armature is the part of a machine which receives or delivers active power to the external electrical system.
+
+Brush is a sliding electrical contact, usually rotating.
+
+Capacitance is the amount of electrical energy stored for a given electric potential.
+
+Chord is the factor by which short pitching a coil reduces the back e.m.f.
+
+Coil is set of series connected turns.
+
+Commutation is change-over switching in a periodic and automatic manner without interruption of the electric current.
+
+Commutator is an assembly of insulated conducting segments connected to the rotating armature winding.
+
+Conductor is a material which contains movable electrical charges.
+
+Efficiency is ratio of output power to input power of a device.
+
+Exciter is a source of the power to the field winding of an electrical machine.
+
+Generator is rotating electric machine used to transform mechanical energy into electric energy.
+
+Hertz is SI derived unit for frequency defined as the number of cycles per second of a periodic function.
+
+Horsepower is unit of power.
+
+Impedance is the ratio of the voltage to the electric current, a measure of opposition to time-varying electric current in an electric circuit.
+
+Inductance is property in an electric circuit where a change in the current induces an electromotive force that opposes the change in current.
+
+Insulation is the materials and parts used to insulate conductive elements of a machine.
+
+Inverter is converter that changes direct electric current to single-phase or poly-phase alternating currents.
+
+Motor is a machine which converts electrical energy into mechanical energy.
+
+Newton is force required to accelerate a mass of one kilogram at a rate of one meter per second per second.
+
+Poles is magnetic poles created in a machine by windings.
+
+Power is the rate at which work is performed.
+
+Reactance is the resistance to AC current due to capacitance or inductance.
+
+Regeneration is operation of a motor in a generator mode to feed energy back into the power supply.
+
+Regulation is amount of speed or voltage change due to load variations.
+
+Reluctance is the ‘resistance’ of a magnetic circuit.
+
+Resistance is defined as the ratio of voltage to current.
+
+Rotor is the rotating part of an electrical machine.
+
+Skew is non parallel stator and rotor slot alignment.
+
+Slip is the difference between the synchronous speed and the actual speed of a rotor expressed as per unit or as a percentage of the synchronous speed.
+
+Slot is a recess in a core in which the conductors of a winding may be placed.
+
+Stator is the stationary portion of a machine.
+
+Tolerance is permitted deviation between the declared value of a quantity and the measured value.
+
+Torque is the rotational force produced by a motor.
+
+Volt is derived SI unit for electromotive force (e.m.f.).
+
+Watt is SI unit of power.
+
+Yoke is part of a device, composed of magnetic material and intended to complete a magnetic circuit.
