@@ -40,7 +40,7 @@ def parse_file(path, G):
                     if sentence != '':
                         tokens = nlp(str(sentence).lower())                        
                         for token in tokens:
-                            if token.pos_ == "NOUN": 
+                            if token.pos_ == "NOUN" or token.pos_ == "VERB": 
                                 #or token.pos_ == "PROPN":
                                 # or token.pos_ == "VERB":
                                 edge = G.get_edge_data(key, token.lemma_)                            

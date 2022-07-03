@@ -53,7 +53,7 @@ def do_plot(G, writer, pos=None, title=None):
 
     edge_width = []
     for edge in subgraph.edges(data=True):
-        edge_width.append(edge[2]['weight'])
+        edge_width.append(edge[2]['weight'] * 0.5)
 
     if pos is None:
         # pos = nx.spring_layout(subgraph, k=0.15, iterations=100)
@@ -129,7 +129,7 @@ def execute(args):
                         if token.lemma_ not in rest_tokens:
                             rest_tokens.append(token.lemma_)
 
-                        to_set = stimulate(token.lemma_, 0.5, G)
+                        to_set = stimulate(token.lemma_, 1, G)
                         nx.set_node_attributes(G, to_set)
 
                     elif token.pos == "PROPN":
