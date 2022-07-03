@@ -10,31 +10,28 @@ nlp = spacy.load("en_core_web_sm")
 figure(figsize=(8, 6), dpi=300)
 logger = logging.getLogger(__name__)
 
+# if key not in visited:
+#     visited.append(key)
+#     node = G[key]
+#     if nodes is None:
+#         nodes = G.nodes(data=True)
+#     previous_value = nodes[key]['s']
+#     new_value = min(1, previous_value + value)
+#     # nx.set_node_attributes(G, {key: {'s':  new_value}})
 
-def stimulate(key, value, G, visited=[]):
-    value = float(value)
-    if key not in visited:
-        visited.append(key)
-        node = G[key]
-        previous_value = G.nodes(data=True)[key]['s']
-        new_value = min(1, previous_value + value)
-        nx.set_node_attributes(G, {key: {'s':  new_value}})
+#     if (new_value < 0.01):
+#         return
 
-        if (new_value < 0.01):
-            return
-        
-        # for sub_key in node.keys():
-        #     if sub_key != key and sub_key not in visited:
-        #         weight = node[sub_key]['weight']
-        #         stimulate(sub_key, weight * new_value, G, visited)
+#     for sub_key in node.keys():
+#         if sub_key != key and sub_key not in visited:
+#             weight = node[sub_key]['weight']
+#             stimulate(sub_key, weight * new_value, G, visited, nodes=nodes)
 
-    return visited
+# return visited
 
 
-def do_plot(G, writer, pos = None):
-    threshold = 0.05
-
-    
+def do_plot(G, writer, pos=None, title=None):
+    threshold = 0.1
 
     nodes = (
         node
@@ -48,24 +45,27 @@ def do_plot(G, writer, pos = None):
     stimulus = nx.get_node_attributes(subgraph, 's')
 
     node_alpha = []
+    node_size = []
 
     for n, v in stimulus.items():
         node_alpha.append(v)
+        node_size.append(700 * v)
 
     edge_width = []
     for edge in subgraph.edges(data=True):
         edge_width.append(edge[2]['weight'])
 
-
     if pos is None:
-        pos = nx.spring_layout(subgraph, k=0.15, iterations=100)
+        # pos = nx.spring_layout(subgraph, k=0.15, iterations=100)
+        pos = nx.kamada_kawai_layout(subgraph)
 
     nx.draw_networkx_nodes(
-        subgraph, pos=pos, node_size=10, alpha=node_alpha)
+        subgraph, pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.1)
     nx.draw_networkx_labels(subgraph, pos, font_size=6,
                             verticalalignment='bottom')
     nx.draw_networkx_edges(subgraph, pos, width=edge_width)
-
+    ax = plt.gca()
+    ax.set_title(title)
     plt.savefig('output/graph.jpg')
     plt.clf()
     image = imageio.imread('output/graph.jpg')
@@ -74,41 +74,99 @@ def do_plot(G, writer, pos = None):
     nx.write_gml(subgraph, 'output/graph.gml')
 
 
+def stimulate(key, value, G, factor=1, to_set=None, nodes=None):
+    value = float(value) * factor
+
+    if to_set is None:
+        to_set = {}
+    if nodes is None:
+        nodes = G.nodes()
+
+    if key not in to_set:
+        node = G[key]
+        previous_value = nodes[key]['s']
+        new_value = min(1, previous_value + value)
+        to_set[key] = {'s':  new_value}
+
+        if new_value > 0.1:
+            for sub_key in node.keys():
+                if sub_key != key:
+                    weight = node[sub_key]['weight']
+                    stimulate(sub_key, weight * new_value,
+                              G, factor * 0.5, to_set=to_set, nodes=nodes)
+
+    return to_set
+
+
 def execute(args):
     G = nx.read_edgelist("graphs/full-dictionary.edgelist")
     G.remove_edges_from(nx.selfloop_edges(G))
     # pos = nx.spring_layout(G, k=0.15, iterations=100)
     # pos = nx.kamada_kawai_layout(G)
+    # pos = nx.random_layout(G)
     pos = None
 
     nx.set_node_attributes(G, 0, name='s')
 
-    test_text = """
-    The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It has a muscular, broad-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane. It is a social species, forming groups called prides. A lion's pride consists of a few adult males, related females, and cubs. Groups of female lions usually hunt together, preying mostly on large ungulates. The lion is an apex and keystone predator; although some lions scavenge when opportunities occur and have been known to hunt humans, the species typically does not actively seek out and prey on humans.
-    The lion inhabits grasslands, savannas and shrublands. It is usually more diurnal than other wild cats, but when persecuted, it adapts to being active at night and at twilight. During the Neolithic period, the lion ranged throughout Africa, Southeast Europe, the Caucasus, Western Asia and northern parts of India, but it has been reduced to fragmented populations in sub-Saharan Africa and one population in western India. It has been listed as Vulnerable on the IUCN Red List since 1996 because populations in African countries have declined by about 43% since the early 1990s. Lion populations are untenable outside designated protected areas. Although the cause of the decline is not fully understood, habitat loss and conflicts with humans are the greatest causes for concern.
-    One of the most widely recognised animal symbols in human culture, the lion has been extensively depicted in sculptures and paintings, on national flags, and in contemporary films and literature. Lions have been kept in menageries since the time of the Roman Empire and have been a key species sought for exhibition in zoological gardens across the world since the late 18th century. Cultural depictions of lions were prominent in Ancient Egypt, and depictions have occurred in virtually all ancient and medieval cultures in the lion's historic and current range.
-    """
+    print(f'Reading from {args[0]}')
+    with open(args[0]) as f:
+        test_text = f.read()
 
     doc = nlp(test_text.lower())
     sentences = str(doc).splitlines()
     with imageio.get_writer('output/output.gif', mode='I') as writer:
         for sentence in sentences:
             if sentence != '':
+                to_link = []
+                rest_tokens = []
                 tokens = nlp(sentence)
                 for token in tokens:
                     if token.pos_ == "NOUN":
-                        # or token.pos_ == "PROPN" or token.pos_ == "VERB":
-                        try:
-                            stimulate(token.lemma_, 0.1, G)
-                        except KeyError:
-                            logger.info(f'Unknown token {token.lemma_}')
+                        if not G.has_node(token.lemma_):
+                            G.add_node(token.lemma_, s=0)
+                            to_link.append(token.lemma_)
 
-        
+                        if token.lemma_ not in rest_tokens:
+                            rest_tokens.append(token.lemma_)
 
-            # list = G.nodes(data=True)
-            # set_values = {}
-            # for node, data in list:
-            #     set_values[node] = {'s': data['s'] - 0.02}
-            # nx.set_node_attributes(G, set_values)
+                        to_set = stimulate(token.lemma_, 0.5, G)
+                        nx.set_node_attributes(G, to_set)
 
-                do_plot(G, writer, pos)
+                    elif token.pos == "PROPN":
+                        print(token.pos_)
+
+                for token in to_link:
+                    for to_token in rest_tokens:
+                        if token != to_token:
+                            G.add_edge(token, to_token, weight=0.1)
+
+                list = G.nodes(data=True)
+                set_values = {}
+                for node, data in list:
+                    new_value = data['s'] - 0.05
+                    set_values[node] = {'s': max(0, new_value)}
+                nx.set_node_attributes(G, set_values)
+
+                #We should create connections between nodes that are strongly stimulated
+                nodes = (
+                    node
+                    for node, data
+                    in G.nodes(data=True)
+                    if data.get("s") > 0.5
+                )
+
+                subgraph = G.subgraph(nodes)
+                nodes_list = subgraph.nodes()
+
+                if len(nodes_list) > 1:
+                    
+                    for node_i in nodes_list:
+                        for node_j in nodes_list:
+                            if node_i != node_j and not G.has_edge(node_i, node_j):
+                                print(node_i, node_j)
+                                G.add_edge(node_i, node_j, weight=0.1)
+                # End of we should create :)
+                
+                
+
+                do_plot(G, writer, pos, title=sentence)
