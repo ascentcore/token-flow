@@ -13,5 +13,10 @@ python -m spacy download en_core_web_sm
 
 Computing the network
 ```
-python src/tokenflow.py digest ./text-definitions
+python src/tokenflow.py digest ./text-definitions/dictionary
+```
+
+Running little prince
+```
+python src/tokenflow.py dev ./text-definitions/stories/little-prince-small.txt
 ```
