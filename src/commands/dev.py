@@ -8,16 +8,17 @@ import spacy
 import imageio
 
 nlp = spacy.load("en_core_web_sm")
-plt = figure(figsize=(8, 6), dpi=150)
+plt = figure(figsize=(6, 6), dpi=150)
 
 logger = logging.getLogger(__name__)
 
-relink = True
-factor_constant = 0.75
+relink = False
+factor_constant = 0.35
 render_filter_value = 0.1
-stimulus = 0.5
+stimulus = 0.7
 temp_decrease = 0.05
 edge_decrease = 0.005
+render_label_size = 0.5
 
 positions = {}
 
@@ -41,24 +42,31 @@ def do_plot(G, writer, pos=None, title=None):
 
     for n, v in stimulus.items():
         node_alpha.append(v)
-        node_size.append(700 * v)
+        node_size.append((700 if v > render_label_size else 100) * v)
 
     edge_width = []
     for edge in subgraph.edges(data=True):
-        edge_width.append(edge[2]['weight'] * 0.5)
+        edge_width.append(edge[2]['weight'] *
+                          (0.5 if v > render_label_size else 0.1))
 
     if pos is None:
-        pos = nx.fruchterman_reingold_layout(subgraph)
-        # pos = nx.spring_layout(subgraph, k=0.5,   iterations=100)
+        # pos = nx.fruchterman_reingold_layout(subgraph)
+        pos = nx.spring_layout(subgraph, k=0.5,   iterations=100)
         for p_key in pos.keys():
             if p_key in positions:
                 pos[p_key] = positions[p_key]
             else:
                 positions[p_key] = pos[p_key]
 
+    labels = {n: n if stimulus[n] >
+              render_label_size else '' for n in subgraph}
+
     nx.draw_networkx_nodes(
-        subgraph, pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.1)
+        subgraph,
+        pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.1)
+
     nx.draw_networkx_labels(subgraph, pos, font_size=6,
+                            labels=labels,
                             verticalalignment='bottom')
     nx.draw_networkx_edges(subgraph, pos, width=edge_width)
     ax = plt.gca()
@@ -110,7 +118,7 @@ def execute(args):
 
     doc = nlp(test_text.lower())
     sentences = str(doc).splitlines()
-    
+
     with imageio.get_writer('output/output.gif', mode='I') as writer:
         for sentence in sentences:
             if sentence != '':
@@ -127,7 +135,8 @@ def execute(args):
                         if token.lemma_ not in rest_tokens:
                             rest_tokens.append(token.lemma_)
 
-                        to_set = stimulate(token.lemma_, stimulus, G, to_set=to_set)
+                        to_set = stimulate(
+                            token.lemma_, stimulus, G, to_set=to_set)
                         nx.set_node_attributes(G, to_set)
 
                 if relink:
@@ -135,8 +144,6 @@ def execute(args):
                         for to_token in rest_tokens:
                             if token != to_token:
                                 G.add_edge(token, to_token, weight=0.1)
-
-               
 
                 # We should create connections between nodes that are strongly stimulated
 
@@ -162,8 +169,6 @@ def execute(args):
 
                 do_plot(G, writer, pos, title=sentence)
 
-
-
                 ### Cleanup ####
                 # temp_decrease
 
@@ -173,7 +178,6 @@ def execute(args):
                     new_value = data['s'] - temp_decrease
                     set_values[node] = {'s': max(0, new_value)}
                 nx.set_node_attributes(G, set_values)
-
 
                 # edge_decrease
 
