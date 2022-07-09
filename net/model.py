@@ -9,7 +9,7 @@ class GCN(torch.nn.Module):
         super().__init__()
         """ GCNConv layers """
         self.conv1 = GCNConv(num_features, 256)
-        # self.conv2 = GCNConv(256, 256)
+        self.conv2 = GCNConv(256, 256)
         self.conv3 = GCNConv(256, num_features)
 
     def forward(self, data):
