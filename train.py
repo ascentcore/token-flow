@@ -1,4 +1,88 @@
-from net.dataset import ContextualGraphDataset
+from sklearn.metrics import roc_auc_score
+from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
+from torch_geometric.nn import GraphConv, TopKPooling, GatedGraphConv, SAGEConv, SGConv
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
+from net.dataset import ContextualGraphDataset
+from torch_geometric.data import DataLoader
+import numpy as np
+
+from net.dataset import get_dictionary_keys
+from net.model import GCN
+
+keys = get_dictionary_keys()
 
 dataset = ContextualGraphDataset(source='datasets/kids')
+
+dataset = dataset.shuffle()
+one_tenth_length = int(len(dataset) * 0.1)
+train_dataset = dataset[:one_tenth_length * 8]
+val_dataset = dataset[one_tenth_length*8:one_tenth_length * 9]
+test_dataset = dataset[one_tenth_length*9:]
+print(len(train_dataset), len(val_dataset), len(test_dataset))
+
+
+batch_size = 64
+train_loader = DataLoader(train_dataset, batch_size=batch_size)
+val_loader = DataLoader(val_dataset, batch_size=batch_size)
+test_loader = DataLoader(test_dataset, batch_size=batch_size)
+
+num_items = 10007
+num_categories = 10007
+
+embed_dim = 128
+
+# number of graphs
+print("Number of graphs: ", len(dataset))
+
+# number of features
+print("Number of features: ", dataset.num_features)
+
+# number of classes
+print("Number of classes: ", dataset.num_classes)
+
+print("X shape: ", dataset[0].x.shape)
+print("Edge shape: ", dataset[0].edge_index.shape)
+print("Y shape: ", dataset[0].y.shape)
+
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+model = GCN(dataset.num_features).to(device)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+crit = torch.nn.BCELoss()
+
+
+def train():
+    model.train()
+
+    loss_all = 0
+    for data in train_loader:
+        data = data.to(device)
+      
+        optimizer.zero_grad()
+        output = model(data)
+        output = output.squeeze(1)
+
+        # print('---------')
+        # print([keys[index] for index in torch.topk(data.x.squeeze(1), k=5).indices])
+        # print([keys[index] for index in torch.topk(output, k=5).indices])
+
+        label = data.y.to(device)
+        loss = crit(output, label.to(torch.float32))
+        
+        loss.backward()
+        loss_all += data.num_graphs * loss.item()
+        optimizer.step()
+    return loss_all / len(train_dataset)
+
+
+
+
+for epoch in range(1, 10):
+    loss = train()
+    print(f'Epoch: {epoch}, Loss: {loss}')
+
+torch.save(model, './tempmodel')
