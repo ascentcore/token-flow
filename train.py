@@ -1,4 +1,4 @@
 from net.dataset import ContextualGraphDataset
 
 
-dataset = ContextualGraphDataset(source='datasets/simple')
+dataset = ContextualGraphDataset(source='datasets/kids')
