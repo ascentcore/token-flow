@@ -52,7 +52,6 @@ def stimulate(key, value, G, factor=degrade_factor, to_set=None, nodes=None):
             previous_value = nodes[key]['s']
             new_value = previous_value + value
             to_set[key] = {'s':  min(1, new_value)}
-
             if new_value > 0.1:
                 for sub_key in node.keys():
                     if sub_key != key:
@@ -61,6 +60,56 @@ def stimulate(key, value, G, factor=degrade_factor, to_set=None, nodes=None):
                                   G, factor * factor_constant, to_set=to_set, nodes=nodes)
 
     return to_set
+
+
+def get_tensor_from_nodes(data_graph, keys):
+    nodes = data_graph.nodes(data=True)
+    edges = data_graph.edges(data=True)
+
+    n_nodes = len(keys)
+
+    y0 = [edge[0] for edge in edges]
+    y1 = [edge[1] for edge in edges]
+    weights = [edge[2]['weight'] for edge in edges]
+
+    x = torch.tensor(
+        [[node['s']] for idx, node in nodes], dtype=torch.float)
+    # node_features = [node['s'] for idx, node in nodes]
+    # node_features = torch.LongTensor(node_features).unsqueeze(1)
+    # x = node_features
+    edge_index = torch.tensor([y0, y1], dtype=torch.long)
+
+    data = Data(x=x, edge_index=edge_index, edge_attr=weights)
+
+    data.num_nodes = n_nodes
+
+    return data
+
+
+def stimulate_graph_with_text(text, keys, data_graph, to_set={}):
+
+    doc = nlp(text)
+    for sentence in doc.sents:
+        prev = keys.index('<start>')
+        to_set = stimulate(prev, stimulus, data_graph, to_set=to_set)
+        for token in sentence:
+            lemma = token.lemma_.lower()
+
+            if not token.is_punct and lemma in keys:
+                lower_lemma = keys.index(lemma)
+
+                to_set = stimulate(
+                    lower_lemma, stimulus, data_graph, to_set=to_set)
+                prev = lower_lemma
+                nx.set_node_attributes(data_graph, to_set)
+
+        ## Decrease temperature ##
+        dlist = data_graph.nodes(data=True)
+        set_values = {}
+        for node, data in dlist:
+            new_value = data['s'] - temp_decrease
+            set_values[node] = {'s': max(0, new_value)}
+        nx.set_node_attributes(data_graph, set_values)
 
 
 def do_link(from_tkn, to_tkn, G):
@@ -127,16 +176,24 @@ class ContextualGraphDataset(InMemoryDataset):
             nodes = data_graph.nodes(data=True)
             edges = data_graph.edges(data=True)
 
+            n_nodes = len(keys)
+
             y0 = [edge[0] for edge in edges]
             y1 = [edge[1] for edge in edges]
             weights = [edge[2]['weight'] for edge in edges]
 
             x = torch.tensor(
-                [[node['s'] for idx, node in nodes]], dtype=torch.float)
+                [[node['s']] for idx, node in nodes], dtype=torch.float)
+            # node_features = [node['s'] for idx, node in nodes]
+            # node_features = torch.LongTensor(node_features).unsqueeze(1)
+            # x = node_features
             edge_index = torch.tensor([y0, y1], dtype=torch.long)
 
-            data = Data(x=x, edge_index=edge_index,
-                        edge_attr=weights, y=torch.tensor([lower_lemma]))
+            y = torch.zeros(n_nodes, dtype=torch.long)
+            y[lower_lemma] = 1
+            data = Data(x=x, edge_index=edge_index, edge_attr=weights, y=y)
+
+            data.num_nodes = n_nodes
 
             data_list.append(data)
 
@@ -151,10 +208,9 @@ class ContextualGraphDataset(InMemoryDataset):
                     basename = os.path.basename(f.name)
                     text = f.read()
                     doc = create_links(text, keys, current_graph)
-                    print(basename)
-                    print(current_graph.edges(data=True))
-             
-                    nx.write_edgelist(current_graph, f'{self.source}/dataset/graphs/{basename}')
+
+                    nx.write_edgelist(
+                        current_graph, f'{self.source}/dataset/graphs/{basename}')
 
                     data_graph = current_graph.copy()
                     for sentence in doc.sents:
