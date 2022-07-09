@@ -85,7 +85,8 @@ def create_links(text, keys, current_graph):
                             current_graph)
                     prev = lower_index
                 else:
-                    print(lower)
+                    pass
+                    # print(lower)
         do_link(prev, keys.index('<end>'), current_graph)
 
     return doc
@@ -115,6 +116,11 @@ class ContextualGraphDataset(InMemoryDataset):
         keys = get_dictionary_keys()
         G = get_initial_graph(keys)
 
+        try:
+            os.makedirs(f'{self.source}/dataset/graphs/')
+        except OSError as e:
+            pass
+
         data_list = []
 
         def add_to_list(data_graph, lower_lemma):
@@ -139,10 +145,16 @@ class ContextualGraphDataset(InMemoryDataset):
                 current_graph = G.copy()
                 path = os.path.join(root, file)
 
-                with open(path) as f:
-                    text = f.read()
+                print(path)
 
+                with open(path) as f:
+                    basename = os.path.basename(f.name)
+                    text = f.read()
                     doc = create_links(text, keys, current_graph)
+                    print(basename)
+                    print(current_graph.edges(data=True))
+             
+                    nx.write_edgelist(current_graph, f'{self.source}/dataset/graphs/{basename}')
 
                     data_graph = current_graph.copy()
                     for sentence in doc.sents:
@@ -167,6 +179,8 @@ class ContextualGraphDataset(InMemoryDataset):
                             new_value = data['s'] - temp_decrease
                             set_values[node] = {'s': max(0, new_value)}
                         nx.set_node_attributes(data_graph, set_values)
+
+            break
 
         data, slices = self.collate(data_list)
         torch.save((data, slices), self.processed_paths[0])
