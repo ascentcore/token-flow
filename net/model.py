@@ -16,9 +16,9 @@ class GCN(torch.nn.Module):
         x, edge_index, y = data.x, data.edge_index, data.y
 
         x = F.relu(self.conv1(x, edge_index))
-        x = F.dropout(x, training=self.training)
-        x = F.relu(self.conv2(x, edge_index))
-        x = F.dropout(x, training=self.training)
+        # x = F.dropout(x, training=self.training)
+        # x = F.relu(self.conv2(x, edge_index))
+        # x = F.dropout(x, training=self.training)
         x = F.relu(self.conv3(x, edge_index))
 
         return torch.sigmoid(x)

@@ -5,17 +5,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from net.dataset import ContextualGraphDataset
-from torch_geometric.data import DataLoader
+
+from torch_geometric.loader import DataLoader
 import numpy as np
 
-from net.dataset import get_dictionary_keys
+from net.dataset import ContextualGraphDataset
+from net.context import Context
 from net.model import GCN
 
-keys = get_dictionary_keys()
+path = 'datasets/simple'
 
-dataset = ContextualGraphDataset(source='datasets/kids')
-
+dataset = ContextualGraphDataset(source=path, prune_dictionary=True)
+context = Context(path)
 dataset = dataset.shuffle()
 one_tenth_length = int(len(dataset) * 0.1)
 train_dataset = dataset[:one_tenth_length * 8]
@@ -29,10 +30,9 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size)
 val_loader = DataLoader(val_dataset, batch_size=batch_size)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
-num_items = 10007
-num_categories = 10007
+num_items = len(context.keys)
+num_categories = len(context.keys)
 
-embed_dim = 128
 
 # number of graphs
 print("Number of graphs: ", len(dataset))
@@ -61,28 +61,23 @@ def train():
     loss_all = 0
     for data in train_loader:
         data = data.to(device)
-      
+
         optimizer.zero_grad()
         output = model(data)
         output = output.squeeze(1)
-
-        # print('---------')
-        # print([keys[index] for index in torch.topk(data.x.squeeze(1), k=5).indices])
-        # print([keys[index] for index in torch.topk(output, k=5).indices])
-
+        
         label = data.y.to(device)
         loss = crit(output, label.to(torch.float32))
-        
+
         loss.backward()
         loss_all += data.num_graphs * loss.item()
         optimizer.step()
     return loss_all / len(train_dataset)
 
 
-
-
 for epoch in range(1, 10):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
+    torch.save(model, f'{path}/temp_model')
 
-torch.save(model, './tempmodel')
+torch.save(model, f'{path}/trained_model')
