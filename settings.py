@@ -1,3 +1,4 @@
-path = 'datasets/kids'
+path = 'datasets/simple'
 clear_dataset = False
-edgelist = 'environment'
+edgelist = 'car'
+tokens = ['<start>', 'the', 'car']

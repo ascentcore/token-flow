@@ -133,15 +133,18 @@ class ContextualGraphDataset(InMemoryDataset):
 
             for sentence in tqdm(sentences, 'Stimulating nodes'):
                 for token in sentence:
-                    context.stimulate_token(graph, token)
+                    
                     data_list.append(
                         context.get_tensor_from_nodes(graph, token))
                     
 
-                    if token == '<end>':
-                        context.decrease_stimulus(graph, 0.5)
-                    else:
-                        context.decrease_stimulus(graph, 0.1)
+                # if token == '<end>':
+                #     context.decrease_stimulus(graph, 0.2)
+                # else:
+                    context.decrease_stimulus(graph, 0.1)
+                    context.stimulate_token(graph, token)
+
+                context.decrease_stimulus(graph, 0.5)
 
                     
 

@@ -63,9 +63,12 @@ print("Y shape: ", dataset[0].y.shape)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = GCN(dataset.num_features).to(device)
+print(model)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-crit = torch.nn.BCELoss()
-
+# crit = torch.nn.BCELoss()
+crit = torch.nn.CrossEntropyLoss()
+# crit = torch.nn.MSELoss()
+# crit = torch.nn.BCEWithLogitsLoss()
 
 def train():
     model.train()
@@ -73,12 +76,10 @@ def train():
     loss_all = 0
     for data in train_loader:
         data = data.to(device)
-
         optimizer.zero_grad()
         output = model(data)
-        
         output = output.squeeze(1)
-        
+
         label = data.y.to(device)
         loss = crit(output, label.to(torch.float32))
 
@@ -88,7 +89,7 @@ def train():
     return loss_all / len(train_dataset)
 
 
-for epoch in range(1, 50):
+for epoch in range(1, 100):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
     torch.save(model, f'{path}/temp_model')
