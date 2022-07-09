@@ -58,7 +58,7 @@ class Context:
 
         y0 = [edge[0] for edge in edges]
         y1 = [edge[1] for edge in edges]
-        weights = [edge[2]['weight'] for edge in edges]
+        weights = [[edge[2]['weight']] for edge in edges]
 
         x = torch.tensor(
             [[node['s']] for idx, node in nodes], dtype=torch.float)

@@ -12,8 +12,12 @@ import numpy as np
 from net.dataset import ContextualGraphDataset
 from net.context import Context
 from net.model import GCN
+from settings import path, clear_dataset
 
-path = 'datasets/kids'
+if clear_dataset:
+    import shutil
+    shutil.rmtree(f'{path}/dataset')
+
 
 dataset = ContextualGraphDataset(source=path, prune_dictionary=True)
 context = Context(path)
@@ -48,6 +52,12 @@ print("Edge shape: ", dataset[0].edge_index.shape)
 print("Y shape: ", dataset[0].y.shape)
 
 
+# print(dataset[0].edge_index.t())
+# print(dataset[0].x)
+# print(dataset[0].edge_attr)
+# print(dataset[0].y)
+
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = GCN(dataset.num_features).to(device)
@@ -76,7 +86,7 @@ def train():
     return loss_all / len(train_dataset)
 
 
-for epoch in range(1, 10):
+for epoch in range(1, 20):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
     torch.save(model, f'{path}/temp_model')
