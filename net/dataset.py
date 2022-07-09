@@ -111,7 +111,7 @@ class ContextualGraphDataset(InMemoryDataset):
             fp.write('\n'.join(used_keys if self.prune_dictionary else all_keys))
 
         #### Start creating context graphs ####
-        context = Context(self.get_dictionary_path())
+        context = Context(f'{self.source}')
 
         data_list = []
         for txt in texts:

@@ -38,6 +38,18 @@ class Context:
         print(f'Context initialized with {len(self.keys)} nodes')
         self.G = G
 
+    def initialize_from_edgelist(self, path):
+        edgelist_graph = nx.read_edgelist(path)
+        output_graph = self.G.copy()
+        for edge in edgelist_graph.edges(data=True):
+            output_graph.add_edge(int(edge[0]), int(
+                edge[1]), weight=edge[2]['weight'])
+
+        return output_graph
+
+    def translate(self, token_index):
+        return self.keys[token_index]
+
     def get_tensor_from_nodes(self, data_graph, next_token=None):
         nodes = data_graph.nodes(data=True)
         edges = data_graph.edges(data=True)

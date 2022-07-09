@@ -13,7 +13,7 @@ from net.dataset import ContextualGraphDataset
 from net.context import Context
 from net.model import GCN
 
-path = 'datasets/simple'
+path = 'datasets/kids'
 
 dataset = ContextualGraphDataset(source=path, prune_dictionary=True)
 context = Context(path)
@@ -25,7 +25,7 @@ test_dataset = dataset[one_tenth_length*9:]
 print(len(train_dataset), len(val_dataset), len(test_dataset))
 
 
-batch_size = 64
+batch_size = 16
 train_loader = DataLoader(train_dataset, batch_size=batch_size)
 val_loader = DataLoader(val_dataset, batch_size=batch_size)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
@@ -64,6 +64,7 @@ def train():
 
         optimizer.zero_grad()
         output = model(data)
+        
         output = output.squeeze(1)
         
         label = data.y.to(device)
