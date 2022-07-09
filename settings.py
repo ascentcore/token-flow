@@ -1,2 +1,3 @@
-path = 'datasets/simple'
-clear_dataset = True
+path = 'datasets/kids'
+clear_dataset = False
+edgelist = 'environment'

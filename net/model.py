@@ -8,8 +8,9 @@ class GCN(torch.nn.Module):
     def __init__(self, num_features):
         super().__init__()
         """ GCNConv layers """
-        self.conv1 = GCNConv(num_features, 128)
-        self.conv2 = GCNConv(128, num_features)
+        self.conv1 = GCNConv(num_features, 256)
+        # self.conv2 = GCNConv(32, 64)
+        self.final = GCNConv(256, num_features)
 
     def forward(self, data):
         x, edge_index = data.x, data.edge_index
@@ -17,7 +18,10 @@ class GCN(torch.nn.Module):
         x = self.conv1(x, edge_index)
         x = F.relu(x)
         x = F.dropout(x, training=self.training)
-        x = self.conv2(x, edge_index)
+        # x = self.conv2(x, edge_index)
+        # x = F.relu(x)
+        # x = F.dropout(x, training=self.training)
+        x = self.final(x, edge_index)
 
         # return F.log_softmax(x, dim=1)
         return torch.sigmoid(x)

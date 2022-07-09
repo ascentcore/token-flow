@@ -16,8 +16,10 @@ from settings import path, clear_dataset
 
 if clear_dataset:
     import shutil
-    shutil.rmtree(f'{path}/dataset')
-
+    try:
+        shutil.rmtree(f'{path}/dataset')
+    except:
+        pass
 
 dataset = ContextualGraphDataset(source=path, prune_dictionary=True)
 context = Context(path)
@@ -86,7 +88,7 @@ def train():
     return loss_all / len(train_dataset)
 
 
-for epoch in range(1, 20):
+for epoch in range(1, 50):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
     torch.save(model, f'{path}/temp_model')

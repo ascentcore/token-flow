@@ -1,6 +1,7 @@
 import os
 import torch
 import spacy
+from tqdm import tqdm
 import networkx as nx
 from torch_geometric.data import InMemoryDataset
 
@@ -66,7 +67,7 @@ class ContextualGraphDataset(InMemoryDataset):
 
         texts = []
 
-        all_keys = self.get_dictionary_keys('dictionaries/essential.txt')
+        # all_keys = self.get_dictionary_keys('dictionaries/essential.txt')
         used_keys = ['<start>', '<end>']
 
         for root, dirs, files in os.walk(self.source):
@@ -86,13 +87,17 @@ class ContextualGraphDataset(InMemoryDataset):
                         for sentence in doc.sents:
                             tokens = ['<start>']
                             for token in sentence:
-                                if not token.is_punct:
-                                    lemma = token.lemma_.lower()
-                                    if lemma in all_keys:
-                                        tokens.append(lemma)
+                                if not token.is_punct and token.text != '\n':
+                                    # lemma = token.lemma_.lower()
+                                    # if lemma in all_keys:
+                                    #     tokens.append(lemma)
 
-                                        if self.prune_dictionary and lemma not in used_keys:
-                                            used_keys.append(lemma)
+                                    #     if self.prune_dictionary and lemma not in used_keys:
+                                    #         used_keys.append(lemma)
+
+                                    tokens.append(token.text.lower())
+                                    if token.text.lower() not in used_keys:
+                                        used_keys.append(token.text.lower())
 
                             tokens.append('<end>')
 
@@ -108,7 +113,8 @@ class ContextualGraphDataset(InMemoryDataset):
         print(f'Storing dictionary to {self.get_dictionary_path()} ...')
         used_keys.append('')
         with open(self.get_dictionary_path(), 'w') as fp:
-            fp.write('\n'.join(used_keys if self.prune_dictionary else all_keys))
+            fp.write('\n'.join(used_keys))
+            # fp.write('\n'.join(used_keys if self.prune_dictionary else all_keys))
 
         #### Start creating context graphs ####
         context = Context(f'{self.source}')
@@ -119,21 +125,25 @@ class ContextualGraphDataset(InMemoryDataset):
             name = txt['filename']
             sentences = txt['sentences']
 
-            for sentence in sentences:
+            for sentence in tqdm(sentences, desc=f'Creating Links'):
                 context.create_links(graph, sentence)
 
             nx.write_edgelist(
                 graph, f'{self.source}/dataset/{name}-graph.edgelist')
 
-            for sentence in sentences:
+            for sentence in tqdm(sentences, 'Stimulating nodes'):
                 for token in sentence:
+                    context.stimulate_token(graph, token)
                     data_list.append(
                         context.get_tensor_from_nodes(graph, token))
-                    if token == '<end>':
+                    
 
-                        context.decrease_stimulus(graph)
+                    if token == '<end>':
+                        context.decrease_stimulus(graph, 0.5)
                     else:
-                        context.stimulate_token(graph, token)
+                        context.decrease_stimulus(graph, 0.1)
+
+                    
 
         data, slices = self.collate(data_list)
         torch.save((data, slices), self.processed_paths[0])

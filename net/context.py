@@ -6,13 +6,13 @@ from torch_geometric.data import Data
 class Context:
 
     # Initial weight of the edge when created
-    initial_weight = 0.1
+    initial_weight = 0.2
 
     # Edge weight increase when connection exists
     weight_increase = 0.05
 
     # Degradation of signal from one node to the childre
-    neuron_resistence = 0.75
+    neuron_opening = 0.75
 
     # Initial stimulus
     stimulus = 1
@@ -86,28 +86,37 @@ class Context:
             token_index = self.get_token_index(token)
             if previous is not None:
                 if graph.has_edge(previous, token_index):
-                    graph[previous][token_index]['weight'] += self.weight_increase
+                    weight = graph[previous][token_index]['weight']
+                    graph[previous][token_index]['weight'] = min(
+                        weight + self.weight_increase, 1)
                 else:
                     graph.add_edge(previous, token_index,
                                    weight=self.initial_weight)
             previous = token_index
 
-    def stimulate_token(self, graph, token, stimulus=stimulus):
+    def stimulate_token(self, graph, token, stimulus=stimulus, debug=False):
         token_index = self.get_token_index(token)
         to_set = self.stimulate(graph, token_index, stimulus, {})
-        # print([(self.keys[idx], str(round(to_set[idx]['s'], 3)))
-        #       for idx in to_set.keys()])
+        if debug:
+            print(token, '->', [(self.keys[idx], str(round(to_set[idx]['s'], 3)))
+                for idx in to_set.keys()])
         nx.set_node_attributes(graph, to_set)
 
     def decrease_stimulus(self, graph, decrease=temp_decrease):
         for node in graph.nodes():
             graph.nodes[node]['s'] = max(0, graph.nodes[node]['s'] - decrease)
 
-    def stimulate(self, graph, token_index, stimulus=stimulus, to_set={}):
+    def stimulate(self, graph, token_index, stimulus=stimulus, to_set={}, decrease=False):
         if token_index not in to_set.keys():
             node = graph[token_index]
-            current_stimulus = graph.nodes[token_index]['s'] + stimulus
-            to_set[token_index] = {'s': min(1, current_stimulus)}
+
+            if graph.nodes[token_index]['s'] < stimulus:
+                # current_stimulus = graph.nodes[token_index]['s'] + stimulus
+                current_stimulus = stimulus
+            else:
+                current_stimulus = graph.nodes[token_index]['s'] - self.temp_decrease
+
+            to_set[token_index] = {'s': max(0, min(1, current_stimulus))}
 
             if stimulus > self.propagate_threshold:
                 for sub_key in node.keys():
@@ -115,6 +124,6 @@ class Context:
                     if sub_key != token_index:
                         weight = node[sub_key]['weight']
                         self.stimulate(graph, sub_key,
-                                       weight * stimulus * self.neuron_resistence, to_set=to_set)
+                                       weight * stimulus * self.neuron_opening, to_set=to_set, decrease=True)
 
         return to_set

@@ -2,7 +2,7 @@ from curses.panel import top_panel
 import torch
 from net.model import GCN
 from net.context import Context
-from settings import path
+from settings import path, edgelist
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -10,8 +10,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 context = Context(path)
 
 graph = context.initialize_from_edgelist(
-    path + '/dataset/car.txt-graph.edgelist')
-
+    path + f'/dataset/{edgelist}.txt-graph.edgelist')
+print(f'loading {path}/temp_model')
 model = torch.load(f'{path}/temp_model')
 model.eval()
 tokens = ['<start>', 'the']
@@ -39,12 +39,10 @@ for i in range(100):
     token = context.translate(last)    
     text = text + ' ' + token
 
-    context.stimulate_token(graph, token, 0.5)
+    context.stimulate_token(graph, token, debug=True)
     history.append(last)
     history = history[-preserve_history:]
 
-    if token == '<end>' or token =='<start>':
-        context.decrease_stimulus(graph, 0.2)
 
 print(text)
 
