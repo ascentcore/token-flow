@@ -141,7 +141,7 @@ class ContextualGraphDataset(InMemoryDataset):
                 # if token == '<end>':
                 #     context.decrease_stimulus(graph, 0.2)
                 # else:
-                    context.decrease_stimulus(graph, 0.1)
+                    # context.decrease_stimulus(graph, 0.1)
                     context.stimulate_token(graph, token)
 
                 context.decrease_stimulus(graph, 0.5)

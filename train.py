@@ -66,8 +66,8 @@ model = GCN(dataset.num_features).to(device)
 print(model)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 # crit = torch.nn.BCELoss()
-crit = torch.nn.CrossEntropyLoss()
-# crit = torch.nn.MSELoss()
+# crit = torch.nn.CrossEntropyLoss()
+crit = torch.nn.MSELoss()
 # crit = torch.nn.BCEWithLogitsLoss()
 
 def train():

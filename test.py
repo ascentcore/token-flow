@@ -17,7 +17,7 @@ model.eval()
 
 text = ' '.join(tokens)
 
-preserve_history = 20
+preserve_history = 10
 history = []
 
 for token in tokens:
