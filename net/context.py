@@ -15,7 +15,7 @@ class Context:
     initial_weight = 0.1
 
     # Edge weight increase when connection exists
-    weight_increase = 0.01
+    weight_increase = 0.05
 
     # Degradation of signal from one node to the childre
     neuron_opening = 0.75
@@ -37,7 +37,9 @@ class Context:
 
     vocabulary = ['<start>', '<end>']
 
-    def __init__(self, path = None):
+    plt = None
+
+    def __init__(self, path=None):
         self.nlp = spacy.load("en_core_web_sm")
         if path:
             if os.path.exists(f'{path}/dataset/vocabulary.txt'):
@@ -52,6 +54,13 @@ class Context:
                     self.G.add_node(self.vocabulary.index(key))
 
                 nx.set_node_attributes(self.G, 0, 's')
+
+    def get_lemma(self, token, accepted=['NOUN', 'PROPN', 'VERB']):
+        tokens = self.nlp(token)
+        if (tokens[0].pos_ in accepted):
+            return tokens[0].lemma_
+        else:
+            return token
 
     def from_folder(self, folder_path, reset=False, connect_all=True):
         graphs = {}
@@ -99,7 +108,6 @@ class Context:
                             print('Creating edgelist...')
                             nx.write_edgelist(
                                 G, f'{folder_path}/dataset/{file}-edgelist.txt')
-                                
 
             with open(f'{folder_path}/dataset/vocabulary.txt', 'w') as fp:
                 for token in self.vocabulary:
@@ -114,9 +122,20 @@ class Context:
 
         return graphs
 
-    def from_text(self, text, all_tokens=True, accepted=['NOUN', 'PROPN', 'VERB'], keys=['<start>', '<end>'], set_vocabulary=True, set_graph=True, connect_all=True):
+    def from_text(self, text, accepted=['NOUN', 'PROPN', 'VERB'], keys=['<start>', '<end>'], set_vocabulary=True, set_graph=True, connect_all=True):
         G = nx.DiGraph()
         doc = self.nlp(text)
+
+        def make_connection(from_nodes, to_node):
+            for from_node in from_nodes:
+                if from_node != to_node:
+                    if G.has_edge(from_node, to_node):
+                        weight = G[from_node][to_node]['weight']
+                        G[from_node][to_node]['weight'] = min(
+                            weight + self.weight_increase, 1)
+                    else:
+                        G.add_edge(from_node, to_node,
+                                    weight=self.initial_weight)
 
         def connect_tokens(tokens):
             for i in range(0, len(tokens)):
@@ -128,34 +147,49 @@ class Context:
 
                     if connect_all or j == i + 1 or tokens[i] != tokens[j]:
                         if tokens[i] != tokens[j]:
-                            if G.has_edge(tokens[i], tokens[j]):
-                                weight = G[tokens[i]][tokens[j]]['weight']
-                                G[tokens[i]][tokens[j]]['weight'] = min(
-                                    weight + self.weight_increase, 1)
-                            else:
-                                G.add_edge(tokens[i], tokens[j],
-                                           weight=self.initial_weight)
+                            make_connection([tokens[i]], tokens[j])
 
         for sentence in doc.sents:
-            tokens = [0]
+            tokens = []
+            previous = [0]
             for token in sentence:
+                cp = []
                 if not token.is_punct and token.text != '\n':
                     token_lower = token.lemma_.lower()
+                    text_lower = token.text.lower()
 
-                    if all_tokens or token.pos_ in accepted:
+                    if token.pos_ in accepted:
                         if token_lower not in keys:
+                            G.add_node(len(keys))
                             keys.append(token_lower)
-                        tokens.append(keys.index(token_lower))
+                        token_index = keys.index(token_lower)
+                        tokens.append(token_index)
+                        make_connection(previous, token_index)
+                        cp.append(token_index)
 
-                    if token.text.lower() not in keys:
-                        keys.append(token.text.lower())
+                    
+                    if text_lower not in keys:
+                        G.add_node(len(keys))     
+                        keys.append(text_lower)
+                    
+                    text_lower_index = keys.index(text_lower)
+                    make_connection(previous, text_lower_index)
+                    cp.append(text_lower_index)
+
+                    if len(cp) > 1:
+                        make_connection([cp[0]], cp[1])
+                        make_connection([cp[1]], cp[0])
+                   
                 else:
-                    tokens.append(1)
-                    connect_tokens(tokens)
-                    tokens = [0]
+                    make_connection(previous, 1)
+                    # connect_tokens(tokens)
+                    tokens = []
+                    previous = [0]
+                
+                previous = cp
 
-            if len(tokens) > 0:
-                connect_tokens(tokens)
+            # if len(tokens) > 0:
+            #     connect_tokens(tokens)
 
         nx.set_node_attributes(G, 0, 's')
 
@@ -168,13 +202,13 @@ class Context:
         return G
 
     def initialize_from_edgelist(self, path):
-       edgelist_graph = nx.read_edgelist(path)
-       output_graph = self.G.copy()
-       for edge in edgelist_graph.edges(data=True):
+        edgelist_graph = nx.read_edgelist(path)
+        output_graph = self.G.copy()
+        for edge in edgelist_graph.edges(data=True):
             output_graph.add_edge(int(edge[0]), int(
                 edge[1]), weight=edge[2]['weight'])
 
-       return output_graph
+        return output_graph
 
     def translate(self, token_index):
         return self.vocabulary[token_index]
@@ -195,7 +229,7 @@ class Context:
         edge_index = torch.tensor([y0, y1], dtype=torch.long)
 
         if next_token is not None:
-            next_token_index = self.get_token_index(next_token)
+            next_token_index = self.get_token_index(next_token[1])
             y = torch.zeros(n_nodes, dtype=torch.long)
             y[next_token_index] = 1
             data = Data(x=x, edge_index=edge_index, edge_attr=weights, y=y)
@@ -244,8 +278,6 @@ class Context:
 
         if token_index not in to_set.keys():
             node = graph[token_index]
-            print(self.vocabulary)
-            print(token_index, self.vocabulary[token_index])
             if graph.nodes[token_index]['s'] < stimulus:
                 # current_stimulus = graph.nodes[token_index]['s'] + stimulus
                 current_stimulus = stimulus
@@ -268,9 +300,11 @@ class Context:
 
         return to_set
 
-    plt = figure(figsize=(8, 6), dpi=150)
-
     def render(self, path, title="Context", consider_stimulus=True, pre_pos=None, arrowsize=3):
+        if self.plt is None:
+            plt = figure(figsize=(8, 6), dpi=150)
+        else:
+            plt = self.plt
 
         if pre_pos:
             pos = pre_pos

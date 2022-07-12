@@ -56,14 +56,14 @@ class ContextualGraphDataset(InMemoryDataset):
         sentences = []
         doc = nlp(text)
         for sentence in doc.sents:
-            tokens = ['<start>']
+            tokens = [('<start>', '<start>')]
             for token in sentence:
                 if not token.is_punct:
                     lemma = token.lemma_.lower()
                     if lemma in keys:
-                        tokens.append(lemma)
+                        tokens.append((lemma, token.text.lower()))
 
-            tokens.append('<end>')
+            tokens.append(('<end>', '<end>'))
             sentences.append(tokens)
 
         return sentences
@@ -87,13 +87,13 @@ class ContextualGraphDataset(InMemoryDataset):
                         }
                         doc = nlp(text)
                         for sentence in doc.sents:
-                            tokens = ['<start>']
+                            tokens = [('<start>', '<start>')]
                             for token in sentence:
 
                                 # TODO: check if _is_punct is correct
                                 if not token.is_punct and token.text != '\n':
-                                    tokens.append(token.lemma_.lower())
-                            tokens.append('<end>')
+                                    tokens.append((token.lemma_.lower(), token.text.lower()))
+                            tokens.append(('<end>', '<end>'))
                             content['sentences'].append(tokens)
                         texts.append(content)
                     except:
@@ -104,20 +104,21 @@ class ContextualGraphDataset(InMemoryDataset):
 
         context = Context()
         graphs = context.from_folder(f'{self.source}', connect_all=False)
+        
         data_list = []
         for txt in texts:
 
             name = txt['filename']
             sentences = txt['sentences']
             graph = graphs[name]
-
+            context.G = graph
+            context.render(f'./output/sample-{name}.jpg', consider_stimulus=False)
             for sentence in tqdm(sentences, 'Stimulating nodes'):
                 for token in sentence:
-
                     data_list.append(
                         context.get_tensor_from_nodes(graph, token))
-
-                    context.stimulate_token(graph, token, debug=False)
+                    # context.stimulate_token(graph, token[0], debug=False)
+                    context.stimulate_token(graph, token[1], debug=False)
                 context.decrease_stimulus(graph, 0.1)
 
         data, slices = self.collate(data_list)

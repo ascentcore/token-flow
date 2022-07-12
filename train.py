@@ -12,7 +12,7 @@ import numpy as np
 from net.dataset import ContextualGraphDataset
 from net.context import Context
 from net.model import GCN
-from settings import path, clear_dataset
+from settings import path, clear_dataset, train_epochs
 
 dataset = ContextualGraphDataset(
     source=path, from_scratch=clear_dataset)
@@ -78,7 +78,7 @@ def train():
     return loss_all / len(train_dataset)
 
 
-for epoch in range(1, 100):
+for epoch in range(1, train_epochs):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
     torch.save(model, f'{path}/dataset/temp_model')
