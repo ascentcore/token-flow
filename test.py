@@ -8,14 +8,16 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 context = Context(path)
-
+print(context.vocabulary)
 graph = context.initialize_from_edgelist(
-    path + f'/dataset/{edgelist}.txt-graph.edgelist')
+    path + f'/dataset/{edgelist}.txt-edgelist.txt')
 print(f'loading {path}/temp_model')
-model = torch.load(f'{path}/temp_model')
+model = torch.load(f'{path}/dataset/temp_model')
 model.eval()
 
 text = ' '.join(tokens)
+
+print(graph.nodes(data=True))
 
 preserve_history = 10
 history = []

@@ -14,21 +14,13 @@ from net.context import Context
 from net.model import GCN
 from settings import path, clear_dataset
 
-if clear_dataset:
-    import shutil
-    try:
-        shutil.rmtree(f'{path}/dataset')
-    except:
-        pass
-
-dataset = ContextualGraphDataset(source=path, prune_dictionary=True)
-context = Context(path)
+dataset = ContextualGraphDataset(
+    source=path, from_scratch=clear_dataset)
 dataset = dataset.shuffle()
 one_tenth_length = int(len(dataset) * 0.1)
 train_dataset = dataset[:one_tenth_length * 8]
 val_dataset = dataset[one_tenth_length*8:one_tenth_length * 9]
 test_dataset = dataset[one_tenth_length*9:]
-print(len(train_dataset), len(val_dataset), len(test_dataset))
 
 
 batch_size = 16
@@ -36,8 +28,6 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size)
 val_loader = DataLoader(val_dataset, batch_size=batch_size)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
-num_items = len(context.keys)
-num_categories = len(context.keys)
 
 
 # number of graphs
@@ -63,12 +53,12 @@ print("Y shape: ", dataset[0].y.shape)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = GCN(dataset.num_features).to(device)
-print(model)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 # crit = torch.nn.BCELoss()
 # crit = torch.nn.CrossEntropyLoss()
 crit = torch.nn.MSELoss()
 # crit = torch.nn.BCEWithLogitsLoss()
+
 
 def train():
     model.train()
@@ -77,9 +67,8 @@ def train():
     for data in train_loader:
         data = data.to(device)
         optimizer.zero_grad()
-        output = model(data)
+        output = model(data)        
         output = output.squeeze(1)
-
         label = data.y.to(device)
         loss = crit(output, label.to(torch.float32))
 
@@ -92,6 +81,6 @@ def train():
 for epoch in range(1, 100):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
-    torch.save(model, f'{path}/temp_model')
+    torch.save(model, f'{path}/dataset/temp_model')
 
-torch.save(model, f'{path}/trained_model')
+torch.save(model, f'{path}/dataset/trained_model')

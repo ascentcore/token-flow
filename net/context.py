@@ -37,18 +37,48 @@ class Context:
 
     vocabulary = ['<start>', '<end>']
 
-    def __init__(self):
+    def __init__(self, path = None):
         self.nlp = spacy.load("en_core_web_sm")
+        if path:
+            if os.path.exists(f'{path}/dataset/vocabulary.txt'):
+                print('Vocabulary found, loading...')
+                with open(f'{path}/dataset/vocabulary.txt', 'r') as fp:
+                    self.vocabulary = []
+                    for line in fp:
+                        self.vocabulary.append(line[:-1])
+
+                self.G = nx.DiGraph()
+                for key in self.vocabulary:
+                    self.G.add_node(self.vocabulary.index(key))
+
+                nx.set_node_attributes(self.G, 0, 's')
 
     def from_folder(self, folder_path, reset=False, connect_all=True):
+        graphs = {}
         if not os.path.exists(f'{folder_path}/dataset'):
             os.makedirs(f'{folder_path}/dataset')
 
         if os.path.exists(f'{folder_path}/dataset/vocabulary.txt') and not reset:
             print('Vocabulary found, loading...')
             with open(f'{folder_path}/dataset/vocabulary.txt', 'r') as fp:
+                self.vocabulary = []
                 for line in fp:
                     self.vocabulary.append(line[:-1])
+            for file in os.listdir(folder_path):
+                if file.endswith(".txt"):
+                    G = nx.DiGraph()
+                    for i in range(0, len(self.vocabulary)):
+                        G.add_node(i)
+
+                    edgelist_graph = nx.read_edgelist(
+                        f'{folder_path}/dataset/{file}-edgelist.txt')
+                    for edge in edgelist_graph.edges(data=True):
+                        G.add_edge(int(edge[0]), int(
+                            edge[1]), weight=edge[2]['weight'])
+
+                    nx.set_node_attributes(G, 0, 's')
+                    graphs[file] = G
+
         else:
             print('Vocabulary not found, creating...')
             for file in os.listdir(folder_path):
@@ -58,19 +88,31 @@ class Context:
                         print('Parsing file: ' + filename)
                         text = fp.read()
                         G = self.from_text(
-                            text, keys=self.vocabulary, 
-                            set_vocabulary=False, 
-                            set_graph=False, 
+                            text, keys=self.vocabulary,
+                            set_vocabulary=False,
+                            set_graph=False,
                             connect_all=connect_all)
+
+                        graphs[file] = G
 
                         if not os.path.exists(f'{folder_path}/dataset/{file}-edgelist.txt') or reset:
                             print('Creating edgelist...')
                             nx.write_edgelist(
                                 G, f'{folder_path}/dataset/{file}-edgelist.txt')
+                                
 
             with open(f'{folder_path}/dataset/vocabulary.txt', 'w') as fp:
                 for token in self.vocabulary:
                     fp.write(token + '\n')
+
+            for G in graphs.values():
+                for key in self.vocabulary:
+                    if key not in G.nodes():
+                        G.add_node(self.vocabulary.index(key))
+
+                nx.set_node_attributes(G, 0, 's')
+
+        return graphs
 
     def from_text(self, text, all_tokens=True, accepted=['NOUN', 'PROPN', 'VERB'], keys=['<start>', '<end>'], set_vocabulary=True, set_graph=True, connect_all=True):
         G = nx.DiGraph()
@@ -126,13 +168,13 @@ class Context:
         return G
 
     def initialize_from_edgelist(self, path):
-        edgelist_graph = nx.read_edgelist(path)
-        output_graph = self.G.copy()
-        for edge in edgelist_graph.edges(data=True):
+       edgelist_graph = nx.read_edgelist(path)
+       output_graph = self.G.copy()
+       for edge in edgelist_graph.edges(data=True):
             output_graph.add_edge(int(edge[0]), int(
                 edge[1]), weight=edge[2]['weight'])
 
-        return output_graph
+       return output_graph
 
     def translate(self, token_index):
         return self.vocabulary[token_index]
@@ -202,7 +244,8 @@ class Context:
 
         if token_index not in to_set.keys():
             node = graph[token_index]
-
+            print(self.vocabulary)
+            print(token_index, self.vocabulary[token_index])
             if graph.nodes[token_index]['s'] < stimulus:
                 # current_stimulus = graph.nodes[token_index]['s'] + stimulus
                 current_stimulus = stimulus
