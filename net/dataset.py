@@ -1,6 +1,7 @@
 import os
 import torch
 import spacy
+import re
 from tqdm import tqdm
 import networkx as nx
 from torch_geometric.data import InMemoryDataset
@@ -24,7 +25,7 @@ class ContextualGraphDataset(InMemoryDataset):
 
         print('Initializing')
         self.source = source
-       
+
         super().__init__(f'{source}/dataset',
                          transform, pre_transform, pre_filter)
         self.data, self.slices = torch.load(self.processed_paths[0])
@@ -72,6 +73,8 @@ class ContextualGraphDataset(InMemoryDataset):
         print('Processing dataset ...')
         texts = []
 
+        
+
         for root, dirs, files in os.walk(self.source):
             for file in files:
 
@@ -81,6 +84,9 @@ class ContextualGraphDataset(InMemoryDataset):
                     print(f'Processing {basename}')
                     try:
                         text = f.read()
+                        text = re.sub(r"(?<=[^\.])\n", " ", text)
+                        text = re.sub(r"\ +", " ", text)
+
                         content = {
                             'filename': basename,
                             'sentences': []
@@ -92,7 +98,8 @@ class ContextualGraphDataset(InMemoryDataset):
 
                                 # TODO: check if _is_punct is correct
                                 if not token.is_punct and token.text != '\n':
-                                    tokens.append((token.lemma_.lower(), token.text.lower()))
+                                    tokens.append(
+                                        (token.lemma_.lower().strip(), token.text.lower().strip()))
                             tokens.append(('<end>', '<end>'))
                             content['sentences'].append(tokens)
                         texts.append(content)
@@ -105,6 +112,8 @@ class ContextualGraphDataset(InMemoryDataset):
         context = Context()
         graphs = context.from_folder(f'{self.source}', connect_all=False)
         
+        keys = self.get_vocabulary_keys()
+        
         data_list = []
         for txt in texts:
 
@@ -112,14 +121,16 @@ class ContextualGraphDataset(InMemoryDataset):
             sentences = txt['sentences']
             graph = graphs[name]
             context.G = graph
-            context.render(f'./output/sample-{name}.jpg', consider_stimulus=False)
             for sentence in tqdm(sentences, 'Stimulating nodes'):
                 for token in sentence:
                     data_list.append(
                         context.get_tensor_from_nodes(graph, token))
-                    # context.stimulate_token(graph, token[0], debug=False)
-                    context.stimulate_token(graph, token[1], debug=False)
-                context.decrease_stimulus(graph, 0.1)
+                    context.decrease_stimulus(graph)
+                    if token[0] in keys:
+                        context.stimulate_token(graph, token[0], debug=False)
+                    else:
+                        context.stimulate_token(graph, token[1], debug=False)
+                
 
         data, slices = self.collate(data_list)
         torch.save((data, slices), self.processed_paths[0])

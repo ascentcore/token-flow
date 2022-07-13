@@ -1,8 +1,8 @@
 path = 'datasets/simple'
-clear_dataset = False
-edgelist = 'airplane'
-tokens = ['<start>', 'the']
-train_epochs = 100
+clear_dataset = True
+edgelist = 'car'
+tokens = ['<start>']
+train_epochs = 1000
 
 preserve_history = 10
 generate_length = 100

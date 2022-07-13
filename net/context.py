@@ -17,8 +17,8 @@ class Context:
     # Edge weight increase when connection exists
     weight_increase = 0.05
 
-    # Degradation of signal from one node to the childre
-    neuron_opening = 0.75
+    # Degradation of signal from one node to the children
+    neuron_opening = 0.95
 
     # Initial stimulus
     stimulus = 1
@@ -30,7 +30,7 @@ class Context:
     propagate_threshold = 0.1
 
     # Stimulus decrease
-    temp_decrease = 0.1
+    temp_decrease = 0.05
 
     # Rendering only
     render_label_size = 0.01
@@ -122,7 +122,24 @@ class Context:
 
         return graphs
 
-    def from_text(self, text, accepted=['NOUN', 'PROPN', 'VERB'], keys=['<start>', '<end>'], set_vocabulary=True, set_graph=True, connect_all=True):
+    def from_text(self, 
+        text, 
+        accepted=['NOUN', 'PROPN', 'VERB'], 
+        keys=['<start>', '<end>'], 
+        set_vocabulary=True, 
+        set_graph=True, 
+        connect_all=True):
+        
+        ## The graph contains only indexes of tokens
+        ##       [0]
+        ##      /   \
+        ##    [2]    [4]
+        ##   /   \  /
+        ## [3]----[1]
+        ##
+        ##                                   [0]     [1]   [2]  [3]  [4]
+        ## Vocabulary in this case can be [<start>, <end>, 'a', 'b', 'c']
+
         G = nx.DiGraph()
         doc = self.nlp(text)
 
@@ -135,63 +152,81 @@ class Context:
                             weight + self.weight_increase, 1)
                     else:
                         G.add_edge(from_node, to_node,
-                                    weight=self.initial_weight)
+                                   weight=self.initial_weight)
 
         def connect_tokens(tokens):
             for i in range(0, len(tokens)):
                 for j in range(i+1, len(tokens)):
-
-                    # do not link start with end and make sure that start points just to the first node
                     if tokens[i] == 0 and (tokens[j] == 1 or j > 1):
                         continue
 
                     if connect_all or j == i + 1 or tokens[i] != tokens[j]:
                         if tokens[i] != tokens[j]:
                             make_connection([tokens[i]], tokens[j])
+                            make_connection([tokens[j]], tokens[i])
 
         for sentence in doc.sents:
             tokens = []
             previous = [0]
             for token in sentence:
-                cp = []
-                if not token.is_punct and token.text != '\n':
-                    token_lower = token.lemma_.lower()
-                    text_lower = token.text.lower()
+                current_position = []
+                if token.text != '\n':
+                    if not token.is_punct:
+                        token_lower = token.lemma_.lower().strip()
+                        text_lower = token.text.lower().strip()
 
-                    if token.pos_ in accepted:
-                        if token_lower not in keys:
-                            G.add_node(len(keys))
-                            keys.append(token_lower)
-                        token_index = keys.index(token_lower)
-                        tokens.append(token_index)
-                        make_connection(previous, token_index)
-                        cp.append(token_index)
+                        if len(text_lower) > 0:
 
-                    
-                    if text_lower not in keys:
-                        G.add_node(len(keys))     
-                        keys.append(text_lower)
-                    
-                    text_lower_index = keys.index(text_lower)
-                    make_connection(previous, text_lower_index)
-                    cp.append(text_lower_index)
+                            if token.pos_ in accepted:
+                                # Add lemma to Graph and vocabulary.
+                                # Lemma is the simplified word ('children' -> 'child')
+                                token_index = len(keys)
+                                if token_lower not in keys:
+                                    G.add_node(token_index)
+                                    keys.append(token_lower)
 
-                    if len(cp) > 1:
-                        make_connection([cp[0]], cp[1])
-                        make_connection([cp[1]], cp[0])
-                   
-                else:
-                    make_connection(previous, 1)
-                    # connect_tokens(tokens)
-                    tokens = []
-                    previous = [0]
-                
-                previous = cp
+                                tokens.append(token_index)
+                                make_connection(previous, token_index)
 
-            # if len(tokens) > 0:
-            #     connect_tokens(tokens)
+                                # The below lines allows connectivity to both word and lemma
+                                # in 13. Jul we decided to remove it
+                                # just to preserve the sentence structure
+                                # this was to make a connection to the lemma as well
+                                # we are going to keep it hidden for the moment
+                                # current_sentence.append(token_index)
+
+                            ## If the actual word (not lemma) is not in the vocabulary add it (child might be but children not)
+                            if text_lower not in keys:
+                                G.add_node(len(keys))
+                                keys.append(text_lower)
+
+                            text_lower_index = keys.index(text_lower)
+                            
+                            # This is strange - need to investigate
+                            make_connection(previous, text_lower_index)
+
+                            current_position.append(text_lower_index)
+
+                            if len(current_position) > 1:
+                                make_connection([current_position[0]], current_position[1])
+                                make_connection([current_position[1]], current_position[0])
+
+                            else:
+                                make_connection(previous, 1)
+                                previous = [0]
+
+                            previous = current_position
+
+                    elif len(tokens) > 0:
+                        connect_tokens(tokens)
+                        tokens = []
+
+        if len(tokens) > 0:
+            connect_tokens(tokens)
+            tokens = []
 
         nx.set_node_attributes(G, 0, 's')
+        G.remove_edge(0, 1)
 
         if set_vocabulary:
             self.vocabulary = keys
@@ -213,6 +248,15 @@ class Context:
     def translate(self, token_index):
         return self.vocabulary[token_index]
 
+    ## Generate a pytorch tensor from a graph
+    ## If next token  (as word) is present then the data will include the y value
+    ## [data.x] represents the simulus of each node
+    ## [data.edge_index] contain all the edges in the graph
+    ## [data.edge_attr] contains the weight of each edge
+    ## [?data.y] an array of zeros with the same length as the number of tokens in vocabulary 
+    ## have 1 as value to the element index of the next word
+    ##
+    ## To analize if y should be a vector of the next 10 words??
     def get_tensor_from_nodes(self, data_graph, next_token=None):
         nodes = data_graph.nodes(data=True)
         edges = data_graph.edges(data=True)
@@ -324,7 +368,7 @@ class Context:
             labels = {n: self.translate(n) for n in self.G}
 
         node_size = [stimulus[n] *
-                     300 if consider_stimulus else 50 for n in self.G]
+                     300 if consider_stimulus else 10 for n in self.G]
 
         ax = plt.gca()
         # ax.set_xlim([-1.4, 1.4])

@@ -10,6 +10,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 context = Context(path)
 graph = context.initialize_from_edgelist(
     path + f'/dataset/{edgelist}.txt-edgelist.txt')
+context.G = graph
 print(f'loading {path}/temp_model')
 model = torch.load(f'{path}/dataset/temp_model')
 model.eval()
@@ -32,16 +33,21 @@ for i in range(generate_length):
     output = output.squeeze(1)
     top_keys = torch.topk(output, k=preserve_history + 1).indices.tolist()
     top_keys = [x for x in top_keys if x not in history]
-    
+
     last = top_keys[0]
     token = context.translate(last)
     text = text + ' ' + token
-    print(text, '->', [context.vocabulary[key] for key in top_keys])
+    print(text, '->', [context.vocabulary[key] for key in top_keys[1:]])
+    context.decrease_stimulus(graph)
     context.stimulate_token(graph, context.get_lemma(token), debug=False)
+    # context.render(f'./output/sample.jpg', title=text)
+
+    if token == '<end>':
+        context.decrease_stimulus(graph)
+
     history.append(last)
     history = history[-preserve_history:]
 
-    if token == '<end>':
-        context.decrease_stimulus(graph, 0.5)
+   
 
 print(text)

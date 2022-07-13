@@ -1,6 +1,7 @@
 from sklearn.metrics import roc_auc_score
 from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
 from torch_geometric.nn import GraphConv, TopKPooling, GatedGraphConv, SAGEConv, SGConv
+import tqdm
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,7 +11,6 @@ from torch_geometric.loader import DataLoader
 import numpy as np
 
 from net.dataset import ContextualGraphDataset
-from net.context import Context
 from net.model import GCN
 from settings import path, clear_dataset, train_epochs
 
@@ -25,9 +25,6 @@ test_dataset = dataset[one_tenth_length*9:]
 
 batch_size = 16
 train_loader = DataLoader(train_dataset, batch_size=batch_size)
-val_loader = DataLoader(val_dataset, batch_size=batch_size)
-test_loader = DataLoader(test_dataset, batch_size=batch_size)
-
 
 
 # number of graphs
@@ -44,21 +41,14 @@ print("Edge shape: ", dataset[0].edge_index.shape)
 print("Y shape: ", dataset[0].y.shape)
 
 
-# print(dataset[0].edge_index.t())
-# print(dataset[0].x)
-# print(dataset[0].edge_attr)
-# print(dataset[0].y)
-
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = GCN(dataset.num_features).to(device)
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-# crit = torch.nn.BCELoss()
-# crit = torch.nn.CrossEntropyLoss()
-crit = torch.nn.MSELoss()
-# crit = torch.nn.BCEWithLogitsLoss()
+print(model)
 
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+crit = torch.nn.CrossEntropyLoss()
+# crit = torch.nn.MSELoss()
 
 def train():
     model.train()
@@ -67,14 +57,14 @@ def train():
     for data in train_loader:
         data = data.to(device)
         optimizer.zero_grad()
-        output = model(data)        
+        output = model(data)
         output = output.squeeze(1)
         label = data.y.to(device)
         loss = crit(output, label.to(torch.float32))
-
         loss.backward()
         loss_all += data.num_graphs * loss.item()
         optimizer.step()
+        
     return loss_all / len(train_dataset)
 
 

@@ -9,7 +9,7 @@ def run_sample():
     context = Context()
     with open('examples/assets/environment.txt', 'r') as f:
         text = f.read()
-        G = context.from_text(text, connect_all=False)
+        G = context.from_text(text, connect_all=True)
 
         images = []
         doc = nlp("""
