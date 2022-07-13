@@ -1,6 +1,6 @@
-path = 'datasets/simple'
+path = 'datasets/randomtext'
 clear_dataset = True
-edgelist = 'car'
+edgelist = '3gables'
 tokens = ['<start>']
 train_epochs = 1000
 

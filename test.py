@@ -37,7 +37,7 @@ for i in range(generate_length):
     last = top_keys[0]
     token = context.translate(last)
     text = text + ' ' + token
-    print(text, '->', [context.vocabulary[key] for key in top_keys[1:]])
+    # print([context.vocabulary[key] for key in top_keys[1:]])
     context.decrease_stimulus(graph)
     context.stimulate_token(graph, context.get_lemma(token), debug=False)
     # context.render(f'./output/sample.jpg', title=text)

@@ -95,11 +95,14 @@ class ContextualGraphDataset(InMemoryDataset):
                         for sentence in doc.sents:
                             tokens = [('<start>', '<start>')]
                             for token in sentence:
-
+                                
                                 # TODO: check if _is_punct is correct
                                 if not token.is_punct and token.text != '\n':
-                                    tokens.append(
-                                        (token.lemma_.lower().strip(), token.text.lower().strip()))
+                                    lemma_lower = token.lemma_.lower().strip()
+                                    token_lower = token.text.lower().strip()
+                                    if len(lemma_lower) > 0 and len(token_lower) > 0:
+                                        tokens.append((lemma_lower, token_lower))
+                                   
                             tokens.append(('<end>', '<end>'))
                             content['sentences'].append(tokens)
                         texts.append(content)
@@ -113,7 +116,6 @@ class ContextualGraphDataset(InMemoryDataset):
         graphs = context.from_folder(f'{self.source}', connect_all=False)
         
         keys = self.get_vocabulary_keys()
-        
         data_list = []
         for txt in texts:
 

@@ -30,7 +30,7 @@ class Context:
     propagate_threshold = 0.1
 
     # Stimulus decrease
-    temp_decrease = 0.05
+    temp_decrease = 0.2
 
     # Rendering only
     render_label_size = 0.01
@@ -57,10 +57,13 @@ class Context:
 
     def get_lemma(self, token, accepted=['NOUN', 'PROPN', 'VERB']):
         tokens = self.nlp(token)
+        val = token
         if (tokens[0].pos_ in accepted):
-            return tokens[0].lemma_
-        else:
-            return token
+            if tokens[0].lemma_ in self.vocabulary:
+                val =  tokens[0].lemma_
+       
+
+        return val
 
     def from_folder(self, folder_path, reset=False, connect_all=True):
         graphs = {}
@@ -175,7 +178,7 @@ class Context:
                         token_lower = token.lemma_.lower().strip()
                         text_lower = token.text.lower().strip()
 
-                        if len(text_lower) > 0:
+                        if len(text_lower) > 0 and len(text_lower) > 0:
 
                             if token.pos_ in accepted:
                                 # Add lemma to Graph and vocabulary.
@@ -346,7 +349,7 @@ class Context:
 
     def render(self, path, title="Context", consider_stimulus=True, pre_pos=None, arrowsize=3):
         if self.plt is None:
-            plt = figure(figsize=(8, 6), dpi=150)
+            plt = figure(figsize=(3, 3), dpi=150)
         else:
             plt = self.plt
 
@@ -373,7 +376,7 @@ class Context:
         ax = plt.gca()
         # ax.set_xlim([-1.4, 1.4])
         # ax.set_ylim([-1.4, 1.4])
-        ax.set_title(title)
+        # ax.set_title(title)
 
         nx.draw_networkx_nodes(
             self.G, pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.3)
