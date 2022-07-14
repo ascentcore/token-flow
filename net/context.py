@@ -18,7 +18,7 @@ class Context:
     weight_increase = 0.05
 
     # Degradation of signal from one node to the children
-    neuron_opening = 0.95
+    neuron_opening = 0.5
 
     # Initial stimulus
     stimulus = 1
@@ -30,7 +30,7 @@ class Context:
     propagate_threshold = 0.1
 
     # Stimulus decrease
-    temp_decrease = 0.2
+    temp_decrease = 0.1
 
     # Rendering only
     render_label_size = 0.01
@@ -215,7 +215,7 @@ class Context:
                                 make_connection([current_position[1]], current_position[0])
 
                             else:
-                                make_connection(previous, 1)
+                                
                                 previous = [0]
 
                             previous = current_position
@@ -224,12 +224,16 @@ class Context:
                         connect_tokens(tokens)
                         tokens = []
 
+            make_connection(previous, 1)
+
         if len(tokens) > 0:
             connect_tokens(tokens)
             tokens = []
 
         nx.set_node_attributes(G, 0, 's')
-        G.remove_edge(0, 1)
+
+        if G.has_edge(0, 1):
+            G.remove_edge(0, 1)
 
         if set_vocabulary:
             self.vocabulary = keys
@@ -268,7 +272,7 @@ class Context:
 
         y0 = [edge[0] for edge in edges]
         y1 = [edge[1] for edge in edges]
-        weights = [[edge[2]['weight']] for edge in edges]
+        weights = [edge[2]['weight'] for edge in edges]
 
         x = torch.tensor(
             [[node['s']] for idx, node in nodes], dtype=torch.float)
@@ -278,7 +282,11 @@ class Context:
         if next_token is not None:
             next_token_index = self.get_token_index(next_token[1])
             y = torch.zeros(n_nodes, dtype=torch.long)
-            y[next_token_index] = 1
+            # y = torch.tensor(
+            # [node['s'] for idx, node in nodes], dtype=torch.float)
+            # 
+            
+            y[next_token_index] = self.stimulus
             data = Data(x=x, edge_index=edge_index, edge_attr=weights, y=y)
         else:
             data = Data(x=x, edge_index=edge_index, edge_attr=weights)
@@ -325,12 +333,12 @@ class Context:
 
         if token_index not in to_set.keys():
             node = graph[token_index]
-            if graph.nodes[token_index]['s'] < stimulus:
-                # current_stimulus = graph.nodes[token_index]['s'] + stimulus
-                current_stimulus = stimulus
-            else:
-                current_stimulus = graph.nodes[token_index]['s'] - \
-                    self.temp_decrease
+            # if graph.nodes[token_index]['s'] < stimulus:
+            current_stimulus = graph.nodes[token_index]['s'] + stimulus
+                # current_stimulus = stimulus
+            # else:
+            #     current_stimulus = graph.nodes[token_index]['s'] - \
+            #         self.temp_decrease
 
             to_set[token_index] = {'s': max(0, min(1, current_stimulus))}
 
