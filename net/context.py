@@ -2,6 +2,7 @@ import os
 import spacy
 import torch
 import networkx as nx
+import collections
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 from spacy.matcher import DependencyMatcher
@@ -60,8 +61,7 @@ class Context:
         val = token
         if (tokens[0].pos_ in accepted):
             if tokens[0].lemma_ in self.vocabulary:
-                val =  tokens[0].lemma_
-       
+                val = tokens[0].lemma_
 
         return val
 
@@ -125,14 +125,14 @@ class Context:
 
         return graphs
 
-    def from_text(self, 
-        text, 
-        accepted=['NOUN', 'PROPN', 'VERB'], 
-        keys=['<start>', '<end>'], 
-        set_vocabulary=True, 
-        set_graph=True, 
-        connect_all=True):
-        
+    def from_text(self,
+                  text,
+                  accepted=['NOUN', 'PROPN', 'VERB'],
+                  keys=['<start>', '<end>'],
+                  set_vocabulary=True,
+                  set_graph=True,
+                  connect_all=True):
+
         ## The graph contains only indexes of tokens
         ##       [0]
         ##      /   \
@@ -141,7 +141,7 @@ class Context:
         ## [3]----[1]
         ##
         ##                                   [0]     [1]   [2]  [3]  [4]
-        ## Vocabulary in this case can be [<start>, <end>, 'a', 'b', 'c']
+        # Vocabulary in this case can be [<start>, <end>, 'a', 'b', 'c']
 
         G = nx.DiGraph()
         doc = self.nlp(text)
@@ -198,24 +198,26 @@ class Context:
                                 # we are going to keep it hidden for the moment
                                 # current_sentence.append(token_index)
 
-                            ## If the actual word (not lemma) is not in the vocabulary add it (child might be but children not)
+                            # If the actual word (not lemma) is not in the vocabulary add it (child might be but children not)
                             if text_lower not in keys:
                                 G.add_node(len(keys))
                                 keys.append(text_lower)
 
                             text_lower_index = keys.index(text_lower)
-                            
+
                             # This is strange - need to investigate
                             make_connection(previous, text_lower_index)
 
                             current_position.append(text_lower_index)
 
                             if len(current_position) > 1:
-                                make_connection([current_position[0]], current_position[1])
-                                make_connection([current_position[1]], current_position[0])
+                                make_connection(
+                                    [current_position[0]], current_position[1])
+                                make_connection(
+                                    [current_position[1]], current_position[0])
 
                             else:
-                                
+
                                 previous = [0]
 
                             previous = current_position
@@ -255,18 +257,23 @@ class Context:
     def translate(self, token_index):
         return self.vocabulary[token_index]
 
-    ## Generate a pytorch tensor from a graph
-    ## If next token  (as word) is present then the data will include the y value
-    ## [data.x] represents the simulus of each node
-    ## [data.edge_index] contain all the edges in the graph
-    ## [data.edge_attr] contains the weight of each edge
-    ## [?data.y] an array of zeros with the same length as the number of tokens in vocabulary 
-    ## have 1 as value to the element index of the next word
+    # Generate a pytorch tensor from a graph
+    # If next token  (as word) is present then the data will include the y value
+    # [data.x] represents the simulus of each node
+    # [data.edge_index] contain all the edges in the graph
+    # [data.edge_attr] contains the weight of each edge
+    # [?data.y] an array of zeros with the same length as the number of tokens in vocabulary
+    # have 1 as value to the element index of the next word
     ##
-    ## To analize if y should be a vector of the next 10 words??
+    # To analize if y should be a vector of the next 10 words??
     def get_tensor_from_nodes(self, data_graph, next_token=None):
         nodes = data_graph.nodes(data=True)
         edges = data_graph.edges(data=True)
+
+        nnodes = {}
+        for node in nodes:
+            nnodes[node[0]] = node[1]['s']
+        nodes = collections.OrderedDict(sorted(nnodes.items()))
 
         n_nodes = len(self.vocabulary)
 
@@ -275,7 +282,7 @@ class Context:
         weights = [edge[2]['weight'] for edge in edges]
 
         x = torch.tensor(
-            [[node['s']] for idx, node in nodes], dtype=torch.float)
+            [[node[1]] for node in nodes.items()], dtype=torch.float)
 
         edge_index = torch.tensor([y0, y1], dtype=torch.long)
 
@@ -284,8 +291,8 @@ class Context:
             y = torch.zeros(n_nodes, dtype=torch.long)
             # y = torch.tensor(
             # [node['s'] for idx, node in nodes], dtype=torch.float)
-            # 
-            
+            #
+
             y[next_token_index] = self.stimulus
             data = Data(x=x, edge_index=edge_index, edge_attr=weights, y=y)
         else:
@@ -335,7 +342,7 @@ class Context:
             node = graph[token_index]
             # if graph.nodes[token_index]['s'] < stimulus:
             current_stimulus = graph.nodes[token_index]['s'] + stimulus
-                # current_stimulus = stimulus
+            # current_stimulus = stimulus
             # else:
             #     current_stimulus = graph.nodes[token_index]['s'] - \
             #         self.temp_decrease
