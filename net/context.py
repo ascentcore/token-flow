@@ -13,10 +13,10 @@ from torch_geometric.data import Data
 class Context:
 
     # Initial weight of the edge when created
-    initial_weight = 0.1
+    initial_weight = 0.2
 
     # Edge weight increase when connection exists
-    weight_increase = 0.05
+    weight_increase = 0.1
 
     # Degradation of signal from one node to the children
     neuron_opening = 0.5

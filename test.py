@@ -1,6 +1,6 @@
 from curses.panel import top_panel
 import torch
-from net.model import GCN
+from net.model import Model
 from net.context import Context
 from settings import path, edgelist, tokens, generate_length, preserve_history
 
@@ -15,6 +15,9 @@ print(f'loading {path}/temp_model')
 model = torch.load(f'{path}/dataset/temp_model')
 model.eval()
 
+
+
+
 text = ' '.join(tokens)
 
 
@@ -25,27 +28,42 @@ for token in tokens:
     token_index = context.get_token_index(token)
     history.append(token_index)
 
-
+print("===========================================")
 for i in range(generate_length):
     data = context.get_tensor_from_nodes(graph)
     data = data.to(device)
     output = model(data)
-    output = output.squeeze(1)
+    # print(output)
+    # predict_index = output.argmax()
+    # print(output.shape)
+    # print(predict_index)
+    # predict_index = output.sum(dim=1).argmax()
+    
+    # _, pred = output.max(dim = 1)
+    # print(_, pred)
+    # output = output.squeeze(1)
+    
     top_keys = torch.topk(output, k=preserve_history + 1).indices.tolist()
     top_keys = [x for x in top_keys if x not in history]
+    #  print([context.vocabulary[key] for key in top_keys])
+    predict_index = top_keys[0]
 
-    last = top_keys[0]
-    token = context.translate(last)
+    token = context.translate(predict_index)
     text = text + ' ' + token
-    # print([context.vocabulary[key] for key in top_keys[1:]])
+    
     context.decrease_stimulus(graph)
-    context.stimulate_token(graph, context.get_lemma(token), debug=False)
-    # context.render(f'./output/sample.jpg', title=text)
+    lemma = context.get_lemma(token)
+    
+    context.stimulate_token(graph, lemma, debug=False)
+    if lemma != token:
+        context.stimulate_token(graph, token, debug=False)
 
-    if token == '<end>':
-        context.decrease_stimulus(graph)
+    # # context.render(f'./output/sample.jpg', title=text)
 
-    history.append(last)
+    # if token == '<end>':
+    #     context.decrease_stimulus(graph, 0.2)
+
+    history.append(predict_index)
     history = history[-preserve_history:]
 
    
