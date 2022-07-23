@@ -79,16 +79,15 @@ class Context():
             for i in range(len(sequence) - 1):
                 self.connect(sequence[i], sequence[i + 1])
 
+        return sequences
+
     def decrease_stimulus(self, decrease=None):
         if decrease is None:
             decrease = self.temp_decrease
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
-
-    def get_matrix(self):
-        return nx.to_numpy_matrix(self.graph)
-
+    
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None):
         root = False
         if token in self.vocabulary.vocabulary:
@@ -134,7 +133,10 @@ class Context():
         return self.graph.nodes[token]['s']
 
     def get_stimuli(self):
-        return self.graph.nodes(data='s')
+        return [ self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
+
+    def get_matrix(self):
+        return nx.to_numpy_matrix(self.graph)
 
     def store(self, path):
         nx.write_edgelist(self.graph, f'{path}/{self.name}.edgelist')

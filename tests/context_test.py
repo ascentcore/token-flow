@@ -83,13 +83,14 @@ class TestContext(unittest.TestCase):
     def test_matrix(self):
         context = Context('test')
         context.add_text('The rain in spain rain in spain the')
+        context.stimulate('rain')
         matrix = context.get_matrix()
         self.assertEqual(matrix.shape, (5, 5))
         flatted = matrix.flatten().tolist()[0]
-        print(flatted)
         self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0,
                              0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
-
+        self.assertListEqual(context.get_stimuli(), [0, 0.0029160000000000006, 1, 0.18000000000000002, 0.032400000000000005])
+        stimuli = context.get_stimuli()
 
 if __name__ == '__main__':
     unittest.main()
