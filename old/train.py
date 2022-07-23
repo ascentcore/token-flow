@@ -6,6 +6,7 @@ import tqdm
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from test import run
 
 
 from torch_geometric.loader import DataLoader
@@ -47,7 +48,8 @@ model = Model(dataset.num_features, dataset[0].x.shape[0]).to(device)
 print(model)
 
 # optimizer = torch.optim.Adam(model.parameters(), lr=0.005, weight_decay=5e-4)
-optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
+# optimizer = torch.optim.SGD(model.parameters(), lr=0.005, momentum=0.9)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 crit = torch.nn.CrossEntropyLoss()
 # crit = torch.nn.MSELoss()
 
@@ -72,10 +74,20 @@ def train():
         
     return loss_all / len(train_dataset)
 
-
+print('Start training...')
 for epoch in range(1, train_epochs):
     loss = train()
     print(f'Epoch: {epoch}, Loss: {loss}')
-    torch.save(model, f'{path}/dataset/temp_model')
+
+    if epoch % 100 == 0:
+        torch.save(model, f'{path}/dataset/model_{epoch}')
+
+    if epoch % 10 == 0:
+        torch.save(model, f'{path}/dataset/temp_model')
+        try:
+            run()
+        except: 
+            pass
+        
 
 torch.save(model, f'{path}/dataset/trained_model')

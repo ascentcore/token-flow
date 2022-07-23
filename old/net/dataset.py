@@ -117,6 +117,7 @@ class ContextualGraphDataset(InMemoryDataset):
         
         keys = self.get_vocabulary_keys()
         data_list = []
+        idx = 0
         for txt in texts:
 
             name = txt['filename']
@@ -132,6 +133,10 @@ class ContextualGraphDataset(InMemoryDataset):
                         context.stimulate_token(graph, token[0], debug=False)
                     else:
                         context.stimulate_token(graph, token[1], debug=False)
+                    
+                    # Dangerous will render lots of images
+                    # context.render(f'{self.source}/dataset/render-{idx}-{token[0]}-{token[1]}')
+                    idx += 1
                 
 
         data, slices = self.collate(data_list)

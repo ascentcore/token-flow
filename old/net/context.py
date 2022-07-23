@@ -13,13 +13,13 @@ from torch_geometric.data import Data
 class Context:
 
     # Initial weight of the edge when created
-    initial_weight = 0.2
+    initial_weight = 0.5
 
     # Edge weight increase when connection exists
     weight_increase = 0.1
 
     # Degradation of signal from one node to the children
-    neuron_opening = 0.5
+    neuron_opening = 0.75
 
     # Initial stimulus
     stimulus = 1
@@ -31,7 +31,7 @@ class Context:
     propagate_threshold = 0.1
 
     # Stimulus decrease
-    temp_decrease = 0.1
+    temp_decrease = 0.2
 
     # Rendering only
     render_label_size = 0.01
@@ -133,12 +133,12 @@ class Context:
                   set_graph=True,
                   connect_all=True):
 
-        ## The graph contains only indexes of tokens
-        ##       [0]
-        ##      /   \
+        # The graph contains only indexes of tokens
+        # [0]
+        # /   \
         ##    [2]    [4]
-        ##   /   \  /
-        ## [3]----[1]
+        # /   \  /
+        # [3]----[1]
         ##
         ##                                   [0]     [1]   [2]  [3]  [4]
         # Vocabulary in this case can be [<start>, <end>, 'a', 'b', 'c']
@@ -257,6 +257,14 @@ class Context:
     def translate(self, token_index):
         return self.vocabulary[token_index]
 
+    def get_stimulus_for_nodes(self, graph):
+        nodes = graph.nodes(data=True)
+
+        nnodes = {}
+        for node in nodes:
+            nnodes[node[0]] = node[1]['s']
+        return collections.OrderedDict(sorted(nnodes.items()))
+
     # Generate a pytorch tensor from a graph
     # If next token  (as word) is present then the data will include the y value
     # [data.x] represents the simulus of each node
@@ -266,14 +274,10 @@ class Context:
     # have 1 as value to the element index of the next word
     ##
     # To analize if y should be a vector of the next 10 words??
-    def get_tensor_from_nodes(self, data_graph, next_token=None):
-        nodes = data_graph.nodes(data=True)
+    def get_tensor_from_nodes(self, data_graph, next_token=None, with_state=False):
+        
         edges = data_graph.edges(data=True)
-
-        nnodes = {}
-        for node in nodes:
-            nnodes[node[0]] = node[1]['s']
-        nodes = collections.OrderedDict(sorted(nnodes.items()))
+        nodes = self.get_stimulus_for_nodes(data_graph)
 
         n_nodes = len(self.vocabulary)
 
@@ -282,18 +286,23 @@ class Context:
         weights = [edge[2]['weight'] for edge in edges]
 
         x = torch.tensor(
-            [[node[1]] for node in nodes.items()], dtype=torch.float)
+            [node[1] for node in nodes.items()], dtype=torch.float)
 
         edge_index = torch.tensor([y0, y1], dtype=torch.long)
 
         if next_token is not None:
             next_token_index = self.get_token_index(next_token[1])
-            y = torch.zeros(n_nodes, dtype=torch.long)
-            # y = torch.tensor(
-            # [node['s'] for idx, node in nodes], dtype=torch.float)
-            #
 
-            y[next_token_index] = self.stimulus
+            if with_state:
+                self.decrease_stimulus(data_graph)
+                self.stimulate(data_graph, next_token_index,
+                               to_set={}, and_set=True)
+                nodes = self.get_stimulus_for_nodes(data_graph)
+                y = torch.tensor([node[1]
+                                 for node in nodes.items()], dtype=torch.float)
+            else:
+                y = torch.zeros(n_nodes, dtype=torch.float)
+                y[next_token_index] = self.stimulus
             data = Data(x=x, edge_index=edge_index, edge_attr=weights, y=y)
         else:
             data = Data(x=x, edge_index=edge_index, edge_attr=weights)
@@ -340,12 +349,12 @@ class Context:
 
         if token_index not in to_set.keys():
             node = graph[token_index]
-            # if graph.nodes[token_index]['s'] < stimulus:
-            current_stimulus = graph.nodes[token_index]['s'] + stimulus
-            # current_stimulus = stimulus
-            # else:
-            #     current_stimulus = graph.nodes[token_index]['s'] - \
-            #         self.temp_decrease
+            if graph.nodes[token_index]['s'] < stimulus:
+                # current_stimulus = graph.nodes[token_index]['s'] + stimulus
+                current_stimulus = stimulus
+            else:
+                current_stimulus = graph.nodes[token_index]['s'] - \
+                    self.temp_decrease
 
             to_set[token_index] = {'s': max(0, min(1, current_stimulus))}
 

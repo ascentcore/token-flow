@@ -8,6 +8,7 @@ import examples.context_sample5 as cs5
 import examples.dataset_sample1 as ds1
 
 import examples.nn_sample1 as nn1
+import examples.nn_sample2 as nn2
 
 samples = {
     'cs1': cs1,
@@ -16,7 +17,8 @@ samples = {
     'cs4': cs4,
     'cs5': cs5,
     'ds1': ds1,
-    'nn1': nn1
+    'nn1': nn1,
+    'nn2': nn2
 }
 
 samples[sys.argv[1]].run_sample()

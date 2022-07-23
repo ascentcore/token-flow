@@ -63,9 +63,9 @@ def run_sample():
     print('')
 
     for token in ['<start>', 'a', 'car', 'is', 'a', 'vehicle', '<end>', 'the', 'vehicle', 'runs', 'on', 'roads', '<end>']:
-        data = context.get_tensor_from_nodes(context.G, (token, token))
-        context.decrease_stimulus(context.G)
-        context.stimulate_token(context.G, token, debug=True)
+        data = context.get_tensor_from_nodes(context.G, (token, token), with_state=True)
+        # context.decrease_stimulus(context.G)
+        # context.stimulate_token(context.G, token, debug=True)
         dataset.append(data)
         print(data.x.squeeze(1))
         print(data.y)
