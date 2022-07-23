@@ -1,34 +1,34 @@
 import spacy
 
+
 class Vocabulary():
 
     listeners = []
 
-    def __init__(self, vocabulary=['<start>']):
+    def __init__(self, vocabulary=None):
         self.nlp = spacy.load("en_core_web_sm")
-        self.vocabulary = vocabulary
+        self.vocabulary = vocabulary if vocabulary is not None else ['<start>']
 
-    @staticmethod
-    def from_text(text):
-        vocab = Vocabulary()
+    @classmethod
+    def from_text(cls, text):
+        vocab = cls()
         vocab.add_text(text)
 
         return vocab
 
-    @staticmethod
-    def from_list(vocabulary):
-        vocab = Vocabulary()
-        vocab.vocabulary = vocabulary
+    @classmethod
+    def from_list(cls, vocabulary):
+        vocab = cls(vocabulary = vocabulary)
         return vocab
 
-    @staticmethod
-    def from_file(path):
+    @classmethod
+    def from_file(cls, path):
         local = []
         with open(f'{path}/vocabulary.txt', 'r') as fp:
             for line in fp:
                 local.append(line[:-1])
 
-        return Vocabulary(vocabulary=local)
+        return cls(vocabulary=local)
 
     def size(self):
         return len(self.vocabulary)

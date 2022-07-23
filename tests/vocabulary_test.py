@@ -15,10 +15,10 @@ class TestVocabulary(unittest.TestCase):
         self.assertEqual(vocab.size(), 10)
 
     def test_append_to_vocab(self):
-        vocab = Vocabulary.from_text(
+        vocab2 = Vocabulary.from_text(
             'The rain in Spain falls mainly on the plain.')
-        vocab.add_text('The rain helps plants grow.')
-        self.assertEqual(vocab.size(), 13)
+        vocab2.add_text('The rain helps plants grow.')
+        self.assertEqual(vocab2.size(), 13)
 
     def test_sequences(self):
         vocab = Vocabulary()

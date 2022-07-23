@@ -73,10 +73,7 @@ class Context():
                                 weight=self.initial_weight)
 
     def add_text(self, text):
-
-        missing, sequences = self.vocabulary.add_text(text)
-
-        
+        _, sequences = self.vocabulary.add_text(text)
 
         for sequence in sequences:
             for i in range(len(sequence) - 1):
@@ -88,6 +85,9 @@ class Context():
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
+
+    def get_matrix(self):
+        return nx.to_numpy_matrix(self.graph)
 
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None):
         root = False

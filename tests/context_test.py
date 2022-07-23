@@ -65,9 +65,11 @@ class TestContext(unittest.TestCase):
 
         context1.stimulate('engine')
         context2.stimulate('engine')
-        
-        context1.render('output/tests/context1.png', consider_stimulus=True, force_text_rendering = True)
-        context2.render('output/tests/context2.png', consider_stimulus=True, force_text_rendering = True)
+
+        context1.render('output/tests/context1.png',
+                        consider_stimulus=True, force_text_rendering=True)
+        context2.render('output/tests/context2.png',
+                        consider_stimulus=True, force_text_rendering=True)
 
         self.assertEqual(len(vocab.vocabulary), 14)
 
@@ -77,6 +79,16 @@ class TestContext(unittest.TestCase):
         context = Context('testcontext', vocabulary=vocab)
         context.add_text(text)
         context.store('output/tests')
+
+    def test_matrix(self):
+        context = Context('test')
+        context.add_text('The rain in spain rain in spain the')
+        matrix = context.get_matrix()
+        self.assertEqual(matrix.shape, (5, 5))
+        flatted = matrix.flatten().tolist()[0]
+        print(flatted)
+        self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0,
+                             0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
 
 
 if __name__ == '__main__':
