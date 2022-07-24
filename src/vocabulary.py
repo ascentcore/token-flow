@@ -5,9 +5,10 @@ class Vocabulary():
 
     listeners = []
 
-    def __init__(self, vocabulary=None):
+    def __init__(self, vocabulary=None, include_start=True):
         self.nlp = spacy.load("en_core_web_sm")
-        self.vocabulary = vocabulary if vocabulary is not None else ['<start>']
+        self.vocabulary = vocabulary if vocabulary is not None else [
+            '<start>'] if include_start else []
 
     @classmethod
     def from_text(cls, text):
@@ -18,7 +19,7 @@ class Vocabulary():
 
     @classmethod
     def from_list(cls, vocabulary):
-        vocab = cls(vocabulary = vocabulary)
+        vocab = cls(vocabulary=vocabulary)
         return vocab
 
     @classmethod
@@ -41,25 +42,54 @@ class Vocabulary():
     def register(self, listener_fn):
         self.listeners.append(listener_fn)
 
-    def add_text(self, text):
-        doc = self.nlp(text)
+    def add_definition(self, word, definition, accepted=['NOUN', 'PROPN', 'ADJ', 'VERB']):
+        
+        doc = self.nlp(f'{word} {definition}'.lower())
+
         missing = []
         sequences = []
 
         for sent in doc.sents:
-            sequence = ['<start>']
+            sequence = []
             for token in sent:
-                lower = token.text.lower()
-                sequence.append(lower)
-                if lower not in self.vocabulary:
-                    self.vocabulary.append(lower)
-                    missing.append(lower)
-            sequences.append(sequence)
+                if token.pos_ in accepted:
+                    lower = token.text
+                    for lower_val in [lower, token.lemma_]:
+                        if lower_val not in sequence:
+                            sequence.append(lower_val)
+                        if lower_val not in self.vocabulary:
+                            self.vocabulary.append(lower_val)
+                            missing.append(lower_val)
+            if len(sequence) > 0:
+                sequences.append(sequence)
 
-        for listener in self.listeners:
-            listener(missing)
+        if len(missing) > 0:
+            for listener in self.listeners:
+                listener(missing)
 
         return missing, sequences
 
-        # print(self.vocabulary)
-        # print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)
+    def get_token_sequence(self, text, append_to_vocab=False, include_start=True):
+        doc = self.nlp(text.lower())
+        missing = []
+        sequences = []
+
+        for sent in doc.sents:
+            sequence = ['<start>'] if include_start else []
+            for token in sent:
+                lower = token.text
+                sequence.append(lower)
+                if lower not in self.vocabulary:
+                    if append_to_vocab:
+                        self.vocabulary.append(lower)
+                    missing.append(lower)
+            sequences.append(sequence)
+
+        if len(missing) > 0:
+            for listener in self.listeners:
+                listener(missing)
+
+        return missing, sequences
+
+    def add_text(self, text, include_start=True):
+        return self.get_token_sequence(text, append_to_vocab=True, include_start=include_start)

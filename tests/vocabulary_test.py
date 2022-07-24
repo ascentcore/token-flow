@@ -29,6 +29,16 @@ class TestVocabulary(unittest.TestCase):
         self.assertEqual(len(sequences[0]), 11)
         self.assertEqual(len(sequences[1]), 7)
 
+    def test_add_definition(self):
+        vocab = Vocabulary()
+        added, sequences = vocab.add_definition(
+            'tomato', 'The tomato is part of fruits family.')
+
+        self.assertListEqual(
+            added, ['tomato', 'part', 'fruits', 'fruit', 'family'])
+        self.assertListEqual(
+            sequences, [['tomato', 'part', 'fruits', 'fruit', 'family']])
+
     def test_save_vocabulary(self):
         vocab = Vocabulary.from_text(
             'The rain in Spain falls mainly on the plain.')
@@ -37,7 +47,6 @@ class TestVocabulary(unittest.TestCase):
 
         path = pl.Path("output/tests/vocabulary.txt")
         self.assertIsFile(path)
-
 
     def test_load_vocabulary(self):
         vocab = Vocabulary.from_file('output/tests')

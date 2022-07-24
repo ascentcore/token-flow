@@ -47,11 +47,8 @@ class TestContext(unittest.TestCase):
 
         context.stimulate('rain', decrease_factor=0)
 
-        expected = [('<start>', 0), ('the', 0.5314410000000002), ('rain', 1), ('in', 0.9), ('spain', 0.81), ('falls', 0.7290000000000001), ('mainly', 0.6561000000000001), ('on', 0.5904900000000002), ('plain', 0.47829690000000014), ('.', 0.43046721000000016), ('is', 0.7290000000000001), ('a', 0.7217100000000002),
-                    ('country', 0.6495390000000002), ('europe', 0.81), ('continent', 0.6495390000000002), (',', 0.5845851000000002), ('also', 0.5261265900000002), ('recognised', 0.47351393100000017), ('as', 0.42616253790000014), ('part', 0.6495390000000002), ('of', 0.5845851000000002), ('eurasia', 0.5261265900000002)]
-
-        for token, s in expected:
-            self.assertEqual(context.get_stimulus_of(token), s)
+        self.assertListEqual(context.get_stimuli(), [0, 0.5314410000000002, 1, 0.9, 0.81, 0.7290000000000001, 0.6561000000000001, 0.5904900000000002, 0.47829690000000014, 0.7290000000000001, 0.7290000000000001,
+                             0.7217100000000002, 0.6495390000000002, 0.81, 0.6495390000000002, 0.5845851000000002, 0.5261265900000002, 0.47351393100000017, 0.42616253790000014, 0.6495390000000002, 0.5845851000000002, 0.5261265900000002])
 
     def test_single_vocab_multiple_contexts(self):
         vocab = Vocabulary()
@@ -89,8 +86,37 @@ class TestContext(unittest.TestCase):
         flatted = matrix.flatten().tolist()[0]
         self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0,
                              0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
-        self.assertListEqual(context.get_stimuli(), [0, 0.0029160000000000006, 1, 0.18000000000000002, 0.032400000000000005])
+        self.assertListEqual(context.get_stimuli(), [
+                             0, 0.0029160000000000006, 1, 0.18000000000000002, 0.032400000000000005])
         stimuli = context.get_stimuli()
+
+    def test_add_definition(self):
+        context = Context('test')
+        added, sequences = context.add_definition(
+            'tomato', 'The tomato is part of fruits family.')
+
+        self.assertListEqual(list(context.graph.edges), [('tomato', 'part'), ('tomato', 'fruits'), ('tomato', 'fruit'), (
+            'tomato', 'family'), ('part', 'tomato'), ('fruits', 'tomato'), ('fruit', 'tomato'), ('family', 'tomato')])
+
+    def test_animate(self):
+        context = Context('test', initial_weight=0.6, include_start=False)
+        context.add_text(
+            "red is a color", include_start=False)
+        context.add_text(
+            "blue is a color", include_start=False)
+
+        context.add_text("a tomato is a fruit", include_start=False)
+        context.add_text("a potato is a vegetable", include_start=False)
+
+        # context.add_text("tomato is of color red",
+        #                  include_start=False, skip_connections=True)
+
+        context.stimulate('color', skip_decrease=True)
+        context.stimulate('fruit', skip_decrease=True)
+        context.stimulate('red', skip_decrease=True)
+
+        context.render('output/tests/output.png', consider_stimulus=True)
+
 
 if __name__ == '__main__':
     unittest.main()

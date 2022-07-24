@@ -15,6 +15,7 @@ class Context():
                  default_stimulus=1,
                  max_stimulus=1,
                  propagate_threshold=0.1,
+                 include_start = True,
                  decay_if_low_signal=True,
                  temp_decrease=0.1):
 
@@ -48,7 +49,7 @@ class Context():
 
         self.graph = nx.DiGraph() if directed else nx.Graph()
 
-        self.vocabulary = vocabulary if vocabulary is not None else Vocabulary()
+        self.vocabulary = vocabulary if vocabulary is not None else Vocabulary(include_start = include_start)
         self.vocabulary.register(self.on_new_words)
 
         # If the vocabulary is not empty then we can initialize the graph
@@ -56,7 +57,6 @@ class Context():
             self.initialize_nodes()
 
     def on_new_words(self, words):
-        print(self.name, 'new words:', words)
         for token in words:
             self.graph.add_node(token, s=0)
 
@@ -66,20 +66,38 @@ class Context():
         nx.set_node_attributes(self.graph, 0, 's')
 
     def connect(self, from_token, to_token):
-        if self.graph.has_edge(from_token, to_token):
-            self.graph[from_token][to_token]['weight'] += self.weight_increase
-        else:
-            self.graph.add_edge(from_token, to_token,
-                                weight=self.initial_weight)
+        if from_token != to_token:
+            if self.graph.has_edge(from_token, to_token):
+                self.graph[from_token][to_token]['weight'] += self.weight_increase
+            else:
+                self.graph.add_edge(from_token, to_token,
+                                    weight=self.initial_weight)
 
-    def add_text(self, text):
-        _, sequences = self.vocabulary.add_text(text)
 
+    def from_sequence(self, sequences):
         for sequence in sequences:
             for i in range(len(sequence) - 1):
                 self.connect(sequence[i], sequence[i + 1])
 
+    def add_text(self, text, skip_connections = False, include_start = True):
+        _, sequences = self.vocabulary.add_text(text, include_start = include_start)
+
+        if not skip_connections:
+            self.from_sequence(sequences)
+
         return sequences
+
+    def add_definition(self, word, definition):
+        print(f'Adding definition of {word}. with {definition}')
+        missing, sequences = self.vocabulary.add_definition(word, definition)
+        for sequence in sequences:
+            for i in range(0, len(sequence)):
+                self.connect(word, sequence[i])
+                self.connect(sequence[i], word)
+
+        return missing, sequences
+                               
+                
 
     def decrease_stimulus(self, decrease=None):
         if decrease is None:
@@ -88,11 +106,12 @@ class Context():
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
     
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False):
         root = False
         if token in self.vocabulary.vocabulary:
             if to_set is None:
-                self.decrease_stimulus(decrease_factor)
+                if not skip_decrease:
+                    self.decrease_stimulus(decrease_factor)
                 to_set = {}
                 root = True
 
@@ -101,11 +120,9 @@ class Context():
 
             graph = self.graph
             node = graph.nodes[token]
-            print(token, node)
             current_stimulus = node['s']
             pass_message = False
-
-            if token not in to_set.keys():
+            if token not in to_set.keys() or to_set[token]['s'] < stimulus:
                 if current_stimulus < stimulus:
                     current_stimulus = stimulus
                     pass_message = True
@@ -161,7 +178,10 @@ class Context():
         if pre_pos:
             pos = pre_pos
         else:
-            pos = nx.kamada_kawai_layout(self.graph, scale=1)
+            # pos = nx.spring_layout(self.graph, k=0.3, iterations=50)
+            # pos = nx.kamada_kawai_layout(self.graph, weight='weight')
+            pos = nx.fruchterman_reingold_layout(self.graph, seed = 12345)
+            # pos = nx.circular_layout(self.graph)
 
         edge_width = []
         for edge in self.graph.edges(data=True):

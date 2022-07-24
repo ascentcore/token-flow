@@ -13,7 +13,7 @@ class TestDataset(unittest.TestCase):
         dataset.add_text('test_context1', 'The rain in spain. The rain is actually watter.')
         dataset.add_text('test_context2', 'Spain is a country in Europe')
 
-        self.assertEqual(len(dataset.contexts.keys()), 2)
+        self.assertEqual(len(dataset.context_data.keys()), 2)
         self.assertEqual(dataset.vocabulary.size(), 12)
 
     def test_get_full_Dataset(self):
