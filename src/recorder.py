@@ -8,7 +8,7 @@ class Recorder(Context):
 
     def stimulate(self, *args, **kwargs):
         super().stimulate(*args, **kwargs)
-        if self.writer and 'to_set' not in kwargs.keys() or kwargs['to_set'] is None:
+        if self.writer and 'to_set' not in kwargs.keys():
             self.capture_frame()
 
     def capture_frame(self):

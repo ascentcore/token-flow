@@ -15,7 +15,7 @@ class Context():
                  default_stimulus=1,
                  max_stimulus=1,
                  propagate_threshold=0.1,
-                 include_start = True,
+                 include_start=True,
                  decay_if_low_signal=True,
                  temp_decrease=0.1):
 
@@ -44,43 +44,55 @@ class Context():
         # Stimuli decrease over time
         self.temp_decrease = temp_decrease
 
+        self.include_start = include_start
+
         # Threshold of stimulus to trigger a propagation
         self.propagate_threshold = propagate_threshold
 
         self.graph = nx.DiGraph() if directed else nx.Graph()
 
-        self.vocabulary = vocabulary if vocabulary is not None else Vocabulary(include_start = include_start)
+        self.vocabulary = vocabulary if vocabulary is not None else Vocabulary(
+            include_start=include_start)
         self.vocabulary.register(self.on_new_words)
 
         # If the vocabulary is not empty then we can initialize the graph
         if self.vocabulary.size() > 0:
             self.initialize_nodes()
 
+    
+    def add_node(self, token):
+        if not self.graph.has_node(token):
+                self.graph.add_node(token, s=0)
+
     def on_new_words(self, words):
         for token in words:
-            self.graph.add_node(token, s=0)
+            self.add_node(token)
 
     def initialize_nodes(self):
         self.graph.add_nodes_from(self.vocabulary.vocabulary)
         # Set initial stimulus to 0
         nx.set_node_attributes(self.graph, 0, 's')
 
-    def connect(self, from_token, to_token):
+    def connect(self, from_token, to_token, weight=None):
         if from_token != to_token:
             if self.graph.has_edge(from_token, to_token):
-                self.graph[from_token][to_token]['weight'] += self.weight_increase
+                current_weight = self.graph[from_token][to_token]['weight']
+                current_weight = min(1, current_weight + self.weight_increase)
+                self.graph[from_token][to_token]['weight'] = weight if weight != None else self.initial_weight
             else:
                 self.graph.add_edge(from_token, to_token,
-                                    weight=self.initial_weight)
-
+                                    weight=weight if weight != None else self.initial_weight)
 
     def from_sequence(self, sequences):
         for sequence in sequences:
             for i in range(len(sequence) - 1):
-                self.connect(sequence[i], sequence[i + 1])
+                for from_token in sequence[i]:
+                    for to_token in sequence[i + 1]:
+                        self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections = False, include_start = True):
-        _, sequences = self.vocabulary.add_text(text, include_start = include_start)
+    def add_text(self, text, skip_connections=False):
+        _, sequences = self.vocabulary.add_text(
+            text, include_start=self.include_start)
 
         if not skip_connections:
             self.from_sequence(sequences)
@@ -89,15 +101,19 @@ class Context():
 
     def add_definition(self, word, definition):
         print(f'Adding definition of {word}. with {definition}')
-        missing, sequences = self.vocabulary.add_definition(word, definition)
+        missing, sequences = self.vocabulary.get_token_sequence(
+            definition, include_start=self.include_start, accept_all=False)
+
+        self.vocabulary.add_to_vocabulary(word)
+        self.add_node(word)
+        
         for sequence in sequences:
             for i in range(0, len(sequence)):
-                self.connect(word, sequence[i])
-                self.connect(sequence[i], word)
+                for tokens in sequence[i]:
+                    self.connect(word, tokens)
+                    self.connect(tokens, word)
 
         return missing, sequences
-                               
-                
 
     def decrease_stimulus(self, decrease=None):
         if decrease is None:
@@ -105,7 +121,7 @@ class Context():
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
-    
+
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False):
         root = False
         if token in self.vocabulary.vocabulary:
@@ -126,9 +142,9 @@ class Context():
                 if current_stimulus < stimulus:
                     current_stimulus = stimulus
                     pass_message = True
-                elif self.decay_if_low_signal:
-                    current_stimulus = graph.nodes[token]['s'] - \
-                        self.temp_decrease
+                # elif self.decay_if_low_signal:
+                #     current_stimulus = graph.nodes[token]['s'] - \
+                #         self.temp_decrease
 
                 current_stimulus = max(0, min(1, current_stimulus))
                 to_set[token] = {'s':  current_stimulus}
@@ -146,11 +162,20 @@ class Context():
 
         return to_set
 
+    def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False):
+        _, sentences = self.vocabulary.get_token_sequence(
+            sequence, include_start=self.include_start)
+        for sentence in sentences:
+            for tokens in sentence:
+                for token in tokens:
+                    self.stimulate(
+                        token, stimulus, decrease_factor=decrease_factor, skip_decrease=skip_decrease)
+
     def get_stimulus_of(self, token):
         return self.graph.nodes[token]['s']
 
     def get_stimuli(self):
-        return [ self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
+        return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)
@@ -169,9 +194,9 @@ class Context():
             self.graph.add_edge(int(edge[0]), int(
                 edge[1]), weight=edge[2]['weight'])
 
-    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering = False):
+    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False):
         if self.plt is None:
-            plt = figure(figsize=(3, 3), dpi=150)
+            plt = figure(figsize=(6, 6), dpi=150)
         else:
             plt = self.plt
 
@@ -180,7 +205,7 @@ class Context():
         else:
             # pos = nx.spring_layout(self.graph, k=0.3, iterations=50)
             # pos = nx.kamada_kawai_layout(self.graph, weight='weight')
-            pos = nx.fruchterman_reingold_layout(self.graph, seed = 12345)
+            pos = nx.fruchterman_reingold_layout(self.graph, seed=12345)
             # pos = nx.circular_layout(self.graph)
 
         edge_width = []

@@ -14,7 +14,7 @@ class TestDataset(unittest.TestCase):
         dataset.add_text('test_context2', 'Spain is a country in Europe')
 
         self.assertEqual(len(dataset.context_data.keys()), 2)
-        self.assertEqual(dataset.vocabulary.size(), 12)
+        self.assertEqual(dataset.vocabulary.size(), 13)
 
     def test_get_full_Dataset(self):
         dataset = Dataset()

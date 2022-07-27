@@ -29,26 +29,43 @@ dictionary = open('assets/english_dictionary.txt', 'r')
 class TestContext(unittest.TestCase):
 
     def test_vocabulary_showcase(self):
-        context = Context('Showcase', include_start=False, initial_weight=0.1)
-
-        context.add_definition(
-            'salad', 'The salad is a food made from a variety of fresh vegetables.')
-        context.add_definition(
-            'sausage', 'The sausage is a food meat product made from the meat of a pig.')
+        context = Recorder('Showcase', include_start=False, initial_weight=0.1)
         
         context.add_definition(
-            'car', 'A car is a wheeled motor vehicle used for transportation.')
+            'salad', 'a mixture of cold vegetables such as lettuce, tomato, and cucumber, served with a dressing.')
+
         context.add_definition(
-            'drive', 'To drive is to move the vehicle forward.')
+            'lettuce', 'a plant with large, crisp leaves that can be eaten.'
+        )
 
-        context.add_definition('eat', 'To eat is to consume food.')
+        context.add_definition('tomato', 'a red or yellow fruit with a juicy pulp. A tomato is eaten either raw or cooked as a vegetable.')
+        context.add_definition('cucumber', 'a plant with a green, round, fleshy fruit that is used in salads, soups, and other dishes.')
+        context.add_definition('vegetbale', 'a plant or part of a plant, such as carrots, beans, or lettuce, that is used for food.')
 
-        context.stimulate('drive', skip_decrease=True)
-        context.stimulate('eat', skip_decrease=True)
-        context.stimulate('food', skip_decrease=True)
+        context.add_definition('sausage', 'a mixture of chopped meat and spices stuffed into a casing of animal intestine.')
 
-        context.render('output/tests/output.png',
-                       title="Definitions Only", consider_stimulus=True)
+        context.add_definition('food', 'the flesh of animals when used as food.')
+
+
+        context.add_definition('favorite', 'food is salad')
+        context.add_definition('greek', 'salad olive oil, tomatoes, lettuce, and cucumber')
+        
+        context.add_text('my favorite food is salad')
+        context.add_text('I like greek salad')
+        context.add_text('my prefference in food are vegetables')
+        context.add_text('I do not eat meat')
+
+        print(context.vocabulary.vocabulary)
+
+        context.start_recording('output/tests/output.gif',
+                                title="Test Gif", consider_stimulus=True, fps=3, arrow_size=0.5)
+                            
+
+        context.stimulate_sequence('My favorite food is salad. I like vegetables in my salad. Like, lettuce, cucumber and tomatoes')
+        
+        context.render('output/tests/output.png', consider_stimulus=True)
+
+        context.stop_recording()
 
     def test_complex_showcase(self):
 
@@ -74,42 +91,6 @@ class TestContext(unittest.TestCase):
 
         _, sequences = context.vocabulary.get_token_sequence(
             "A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.", include_start=False)
-
-        context.start_recording('output/tests/output.gif',
-                                title="Test Gif", consider_stimulus=True, fps=5, arrow_size=0.5)
-
-        for sequence in sequences:
-            for token in sequence:
-                context.stimulate(token)
-
-        for i in range(0, 10):
-            context.decrease_stimulus()
-            context.capture_frame()
-
-        context.stop_recording()
-
-    def test_vocabulary_initialization(self):
-        context = Recorder('english_vocabulary',
-                           initial_weight=0.1, include_start=False)
-
-        dictionary = json.loads(
-            open('assets/english_dictionary.json', 'r').read())
-
-        context.vocabulary.get_token_sequence(
-            'An engine or motor is a machine designed to convert one or more forms of energy into mechanical energy', append_to_vocab=True)
-
-        for word in context.vocabulary.vocabulary.copy():
-            print('Processing word: ' + word)
-            if len(word) > 3:
-                filtered_dict = [x for x in dictionary if x[0] == word]
-                for definition in filtered_dict:
-                    _, sequences = context.vocabulary.add_definition(
-                        definition[0], definition[1])
-                    context.from_sequence(sequences=sequences)
-
-        context.store('.')
-        _, sequences = context.vocabulary.get_token_sequence(
-            "Mechanical heat engines convert heat into work via various thermodynamic processes. The internal combustion engine is perhaps the most common example of a mechanical heat engine, in which heat from the combustion of a fuel causes rapid pressurisation of the gaseous combustion products in the combustion chamber, causing them to expand and drive a piston, which turns a crankshaft.", include_start=False)
 
         context.start_recording('output/tests/output.gif',
                                 title="Test Gif", consider_stimulus=True, fps=5, arrow_size=0.5)

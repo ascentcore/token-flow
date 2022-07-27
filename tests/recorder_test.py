@@ -11,11 +11,11 @@ class RectorderTest(unittest.TestCase):
 
         context = Recorder('recorder')
         context.add_text(
-            "tomato is a round, red fruit with a lot of seeds, eaten cooked or uncooked as a vegetable, for example in salads or sauces", include_start=False)
+            "tomato is a round, red fruit with a lot of seeds, eaten cooked or uncooked as a vegetable, for example in salads or sauces")
         context.add_text(
-            "vegetable is a plant, root, seed, or pod that is used as food, especially in dishes that are not sweet", include_start=False)
+            "vegetable is a plant, root, seed, or pod that is used as food, especially in dishes that are not sweet")
         context.add_text(
-            "potato is a round vegetable that grows underground and has white flesh with light brown, red, or pink skin, or the plant on which these grow", include_start=False)
+            "potato is a round vegetable that grows underground and has white flesh with light brown, red, or pink skin, or the plant on which these grow")
         # context.add_text("", include_start=False)
 
         _, sequences = context.vocabulary.get_token_sequence(
@@ -25,8 +25,9 @@ class RectorderTest(unittest.TestCase):
                                 title="Test Gif", consider_stimulus=True, fps=5)
 
         for sequence in sequences:
-            for token in sequence:
-                context.stimulate(token)
+            for tokens in sequence:
+                for token in tokens:
+                    context.stimulate(token)
 
         context.stop_recording()
 
