@@ -449,23 +449,6 @@ alphabet
 alphabets noun
 a series of letters or symbols, written in a particular order, that people use to write words.
 alphabetical adjective
--Roman alphabet
--letters
--vowels
--consonants
--Greek alphabet
--Cyrillic alphabet
--Hebrew alphabet
--Arabic alphabet
--Gujarati alphabet
--Japanese alphabet
--Roman
--Greek
--Cyrillic
--Arabic
--Japanese
--Hebrew
--Gujarati
 
 already
 adverb
@@ -523,19 +506,16 @@ to hide and wait for someone, then attack them by surprise when they come along.
 among
 preposition
 in the middle of.
+There are poppies growing among the corn.
 
 amount
 amounts noun
 how much there is of something.
-
 Twice the amount of ﬂour as brown sugar.
 
 amphibian
 amphibians noun
 an animal that can live in water and on land.
-
-tree frog
-
 (cid:78) say am-ﬁb-ee-an
 amphibious adjective
 
@@ -556,27 +536,18 @@ a word or phrase made by changing the order of letters in another word or phrase
 ancestor
 ancestors noun
 a relative from a previous generation.
-
-There are poppies growing among the corn.
-
-Archaeopteryx is an ancestor
-of birds like the hoatzin.
+Archaeopteryx is an ancestor of birds like the hoatzin.
 (cid:78) say an-ses-tur
-
-anger
 
 anchor
 anchors noun
 a large, heavy, metal hook that digs into the seabed to stop a ship from drifting away.
-
 (cid:78) say ang-ker
 
 ancient
 adjective
 very old.
-
-ancient 
-Roman statue
+ancient Roman statue
 
 angel
 angels noun
@@ -587,15 +558,9 @@ noun
 a strong feeling of annoyance.
 angry adjective
 
-Archaeopteryx
-
-hoatzin
-angle
 angle
 angles noun
-
 a corner where two lines or surfaces meet.
-
 right angle (90˚)
 
 animal
@@ -603,15 +568,6 @@ animals noun
 any living thing that breathes and moves around. 
 Insects, ﬁsh, birds, mammals, and reptiles are all types of animal.
 
-bird
-
-ﬁsh
-
-insect
-
-mammal
-
-reptile
 animation
 animation noun
 still pictures, often in cartoon form, that appear to move.
@@ -633,8 +589,6 @@ Wedding anniversary.
 ant
 ants noun
 an insect that lives in large, organized groups. The males and egg-laying females have wings.
-
-wood ant
 
 announce
 announces announcing announced verb
@@ -659,14 +613,11 @@ do anything to stop me!
 apart
 adverb
 away from each other, or separate.
-
-Standing 
-with feet apart.
+Standing with feet apart.
 
 annoy
 annoys annoying annoyed verb
 to make someone irritated.
-
 The ﬂies annoyed her.
 annoyance noun
 
@@ -685,12 +636,9 @@ An anonymous letter.
 another
 adjective
 1 different.
-Do you have another pen? I 
-think this one is broken.
+Do you have another pen? I think this one is broken.
 2 one more.
 Do you want another cookie?
-
-nyala
 
 antenna
 antennae or antennas noun
@@ -720,8 +668,6 @@ apes noun
 a mammal that lives in forests in warm regions and feeds on insects and fruit. 
 Apes have no tails and can walk on two legs.
 
-gibbon
-
 apologize
 apologizes apologizing apologized verb
 to say you are sorry.
@@ -729,6 +675,7 @@ to say you are sorry.
 apparatus
 noun
 the equipment you need for a particular task.
+scientiﬁc apparatus
 
 apple
 apples noun
@@ -736,12 +683,7 @@ an edible fruit with a smooth skin and crisp ﬂesh.
 
 aquarium
 aquariums or aquaria noun
-a glass tank to keep ﬁsh 
-and other water animals and plants in.
-
-armadillo
-
-scientiﬁc apparatus
+a glass tank to keep ﬁsh and other water animals and plants in.
 
 appear
 appears appearing appeared verb
@@ -753,15 +695,10 @@ appendix
 appendices or appendixes noun
 a very small part of your lower intestine.
 
-stomach
-
-appendix
-
-intestine
-
 appetite
 appetites noun
 a desire for food.
+He has a huge appetite.
 
 appointment
 appointments noun
@@ -771,8 +708,7 @@ A dental appointment.
 appreciate
 appreciates appreciating appreciated verb
 to be grateful for something.
-She appreciated the ﬂowers 
-that her daughter sent her.
+She appreciated the ﬂowers that her daughter sent her.
 (cid:78) say a-pree-shee-ate
 
 approach
@@ -787,13 +723,9 @@ Does your mom approve of your new shoes?
 
 approximate
 adjective
-almost 
-accurate, or not exact.
-
+almost accurate, or not exact.
 The approximate number of marbles in the jar is 50.
 approximately adverb
-
-He has a huge appetite.
 
 applause
 noun
@@ -802,8 +734,7 @@ The applause rang out as the team ran onto the ﬁeld.
 
 apricot
 apricots noun
-an edible fruit with soft ﬂesh 
-and a pit in its center.
+an edible fruit with soft ﬂesh and a pit in its center.
 
 arch
 arches noun
@@ -813,19 +744,9 @@ arithmetic
 noun
 the adding, subtracting, multiplying, and dividing of numbers.
 
-adding
-
-subtracting
-
-multiplying
-
-dividing
-
 arm
 arms noun
 the part of your body between your shoulder and your hand.
-
-arm
 
 architect
 architects noun
@@ -844,13 +765,11 @@ argues arguing argued verb
 to talk angrily with someone because you disagree with them.
 argument noun
 
-armpit
-
 armadillo
 armadillos noun
-a nocturnal mammal that lives in North and South America and eats insects, snakes, and frogs. The 
-armadillo’s body is protected by hard, bony plates.
-armchair
+a nocturnal mammal that lives in North and South America and eats insects, snakes, and frogs. 
+The armadillo’s body is protected by hard, bony plates.
+
 armchair
 armchairs noun
 a soft, padded chair with arms.
@@ -876,6 +795,7 @@ preposition
 We walked around the city.
 2 on all sides.
 We sat around the table.
+
 arrange
 arranges arranging arranged verb
 1 to plan something.
@@ -889,8 +809,7 @@ to catch hold of someone and ofﬁcially accuse them of breaking the law.
 arrive
 arrives arriving arrived verb
 to come to a place.
-The plane arrived
-at the airport.
+The plane arrived at the airport.
 arrival noun
 
 arrow
@@ -906,27 +825,23 @@ artery
 arteries noun
 one of the tubes that carries blood from the heart to the rest of the body.
 
-artery
-
-heart
-
 artiﬁcial
 adjective
-something 
-false that is made to look like the real thing.
-
+something false that is made to look like the real thing.
 an artiﬁcial ﬂower
 (cid:78) ar-tuh-ﬁsh-ul
 
 artist
 artists noun
 someone who creates pictures, sculptures, music, or other creative things.
-
 artistic adjective
 
 ash
 ashes noun
 1 the gray powder that is left behind after something has been burned.
+wood ash
+2 a deciduous, broad-leaved tree, with spreading branches that grow in pairs. 
+The female ash produces winged seeds. 
 
 ask
 asks asking asked verb
@@ -936,8 +851,6 @@ Ask your dad if you can come with us.
 asleep
 adjective
 resting the whole body and mind with the eyes closed.
-
-sleep verb
 
 aspirin
 aspirins noun
@@ -951,24 +864,11 @@ I assembled a model boat.
 They assembled in the hall.
 assembly noun
 
-wood ash
-
-2 a deciduous, broad-leaved 
-tree, with spreading branches that grow in pairs. 
-The female ash produces winged seeds. 
-The wood is hard and strong.
-
 assist
 assists assisting assisted verb
 to help somebody.
-
-He assisted
-the customer with his coat.
+He assisted the customer with his coat.
 assistance noun
-
-sales assistant
-
-ash leaves
 
 ashamed
 adjective
@@ -978,7 +878,6 @@ She felt ashamed about teasing her little brother.
 assortment
 assortments noun
 a collection of different types of the same thing.
-
 An assortment of buttons.
 
 asthma
@@ -1007,7 +906,6 @@ I ate a whole loaf of bread yesterday.
 athlete
 athletes noun
 a person who takes part in races or sports competitions.
-
 athletics noun
 
 atlas
@@ -1023,12 +921,12 @@ The dark room had a gloomy atmosphere.
 atom
 atoms noun
 a very tiny part of any substance.
-
 magniﬁed atom
 
 attach
 attaches attaching attached verb
 to fasten.
+Attached with a paper clip.
 
 attend
 attends attending attended verb
@@ -1049,11 +947,9 @@ a room at the top of a house, usually in the space under the roof.
 attract
 attracts attracting attracted verb
 1 to interest.
-The museum attracts
-many visitors.
+The museum attracts many visitors.
 2 to make something come closer.
-
-Attached with a paper clip.
+Magnets attract iron ﬁlings.
 
 attack
 attacks attacking attacked verb
@@ -1065,10 +961,6 @@ attempts attempting attempted verb
 to try to do something.
 They attempted to climb the wall, but had to give up.
 
-Magnets 
-attract
-iron ﬁlings.
-
 attractive
 adjective
 pleasing to the eye, mind, and senses.
@@ -1076,8 +968,6 @@ pleasing to the eye, mind, and senses.
 audience
 audiences noun
 the people who come to watch a show or concert.
-
-autumn
 
 aunt
 aunts noun
@@ -1103,14 +993,13 @@ Automatic doors.
 automobile
 automobiles noun
 another name for a car. 
-
 vintage automobile
 
 autumn
 autumns noun
 one of the four seasons. 
 Autumn follows summer and comes before winter. It is the time when the leaves on some trees change color and fall to the ground.
-avalanche
+
 avalanche
 avalanches noun
 a large amount of snow, rocks, and ice that suddenly slides down a mountain.
@@ -1146,7 +1035,6 @@ awkward
 adjective
 1 difﬁcult to use or inconvenient.
 2 clumsy.
-
 A newborn foal looks awkward on its feet.
 awkwardly adverb
 
@@ -1172,20 +1060,16 @@ He eats 14 apples a week, an average of 2 a day.
 
 avocado
 avocados noun
-a green, pear-
-shaped tree fruit with a leathery skin and smooth, creamy ﬂesh.
+a green, pear-shaped tree fruit with a leathery skin and smooth, creamy ﬂesh.
 
 avoid
 avoids avoiding avoided verb
 to keep away from something.
 
-The car swerved to avoid
-the dog.
-Bb
-
 baboon
 baboons noun
-a large monkey that is found all over Africa. Baboons live on the ground and eat plants and small animals.
+a large monkey that is found all over Africa.
+Baboons live on the ground and eat plants and small animals.
 
 backpack
 backpacks noun
@@ -1203,8 +1087,8 @@ I am going to the store. I’ll be back later.
 back
 backs noun
 1 the part of your body that is opposite your chest and between your neck and your bottom.
-
-back
+2 the part opposite the front.
+back adjective
 
 backward
 adverb
@@ -1215,38 +1099,27 @@ bacon
 noun
 salted meat from the back or side of a pig.
 
-2 the part opposite the front.
-back adjective
-
-back of a clock
-
 bacteria
 noun
-very small organisms. Some 
-cause disease, while others help your body.
+very small organisms. Some cause disease, while others help your body.
 Some bacteria help break down food in your stomach.
 (cid:78) say bak-teer-ee-uh
 
 baggy
 adjective
-ﬁtting 
-loosely.
-
-baggy
-pants
+ﬁtting loosely.
+baggy pants
 
 bake
 bakes baking baked verb
 to cook in an oven or ﬁre. 
 Pies, cakes, and bread are baked.
-
 A baker bakes bread.
 
 balance
 balances balancing balanced verb
 to keep steady so you do not fall over.
-The tightrope walker balanced
-on the high wire.
+The tightrope walker balanced on the high wire.
 
 balcony
 balconies noun
@@ -1265,7 +1138,6 @@ The food had gone bad.
 badge
 badges noun
 a decoration that can be pinned or sewn onto clothes.
-
 sheriff’s badge
 
 badminton
@@ -1290,9 +1162,7 @@ A bald head.
 ball
 balls noun
 1 a rounded object used to play many games and sports.
-
 beach ball
-
 2 a big, grand party where there is dancing.
 A summer ball.
 
@@ -1302,15 +1172,10 @@ a performance on stage that tells a story in music and dance.
 (cid:78) say bal-lay
 or bal-lay
 
-bandage
-
 bamboo
 noun
 a tall, tropical grass with hard, hollow stems. 
 Bamboo can be used to make garden poles and furniture.
-
-bamboo 
-poles
 
 ban
 bans banning banned verb
@@ -1325,23 +1190,16 @@ Bananas grow in hot, damp regions.
 band
 bands noun
 1 a group of people who play music together.
-
-ballet dancers
+2 a strip of material such as fabric, elastic, or metal that holds things together.
 
 balloon
 balloons noun
 a bag of rubber or other material ﬁlled with air or another gas.
 
-hot-air balloon
-
-2 a strip of material such as fabric, elastic, or metal that holds things together.
-
-rubber band
-
 bandage
 bandages noun
 a strip of material that is used to wrap around a wound to keep it clean.
-bang
+
 bang
 bangs noun
 a sudden, loud noise.
@@ -1350,7 +1208,6 @@ The ﬁrework went off with a loud bang.
 bank
 banks noun
 1 a steep, sloping piece of ground, often on the side of a river.
-
 2 a company that looks after people’s money and also lends money.
 
 banner
@@ -1360,12 +1217,14 @@ a large ﬂag or piece of cloth that has a picture or a message on it.
 bar
 bars noun
 1 a long, narrow piece of metal.
-
 2 a counter or a room where drinks or snacks are sold.
+
 barbecue
 barbecues noun
 1 a grill over an open ﬁre 
 that is lit outdoors and used for cooking meat, ﬁsh, or vegetables.
+2 a party or special meal where food is cooked on a barbecue.
+(cid:78) say bar-bi-kyoo
 
 bark
 noun
@@ -1380,24 +1239,15 @@ barks barking barked verb
 to make a rough, loud noise like a dog.
 bark noun
 
-lamp base
-
-2 a party or special meal where food is cooked on a barbecue.
-(cid:78) say bar-bi-kyoo
-
 bare
 adjective
 without any covering.
-
 bare feet
 
 bargain
 bargains noun
 something bought cheaply.
-My shoes were a real bargain
-in the sale. 
-
-weight-lifting bar
+My shoes were a real bargain in the sale. 
 
 barley
 noun
@@ -1421,8 +1271,7 @@ a ﬂoor in a building that is partly or completely below ground level.
 
 basin
 basins noun
-a large, bowl-shaped 
-container used for holding water. Basins are often used for washing. 
+a large, bowl-shaped container used for holding water. Basins are often used for washing. 
 
 barrier
 barriers noun
@@ -1436,21 +1285,17 @@ made of cane, twigs, or straw.
 
 basketball
 noun
-a team game with ﬁve 
-players on each side. Points 
-are scored by throwing a ball through a raised hoop called the “basket” 
-(see sport on page 197).
+a team game with ﬁve players on each side. Points are scored by throwing a ball through a raised hoop called the “basket” 
 
 battery
 batteries noun
 a closed container of chemicals that makes and stores small amounts of electricity.
-
 watch battery
 
 beam
 beams noun
-
 1 a long, narrow ray of light.
+2 a long, strong piece of wood or metal, often used in buildings to hold up the roof.
 
 battle
 battles noun
@@ -1472,12 +1317,9 @@ bead
 beads noun
 a small piece of wood, stone, or glass that can be threaded onto string.
 
-2 a long, strong piece of wood or metal, often used in buildings to hold up the roof.
-
 bean
 beans noun
 a seed or pod that is eaten as a vegetable.
-
 fava bean
 
 bear
@@ -1487,13 +1329,8 @@ a large mammal with thick fur that usually lives in forests. All bears eat meat,
 bat
 bats noun
 1 a stick, often made of wood or metal that is used to hit a ball (see sport on page 197).
-
 softball bat
-
-2 a nocturnal mammal with wings. Bats 
-live in caves and dark places and eat insects, fruit, or small animals. They rest hanging upside down (see 
-mammal on page 124).
-
+2 a nocturnal mammal with wings. Bats live in caves and dark places and eat insects, fruit, or small animals. They rest hanging upside down 
 long-eared bat
 
 bathtub
@@ -1507,29 +1344,14 @@ Conductors of orchestras and band leaders use different types of batons to keep 
 
 beak
 beaks noun
-the hard, bony mouth of a bird or dinosaur (see 
-dinosaur on page 61).
-
-band 
-leader’s 
-baton
-
-Canadian
-black 
-bear
-
-toucan’s 
-beak
-
-beaver
+the hard, bony mouth of a bird or dinosaur
 
 bear
 bears bearing bore born or borne verb
 1 to produce or give birth to.
 This plant bears red berries.
 2 to carry or support.
-Can that branch bear
-your weight?
+Can that branch bear your weight?
 3 to put up with.
 I can’t bear to think about it.
 
@@ -1560,7 +1382,7 @@ What a beautiful view!
 beaver
 beavers noun
 a large rodent that gnaws down trees to build dams and island homes, called lodges, in rivers. Beavers eat bark, roots, and twigs.
-beckon
+
 beckon
 beckons beckoning beckoned verb
 to make a sign that tells someone to come to you.
@@ -1576,8 +1398,7 @@ to ask for something very strongly.
 
 bell
 bells noun
-a cup-shaped 
-piece of metal that makes a ringing sound when it is struck.
+a cup-shaped piece of metal that makes a ringing sound when it is struck.
 
 become
 becomes becoming became verb
@@ -1591,8 +1412,7 @@ beds noun
 
 bee
 bees noun
-a ﬂying insect that usually lives in large, well-organized 
-groups. Bees feed on pollen, nectar, and the honey they make from nectar.
+a ﬂying insect that usually lives in large, well-organized groups. Bees feed on pollen, nectar, and the honey they make from nectar.
 
 beer
 beers noun
@@ -1602,17 +1422,12 @@ cereal grains.
 beetle
 beetles noun
 an insect with hard, often brightly colored wing cases. 
-Some beetles eat small insects; 
-others eat wood and plants.
-
+Some beetles eat small insects; others eat wood and plants.
 jewel beetle
 
 beetroot / beet
 beetroots / beets noun
-a hard, red root plant with leaves that is eaten as a vegetable (see vegetable
-on page 233).
-
-The dog begged for a piece of meat.
+a hard, red root plant with leaves that is eaten as a vegetable
 
 begin
 begins beginning began begun verb
@@ -1638,7 +1453,6 @@ That book belongs to me.
 below
 preposition
 lower than.
-
 Below her waist.
 (cid:78) opposite above
 
@@ -1649,18 +1463,12 @@ a narrow strip of fabric or leather that you wear around your waist.
 beech
 beeches noun
 a deciduous forest tree with smooth, gray bark and spreading branches (see tree on page 223).
-
 beech leaf
 
 before
 preposition
 earlier.
-
-Before
-four o’clock.
-
-She stood behind her friend.
-behind adverb
+Before four o’clock.
 
 being
 beings noun
@@ -1669,6 +1477,7 @@ someone or something that exists.
 bench
 benches noun
 1 a long, wooden seat.
+2 a worktable.
 
 beef
 noun
@@ -1683,16 +1492,15 @@ believe
 believes believing believed verb
 to feel strongly that something is true.
 
-park bench
-
-2 a worktable.
 bend
 bends bending bent verb
 to change something straight into a curved shape.
+She bent over to touch her toes.
 
 beside
 preposition
 at the side of.
+The ball is beside her.
 
 beyond
 preposition
@@ -1703,20 +1511,13 @@ bill
 bills noun
 1 the hard, bony mouth of a bird.
 
-biodegradable
-
-She bent
-over to touch her toes.
-
 bend
 bends noun
 a curve.
-
 Bends in the road.
 
 beneﬁt
-beneﬁts beneﬁting beneﬁted 
-verb
+beneﬁts beneﬁting beneﬁted  verb
 to receive help from someone or something.
 The school would beneﬁt from having new computers.
 beneﬁt noun
@@ -1725,19 +1526,10 @@ beret
 berets noun
 a soft, ﬂat hat.
 
-(cid:78) say buh-ray
-
 berry
 berries noun
 a small, round juicy fruit with seeds inside.
-
 blueberries
-
-The ball is beside her.
-
-best
-from the adjective good
-better than any other.
 
 bet
 bets betting bet verb
@@ -1754,7 +1546,6 @@ I’m feeling better, thanks.
 between
 preposition
 in the middle of.
-
 Between her knees.
 
 beware
@@ -1811,76 +1602,6 @@ bird
 bird
 birds noun
 an animal that has warm blood, feathers on its body, and wings (see skeleton on page 188). 
-
-shaft
-
-quill
-
-macaw’s
-feather
-
-tail feathers
-
-mantle
-
-budgerigar
-
-crest
-
-vane
-
-hooked
-beak
-
-kestrel
-
-song thrush’s 
-nest
-
-osprey’s
-egg
-
-nostril
-
-beak
-
-talon
-
-nape
-
-plumage
-
-breast
-
-ﬁnch
-
-belly
-
-claw
-
-ﬂight feathers
-
-roller
-
-toe
-
-cockatoo
-
-lorikeet
-
-knee
-
-train of feathers
-
-webbed foot
-
-ﬂipper
-
-ﬂamingo
-
-peacock
-
-kiwi
 
 penguin
 birthday
@@ -2111,75 +1832,6 @@ a blob of face cream
 boat
 boats noun
 a small open vessel that carries goods and people across water.
-
-sail
-
-boom
-
-tiller
-
-boat
-
-sprit
-
-anchor
-
-mast
-
-hull
-
-junk
-
-blade
-
-stern
-
-main
-sheet
-
-bow
-
-daggerboard
-
-rudder
-
-cockpit
-
-dinghy
-
-prow
-
-life buoy
-
-propeller
-
-reed boat
-
-cabin
-
-thwart
-
-keel
-
-coble (ﬁshing boat)
-
-rudder
-
-powerboat
-
-propeller
-
-narrowboat
-
-ﬁshing boat
-
-paddle
-
-yard
-
-stay
-
-sailing yacht
 
 deck
 body
@@ -3020,77 +2672,6 @@ tailgate
 car
 cars noun
 a vehicle with wheels that is moved by an engine and used to carry people from place to place.
-
-spare
-tire
-
-jeep
-
-tow hook
-
-mufﬂer
-
-wheel hub
-
-wheel
-trim
-
-minivan
-
-exhaust pipe
-
-tire
-
-spoke
-
-bumper
-
-windshield
-wiper
-
-rearview
-mirror
-
-headlight
-
-hood
-ornament
-
-wheel
-
-fender
-
-hatchback
-
-piston
-
-fan
-
-tire tread
-
-trunk
-
-exhaust
-pipe
-
-starting
-handle
-
-vintage car
-
-radiator grill
-
-hood
-
-windshield
-
-steering wheel
-
-engine
-
-hood
-
-sports car
 
 turn
 signal
@@ -4418,46 +3999,6 @@ to have a price.
 A computer costs hundreds of dollars.
 cost noun
 
-ruff
-
-doublet
-
-costume
-
-chemise
-
-corset
-
-petticoat
-
-hose
-
-drawers
-
-crinoline
-frame
-
-16th-century costume
-
-19th-century lingerie
-
-waistcoat
-
-cuff
-
-handbag
-
-headdress
-
-trimming
-
-pendant
-
-brim
-
-girdle
-
-cloche hat
 
 costume
 costumes noun
@@ -4465,43 +4006,6 @@ costumes noun
 Historical costume.
 2 an outﬁt worn for a special reason.
 Theatrical costume.
-
-gauntlets
-
-silk stockings
-
-tunic
-(chiton)
-
-wig
-
-beauty mark
-
-cravat
-
-sandals
-
-Ancient Greek costume
-
-mules
-
-breeches
-
-stockings
-
-petticoat
-
-buckle
-
-pantaloons
-
-pumps
-
-19th-century costume
-
-18th-century costume
-
-suspenders
 
 14th-century costume
 cotton
@@ -5555,78 +5059,6 @@ dinosaurs noun
 one of a group of land reptiles that lived on Earth, at different times, for more than 150 million years. 
 The last dinosaurs died out 65 million years ago.
 
-beak
-
-brow
-horn
-
-nose
-horn
-
-beak
-
-neck
-
-Gallimimus
-(cid:78) say gal-i-meem-us
-
-frilled crest
-
-Triceratops
-(cid:78) say try-ser-a-tops
-
-plates
-
-dinosaur
-
-tail
-spikes
-
-Stegosaurus
-(cid:78) say steg-uh-sor-rus
-
-armor
-plating
-snout
-
-hand
-
-claw
-
-Troodon
-(cid:78) say troe-o-don
-
-Heterodontosaurus
-(cid:78) say het-er-oh-dont-oh-sor-rus
-
-crest
-
-padded toes
-
-Euoplocephalus
-(cid:78) say yoo-oh-plo-sef-al-us
-
-tail
-
-Barosaurus
-(cid:78) say bar-oh-soh-rus
-
-claw
-
-Deinonychus
-(cid:78) say die-non-i-kus
-
-teeth
-
-scaly skin
-
-claw
-
-leg
-
-Corythosaurus
-(cid:78) say koh-rith-oh-sor-rus
-
 toe
 
 Tyrannosaurus rex
@@ -6495,20 +5927,6 @@ Eggs contain the animal’s babies, which hatch when developed.
 elect
 elects electing elected verb
 to choose someone to do something by voting for them.
-
-egg yolk
-
-egg white
-
-egg shell
-
-egg cup
-
-crow’s egg
-
-hen’s egg
-
-African elephant
 
 elevator
 elevators noun
@@ -7612,76 +7030,6 @@ a cold-blooded animal that lives in the water, breathes through gills, and is us
 have streamlined shapes. 
 Fish eat other water animals and plants (see skeleton on page 188).
 
-barbel
-
-clown loach
-
-spines
-
-freshwater 
-angelﬁsh
-
-scales
-
-ﬁsh
-
-gill opening
-
-nostril
-
-teeth
-
-great white shark
-
-mouth
-
-forceps ﬁsh
-
-dorsal ﬁn
-
-false
-eyespot
-
-tail (caudal) ﬁn
-
-lionﬁsh
-
-lips
-
-golden rudd
-
-gill cover
-
-belly
-
-pectoral ﬁn
-
-anal ﬁn
-
-lateral line
-
-bony
-rings
-
-seahorse
-
-tail
-
-mandarin ﬁsh
-
-eye
-
-concealed
-eye
-
-trigger spine
-
-clownﬁsh
-
-clown triggerﬁsh
-
-porcupine ﬁsh
-
 inﬂated
 body
 ﬁsh
@@ -8278,65 +7626,6 @@ fruits noun
 the part of a plant that contains the seeds. Many 
 fruits are edible.
 (cid:78) rhymes with boot
-
-pit
-
-lychees
-
-greengage 
-plums
-
-black currants
-
-passion fruit
-
-fruit
-
-red currants
-
-star fruit
-
-(side view)
-
-(end view)
-
-drupelet
-
-mango
-
-seeds
-
-pulp
-
-green olives
-
-red raspberries
-
-kiwi fruit
-
-ugli fruit
-
-pineapple
-
-papaya
-ﬂesh
-segment
-
-stem
-
-mandarin oranges
-
-pips
-
-tomatoes
-
-pomegranates
-
-rambutans
-
-peel
-
-pith
 
 rind
 frustrate
@@ -9215,90 +8504,6 @@ growth
 noun
 the way in which things change as they become older and bigger. The growth of animals and plants happens in many different ways.
 
-Snake
-
-egg case
-
-egg tooth
-
-egg
-
-hatchling
-
-adult rat snake
-
-Butterﬂy
-
-silk girdle
-
-eggshell
-
-head
-
-legs
-
-claspers
-
-prolegs
-
-egg
-
-larva (caterpillar)
-
-silk pad
-
-pupa 
-(chrysalis)
-
-imago (adult)
-
-ﬁrst true leaf
-
-disk ﬂorets 
-
-Sunﬂower
-
-shoot
-(plumule)
-
-bract
-
-a single ﬂower 
-(ray ﬂoret)
-
-seed leaf
-
-stem
-
-stem
-
-root hairs
-
-ﬂower
-
-seed coat (testa)
-
-radicle
-
-germinating 
-
-seed
-
-Human being
-
-primary
-root
-
-seedling
-
-baby
-
-toddler
-
-child
-
-teenager
-
 adult
 grub
 grubs noun
@@ -10092,147 +9297,11 @@ a feeling of shock and fear.
 They watched in horror as the house burned down.
 halter
 
-mane
-
-ovaro coat (chestnut and white)
-
-pinto
-
-tail
-
-stripe
-
-gray
-coat
-
-bay
-coat
-
-belly
-
-Arab
-
-Shetland pony
-
-hard hat
-
-ring
-
-bridle
-
-bit
-
-reins
-
-bit
-
-joint
-
-snafﬂe bit
-
-croup
-
-loins
-
-withers
-
-back
-
-palomino
-coat
-
-palomino
-
-black coat
-
-horseshoe
-
-shire
-
-forelock
-
-docked
-tail
-(cut
-short)
-
-feathers
-
-throat
-
-muzzle
-
-shoulder
-
 horse
 horse
 horses noun
 a large, plant-eating mammal that is often used for riding and pulling equipment. There 
 are many different breeds of horse, and their coats can be a variety of colors. 
-
-nostril
-
-halter
-
-lip
-
-neck
-
-knee
-
-hoof
-
-jodhpurs
-
-pommel
-saddle
-
-saddle pad
-dappled
-gray coat
-
-boot
-
-liver-
-chestnut
-coat
-stirrup
-
-girth
-
-thoroughbred
-
-quarters
-
-hock
-
-bay coat
-
-elbow
-chestnut
-
-breast
-
-forearm
-
-dun coat
-
-shank
-
-heel
-
-ergot
-
-pastern
-
-fetlock
-joint
-
-horseshoe
-
-nail
-
-falabella foals (miniature horses)
 
 thoroughbred
 hose
@@ -10820,83 +9889,6 @@ insect
 insects noun
 a small animal with six legs and a body divided into three parts. Insects usually have two pairs of wings and do not have a backbone.
 
-tachinid ﬂy
-
-abdomen
-
-thorax
-
-head
-
-mottled
-markings
-
-ant
-
-spikes
-
-locust
-
-praying 
-mantis
-
-claw
-
-compound
-eye
-
-veins
-
-abdomen
-
-dragonﬂy
-
-wing
-
-stalk
-
-wasp’s 
-nest
-
-paper
-envelopes
-
-paper wasp
-
-antenna
-earwig
-
-coxa
-
-wing case (elytron)
-
-claw
-antenna
-
-hind wing
-
-fore wing
-
-verdant hawkmoth
-
-stick insect
-
-cicada
-
-thorax
-
-femur
-
-tibia
-
-tarsus
-
-Goliath beetle
-
-dung beetle
-
-cockroach
-
 insert
 inserts inserting inserted verb
 to put one thing inside another.
@@ -11249,99 +10241,6 @@ jewelry
 jewelry 
 noun
 decorative ornaments that people wear. Jewelry is usually made from metals and decorated with jewels.
-
-hook
-
-silver
-
-ﬁligree
-bead
-
-gold chain
-
-Viking armband
-
-earrings
-
-lapis lazuli
-
-gold
-amulet
-
-amethyst
-
-turquoise
-
-cornelian
-
-Egyptian necklace
-
-diamond
-
-amethyst
-
-pendant
-
-peridot
-
-red
-garnet
-
-heliodor
-
-solitaire ring
-
-scarf pin
-
-drop earrings
-
-clasp
-
-pearl
-
-choker
-
-emerald
-
-setting
-
-opal
-
-malachite
-
-green
-garnet
-
-citrine
-
-sapphires
-
-ﬁre opal
-
-ruby
-
-cufﬂinks
-
-eternity ring
-
-amethyst
-
-pearl
-
-pearl
-
-diamond
-collar
-
-gold
-
-tourmaline
-
-cameo brooch
-
-diamanté
-
-clasp
 
 jigsaw puzzle
 jigsaw puzzles noun
@@ -12627,105 +11526,6 @@ mammal
 mammals noun
 one of a group of animals that usually have hair or fur and a backbone and are warm-blooded. Most female mammals give birth to live babies and feed them on milk.
 
-ear
-
-hair
-
-mane
-
-giant anteater
-
-snout
-
-knuckle
-
-muzzle
-
-pouch
-
-red-necked wallaby
-
-joey
-
-zebra foal
-
-stripe
-
-hoof
-
-zebra 
-
-skin
-
-whiskers
-
-ﬂipper
-
-toe
-
-human being
-
-ﬁnger-
-and
-toe-tips
-
-Senegal 
-bush baby
-
-tail
-
-earﬂap
-
-African bush elephant
-
-bumps (instead 
-of dorsal ﬁn)
-
-sea lion
-
-pup
-
-barnacles
-
-skin
-
-gray whale
-
-pectoral ﬁn
-
-eye
-
-horny
-plates
-tusk
-
-trunk
-
-trunk
-ﬁngers
-
-cheek
-pouch
-
-chinchilla
-
-fur
-
-maned wolf
-thumb
-
-fur
-
-claw
-
-long-eared bat
-
-paw
-
-wing
-
-ﬁnger
-
 tail ﬂuke
 man
 men noun
@@ -13670,123 +12470,6 @@ musical instrument
 musical instrument
 musical instruments noun
 an instrument for making music, usually played by hitting, blowing, or pulling or hitting strings.
-
-Wind instruments
-
-treble
-clef
-
-sharp sign
-
-quarter
-note
-
-half
-note
-
-ﬂat sign
-
-quarter
-note
-
-whole
-note
-
-key signature time signature
-
-eighth
-notes
-
-sixteenth
-notes
-
-Musical symbols
-
-Brass instruments
-
-bar line
-
-repeat sign
-
-mouthpiece
-
-didgeridoo
-(Australian Aboriginal pipe)
-
-reed
-
-piston valve
-
-bassoon
-
-keys
-
-bell
-
-ocarina
-
-String instruments
-
-Panpipes
-reed
-
-ﬂared bell
-
-mouthpiece
-
-carrying cord
-
-coils of tubing
-
-tuba
-
-nfîr
-(Moroccan 
-trumpet)
-
-sound hole
-
-fret
-
-string
-
-peg box
-
-Percussion instruments
-
-animal skin
-
-balalaika
-
-castanets
-
-ﬁngerboard
-
-tuning
-peg
-
-tuning peg
-
-steel
-bead
-
-bridge
-
-sound box
-
-cabaca (rattle)
-
-djeme (African drum)
-
-soundboard
-
-sitar
-
-ﬁddle
-
-bow
-
-mu-yus (Chinese temple blocks)
 
 beaters
 musician
@@ -17817,97 +16500,6 @@ one of a group of cold-blooded
 animals that have a backbone, lungs for breathing, dry, scaly skin, and clawed ﬁngers 
 or toes. Reptiles lay their eggs on dry land.
 
-crested water dragon
-
-horn
-
-swiveling eye
-
-camouﬂaged
-skin
-
-crest
-
-nostril
-
-scales
-
-external ear
-
-camouﬂaged
-skin
-
-padded
-toe
-
-head
-
-banded skin
-
-milk snake
-
-tail
-
-beak
-
-tortoise hatching
-
-fold of skin
-
-tokay lizard
-
-carapace
-
-Jackson’s chameleon
-
-shell
-
-forked
-tongue
-
-eye
-
-starred tortoise
-
-plastron
-
-tail with rattle
-
-rattlesnake
-
-red-eared terrapin
-
-leg
-
-covered
-eardrum
-
-leopard gecko
-
-tail crest
-
-hind limb
-
-scute
-
-webbed foot
-
-snout
-
-digit (ﬁnger)
-
-forefoot
-
-tail
-
-belly
-
-claw
-
-caiman
-
-nostril
-
 ﬂying gecko
 request
 requests requesting requested verb
@@ -18959,136 +17551,6 @@ sea life
 noun
 all the plants and animals that live in the sea or on the seashore.
 
-pincer
-
-mouthparts
-
-claw
-
-tentacle
-
-tentacle
-
-eye
-
-shell
-
-mouth
-
-foot
-
-stump of missing leg
-
-antenna
-
-jaws
-
-tube foot
-
-abdomen
-
-leg
-
-sea cucumber
-
-lettuce sea slug
-
-shore crab
-
-antenna
-
-body
-
-arm
-
-tentacle
-
-abdomen
-
-leg
-
-squat lobster
-
-scarlet serpent brittlestar
-
-shell
-
-ﬁn ray (strut)
-
-eye
-
-snout
-
-tentacle
-
-red seaweed
-
-dog-ﬁsh egg cases
-
-plant body
-
-strawberry 
-shrimp
-
-sucker
-
-octopus
-tail
-
-zebra 
-pipeﬁsh
-
-siphon
-
-mantle
-
-pelvic ﬁn
-
-eye stalk
-
-thornback ray
-
-pectoral
-ﬁn
-
-antenna
-
-blade
-
-claw
-
-hermit crab
-
-scallop
-
-spine
-
-mouth
-
-sea urchin
-
-tendril
-
-eye
-
-baby
-dogﬁsh
-
-giant blue clam
-
-buckler
-
-dorsal
-ﬁn
-
-tentacle
-
-anemone
-
-compound eye
-
-seaweed
-
 seal
 seals noun
 1 a sea mammal usually found in cold seas. Seals eat ﬁsh 
@@ -19462,82 +17924,6 @@ shapes noun
 the outline or form of an object. 
 Everything has a shape. Some shapes are two-dimensional, because they have width and length, but no height. Some 
 shapes are three-dimensional, because they have width, length, and height.
-
-Two-dimensional shapes
-
-rectangle
-
-semicircle
-
-crescent
-
-equilateral
-triangle
-
-isosceles 
-triangle
-
-pentagon
-
-star
-
-hexagon
-
-octagon
-
-pattern
-
-Three-dimensional shapes
-
-triangle
-
-square
-
-right angle
-
-diamond
-
-right-angled 
-triangle
-
-rectangle
-
-triangle
-
-tetrahedron
-
-prism
-
-rectangle
-
-pyramid
-
-cylinder
-
-cone
-
-rectangle
-
-square
-
-cuboid
-
-cube
-
-right-angled
-triangle
-
-equilateral
-triangle
-
-sphere
-octahedron
-
-icosahedron
-
-rhombicuboctahedron
-
-square
 
 share
 shares sharing shared verb
@@ -20143,94 +18529,6 @@ skeleton
 skeletons noun
 a group of connected bones that support a person’s or animal’s body. 
 There are 206 bones in a human skeleton. 
-
-seal skeleton
-
-horn
-
-frog skeleton
-
-tusk
-
-goat skull
-
-elephant skull
-
-bony plates
-
-radial
-
-horny shield layer
-
-ribs
-
-tortoise skeleton
-
-collarbone
-(clavicle)
-
-breastbone
-(sternum)
-
-rib cage
-
-ﬁsh skeleton
-
-spine
-
-rib
-
-skull
-
-hipbone
-(pelvis)
-
-hand bones (carpals)
-
-metacarpal
-
-phalanx
-
-main shin bone (tibia)
-
-foot bones (tarsals)
-
-metatarsal
-phalanx
-
-bird skeleton
-
-bony layer
-
-skull (cranium)
-
-jawbone
-(mandible)
-
-shoulder blade (scapula)
-
-upper arm bone (humerus)
-
-spine
-main forearm bone (ulna)
-
-small forearm bone (radius)
-
-coccyx
-
-thigh bone (femur)
-
-kneecap
-(patella)
-
-small shin bone (ﬁbula)
-
-monkey skeleton
-
-snake skeleton
-
-human skeleton
-crocodile skeleton
 
 sketch
 sketches noun
@@ -21222,171 +19520,10 @@ spoon
 spoons noun
 a small utensil with a curved bowl at one end. Spoons are used for eating or stirring.
 
-plastic spoon
-
-metal spoon
-
-basketball
-
-sport
-basketball
-rim
-
-golf
-
-shaft
-
-basketball
-
-wood
-
-iron
-
-putter
 
 sport
 sports noun
 an activity or game that requires physical effort or skill. People play sports for exercise or pleasure.
-
-badminton
-
-windsurﬁng
-
-ball
-
-tee
-
-mast
-
-head
-
-head
-
-shaft
-
-sail
-
-feathers
-
-shuttlecocks
-
-handle
-
-racket
-
-table tennis
-
-boom
-
-blade
-
-bat ball
-
-golf clubs
-
-football
-
-face
-guard
-
-batten
-
-armpad
-
-football helmet
-
-life
-jacket
-
-wetsuit
-
-board
-
-shoulder and chest pads
-
-athletics
-
-net
-
-tank
-top
-
-shorts
-
-sneaker
-
-squash
-
-strings
-
-frame
-
-throat
-
-shaft
-
-grip
-
-ball
-
-sailboard
-
-spike
-
-track shoes ﬁeld hockey
-
-ice hockey
-
-cricket 
-
-grip
-
-racket
-
-blade
-
-baseball
-
-webbed
-pocket
-
-barrel
-
-ball
-
-ball
-
-bail
-
-shaft
-
-stump
-
-goalkeeper’s shoe cover
-
-skates
-
-blade
-
-ﬁeld hockey shoe
-
-head
-
-blade
-
-puck
-
-ﬁeld hockey stick
-
-ball
-
-ice hockey stick
-
-wicket
-
-bat
-
-baseball glove
 
 bat
 spot
@@ -23539,128 +21676,6 @@ In Roman times, many roads were built throughout Europe.
 4 an occasion or event.
 I go swimming three times a week. 
 
-Time-measuring devices
-winding
-stem
-
-Roman
-numerals
-
-Telling the time
-
-minute
-hand
-
-o’clock
-
-quarter past
-
-hour
-hand
-
-second
-hand
-
-24-hour clock
-
-half past
-
-quarter to
-January
-February
-March
-April
-May
-June
-July
-August
-September
-October
-November
-December
-timing
-button
-
-strap
-
-pocket watch
-
-stopwatch
-
-battery
-
-hours
-
-minutes
-
-seconds
-
-date
-display
-
-Liquid
-Crystal
-Display
-(LCD)
-
-digital alarm clock
-
-nurse’s watch
-
-Months of the year
-
-clock
-case
-
-dial
-
-cogs
-
-back 
-view
-
-front 
-view
-
-wristwatch
-
-front view
-
-winding
-key
-
-back view
-
-carriage clock
-
-Time periods
-
-month
-
-past
-
-present
-
-future
-
-Days of the week
-
-Monday
-Tuesday
-Wednesday
-Thursday
-Friday
-Saturday
-Sunday
-
-calendar
-
-date
-
-day
-
-date book
-
 timetable
 timetables noun
 a chart that shows the times when events should happen, or when jobs should be done.
@@ -24156,142 +22171,6 @@ transportation
 noun
 a way of carrying goods or people from one place to another. Different methods of transportation are used to travel on land, on water, or in the air.
 
-tank
-
-transportation
-
-rudder
-
-elevator ﬂap
-
-cab
-
-envelope
-
-nose cone
-
-air deﬂector
-
-gondola
-
-airship
-
-engine
-
-cockpit
-
-fuselage
-
-propeller
-
-dairy tanker
-
-landing
-wheel
-
-hull
-
-ﬂoat
-
-sea plane
-
-tail ﬁn
-
-saddle
-
-rotor blade
-
-engine housing
-
-boom
-
-hood
-
-seat
-
-pedal
-
-rickshaw
-
-fairing
-
-windshield
-
-instrument
-panel
-
-landing
-skid
-
-cab
-
-stabilizer
-
-tail rotor
-
-helicopter
-
-horn
-
-engine
-
-double-decker
-car
-
-motorcycle
-
-disc brake
-
-exhaust pipe
-
-saddle
-
-passenger train
-
-track
-
-saddle
-
-fender
-
-pump
-
-frame
-
-handlebar
-
-reﬂector
-
-bridle
-
-pommel
-
-saddle
-
-stirrup
-
-pedal
-
-chain
-
-mountain bike
-
-camel
-
-lifeboat
-
-funnel
-
-deck
-
-horse
-
-rudder
-
-hull
-
-paddle steamer
-
 paddle wheel
 travel
 travels traveling traveled verb
@@ -24399,131 +22278,6 @@ Signing a peace treaty.
 tree
 trees noun
 a tall plant with branches, leaves, and a main stem called a trunk. Trees are either deciduous or evergreen.
-
-Leaves
-
-leaf tip
-
-Flowers
-
-young
-leaf
-
-needle
-
-blossom
-
-veins
-
-jagged
-teeth
-
-tree
-
-maple
-
-palm
-
-leaf stalk (petiole)
-
-midrib
-
-leaﬂet
-
-rowan
-
-apple
-
-female
-ﬂower
-
-male ﬂower 
-(catkin)
-
-silver birch
-
-female ﬂower 
-(young cone)
-leaf
-shoot
-
-male
-ﬂower
-
-European larch
-
-leaf canopy
-
-Seeds and fruit
-
-fruit
-
-quince
-
-case
-
-umbrella pine
-
-eucalyptus
-
-ginkgo
-
-leading leaf and ﬂower bud
-
-leaf
-blade
-
-scale
-
-twig
-
-branch
-
-lateral
-leaf bud
-
-leaf scar
-
-horse 
-chestnut
-
-Trunk cross-section
-
-growth rings
-
-sapwood
-
-scales
-
-mature cones
-
-trunk
-
-seed
-
-oak
-
-wing
-
-sycamore maple
-
-spruce
-
-fruit
-husk
-
-nut
-
-berry
-
-horse chestnut
-
-holly
-
-seed
-beech
-
-bark
 
 heartwood
 tremble
@@ -25136,165 +22890,6 @@ universe
 noun
 all of space, and everything that exists in it. The universe includes Earth, the other planets, and all the stars.
 
-Satellites
-
-solar panel
-
-universe
-command
-antenna
-
-dish antenna
-
-solar panel
-
-European Communications Satellite 1 (ECS 1)
-
-Space exploration
-
-antenna
-
-Landsat 
-
-ﬂap door
-
-main mirror casing
-
-small mirror casing
-
-magnetic
-sensor
-
-solar panel
-
-star
-detector
-
-Mariner 10
-
-television
-camera
-
-dish
-antenna
-
-Earth
-
-antenna
-
-Mars
-
-heat
-shield
-
-The Solar System
-
-Mercury
-
-Venus
-
-Spacecraft
-
-engine nozzle
-
-Apollo
-Service
-Module
-
-Apollo
-Command 
-Module
-
-Apollo
-Lunar
-Module
-
-hatch
-
-docking
-window
-
-maneuvering
-engines
-
-landing leg
-
-foot pad
-
-upper part of the Saturn V rocket
-
-engine nozzle
-
-rudder and speed brake
-
-ﬂight deck windshield
-
-ﬁn
-
-fuselage
-
-solar panel
-
-antenna
-
-Hubble Space Telescope
-
-ring
-
-power
-supply
-
-Jupiter
-
-radio antenna
-
-television
-camera
-
-extendable
-boom
-
-dish antenna
-
-Voyager space probe
-
-ringlets
-
-rings
-
-rings
-
-heat-shield tiles
-
-Saturn
-
-wing
-
-Space Shuttle
-
-solar panel
-
-main engine nozzle
-
-antenna
-
-docking
-module
-
-Uranus
-
-unmanned
-cargo craft
-
-main module
-
-Mir space station
-
-Soyuz TM
-spacecraft
-
-solar panel
-
 Neptune
 university
 university
@@ -25688,81 +23283,6 @@ vegetables noun
 a plant, or part of a plant, that is grown for food. Vegetables contain vitamins and minerals that keep us healthy.
 (cid:78) say vej-tab-bul
 
-vegetable
-
-ﬂesh
-
-pumpkin
-
-stem
-
-seed
-
-okra
-
-leaf
-
-Brussels sprouts
-
-zucchini
-
-eggplant
-
-leaf
-
-corncob
-
-kohlrabi
-
-radish
-
-husk
-
-corn
-
-seed
-
-root tuber
-
-spear
-
-leaf
-
-leaf
-
-asparagus
-
-radicchio
-
-stem
-
-stalk
-
-stalk
-
-skin
-
-ﬂower head
-
-peppers
-
-artichoke
-
-chinese cabbage
-
-celery
-leaf
-
-stem
-
-root
-
-beet
-
-sweet 
-potato
-
-seed
 vegetarian
 vegetarian
 vegetarians noun
@@ -26373,16 +23893,6 @@ west
 noun
 one of the four main compass directions. West 
 is the direction in which the Sun sets.
-
-north
-
-west
-
-east
-
-south
-
-western adjective
 
 western
 westerns noun
