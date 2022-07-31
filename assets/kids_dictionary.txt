@@ -11739,15 +11739,12 @@ a tall bird from Africa that can run very fast, but cannot ﬂy. Ostriches live 
 other
 adjective
 the remaining one, usually of two.
-
 She tried on the other hat.
 
 out
 adverb
 1 away from a place or not in a place.
-
-The bird pulled the worm out
-of the ground.
+The bird pulled the worm out of the ground.
 2 into view.
 The Sun came out from behind the cloud.
 (cid:78) opposite in
@@ -11757,8 +11754,7 @@ Blow the candle out.
 outcome
 outcomes noun
 the result of something.
-What was the outcome
-of the football game?
+What was the outcome of the football game?
 
 outdoors
 adverb
@@ -11771,13 +11767,9 @@ outﬁts noun
 a set of clothes worn for a particular occasion.
 
 outgrow 
-outgrows 
-outgrowing 
-outgrew 
-outgrown verb
+outgrows outgrowing outgrew outgrown verb
 to grow too big for something.
-He had outgrown
-his clothes.
+He had outgrown his clothes.
 
 outline
 outlines noun
@@ -11794,8 +11786,7 @@ You ought to be in bed.
 outside
 outsides noun
 a part of something that faces out.
-They painted the outside
-of the house green.
+They painted the outside of the house green.
 outside adverb
 
 organ
@@ -11814,7 +11805,6 @@ a group of people with common goals or business.
 organize
 organizes organizing organized verb
 to arrange or plan something.
-
 Organizing work into folders.
 organization noun
 
@@ -11842,13 +11832,11 @@ a space for cooking food, heating, or drying things, usually inside a stove.
 over
 preposition
 above or across.
-She threw the ball over
-the wall.
+She threw the ball over the wall.
 
 overboard
 adverb
 over the side of a ship or boat.
-
 The ﬁshermen threw their nets overboard.
 
 overgrown
@@ -11905,11 +11893,9 @@ a layer of ozone gas in the Earth’s atmosphere that protects the Earth from th
 pack
 packs packing packed verb
 to put things into a suitcase,box, or other container.
-
 (cid:78) opposite unpack
 2 to ﬁt in as much as possible.
-The hall was packed
-with people.
+The hall was packed with people.
 
 pack
 packs noun
@@ -11928,7 +11914,6 @@ pads noun
 3 the soft, ﬂeshy parts on an animal’s paw.
 4 a place where helicopters land and take off.
 
-Pp
 paddle
 paddles noun
 a pole with a ﬂat blade at one or both ends. You hold the paddle and use it to move a boat or canoe through water (see boat on page 31).
@@ -11936,7 +11921,6 @@ a pole with a ﬂat blade at one or both ends. You hold the paddle and use it to
 paddle
 paddles paddling paddled verb
 1 to move a boat through water using a paddle.
-
 2 to walk around in shallow water.
 
 paddock
@@ -11950,9 +11934,6 @@ a type of portable lock often used on gates.
 page
 pages noun
 one side of a single piece of paper forming part of a book, newspaper, or magazine.
-paid
-paid
-from the verb to pay I paid for the movie tickets.
 
 pail
 pails noun
@@ -11960,8 +11941,7 @@ a bucket, usually made of wood or metal.
 
 pain
 pains noun
-suffering caused by an injury, 
-disease, or sadness.
+suffering caused by an injury, disease, or sadness.
 painful adjective
 
 paint
@@ -11980,6 +11960,7 @@ pair
 pairs noun
 a set of two things that match each other, or belong together.
 A pair of socks.
+
 palace
 palaces noun
 a large, grand home belonging to an important person.
@@ -11993,9 +11974,7 @@ He painted the hall pale blue.
 palm
 palms noun
 1 the ﬂat, middle part on the inside of your hand.
-
-2 a tree without branches that grows in hot regions. Palms have long leaves that grow from the top of the trunk (see tree
-on page 223).
+2 a tree without branches that grows in hot regions. Palms have long leaves that grow from the top of the trunk
 
 pan
 pans noun
@@ -12040,7 +12019,6 @@ a section in a piece of writing. Paragraphs start on a new line.
 parallel
 adjective
 being side by side and at the same distance from each other.
-
 parallel lines
 
 paper
@@ -12059,7 +12037,6 @@ an object wrapped up with paper.
 parachute
 parachutes noun
 an apparatus made of material that helps people and objects fall to the ground safely from an aircraft.
-
 (cid:78) say pair-uh-shoot
 
 parent
@@ -12087,7 +12064,6 @@ In the wild, parrots live in large ﬂocks.
 part
 parts noun
 1 a piece of something.
-
 The parts of an electric guitar.
 2 a role in a play.
 
@@ -12112,23 +12088,17 @@ pass
 passes passing passed verb
 1 to go by someone or something.
 2 to give something to someone with your hand.
-
 He passed the bowl to her.
 3 to be successful in an examination or test.
 
 passenger
 passengers noun
 someone traveling in or on a vehicle that is controlled by another person.
-motorcycle
-passenger
-
-She played the part of the queen in the play.
+motorcycle passenger
 
 passport
 passports noun
 an ofﬁcial certiﬁcate that you need for traveling to other countries.
-
-cheese pastries
 
 pasture
 pastures noun
@@ -12137,6 +12107,8 @@ a ﬁeld of grass where animals graze.
 patch
 patches noun
 1 a small piece of material that is placed over a hole to repair it.
+2 a small area of something.
+A patch of grass.
 
 past
 noun
@@ -12151,14 +12123,12 @@ He walked past the store.
 pasta
 noun
 an Italian food, usually made from wheat ﬂour and water.
-
 Different shapes of pasta.
 
 paste
 pastes noun
 1 a soft, moist, and usually sticky substance.
-2 a type of glue made of ﬂour 
-and water.
+2 a type of glue made of ﬂour and water.
 
 pasteurize
 pasteurizes pasteurizing pasteurized verb
@@ -12168,9 +12138,6 @@ to heat and then cool something to kill the bacteria in it. Milk is usually past
 pastry
 pastries noun
 a dough made of ﬂour, water, and fat that is baked to make small cakes called pastries, or shells for pies.
-
-2 a small area of something.
-A patch of grass.
 
 path
 paths noun
@@ -12190,11 +12157,10 @@ patrol
 patrols patrolling patrolled verb
 to guard a place by moving around it and checking it regularly.
 patrol noun
-pattern
+
 pattern
 patterns noun
 1 a decorative shape or design.
-
 2 a guide for making things, such as toys or clothes.
 
 pearl
@@ -12205,21 +12171,13 @@ peel
 peels peeling peeled verb
 to remove or strip something off.
 
-patterned adjective
-
-teddy bear pattern
-
 peach
 peaches noun
 a round fruit with a velvety skin and a large pit inside.
 
-(cid:78) say purl
-
 pebble
 pebbles noun
 a small, smooth, rounded stone.
-
-Peeling a banana.
 
 peep
 peeps peeping peeped verb
@@ -12242,7 +12200,7 @@ It has a pouch beneath its bill that it uses to catch and hold ﬁsh.
 peacock
 peacocks noun
 a large bird that is also called a peafowl. Peacocks live in forests in Africa and India and eat insects, grains, plants, and small animals. 
-The males are known for their beautiful tail feathers (see bird on page 28).
+The males are known for their beautiful tail feathers
 
 peak
 peaks noun
@@ -12260,7 +12218,6 @@ a pale green or brown fruit with a thin skin, pale, juicy ﬂesh, and pits.
 peck 
 pecks pecking pecked verb
 to bite or strike with a beak.
-
 The bird pecked at the food.
 
 peculiar
@@ -12269,12 +12226,12 @@ strange, odd, or unusual.
 
 pedal
 pedals noun
-a lever that you work with your foot to move or control something (see transportation
-on page 221).
+a lever that you work with your foot to move or control something
 
 pedestrian
 pedestrians noun
 a person traveling on foot.
+
 pause
 pauses pausing paused verb
 to stop what you are doing for a short time.
@@ -12288,7 +12245,6 @@ to cover a road with stone or concrete to make it smooth.
 paw
 paws noun
 a soft, padded animal foot with claws or nails.
-
 cat’s paw
 
 pay
@@ -12301,8 +12257,6 @@ peas noun
 a small, round, sweet-tasting 
 vegetable that grows in a pod.
 
-pea pod
-
 peace
 noun
 a period of quietness and calm.
@@ -12312,18 +12266,18 @@ peaceful adjective
 pen
 pens noun
 1 a tool ﬁlled with ink, used for writing.
+2 a small area with a fence for keeping animals in.
+A cattle pen.
 
 pepper
 peppers noun
 1 the dried berries of the pepper plant used to ﬂavor foods.
+2 a bright green, yellow, orange, or red vegetable 
 
 perfume
 perfumes noun
-1 a sweet-smelling
-liquid that you put on your skin.
-
-2 a small area with a fence for keeping animals in.
-A cattle pen.
+1 a sweet-smelling liquid that you put on your skin.
+2 any sweet or pleasant smell.
 
 penalty
 penalties noun
@@ -12337,7 +12291,7 @@ a tool with an erasable material inside, used for writing and drawing.
 penguin
 penguins noun
 a large, ﬁsh-eating seabird found in the cold seas of the southern hemisphere. 
-Penguins cannot ﬂy, but are good underwater swimmers (see bird on page 28).
+Penguins cannot ﬂy, but are good underwater swimmers
 
 penknife
 penknives noun
@@ -12352,22 +12306,14 @@ noun
 1 human beings in general.
 2 members of a particular race, culture, or nation.
 
-ground pepper
-
-2 a bright green, yellow, orange, or red vegetable (see 
-vegetable on page 233).
-
 percent
 noun
 a fraction of a whole written as part of 100. Fifty percent means 50 parts of 100. Percent is also written as percentage. 
 The sign for percent is “%.”
 
-27% (percent) of 100 is 27.
-
 perch
 perches perching perched verb
 to sit on a branch or other place like a bird.
-
 Perching on a branch.
 perch noun
 
@@ -12375,8 +12321,6 @@ perfect
 adjective
 having nothing wrong, or just right.
 perfectly adverb
-
-2 any sweet or pleasant smell.
 
 perhaps
 adverb
@@ -12401,14 +12345,12 @@ A permanent job.
 permission
 noun
 the act of allowing someone to do something.
-
 The teacher gave him permission to leave the room.
 permit verb
 
 perform
 performs performing performed verb
 to put on a show for other people.
-
 Performing in the street.
 performance noun
 
@@ -12424,7 +12366,6 @@ a human being.
 personal
 adjective
 belonging to, or meant for one person.
-
 Personal belongings.
 
 personality
@@ -12444,81 +12385,12 @@ persuasion noun
 pest
 pests noun
 an insect or animal that is harmful or a nuisance.
+Colorado beetle
 
-Colorado 
-beetle
-pet
 pet
 pets noun
 a tame animal that is kept because it is loved rather than because it is useful. 
 Pets are often kept in the home.
-
-seed
-hopper
-
-male
-(cock)
-
-female
-(hen)
-
-Siamese cat
-
-green budgerigar
-
-zebra 
-ﬁnches
-
-identity
-tag
-
-Jack Russell puppy
-
-giant Flemish rabbit
-
-Abyssinian guinea pig
-
-Peruvian 
-guinea pig
-
-grooming brush
-
-tortoiseshell coat
-
-Manx cat
-
-golden retriever
-
-golden coat
-
-Persian cat
-
-water 
-bottle
-
-wiry coat
-
-ear tuft
-
-sleek coat
-Angora rabbit
-
-self golden guinea pig
-
-fox terrier
-
-tabby
-coat
-
-clipping scissors
-fur
-
-dew
-claw
-
-lop-eared French rabbit
-
-shorthaired cat
 
 petal
 petals noun
@@ -12541,25 +12413,21 @@ pianos noun
 a large, stringed, musical instrument with black and white keys. 
 Different musical notes are produced by pressing the keys.
 
-grand piano
-
 pick 
 picks picking picked verb
 1 to choose something.
+She asked him to pick a card.
+2 to remove a ﬂower, fruit, or leaf from a plant.
+Picking a ﬂower.
 
 pie
 pies noun
 a pastry case ﬁlled with vegetables, meat, ﬁsh, or fruit and baked in an oven.
 
-photocopy verb
-
 photograph
 photographs noun
 a picture made using a camera. 
-Photograph 
-can be shortened to photo.
-
-Taking a photograph.
+Photograph can be shortened to photo.
 
 photographer
 photographers noun
@@ -12571,11 +12439,6 @@ to do with the body.
 Physical exercise.
 (cid:78) say ﬁz-i-kul
 
-She asked him to pick a card.
-2 to remove a ﬂower, fruit, or leaf from a plant.
-
-Picking a ﬂower.
-
 picnic
 picnics noun
 a meal that is eaten in the open air, away from home.
@@ -12585,14 +12448,9 @@ pianists noun
 a person who plays the piano.
 (cid:78) say pee-uh-nist
 
-picnic verb
-
-apple pie
-
 piece
 pieces noun
 a bit or a part of something.
-
 A piece of cheese.
 
 pier
@@ -12602,24 +12460,17 @@ a long platform built out into the sea for people to walk along or to tie boats 
 pig
 pigs noun
 an animal with a blunt snout and a curly tail that is kept on farms to provide meat, such as pork, ham, and bacon.
-
 sow (female pig)
 
 pigeon
 pigeons noun
 a bird that is common in both town and countryside. 
 Pigeons mainly eat berries, fruits, and seeds. Some pigeons can be trained to deliver messages.
-
 (cid:78) say pij-in
 
 pigment
 pigments noun
 1 a colored powder that is mixed with other substances to make paint.
-
-windsor red
-
-cadmium yellow
-
 2 the substance that gives coloring to the skin of animals and vegetables.
 
 pile
@@ -12630,8 +12481,6 @@ pill
 pills noun
 a small piece of medicine that is swallowed whole.
 
-piglets
-pillow
 pillow
 pillows noun
 a soft pad for resting your head on in bed.
@@ -12646,23 +12495,17 @@ a person who controls and ﬂies an aircraft.
 
 pin
 pins noun
-a small piece of metal with a sharp point at one end, used to fasten pieces
-of cloth together.
-
-pin
-cushion
+a small piece of metal with a sharp point at one end, used to fasten pieces of cloth together.
+pin cushion
 
 pinch
 pinches pinching pinched verb
-to squeeze someone’s skin between your ﬁnger 
-and thumb.
+to squeeze someone’s skin between your ﬁnger and thumb.
 
 pine
 pines noun
 an evergreen tree that has needle-shaped 
 leaves and produces cones.
-
-Arolla pine
 
 pipe
 pipes noun
@@ -12691,6 +12534,7 @@ pitiful
 adjective
 making you feel sad or full of pity.
 A pitiful sight.
+
 pity
 noun
 a feeling of sadness for someone because they are unhappy or in pain.
@@ -12703,19 +12547,12 @@ a round, ﬂat piece of dough with tomato, cheese, and other foods on top that i
 plan
 plans noun
 a map or drawing of an area, such as a room, building, or town.
-
-kitchen 
-
-living 
-room
-
-(cid:78) say peet-suh
+A plan of an apartment.
 
 place
 places noun
 1 a particular area.
 2 a position in a competition or race.
-
 They won the ﬁrst, second, and third places in the race.
 
 place
@@ -12734,10 +12571,6 @@ plain
 plains noun
 a large area of ﬂat land.
 
-bathroom
-
-A plan of an apartment.
-
 plan
 plans planning planned verb
 to decide how you are going to do something.
@@ -12751,64 +12584,13 @@ universe on page 229).
 plant
 plants planting planted verb
 to put a seed, bulb, or plant into the soil so that it will grow.
-
 Planting a window box.
 
 plant
 plants noun
 a living thing that cannot move around like animals do, and that makes its own food. Some plants grow in the ground, while others grow in water. Plants usually have a stem, leaves, ﬂowers, and roots.
-
-spine
-(leaf)
-
-style
-
-poppy 
-seedheads
-
-plant
-
-capsule
-
-fern
-
-ﬂower head
-
-pedicel
-(ﬂower stalk)
-
-frond
-
-green 
-seaweed
-
-sepal
-
-ﬂower bud
-
-thistle
-
-magniﬁed
-pollen grains hibiscus
-
-pitcher
-
-calla 
-lily
-
-stalk
-
-bulb
-
-ﬂower
-
-stalk
-
-lily pad
-
-waterlily
-
 pitcher plant
+
 platypus
 platypuses or platypi noun
 an Australian mammal with a bill like a duck’s, webbed feet, and a long, ﬂat tail. 
@@ -12832,7 +12614,7 @@ plugs noun
 plum
 plums noun
 a fruit that grows on trees, and has a smooth, thin skin and soft, juicy ﬂesh.
-plaster
+
 plaster
 plasters noun
 a powder mixed with water that is spread on walls and ceilings to make them smooth.
@@ -12841,15 +12623,10 @@ plastic
 plastics noun
 a light, manufactured material made from chemicals. Many types of plastic can be heated up and molded into different shapes and products.
 
-plastic 
-duck
-
 plate
 plates noun
 a ﬂat dish that is used for serving food on.
-
-dinner 
-plate
+dinner plate
 
 plateau
 plateaus or plateaux noun
@@ -12860,14 +12637,13 @@ platform
 platforms noun
 1 the ﬂat, raised area at a train station where people get on and off trains.
 2 a ﬂat, raised area in a hall where speakers or performers stand so they can be seen.
+
 play
 plays playing played
 verb
 1 to take part in a game, usually with other people.
-
 Playing with a balloon.
 2 to make music on a musical instrument.
-
 Playing an accordion.
 3 to act a part.
 She played the fairy.
@@ -12883,13 +12659,10 @@ plumber
 plumbers noun
 a person who ﬁts water and heating pipes into buildings and repairs them when they go wrong.
 
-pleat verb
-
 plenty
 noun
 a large amount of something.
-Do you want some candy? I 
-have plenty.
+Do you want some candy? I have plenty.
 plentiful adjective
 
 plot
@@ -12912,9 +12685,6 @@ please
 interjection
 a word used when you ask for something politely.
 
-(cid:78) rhymes with now
-plow verb
-
 plunge
 plunges plunging plunged verb
 to fall or dive very quickly.
@@ -12926,13 +12696,10 @@ a piece of writing, set out in lines that sometimes rhyme. Poems describe things
 poison
 poisons noun
 a substance that can kill or harm animals or plants.
-poison 
-arrow frog
 
 police
 noun
 an organization that is responsible for keeping law and order and making sure that a country’s laws are not broken.
-
 The bridge broke in two and plunged into the river.
 plunge noun
 
@@ -12966,7 +12733,6 @@ a general name for poems.
 point
 points noun
 1 the sharp end of an object.
-
 Each star has six points.
 2 a score in a game or competition.
 How many points did you get?
@@ -12986,38 +12752,28 @@ poisonous adjective
 poke
 pokes poking poked verb
 to push something with a stick, your ﬁnger, or another pointed object.
-
 He poked the ﬁre with a stick.
-
-polar bear
-polar bears noun
-a large mammal that lives in Arctic regions. Polar bears eat animals such as seals and ﬁsh. 
-Their white fur camouﬂages 
-them against the snow and ice where they live.
 
 pole
 poles noun
 1 a long, rounded rod made from wood, metal, or plastic.
+A row of ﬂagpoles.
+2 the most northern and southern end of an imaginary line, or axis, that passes through Earth’s center.
+North Pole
+3 either end of a magnet.
 
 pod
 pods noun
 a long seed case that holds the seeds of some plants.
 
-bean pod
-
-A row of ﬂagpoles.
-
 polish
 polishes polishing polished verb
 to rub something so that it shines.
-
 Polishing shoes.
 
 polish
 polishes noun
 a substance that is rubbed into something to make it shine.
-
-furniture polish
 
 polite
 adjective
@@ -13025,12 +12781,7 @@ well-mannered and pleasant to other people.
 (cid:78) opposite rude
 politely adverb
 
-2 the most northern and southern end of an imaginary line, or axis, that passes through Earth’s center.
-North Pole
 
-South Pole
-3 either end of a magnet.
-politics
 politics
 noun
 the work of government.
@@ -13044,7 +12795,6 @@ Pollen is made by the male parts of a ﬂower.
 pollinate
 pollinates pollinating pollinated verb
 to transfer pollen from the male to the female parts of a plant so that a seed can grow.
-
 The bee pollinated the ﬂower.
 
 pollute
@@ -13056,16 +12806,15 @@ pollution noun
 pond
 ponds noun
 an area of fresh water that is smaller than a lake.
-
 duck pond
 
 pony
 ponies noun
 a small horse (see horse on page 102).
+
 pool
 pools noun
 a small area of water, especially one that is made for people to swim in.
-
 swimming pool
 
 poor
@@ -13107,13 +12856,9 @@ porcupine
 porcupines noun
 a large rodent that is covered in lots of sharp spines called quills. A porcupine can raise the quills to protect itself from its enemies. Porcupines eat bark, buds, twigs, and leaves.
 
-portable 
-DVD player
-
 portion
 portions noun
 a part or share of something.
-
 A portion of ﬁsherman’s pie.
 
 portrait
@@ -13133,8 +12878,6 @@ porpoise
 porpoises noun
 a sea mammal that belongs to the whale family. 
 Porpoises eat shrimp, ﬁsh, squid, and other sea animals.
-
-(cid:78) say poor-pus
 
 port
 ports noun
@@ -13184,29 +12927,25 @@ pouch
 pouches noun
 1 a small, open bag or sack that is used for carrying things like money.
 2 a part of the body that is shaped like a bag or pocket (see mammal on page 124).
+3 the place where a person is supposed to be when working.
 
 pounce
 pounces pouncing pounced verb
 to spring forward suddenly and grab hold of something.
+The cat pounced on the leaf.
 
 pot
 pots noun
 a container with high sides.
-
-The cat pounced
-on the leaf.
+coffee pot
 
 pour
 pours pouring poured verb
 to tip a container up so that its contents ﬂow out.
 
-3 the place where a person is supposed to be when working.
-
 poster
 posters noun
 a large notice or picture that is displayed on a wall as an ad or for decoration.
-
-coffee pot
 
 potato
 potatoes noun
@@ -13229,7 +12968,6 @@ The family lived in poverty.
 powder
 noun
 a mass of very ﬁne, dry grains of a substance.
-
 washing powder
 
 power
@@ -13237,9 +12975,7 @@ powers noun
 1 the ability to do something.
 2 the ability to control what someone else does.
 3 energy or force.
-
 Batteries provide the power for this ﬂashlight.
-(cid:78) rhymes with our
 
 practical
 adjective
@@ -13252,10 +12988,9 @@ You need practical experience for this job.
 practice
 practices practicing practiced verb
 to do something over and over again in order to be good at it.
-
 Practicing the piano.
 practice noun
-praise
+
 praise
 praises praising praised verb
 to tell someone that what they have done is very good.
@@ -13269,21 +13004,18 @@ prayer noun
 precaution
 precautions noun
 care or action taken in advance to prevent something from happening.
-Locks are a precaution
-against theft.
+Locks are a precaution against theft.
 (cid:78) say pre-kaw-shun
 
 precious
 adjective
 very valuable or special to someone.
-
 The ring was very precious.
 (cid:78) say presh-us
 
 precise
 adjective
 exact or accurate.
-
 Stopwatches measure the precise time.
 (cid:78) say pri-sise
 
@@ -13291,18 +13023,19 @@ predict
 predicts predicting predicted verb
 to say what is going to happen in the future.
 prediction noun
+
 preen
 preens preening preened verb
 to clean and arrange feathers with the beak. 
 Birds preen themselves.
 
 prepare
-prepares preparing prepared verb to make something or yourself ready.
+prepares preparing prepared verb
+to make something or yourself ready.
 
 prefer 
 prefers preferring preferred verb
 to like something or someone better than another.
-
 She pointed to the pair of skates she preferred.
 preferable adjective
 
@@ -13311,8 +13044,6 @@ adjective
 expecting 
 a baby.
 pregnancy noun
-
-Preparing sandwiches for lunch.
 
 preposition
 prepositions noun
@@ -13334,13 +13065,11 @@ preserve
 preserves preserving preserved verb
 1 to keep something the way it is.
 2 to keep food so that it lasts.
-Fruit preserved
-in a jar.
+Fruit preserved in a jar.
 
 press
 presses pressing pressed verb
 to squeeze or push something down, often in order to ﬂatten it.
-
 Pressing ﬂowers.
 
 pretend
@@ -13357,17 +13086,11 @@ prejudices noun
 a strong feeling about something, which has been formed unfairly or before all the facts are known.
 (cid:78) say pre-joo-dis
 
-(cid:78) say prez-unt
-
 present
 presents presenting presented verb
 to award or give something to someone.
 The judge presented the rider with a cup.
 (cid:78) say pri-zent
-
-He pretended
-to be a cowboy.
-pretence noun
 
 pretty
 adjective
@@ -13398,11 +13121,15 @@ prison
 prisons noun
 a secure place in which criminals are kept as punishment.
 
-prince / princess
-princes / princesses noun
-a son or daughter of a king or queen. The wife of a prince is also a princess.
-(cid:78) prince is male and princess
-is female
+prince
+princes
+a son or daughter of a king or queen
+(cid:78) prince is male
+
+princess
+princesses noun
+daughter of a king or queen. The wife of a prince is also a princess.
+(cid:78) princess is female
 
 principle
 principles noun
@@ -13412,6 +13139,7 @@ Scientiﬁc principles.
 print
 prints printing printed verb
 1 to write the letters of words separately, rather than with linked letters.
+2 to put words, pictures, or patterns onto paper, using paint or ink, and printing blocks.
 
 private
 adjective
@@ -13431,12 +13159,9 @@ to poke or push something, often with something sharp.
 produce
 produces producing produced verb
 1 to make something happen.
-The magician produced
-a rabbit out of his hat.
+The magician produced a rabbit out of his hat.
 2 to make, grow, manufacture, or create something.
-
-The orange trees produced
-a large crop of fruit this year.
+The orange trees produced a large crop of fruit this year.
 (cid:78) say pruh-doos
 product noun
 production noun
@@ -13452,24 +13177,16 @@ price
 prices noun
 the amount of money needed to buy something.
 
-2 to put words, pictures, or patterns onto paper, using paint or ink, and printing blocks.
-
 prickly
 adjective
 having many little sharp points or needles.
-
-Printing a picture.
-printed adjective
-
-printer
-noun
-a machine that prints on paper, usually linked to a computer.
-
 A prickly cactus.
 (cid:78) comparisons pricklier prickliest
 prick verb
 
-The prize was a silver cup.
+printer
+noun
+a machine that prints on paper, usually linked to a computer.
 
 probable
 adjective
@@ -13480,9 +13197,6 @@ problem
 problems noun
 something that is difﬁcult to do or hard to understand.
 
-farm produce
-(cid:78) say pro-doos
-
 process
 processes noun
 the method of making or doing something.
@@ -13491,7 +13205,6 @@ the method of making or doing something.
 procession
 processions noun
 a line of people or vehicles following each other.
-
 A procession of musicians.
 
 profession
@@ -13506,7 +13219,7 @@ adjective
 He took professional advice.
 2 earning a living from an occupation that is not usually thought of as a job.
 A professional actor.
-proﬁle
+
 proﬁle
 proﬁles noun
 the side view of a face or object.
@@ -13529,16 +13242,14 @@ This program sorts for me.
 progress 
 noun
 the process of moving forward or improving.
-
-She made slow progress
-through the swamp.
+She made slow progress through the swamp.
 progress verb
 
 prohibit 
 prohibits prohibiting prohibited verb
 to ban or to forbid someone from doing something.
-
 Smoking is prohibited.
+
 project
 projects noun
 a piece of work involving research and study of a particular subject.
@@ -13549,26 +13260,17 @@ to encourage someone to do or say something.
 
 proper
 adjective
-suitable 
-and correct.
+suitable and correct.
 
 prompt
 adjective
 on time, or without delay.
-
-He is doing a project
-on plants.
-
-(cid:78) say prah-jekt
-
 A prompt delivery.
 
 project
 projects projecting projected verb
 to stick out or throw outward.
-
-The rock projected over the valley.
-(cid:78) say pro-jekt
+He is doing a project on plants.
 
 promise 
 promises promising promised verb
@@ -13578,7 +13280,6 @@ promise noun
 promotion
 promotions noun
 1 a campaign to improve the sale of a product or event by advertising it.
-
 The promotion for a new yogurt.
 2 a change to a more important job or position.
 promote verb
@@ -13587,8 +13288,7 @@ pronoun
 pronouns noun
 a word such as “he” or “she” 
 that is used in a sentence to replace a noun.
-Jane was sick today, so she
-didn’t go to school.
+Jane was sick today, so she didn’t go to school.
 
 pronunciation
 pronunciations noun
@@ -13599,7 +13299,6 @@ pronounce verb
 proof 
 noun
 a thing or happening that shows something is true.
-
 The footprint was proof that someone had been there.
 
 propeller
@@ -13625,28 +13324,24 @@ prosecution noun
 protect 
 protects protecting protected verb
 to keep someone or something from being harmed.
-
 Gardening gloves protect your hands from thorns.
 protection noun
 
 protest 
 protests protesting protested verb
 to say very clearly that you disagree with something.
+They protested against the building of a new road.
+(cid:78) say pro-test
+protest noun
 
 prowl 
 prowls prowling prowled verb
 to move around quietly while searching for something.
 
-They protested against the building of a new road.
-(cid:78) say pro-test
-protest noun
-
 proud
 adjective
 feeling very pleased or satisﬁed.
-
-She was proud
-of her new outﬁt.
+She was proud of her new outﬁt.
 (cid:78) say prowd
 proudly adverb
 
@@ -13664,8 +13359,7 @@ is a proverb.
 provide 
 provides providing provided verb
 to supply something that is useful or needed.
-
-The tiger prowled around the tree.
+The runners were provided with drinks along the route.
 
 public
 adjective
@@ -13682,16 +13376,11 @@ a shallow pool of liquid on the ground.
 puff
 puffs noun
 a small, sudden gust of smoke, air or breath.
-
 a puff of smoke
 
 pull
 pulls pulling pulled verb
 to move something with force toward you or in the same direction as you are going.
-
-The runners were provided
-with drinks along the route.
-
 Pulling on a rope.
 
 pulley 
@@ -13709,26 +13398,21 @@ the regular sound of your blood as the heart pumps it through your body.
 pump
 pumps noun
 a device that pushes liquids or gases into or out of something.
-
 bicycle pump
 
 punch 
 punches noun
 1 a hard blow made with your ﬁst.
-
 punch verb
 2 a machine that stamps holes, letters, or patterns in something.
-
 Feeling her pulse.
-
-pump
-pumps pumping pumped verb
-to ﬁll or inﬂate something by forcing air or liquids into it.
-
 hole punch
 3 a sweet drink made by mixing fruit juices and other liquids together. 
 Punch is usually served from a large bowl.
 
+pump
+pumps pumping pumped verb
+to ﬁll or inﬂate something by forcing air or liquids into it.
 Pumping up a balloon.
 
 puncture
@@ -13736,7 +13420,7 @@ punctures noun
 a hole or wound, often made by a sharp pointed object or instrument.
 My tire has a puncture.
 puncture verb
-punish
+
 punish
 punishes punishing punished verb
 to make someone suffer in some way for things they have done wrong.
@@ -13744,22 +13428,18 @@ punishment noun
 
 pupa
 pupae noun
-the stage of an insect’s 
-development when it changes from a larva to a winged insect inside a rounded case (see growth on page 94).
+the stage of an insect’s development when it changes from a larva to a winged insect inside a rounded case (see growth on page 94).
 (cid:78) say pyoo-puh
-ladybug
-pupa
 
 pupil
 pupils noun
 1 a student at school.
-
 2 the small, dark part at the center of your eye that expands or contracts to let in the right amount of light.
 
 puppet
 puppets noun
-a doll or animal ﬁgure that is moved by pulling on
-its strings or by making hand movements inside it.
+a doll or animal ﬁgure that is moved by pulling on its strings or by making hand movements inside it.
+
 puppy
 puppies noun
 a young dog (see pet on page 148).
@@ -13780,8 +13460,6 @@ purse
 purses noun
 a small bag for carrying money and personal things.
 
-(cid:78) say pur-chis
-
 pure
 adjective
 clean, or not mixed with anything.
@@ -13795,8 +13473,6 @@ a color made by mixing red and blue together.
 push
 pushes pushing pushed verb
 to move something away from you by pressing hard against it.
-
-He had to push the car to a garage when it broke down.
 
 put
 puts putting put verb
@@ -13821,7 +13497,6 @@ pyramid
 pyramids noun
 1 a solid shape with a square base and four triangular faces that meet in a point (see shape on page 182).
 2 an ancient tomb or temple shaped like a pyramid.
-
 The pyramids of Egypt.
 (cid:78) say pir-a-mid
 
@@ -13829,14 +13504,6 @@ python
 pythons noun
 a large snake that is found in hot regions. Pythons kill by wrapping themselves around their prey and squeezing. 
 They eat small mammals.
-
-ﬁnger puppet
-
-string 
-puppet
-She put her books into her schoolbag.
-
-(cid:78) say pie-thon
 
 quake
 quakes quaking quaked verb
@@ -13848,14 +13515,10 @@ to have an argument or disagreement with someone.
 (cid:78) say kwor-rul
 quarrel noun
 
-He quaked with fear when he saw the crocodile.
-(cid:78) say kwake
-
 qualify
 qualiﬁes qualifying qualiﬁed 
 verb
-to prove that you are ﬁt 
-or suitable for something.
+to prove that you are ﬁt or suitable for something.
 I hope I qualify for the team!
 (cid:78) say kwol-uh-ﬁe
 qualiﬁcation noun
@@ -13871,21 +13534,18 @@ She has many good qualities.
 quantity
 quantities noun
 an amount or number.
-
 A large quantity of crates.
 (cid:78) say kwon-ti-tee
 
 quarry
 quarries noun
 a place where stone, sand, or gravel is cut out of the ground.
-
 A stone quarry.
 (cid:78) say kwor-ee
 
 quarter
 quarters noun
 1 one of four equal pieces of a whole.
-
 2 a coin that is equal to 25 cents, or a quarter of a dollar.
 
 quartz
@@ -13905,7 +13565,6 @@ a female ruler of a country or the wife of a king.
 query
 queries noun
 a question, because you have a doubt or problem about something.
-
 The teacher helped to answer the student’s query.
 (cid:78) say kweer-ree
 query verb
@@ -13939,13 +13598,9 @@ quills noun
 a large feather, especially one that has been made into an ink pen.
 (cid:78) say kwil
 
-quill 
-pen
-
 quilt
 quilts noun
 a thick, soft cover for a bed.
-
 patchwork quilt
 
 quite
@@ -13963,12 +13618,14 @@ quote
 quotes quoting quoted verb
 to repeat something that someone else has said or written.
 quotation noun
-rabbi
 
 racket
 rackets noun
 1 a bat with strings used for playing sports such as tennis and badminton (see 
 sport on page 197).
+badminton racket
+2 a loud, annoying noise.
+He was making a racket with his drums.
 
 rabbi
 rabbis noun
@@ -13983,20 +13640,14 @@ Rabbits are normally active in the evening or at night. They eat grass, roots, a
 race
 races noun
 1 a competition of speed.
-
 A swimming race.
 race verb
 2 a group of people who share the same ancestors and may share some physical characteristics.
 racial adjective
-badminton racket
-
-2 a loud, annoying noise.
-He was making a racket with his drums.
 
 radar
 noun
 a device that tells you the position and speed of ships, cars, and aircraft by sending out radio waves.
-
 An airport radar screen.
 (cid:78) say ray-dar
 
@@ -14005,6 +13656,7 @@ radiators noun
 1 a thin, metal tank with hot water ﬂowing through it that heats a room.
 2 a metal tank that allows air to cool the hot water in the engine of a vehicle.
 (cid:78) say ray-dee-ay-tor
+
 radio
 radios noun
 a device that sends or receives electrical signals and changes them into sound.
@@ -14016,9 +13668,7 @@ a small, torn piece of cloth.
 radioactivity
 noun
 the energy released by the center of atoms breaking up in some substances. High amounts of radioactivity can be harmful to living things.
-
-They tested for radioactivity
-outside the nuclear power plant.
+They tested for radioactivity outside the nuclear power plant.
 (cid:78) say ray-dee-oh-ak-tiv-i-tee
 radioactive adjective
 
@@ -14029,6 +13679,8 @@ a straight line drawn from the center of a circle to its outer edge.
 raft
 rafts noun
 1 a ﬂoating platform made of logs that have been tied tightly together.
+2 a hollow mat made of rubber or plastic and ﬁlled with air that can be used as a boat.
+life raft
 
 rage
 rages noun
@@ -14046,14 +13698,8 @@ rails noun
 1 a long bar for holding on to, or for hanging clothes on.
 Use the rail to help you climb the stairs.
 2 a long line of metal track that trains run along.
-
 3 the railroad.
-We traveled by rail
-around Europe.
-
-2 a hollow mat made of rubber or plastic and ﬁlled with air that can be used as a boat.
-
-life raft
+We traveled by rail around Europe.
 
 railroad
 railroads noun
@@ -14067,9 +13713,6 @@ to gather up leaves into a pile or to smooth over soil.
 rain
 rains noun
 water that falls from the clouds in drops.
-
-rain verb
-rainy adjective
 
 rainbow
 rainbows noun
@@ -14091,27 +13734,22 @@ a dense, hot, wet jungle that grows in tropical areas.
 rally
 rallies noun
 1 a large, public meeting held to discuss something that is important or worrying to people.
+The party held a political rally in the park.
+2 a long-distance car race that tests drivers’ skills.
 
 ran
 from the verb to run
-1 Last week, he ran
-a 400-meter race.
+1 Last week, he ran a 400-meter race.
 2 She ran a bookstore.
 
 ranch
 ranches noun
 a huge farm where cattle or other animals are reared.
 
-The party held a political rally
-in the park.
-2 a long-distance car race that tests drivers’ skills.
-
 ram
 rams noun
 1 a male sheep.
-
 2 a device for pushing against something with force.
-
 They used the log as a ram to break down the door.
 ram verb
 
@@ -14132,7 +13770,6 @@ rare
 adjective
 unusual or not common.
 A rare blue morpho butterﬂy.
-
 (cid:78) comparisons rarer rarest
 (cid:78) opposite common
 
@@ -14147,7 +13784,6 @@ a patch of red, itchy spots on your skin.
 raspberry
 raspberries noun
 a juicy, red fruit that grows on a bush with thorns.
-
 (cid:78) say raz-bair-ee
 
 rat
@@ -14158,10 +13794,10 @@ They can gnaw through stone, wood, and even metal with their strong front teeth.
 rate
 rates noun
 1 a speed.
-Ostriches can run at a rate
-of 30 miles (50 km) per hour.
+Ostriches can run at a rate of 30 miles (50 km) per hour.
 2 a level of payment.
 The vacation resort charges high rates for its apartments.
+
 ready
 adjective
 prepared, or able to start.
@@ -14174,7 +13810,6 @@ actually existing, or genuine.
 realize
 realizes realizing realized verb
 to become aware, or to understand completely.
-
 She did not realize the puddle was so deep.
 
 really
@@ -14187,16 +13822,13 @@ rears rearing reared verb
 1 to feed and care for young animals as they grow up.
 Our cat has reared 10 kittens.
 2 to rise up on the back legs.
-A rearing
-horse.
+A rearing horse.
 
-rather
 rather
 adverb
 1 fairly or quite.
 It was rather hot the other day.
 2 preferably.
-
 She’d rather have fruit than cake.
 
 ration
@@ -14209,7 +13841,6 @@ ration verb
 raw
 adjective
 1 in its natural condition, not processed or cooked.
-
 raw carrot
 2 not experienced.
 A raw recruit.
@@ -14224,10 +13855,8 @@ rays of light
 reach
 reaches reaching reached verb
 1 to stretch out your hand and arm to touch something.
-
 2 to arrive at a place.
-After a long trek they reached
-the other side of the island.
+After a long trek they reached the other side of the island.
 
 react
 reacts reacting reacted verb
@@ -14244,10 +13873,10 @@ read
 reads reading read verb
 to look at and understand written words.
 (cid:78) rhymes with seed
+
 rear
 noun
 the back of something, or the part that is opposite or behind the front.
-
 The rear of a car.
 rear adjective
 
@@ -14269,7 +13898,6 @@ a written or printed piece of paper that shows you have received and paid for so
 receive
 receives receiving received verb
 to take something given or sent to you.
-
 She received lots of presents for her birthday.
 
 recent
@@ -14287,21 +13915,15 @@ record
 records noun
 1 a round plastic disc with tiny grooves in the surface, on which sounds are recorded.
 2 information that is written or printed.
-
-She kept a record
-of the day’s events in her diary.
+She kept a record of the day’s events in her diary.
 3 the fastest or best performance in an activity or sport.
-They tried to beat the record
-for the number of people who can stand on a chair.
+They tried to beat the record for the number of people who can stand on a chair.
 (cid:78) say rek-urd
 
 recorder
 recorders noun
 a small wooden or plastic wind instrument that you blow into. 
 The air is forced out through holes, which you cover with your ﬁngers to make different sounds.
-
-recipe book
-(cid:78) say res-uh-pee
 
 recite
 recites reciting recited verb
@@ -14317,31 +13939,25 @@ What do you reckon that is?
 recognize
 recognizes recognizing recognized verb
 to see someone or something and know who they are or what it is.
+He recognized his friend’s bike because of the red bags.
+recognition noun
 
 recover
 recovers recovering recovered verb
 1 to get better after being ill.
 2 to get something back.
-
-materials for recycling
+He recovered his hat from the lake.
 
 red
 noun
 a color.
 
-He recognized his friend’s bike because of the red bags.
-recognition noun
-
-He recovered his hat from the lake.
-
 record
 records recording recorded verb
-1 to store sounds or pictures, on tape, ﬁlm, record, compact disc (CD), or digital versatile/
-video disc (DVD).
+1 to store sounds or pictures, on tape, ﬁlm, record, compact disc (CD), or digital versatile/video disc (DVD).
+Recording a song.
 2 to write down information on paper.
 (cid:78) say ree-kord
-
-Recording a song.
 
 reduce
 reduces reducing reduced verb
@@ -14367,19 +13983,14 @@ recycle
 recycles recycling recycled verb
 to use things again, often by turning garbage into new products. Glass, plastics, paper, and metal can all be recycled.
 
-reﬁnery
-
 reed
 reeds noun
 a tall plant with a long, stiff, straight stem that grows in wet areas. 
 Reeds are used to make house roofs and paper.
 
-common reed
-
 reef
 reefs noun
 a raised, narrow ridge of rock, sand, or coral, just above or below the surface of the sea.
-
 coral reef
 
 referee
@@ -14395,22 +14006,27 @@ reference noun
 reﬁnery
 reﬁneries noun
 a large factory where natural substances are processed into other products. Oil is made into gasoline at a reﬁnery.
-
 oil reﬁnery
-reﬂect
+
 reﬂect
 reﬂects reﬂecting reﬂected verb
 1 to throw back light, heat, or sound that has come from somewhere else.
 Shiny surfaces reﬂect light.
 2 to give back, or show, an image of something or someone.
+His face was reﬂected in the mirror.
+reﬂection noun
 
 refuse
 refuses refusing refused verb
 to say that you will not do something.
+He refused to give her the ball.
 
 rehearse
 rehearses rehearsing rehearsed verb
 to practice doing something before giving a performance in public.
+Rehearsing for a play.
+(cid:78) say ree-hurs
+rehearsal noun
 
 relative
 relatives noun
@@ -14419,22 +14035,13 @@ a member of someone’s family.
 relax
 relaxes relaxing relaxed verb
 to rest and feel comfortable.
-
-He refused to give her the ball.
+She relaxed with her favorite book.
 
 region
 regions noun
 an area or district of a country.
-
-Rehearsing for a play.
-(cid:78) say ree-hurs
-rehearsal noun
-
-She relaxed with her favorite book.
-
-His face was reﬂected
-in the mirror.
-reﬂection noun
+A mountain region.
+(cid:78) say ree-jun
 
 refrigerator
 refrigerators noun
@@ -14457,9 +14064,6 @@ reindeer or reindeers noun
 a deer with large antlers that lives in cold, Arctic regions. 
 Reindeer herds migrate great distances every summer and winter in search of plants to eat. Some reindeer are tamed and used to pull sleighs.
 
-A mountain region.
-(cid:78) say ree-jun
-
 regret
 regrets regretting regretted verb
 to be sorry or sad about something that has happened.
@@ -14470,14 +14074,14 @@ adjective
 1 normal, or happening at certain times.
 A regular bus service.
 2 even in shape or sound.
+These wooden cubes are regular shapes.
+(cid:78) opposite irregular
+regularly adverb
 
 refugee
 refugees noun
 someone who leaves their home and belongings and escapes to another place, usually because he or she is in danger.
 (cid:78) say ref-yoo-jee
-These wooden cubes are regular shapes.
-(cid:78) opposite irregular
-regularly adverb
 
 relay
 relays noun
@@ -14486,7 +14090,6 @@ a team race in which runners take turns carrying a baton and completing parts of
 release
 releases releasing released verb
 to let someone or something go free.
-
 They released balloons in the park to celebrate the event.
 
 reliable
@@ -14506,20 +14109,18 @@ rent verb
 remind
 reminds reminding reminded verb
 to make someone remember something.
+A calendar reminds you of future events.
 
 repair
 repairs repairing repaired verb
 to ﬁx something that is broken.
-
-A calendar reminds you of future events.
+Repairing a bicycle.
+repair noun
 
 remote
 adjective
 far away, distant.
 A remote farmhouse.
-
-Repairing a bicycle.
-repair noun
 
 repeat
 repeats repeating repeated verb
@@ -14529,10 +14130,15 @@ repetition noun
 remove
 removes removing removed verb
 to take something off or away.
+She removed her shoe to get a pebble out.
 
 replace
 replaces replacing replaced verb
 1 to put something back where it came from.
+She replaced the book on the shelf.
+2 to exchange or renew.
+He replaced his bicycle with a bigger, more expensive one.
+replacement noun
 
 replica
 replicas noun
@@ -14568,7 +14174,6 @@ religious adjective
 reluctant
 adjective
 unsure or unhappy about doing something.
-
 He was reluctant to cross the old bridge.
 
 rely
@@ -14580,25 +14185,16 @@ Young birds rely on their mothers for food.
 remain
 remains remaining remained verb
 1 to stay behind.
-
 He remained there alone.
 2 to be left behind.
 remains noun
 3 to stay unchanged.
 She remained calm while everyone else panicked.
 
-She removed
-her shoe to get a pebble out.
-
 renew
 renews renewing renewed verb
 to begin, make, or get again.
 He renewed his bus pass.
-
-She replaced the book on the shelf.
-2 to exchange or renew.
-He replaced his bicycle with a bigger, more expensive one.
-replacement noun
 
 replay
 replays replaying replayed verb
@@ -14608,16 +14204,14 @@ replays replaying replayed verb
 represent
 represents representing represented verb
 to mean or show something.
-
 Sailors use this ﬂag to represent the word “yes” when they signal to other ships.
-reptile
+
 reptile
 reptiles noun
 one of a group of cold-blooded 
-animals that have a backbone, lungs for breathing, dry, scaly skin, and clawed ﬁngers 
-or toes. Reptiles lay their eggs on dry land.
-
+animals that have a backbone, lungs for breathing, dry, scaly skin, and clawed ﬁngers or toes. Reptiles lay their eggs on dry land.
 ﬂying gecko
+
 request
 requests requesting requested verb
 to ask for something formally.
@@ -14628,13 +14222,11 @@ request noun
 rescue
 rescues rescuing rescued verb
 to save someone who is injured or in danger.
-
 (cid:78) say res-kyoo
 
 research
 researches researching researched verb
 to study a subject in order to learn new facts or develop new ideas.
-
 Researching objects found on the seashore.
 research noun
 
@@ -14646,7 +14238,6 @@ He resisted temptation.
 resort
 resorts noun
 a place where many people go for a vacation.
-
 A ski resort.
 
 resource
@@ -14689,13 +14280,12 @@ responsible
 adjective
 1 sensible and dependable.
 2 in charge of something.
+The boy was responsible for feeding his dog.
 
-return
 result
 results noun
 the effect of certain actions or events.
-What was the result
-of the experiment?
+What was the result of the experiment?
 result verb
 
 retire
@@ -14705,8 +14295,10 @@ to give up working, usually because of old age or illness.
 return
 returns returning returned verb
 1 to come back from somewhere.
-
-The boy was responsible for feeding his dog.
+The boomerang returned easily to his hand.
+2 to give something back to a person.
+She returned the book he had lent her.
+return noun
 
 rest
 noun
@@ -14721,24 +14313,17 @@ at the teacher’s feet.
 restaurant
 restaurants noun
 a place where people go to buy and eat a meal.
-
 (cid:78) say res-tur-ont
 
 restless
 adjective
 unable to stay still or relax.
-
 The baby had a restless night.
 
 restore
 restores restoring restored verb
 to ﬁx something old or worn, so that it looks new or can be used again.
 
-The boomerang returned easily to his hand.
-2 to give something back to a person.
-She returned the book he had lent her.
-return noun
-revenge
 revenge
 noun
 harm or injury that a person does to another, in return for something unpleasant previously done to them.
@@ -14746,13 +14331,11 @@ harm or injury that a person does to another, in return for something unpleasant
 reverse
 reverses reversing reversed verb
 to go backward, usually in a vehicle.
-
 She reversed her motorcycle into the parking space.
 
 reverse
 adjective
 at the opposite side, inside, or back of an object.
-
 The reverse side of the coat is lined with white material.
 reverse noun
 
@@ -14768,9 +14351,11 @@ revolutions noun
 to change the government of their country.
 The French Revolution.
 (cid:78) say rev-uh-loo-shun
+
 reward
 reward noun
 a prize given because of a good thing someone has done.
+They offered a reward to anyone who found their cat.
 
 rhythm
 rhythms noun
@@ -14780,11 +14365,9 @@ a regular pattern of sound, such as beats in music.
 ride
 rides riding rode ridden verb
 1 to travel on the back of a horse.
-
-$50 
-reward
-
-They offered a reward to anyone who found their cat.
+2 to travel on anything that moves.
+Riding on a Ferris wheel.
+ride noun
 
 rhinoceros
 rhinoceroses noun
@@ -14798,33 +14381,27 @@ ribbon
 ribbons noun
 a thin strip of decorative material often used for tying hair or wrapping presents.
 
-2 to travel on anything that moves.
-
-Riding on a Ferris wheel.
-ride noun
-
 ridiculous
 adjective
 crazy, funny, or not making sense.
+She looked ridiculous.
+(cid:78) say ri-dik-yuh-lus
 
 rice
 noun
 a grasslike plant that grows in warm, wet regions. The small white or brown grains can be cooked and eaten.
-
+cooked rice
 (cid:78) say ry-noss-er-rus
 
 rhubarb
 noun
 a large-leaved plant. Its long stems can be cooked and eaten as a dessert.
-
 (cid:78) say roo-barb
 
 rhyme
 rhymes noun
 words that have the same or similar sound and are often found in a poem.
 (cid:78) say rime
-
-cooked rice
 
 rich
 adjective
@@ -14838,9 +14415,6 @@ riddle
 riddles noun
 a word puzzle in which you have to guess the answer from clues.
 
-She looked ridiculous.
-(cid:78) say ri-dik-yuh-lus
-
 right
 adjective
 1 the opposite direction to left.
@@ -14851,19 +14425,19 @@ right noun
 
 right angle
 right angles noun
-an angle that measures 90 degrees, formed by two lines that are perpendicular to one another (see shape
-on page 182).
+an angle that measures 90 degrees, formed by two lines that are perpendicular to one another.
 The four inside corners of a square are right angles.
 
 rim
 rims noun
 the edge or border of something.
-
 He looked over the rim of the volcano into the crater.
 
 ring
 rings ringing rang rung verb
 1 to strike metal or play a bell so that it makes a pleasant sound.
+2 to sound or press a doorbell.
+I rang the doorbell three times but no one answered the door. 
 
 riot
 riots noun
@@ -14874,9 +14448,7 @@ among a crowd of people who are angry or protesting about something.
 rip
 rips ripping ripped verb
 to tear something, usually cloth or paper.
-
-2 to sound or press a doorbell.
-I rang the doorbell three times but no one answered the door. 
+He ripped the piece of paper in half.
 
 ring
 rings noun
@@ -14887,9 +14459,6 @@ on page 112).
 road
 roads noun
 a path for vehicles to travel on, usually with a hard, smooth surface.
-
-He ripped
-the piece of paper in half.
 
 ripe
 adjective
@@ -14908,12 +14477,11 @@ to wash something in water with no soap in it.
 ripple
 ripples noun
 a small wave on the surface of water.
+When the duck dived, it made ripples on the water’s surface.
 
 roast
 roasts roasting roasted verb
 to cook food in a hot oven or over a ﬁre.
-
-When the duck dived, it made ripples on the water’s surface.
 
 rise
 rises rising rose risen verb
@@ -14931,6 +14499,7 @@ risky adjective
 river
 rivers noun
 a large stream of water that ﬂows into another river, a lake, or the ocean.
+
 rob
 robs robbing robbed verb
 to steal from someone, often by using violence.
@@ -14944,14 +14513,12 @@ a person who robs you of something, usually money or goods.
 robot
 robots noun
 a machine that can imitate some human actions. Robots are often used in factories, but can also be used in homes.
-
 A toy robot runs on batteries.
 
 rock
 rocks noun
 a hard, natural, nonliving substance.
 Mountains are made up mostly of rock.
-
 granite rock
 rocky adjective
 
@@ -14963,9 +14530,7 @@ rocking chair
 roll
 rolls noun
 1 paper, cloth, ﬁlm, or other material that has been wound onto a tube.
-
 rolls of wrapping paper
-
 2 a rounded piece of bread or pastry.
 
 root
@@ -14982,7 +14547,6 @@ rocket
 rockets noun
 1 an engine that powers a spacecraft. 
 Hot gases are released from the rear of the engine, causing the craft to move forward.
-
 2 a type of ﬁrework that shoots into the sky and explodes.
 
 rode
@@ -14997,9 +14561,10 @@ a small, usually nocturnal mammal with long front teeth for gnawing food. Some r
 roll
 rolls rolling rolled verb
 1 to move by turning over and over.
-
-bread 
-rolls
+The logs rolled down the hill.
+2 to move on wheels.
+3 to tilt from side to side, like a ship on a rough sea.
+4 to ﬂatten something by moving a tool over it.
 
 roof
 roofs noun
@@ -15009,6 +14574,9 @@ roofs noun
 room
 rooms noun
 1 one of the separate areas inside a building.
+bathroom
+2 space.
+Is there any room in the car for me?
 
 rough
 adjective
@@ -15025,7 +14593,6 @@ shaped like a circle, with no corners.
 route
 routes noun
 the path you take to get from one place to another.
-
 We drew our route on the map in red.
 (cid:78) say root
 
@@ -15037,14 +14604,11 @@ a regular activity.
 row
 rows noun
 a line of several things next to each other.
-
 (cid:78) rhymes with toe
 
 row
 rows rowing rowed verb
 to make a boat move forward by pulling it through the water with oars.
-
-coil of rope
 
 rose
 roses noun
@@ -15062,41 +14626,31 @@ rotten adjective
 rotate
 rotates rotating rotated verb
 to turn around a central point like a wheel does.
-
 The Earth rotates on its axis.
 rotation noun
-The logs rolled down the hill.
-2 to move on wheels.
-3 to tilt from side to side, like a ship on a rough sea.
-
-bathroom
-2 space.
-Is there any room in the car for me?
 
 roost
 roosts roosting roosted verb
 to settle down for the night, usually done by birds.
 
-4 to ﬂatten something by moving a tool over it.
 rugged
 adjective
 1 having a rough, uneven surface.
 A rugged landscape.
-
-rule
-rules noun
-an instruction of what must or must not be done, for example, in a game.
-
 2 not regular, or tough and strong.
 The actor had a rugged face.
 3 stormy.
 Rugged weather.
 (cid:78) say rug-id
 
+rule
+rules noun
+an instruction of what must or must not be done, for example, in a game.
+
 ruin
 ruins noun
 the broken remains of a building.
-
+She ruined her top by spilling ink on it.
 ruined adjective
 
 ruin
@@ -15124,6 +14678,8 @@ a tale passed from one person to another about something that may not be true.
 run
 runs running ran verb
 1 to move quickly on your legs.
+2 to organize something.
+He runs a swim club.
 
 royal
 adjective
@@ -15132,7 +14688,6 @@ to do with a king, queen, or members of his or her family.
 rub
 rubs rubbing rubbed verb
 to press something backward and forward over the surface of something else.
-
 She rubbed her wet hair with a towel.
 
 rubbish
@@ -15147,13 +14702,7 @@ speaking or behaving in a way that does not show respect.
 rug
 rugs noun
 a small carpet made of thick material.
-
 a cotton bath rug
-
-She ruined her top by spilling ink on it.
-
-2 to organize something.
-He runs a swim club.
 
 runway
 runways noun
@@ -15173,20 +14722,17 @@ to hurry, or to do something quickly.
 rust
 noun
 the red-brown coating that forms on some metals when they get wet.
-
 The sickle was covered with rust.
 
 rustle
 rustles rustling rustled verb
 to make a soft, whispering sound.
-The leaves on the tree rustled
-in the wind.
+The leaves on the tree rustled in the wind.
 
 rye
 noun
 a grass with light-brown 
 grains, grown to make bread and food for cattle.
-Ss
 
 safari
 safaris noun
@@ -15212,8 +14758,6 @@ saddle
 saddles noun
 a seat for a rider on a horse or a bicycle (see horse on page 102 and transportation
 on page 221).
-
-(cid:78) say sa-far-ree
 
 safe
 adjective
@@ -15245,9 +14789,6 @@ salad
 salads noun
 a mixture of vegetables, fruit, or other foods, usually served cold.
 
-mixed 
-salad
-
 salary
 salaries noun
 an amount of money regularly paid to someone for work they have done.
@@ -15256,20 +14797,15 @@ A monthly salary.
 sale
 sales noun
 1 the act of offering something to be sold.
-
-FOR 
-SALE
+The house is for sale.
+2 an event where things are sold at reduced prices.
+Half-price sale!
 
 said
 from the verb to say
 1 She said “Good morning.”
 2 The clock said half past four.
 
-The house is for sale.
-2 an event where things are sold at reduced prices.
-Half-price sale!
-
-horse saddle
 saliva
 noun
 the ﬂuid that is produced in your mouth to help you to chew and digest food.
@@ -15277,13 +14813,11 @@ the ﬂuid that is produced in your mouth to help you to chew and digest food.
 salmon
 noun
 a large, edible ﬁsh. Salmon hatch in rivers, but then swim to the sea to live. They swim back up rivers to lay their eggs.
-
 (cid:78) say sam-un
 
 salt
 noun
 a substance made of small, white crystals that we put on food in order to add ﬂavor.
-
 salt mill
 salty adjective
 
@@ -15305,6 +14839,8 @@ He looks like the same person who was there yesterday.
 sample
 samples noun
 a small part of something that shows what the rest is like.
+The supermarket was giving away free samples of cheese.
+sample verb
 
 sank
 from the verb to sink
@@ -15314,8 +14850,7 @@ from the verb to sink
 satisfy
 satisﬁes satisfying satisﬁed verb
 to please someone or give someone what they want or need.
-His answer didn’t satisfy
-the teacher.
+His answer didn’t satisfy the teacher.
 satisfaction noun
 
 sauce
@@ -15325,9 +14860,6 @@ a liquid or soft food that is eaten with a meal.
 sari
 saris noun
 a long, light cloth wrapped around the body and shoulder that is worn mainly by women of India, Bangladesh, Nepal, and Sri Lanka.
-
-The supermarket was giving away free samples of cheese.
-sample verb
 
 sand
 noun
@@ -15345,20 +14877,15 @@ sash
 sashes noun
 a band of fabric worn around the waist or over the shoulder.
 
-raspberry
-sauce
-(cid:78) say sawss
-
 saucepan
 saucepans noun
 a metal container with a handle, used for cooking.
-(cid:0)
-
 (cid:78) say sawss-pan
 
 saucer
 saucers noun
 a small, shallow plate that is placed beneath a cup.
+(cid:78) say sawss-ser
 
 sandwich
 sandwiches noun
@@ -15368,8 +14895,6 @@ sat
 from the verb to sit
 1 I sat down on the ﬂoor.
 2 She sat for a painter.
-
-(cid:78) say sawss-ser
 
 satellite
 satellites noun
@@ -15403,7 +14928,6 @@ a tool for cutting wood that has a handle and a blade with sharp teeth.
 saw
 saws sawing sawed verb
 to use a saw.
-
 Sawing a plank of wood.
 
 saw
@@ -15416,7 +14940,7 @@ says saying said verb
 “Hurry up!” I said.
 2 to give a message or some information.
 The sign says “No Entry.”
-scald
+
 scald
 scalds scalding scalded verb
 to burn with hot liquid or steam.
@@ -15425,9 +14949,9 @@ to burn with hot liquid or steam.
 scale
 scales noun
 1 a series of regular marks along a line used for measuring.
-Thermometers have a scale
-for measuring temperature.
+Thermometers have a scale for measuring temperature.
 2 a set sequence of musical notes going from the highest to the lowest, or from the lowest to the highest.
+This model of a building has been made to scale.
 
 scarce
 adjective
@@ -15439,27 +14963,22 @@ scare
 scares scaring scared verb
 1 to become frightened.
 2 to make someone else frightened.
-
 3 a small, hard plate on the skin of a ﬁsh, insect, or reptile (see ﬁsh on page 79, insect on page 108, reptile on page 168).
 4 the size of a map or a model compared with the actual size of the object.
-
 The bear appeared suddenly and scared him.
 
 scarecrow
 scarecrows noun
 a ﬁgure made from sticks and old clothes that is used to scare birds away from crops.
 
-This model of a building has been made to scale.
-
 scales
 noun
 a machine that is used to weigh things.
+kitchen scales
 
 scarf
 scarves noun
 a piece of cloth that you wear around your shoulders, neck, or head for decoration or to keep warm.
-
-kitchen scales
 
 scar
 scars noun
@@ -15470,10 +14989,10 @@ scatter
 scatters scattering scattered verb
 to spread in many different directions. 
 The wind scattered the seeds.
+
 scavenger
 scavengers noun
 an animal that feeds on rotting meat and garbage.
-
 scavenge verb
 
 scheme
@@ -15509,7 +15028,6 @@ someone who does scientiﬁc work.
 scissors
 noun
 a tool with handles and two blades joined together. Scissors are used for cutting things, such as paper and hair.
-
 (cid:78) say siz-urz
 
 scold
@@ -15517,61 +15035,51 @@ scolds scolding scolded verb
 to speak to someone angrily because they have done something wrong.
 My father scolded me for being late.
 
-A winter scene.
-(cid:78) say seen
-
 scenery
 noun
 1 the way a place looks.
 The scenery in the mountains was amazing.
 2 an artiﬁcial background used in a play or a ﬁlm.
-
-(cid:78) say see-nuh-ree
+A winter scene.
 
 scent
 scents noun
 1 a trail of smell left by an animal or a person.
 The dog followed the scent.
 2 perfume.
-
 (cid:78) say sent
 
 scoop
 scoops scooping scooped verb
 to lift something up using your hand or a tool shaped like a deep spoon.
+Scooping pasta out of a jar.
 
 scramble
 scrambles scrambling scrambled verb
 1 to crawl or climb fast, using your hands.
-
-scratch
-scratches scratching scratched verb
-1 to make a mark on the surface of something with a sharp object.
-
 He scrambled back up the riverbank.
 2 to mix together. 
 Scrambling an egg.
 
+scratch
+scratches scratching scratched verb
+1 to make a mark on the surface of something with a sharp object.
+The cat scratched the tree.
+2 to rub skin with ﬁngernails 
+or claws to stop it from itching.
+scratch noun
+
 scrap
 noun
 1 a small piece of something.
-
-scraps
-of paper
-
+scraps of paper
 2 anything that is worn out or no longer of any use.
-
 The cars were sold as scrap.
 scrap verb
 
 scrape
 scrapes scraping scraped verb
 to drag an object across something, often removing part of the surface.
-
-The cat scratched the tree.
-2 to rub skin with ﬁngernails 
-or claws to stop it from itching.
-scratch noun
 
 scream
 screams screaming screamed verb
@@ -15583,8 +15091,8 @@ screens noun
 1 a ﬂat surface onto which moving images are projected.
 Some movie theaters have six screens.
 2 a barrier that is used to hide, separate, or protect something.
-
-Scooping pasta out of a jar.
+She dressed behind a screen.
+3 the part of a computer or television on which the picture or text appears.
 
 score
 scores scoring scored verb
@@ -15600,8 +15108,7 @@ scorpion
 scorpions noun
 a small, nocturnal animal that is part of the same animal group as spiders. 
 Scorpions usually live in hot regions. They eat insects and spiders that they kill with the poisonous stingers on their tails.
-
-imperial scorpion
+wimperial scorpion
 
 scowl
 scowls scowling scowled verb
@@ -15625,7 +15132,6 @@ scripts noun
 scrub
 scrubs scrubbing scrubbed verb
 to clean by rubbing hard.
-
 Scrubbing a rabbit hutch.
 
 sculpture
@@ -15633,24 +15139,15 @@ sculptures noun
 a piece of art made from wood, stone, metal, or another solid material.
 Scraping wallpaper off the walls.
 
-She dressed behind a screen.
-3 the part of a computer or television on which the picture or text appears.
-
 sea
 seas noun
 the salt water that covers two-thirds of the Earth’s surface.
-sea life
-sea life
-noun
-all the plants and animals that live in the sea or on the seashore.
 
 seal
 seals noun
 1 a sea mammal usually found in cold seas. Seals eat ﬁsh 
 and are excellent swimmers. Some seals are clumsy on land, where they move by rolling or sliding along.
-
 2 a piece of paper or wax that is used to mark something or to close it so that you can tell whether it has been opened.
-
 wax seal
 
 seal
@@ -15661,10 +15158,10 @@ Seal the envelope.
 search
 searches searching searched verb
 to look hard for something.
+He searched for his ball in the long grass.
+search noun
 
-child’s car safety seat
-
-seat belt second
+second
 seconds noun
 a very short period of time. 
 There are 60 seconds in one minute.
@@ -15678,9 +15175,6 @@ secret adjective
 secretary
 secretaries noun
 a person whose job is to assist other people by making business appointments, writing letters, and keeping records.
-
-He searched for his ball in the long grass.
-search noun
 
 season
 seasons noun
@@ -15697,9 +15191,10 @@ The library has a children’s section.
 secure
 adjective
 1 well fastened.
-
 A secure door.
 secure verb
+2 safe and conﬁdent. 
+My baby brother needs his teddy bear to help him feel secure.
 
 seat
 seats noun
@@ -15712,6 +15207,7 @@ to notice something with your eyes.
 seesaw
 seesaws noun
 a balancing toy. Children play on a seesaw by sitting at either end of a board and rocking up and down.
+
 seize
 seizes seizing seized verb
 to take hold of something suddenly.
@@ -15726,7 +15222,6 @@ I seldom get home before six.
 select
 selects selecting selected verb
 to choose something you want from a number of things.
-
 She selected a pot of paint from the tray.
 selection noun
 
@@ -15743,11 +15238,8 @@ You can see a long way with binoculars.
 
 seed
 seeds noun
-a small, hard part of some ﬂowering plants, from which new plants may grow (see 
-growth on page 94).
-
-sunﬂower 
-seeds
+a small, hard part of some ﬂowering plants, from which new plants may grow
+sunﬂower seeds
 
 seek
 seeks seeking sought verb
@@ -15759,16 +15251,11 @@ seems seeming seemed verb
 to appear to be.
 She seems worried about something.
 
-2 safe and conﬁdent. 
-My baby brother needs his teddy bear to help him feel secure.
-semaphore
 semaphore
 noun
 a way of sending messages by signaling with two ﬂags. The ﬂags are  
 held in different positions to represent each letter of the alphabet. 
-
-The letter “x” 
-in semaphore.
+The letter “x” in semaphore.
 (cid:78) say sem-uh-for
 
 send
@@ -15786,7 +15273,6 @@ sense
 senses noun
 1 one of the ﬁve ways in which we can receive information about the world. 
 The ﬁve senses are sight, hearing, touch, smell, and taste.
-
 You need your sense of hearing to use a telephone.
 2 a feeling.
 A sense of disappointment.
@@ -15794,13 +15280,19 @@ A sense of disappointment.
 She has a lot of sense.
 4 a meaning that can be understood.
 It makes sense.
+
 sensible
 adjective
 thinking clearly or in a practical way.
+She was sensible about dressing for the cold weather.
+sensibly adverb
 
 separate
 separates separating separated verb
 to set apart from each other.
+He separated the yellow marbles from the green ones.
+separate adjective
+separately adverb
 
 serious
 adjective
@@ -15809,10 +15301,7 @@ A serious question.
 2 not smiling or laughing.
 A serious expression.
 3 worrying or dangerous.
-
-He separated the yellow marbles from the green ones.
-separate adjective
-separately adverb
+The fallen tree caused serious damage to the roof.
 
 sequel
 sequels noun
@@ -15838,28 +15327,20 @@ series
 noun
 1 a group of similar things that follow one another in order.
 A series of books on nature.
-
-She was sensible about dressing for the cold weather.
-sensibly adverb
+2 a television or radio show that is broadcast in regular episodes, or a set of novels about the same characters.
 
 sensitive
 adjective
 1 quick to feel, understand, or react to something.
-
 Sensitive hairs on this plant make the leaves close when they are touched.
 2 easily upset or hurt.
-His skin was very sensitive
-where he had been burned.
+His skin was very sensitive here he had been burned.
 
 sentence
 sentences noun
 1 a group of words that make sense together. Sentences start with a capital letter and end with a period. They usually include a verb.
 2 a punishment decided by a judge in a court of law.
-He received a four-year 
-prison sentence.
-
-The fallen tree caused serious
-damage to the roof.
+He received a four-year prison sentence.
 
 servant
 servants noun
@@ -15869,8 +15350,6 @@ serve
 serves serving served verb
 1 to help someone, usually by giving them something they want or need.
 2 to start play in games such as tennis by hitting the ball to your opponent.
-
-2 a television or radio show that is broadcast in regular episodes, or a set of novels about the same characters.
 
 service
 services noun
@@ -15899,16 +15378,12 @@ adjective
 1 extremely bad.
 A severe accident.
 2 strict or hard.
-The rock face was a severe
-test for the climbers.
+The rock face was a severe test for the climbers.
 severely adverb
 
 sew
 sews sewing sewn verb
 to join something together using a needle and thread.
-
-A toy construction set.
-
 Sewing on a shirt button.
 (cid:78) say so
 
@@ -15926,8 +15401,9 @@ The cement took a long time to set.
 settle
 settles settling settled verb
 1 to calm down or stop moving.
-
 The dog settled down to sleep.
+2 to decide or agree about something without any doubts.
+Settle an argument.
 
 sewer
 sewers noun
@@ -15938,23 +15414,19 @@ sex
 sexes noun
 one of two groups, male or female, that people, animals, and plants are divided into.
 
-2 to decide or agree about something without any doubts.
-Settle an argument.
-
 shade
 shades noun
-1 a cool place where the Sun’s 
-direct light doesn’t reach.
+1 a cool place where the Sun’s direct light doesn’t reach.
+She sat in the shade to read.
+shady adjective
+2 a slight difference in color.
+Different shades of paint.
 
 shake
 shakes shaking shook shaken verb
 1 to move something rapidly up and down, or from side to side.
-
-She sat in the shade to read.
-shady adjective
-2 a slight difference in color.
-
-Different shades of paint.
+Shaking hands.
+2 to tremble with fear, shock, or cold.
 
 shadow
 shadows noun
@@ -15971,9 +15443,6 @@ shaggy
 adjective
 having long, rough, untidy hair.
 
-Shaking hands.
-2 to tremble with fear, shock, or cold.
-
 shall
 verb
 a word used to show that something will happen in the future.
@@ -15983,7 +15452,6 @@ I shall go shopping later.
 shallow
 adjective
 not deep.
-
 They played in shallow water.
 
 shame
@@ -15996,11 +15464,8 @@ ashamed adjective
 shampoo
 shampoos noun
 a soapy liquid that is used for washing hair.
-
-(cid:78) comparisons shaggier shaggiest
-
 shampoo verb
-shape
+
 shape
 shapes noun
 the outline or form of an object. 
@@ -16010,25 +15475,26 @@ share
 shares sharing shared verb
 1 to have or use together.
 2 to divide something into parts to give to others.
-
 They shared the melon.
 
 shark
 sharks noun
-a large ﬁsh with rows of sharp teeth that lives in both cold and warm oceans. Sharks eat ﬁsh or small water animals and are able to detect smells and sounds at great distances.
-
+a large ﬁsh with rows of sharp teeth that lives in both cold and warm oceans.
+Sharks eat ﬁsh or small water animals and are able to detect smells and sounds at great distances.
 leopard shark
 
 sharp
 adjective
-with a thin edge or a ﬁne 
-point that may be used for cutting things.
+with a thin edge or a ﬁne point that may be used for cutting things.
 Careful—that knife is sharp!
 (cid:78) comparisons sharper sharpest
 
 shatter
 shatters shattering shattered verb
 1 to break into many pieces.
+When she sang the top notes, the glass shattered.
+2 to ruin someone’s plans, or to make someone upset.
+The loss of their jobs shattered their dreams of buying a home.
 
 shave
 shaves shaving shaved verb
@@ -16050,12 +15516,6 @@ a small building for storing things such as garden tools.
 shed
 sheds shedding shed verb
 to drop, lose, or separate from something.
-
-When she sang the top notes, the glass shattered.
-2 to ruin someone’s plans, or to make someone upset.
-The loss of their jobs shattered
-their dreams of buying a home.
-
 Snakes shed their skins.
 
 sheep
@@ -16065,6 +15525,9 @@ a farm animal reared for its wool and meat.
 shelter
 shelters noun
 a thing that protects someone or something from the weather or from danger.
+The doorway was a shelter from the rain.
+shelter verb
+sheltered adjective
 
 sheer
 adjective
@@ -16085,17 +15548,7 @@ a horizontal piece of wood or metal for storing things on.
 shell
 shells noun
 the hard, outer covering that protects some living things. 
-Eggs, nuts, and animals such as snails, crabs, and tortoises have shells (see reptile
-on page 168).
-
-egg shell
-
-nut shell
-
-The doorway was a shelter
-from the rain.
-shelter verb
-sheltered adjective
+Eggs, nuts, and animals such as snails, crabs, and tortoises have shells
 
 sheriff
 sheriffs noun
@@ -16103,24 +15556,19 @@ a law ofﬁcer whose job is to see that people obey the law in a particular area
 
 shield
 shields noun
-a strong piece of metal or leather that soldiers used to carry in battle to protect their bodies from their opponents’ 
-weapons.
-
+a strong piece of metal or leather that soldiers used to carry in battle to protect their bodies from their opponents’ weapons.
 an ancient Indian shield
+She shielded her eyes from the sun.
 
 shield
 shields shielding shielded verb
 to protect.
-
-crab’s 
-shell
+crab’s shell
 
 shellﬁsh
 noun
 any small, edible water animal that has a shell.
 
-She shielded her eyes from the sun.
-shin
 shin
 shins noun
 the front part of your leg below the knee.
@@ -16132,6 +15580,7 @@ a piece of clothing for covering the top half of your body. Shirts have sleeves 
 shiver
 shivers shivering shivered verb
 to tremble with cold or fear.
+He shivered in the cold wind.
 
 shook
 from the verb to shake
@@ -16140,14 +15589,17 @@ The dog shook himself dry.
 shine
 shines shining shone verb
 to give out or reﬂect light.
+The car headlights shone on the road ahead.
+shiny adjective
 
 shoot
 shoots shooting shot verb
 1 to ﬁre a bullet from a gun or another weapon.
-
-The car headlights shone
-on the road ahead.
-shiny adjective
+She shot at the ducks in the fairground booth, hoping she would win a prize.
+2 to wound or kill with a bullet or other weapon.
+The hunters shot the birds.
+3 to take pictures with a camera.
+She shoots lots of animal photographs.
 
 ship
 ships noun
@@ -16159,12 +15611,6 @@ shipwrecks noun
 The whole of the ship’s cargo was lost in the shipwreck.
 2 the remains of a ship that was destroyed at sea.
 
-She shot at the ducks in the fairground booth, hoping she would win a prize.
-2 to wound or kill with a bullet or other weapon.
-The hunters shot the birds.
-3 to take pictures with a camera.
-She shoots lots of animal photographs.
-
 shop
 shops shopping shopped verb
 to visit a store to look at and buy things.
@@ -16174,8 +15620,6 @@ shop noun
 shore
 shores noun
 the edge of an ocean, sea, or lake.
-
-He shivered in the cold wind.
 
 shock
 shocks noun
@@ -16190,15 +15634,10 @@ shoe
 shoes noun
 a protective covering worn on your feet, often made of leather.
 
-(cid:78) say ship-rek
-seashore
-
 short
 adjective
 1 not long in measurement.
-
 short hair
-
 2 not lasting a long time.
 The movie was very short.
 (cid:78) comparisons shorter shortest
@@ -16215,9 +15654,6 @@ shorten
 shortens shortening shortened verb
 to make something shorter.
 
-She shortened the little girl’s 
-skirt for her.
-
 shorts
 noun
 a pair of short pants that usually do not reach below the knees.
@@ -16231,8 +15667,7 @@ should
 verb
 a word used to show that something must be done, ought to be done, or is expected to happen.
 I should do my homework.
-(cid:78) opposite should not / 
-shouldn’t
+(cid:78) opposite should not / shouldn’t
 (cid:78) always used with another verb
 
 shoulder
@@ -16251,16 +15686,18 @@ a broad spadelike tool that you use to move something, like earth or snow, by sc
 show
 shows showing showed verb
 to allow something to be seen, or to make something clear to other people.
-
 He showed the class his favorite photograph in the book.
 
 shrink
 shrinks shrinking shrank shrunk verb
 to become smaller.
+His sweater had shrunk in the wash.
 
 shufﬂe
 shufﬂes shufﬂing shufﬂed verb
 1 to mix things up to change their order.
+He shufﬂed the cards.
+2 to move by dragging your feet along the ground.
 
 show
 shows noun
@@ -16269,20 +15706,16 @@ a public performance or exhibition.
 shower
 showers noun
 1 a device that sends out a ﬁne spray of water, used for washing your body.
-
-His sweater had shrunk
-in the wash.
-
-shrivel
-shrivels shriveling shriveled verb
-to become small and wrinkled, or dry out.
-Water your plants or they will shrivel and die.
-
 2 a short, sudden rain.
 3 a sudden fall of something in large quantities.
 A shower of meteors.
 (cid:78) rhymes with our
 shower verb
+
+shrivel
+shrivels shriveling shriveled verb
+to become small and wrinkled, or dry out.
+Water your plants or they will shrivel and die.
 
 shred
 shreds noun
@@ -16291,9 +15724,6 @@ a small, narrow strip that has been cut or torn off something.
 shrub
 shrubs noun
 a large plant that is smaller than a tree, often with many stems and little or no trunk.
-
-He shufﬂed the cards.
-2 to move by dragging your feet along the ground.
 
 shut
 shuts shutting shut verb
@@ -16305,6 +15735,8 @@ shut adjective
 shutter
 shutters noun
 1 a hard cover for a window.
+The house has shutterson every window.
+2 the part of a camera inside the lens that opens and closes to allow light to fall onto the ﬁlm.
 
 shrug
 shrugs shrugging shrugged verb
@@ -16315,12 +15747,9 @@ shudders shuddering shuddered verb
 to shake or tremble violently for a short time.
 The thought of spiders makes me shudder.
 
-shreds of paper
-
 shriek
 shrieks shrieking shrieked verb
-to cry out in a high-pitched 
-voice because you are excited or afraid.
+to cry out in a high-pitched voice because you are excited or afraid.
 He shrieked when he saw the mouse.
 (cid:78) say shreek
 shriek noun
@@ -16330,10 +15759,6 @@ adjective
 making a sharp, high sound.
 A shrill whistle.
 (cid:78) comparisons shriller shrillest
-
-The house has shutters
-on every window.
-2 the part of a camera inside the lens that opens and closes to allow light to fall onto the ﬁlm.
 
 shy
 adjective
@@ -16346,6 +15771,7 @@ sick
 adjective
 ill, or not healthy.
 (cid:78) comparisons sicker sickest
+
 sigh
 sighs sighing sighed verb
 to let out a long, deep breath slowly.
@@ -16376,9 +15802,7 @@ as it sailed up the river.
 sign
 signs signing signed verb
 1 to write your signature.
-
-The boy signed his friend’s 
-cast.
+The boy signed his friend’s cast.
 2 to use sign language to communicate with people who have hearing difﬁculties.
 (cid:78) say sine
 
@@ -16389,13 +15813,12 @@ The sign for dollar is “$.”
 2 a movement that expresses a meaning.
 He nodded his head as a sign that he wanted to leave.
 3 a public notice that gives information.
-side
+
 side
 sides noun
 1 the edge of something.
 Triangles have three sides.
 2 the outside surfaces of something, but not the front or back.
-
 A car viewed from the side.
 3 a team or group of people that is against another group.
 Which side are you on?
