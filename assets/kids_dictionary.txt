@@ -18181,10 +18181,10 @@ trying to avoid hurting someone’s feelings.
 She was very tactful when talking about his new haircut.
 (cid:78) opposite tactless
 tactfully adverb
+
 tall
 adjective
 1 very high.
-
 The tall ofﬁce building was surrounded by shorter ones.
 (cid:78) opposite short
 2 having a particular height.
@@ -18194,7 +18194,6 @@ He is 4 feet tall.
 tambourine
 tambourines noun
 a musical instrument that is held in the hand and shaken or tapped to provide a rhythm.
-
 (cid:78) say tam-buh-reen
 
 tame
@@ -18212,7 +18211,6 @@ tan verb
 tangle
 tangles tangling tangled verb
 to twist into an untidy mass of knots.
-
 The kittens tangled the yarn.
 tangle noun
 
@@ -18224,6 +18222,7 @@ tanks noun
 tape
 tapes noun
 1 a long, narrow strip of material such as paper, plastic, or metal.
+2 a strip of plastic coated with magnetic powder that is used for recording sounds, video pictures, and computer information.
 
 tanker
 tankers noun
@@ -18232,16 +18231,13 @@ a vehicle or large ship that carries oil or other liquids.
 tantrum
 tantrums noun
 a noisy display of bad temper.
-
-three kinds of tape
-
-2 a strip of plastic coated with magnetic powder that is used for recording sounds, video pictures, and computer information.
+He had a tantrum when he was told to clean his room.
 
 tape measure
 tape measures noun
 a tape marked in centimeters and inches that is used for measuring length.
-
-He had a tantrum when he was told to clean his room.
+She tapped on his shoulder.
+tap noun
 
 tap
 taps tapping tapped verb
@@ -18254,16 +18250,12 @@ a thick, dark, sticky liquid that is made from coal or wood. Tar is used in maki
 target
 targets noun
 an object that you try to hit when shooting or throwing something.
-
 archery target
 
 tartan
 adjective
 decorated with a special pattern of lines and squares. 
 Tartan patterns originally came from Scotland.
-
-She tapped on his shoulder.
-tap noun
 
 tap
 taps noun
@@ -18272,7 +18264,6 @@ a device that you turn to control the ﬂow of liquid or gas from a pipe.
 tea
 noun
 a drink made by pouring boiling water onto the chopped, dried leaves of the tea plant.
-
 tea plant leaves
 
 task
@@ -18284,8 +18275,6 @@ taste
 noun
 1 one of the body’s ﬁve senses that we use to ﬁnd out the ﬂavor of something. 
 2 the ﬂavor of something when you have licked it or put it in your mouth.
-
-cup of tea
 
 teach 
 teaches teaching taught verb
@@ -18319,17 +18308,14 @@ taxis noun
 a car that you can hire to travel in by paying the driver money (see car on page 39).
 (cid:78) say tak-see
 
-football team
-
 teapot
 teapots noun
 a container with a spout, lid, and handle that is used for making and serving tea.
 tartan scarf
-tear
+
 tear
 tears tearing tore torn verb
 to make a hole or split in something by pulling hard.
-
 The dog tore his pant leg.
 (cid:78) rhymes with care
 tear noun
@@ -18349,20 +18335,16 @@ an instrument with lenses inside it. When you look through it distant things app
 temperature
 temperatures noun
 a measurement of how hot or cold something is.
+She took the child’s temperature.
+(cid:78) say tem-pur-uh-chur
 
 television
 televisions noun
 a piece of electrical equipment that receives pictures and sound that are broadcast by a television station. Television is often shortened to TV.
 
-She took the child’s 
-temperature.
-(cid:78) say tem-pur-uh-chur
-
 temple
 temples noun
 a building where people go to worship.
-
-(cid:78) rhymes with deer
 
 tease
 teases teasing teased verb
@@ -18412,7 +18394,6 @@ adjective
 1 easy to chew or cut.
 A tender piece of steak.
 2 feeling sore when touched.
-
 The lion had a tender paw after stepping on a thorn.
 3 gentle and loving.
 He gave his baby a tender smile.
@@ -18421,20 +18402,15 @@ tenderly adverb
 tennis
 noun
 a game that is played with a racket and ball on a court divided by a net. The players try to hit the ball over the net in a way that makes it hard for their opponent to return it (see sport on page 197).
-
-Buddhist temple
-(cid:78) say tem-pul
+tennis court
 
 temporary
 adjective
 lasting for only a short time.
-
 The box was a temporary bed for the cat.
 (cid:78) say tem-puh-rare-ee
 (cid:78) opposite permanent
 temporarily adverb
-
-tennis court
 
 tense
 adjective
@@ -18470,6 +18446,8 @@ terrorize verb
 test
 tests testing tested verb
 to try something out.
+She tested the liquid to see if it was an acid.
+test noun
 
 term
 terms noun
@@ -18487,19 +18465,11 @@ It was a terrible day.
 terrify
 terriﬁes terrifying terriﬁed verb
 to frighten very badly.
-
 Heights terriﬁed him.
-
-She tested the liquid to see if it was an acid.
-test noun
 
 text
 noun
 the words of something written or printed.
-
-text message
-noun
-a written message sent between cell phones.
 
 textile
 textiles noun
@@ -18508,14 +18478,13 @@ a cloth or fabric made by weaving or knitting.
 texture
 textures noun
 the way something feels when you touch it.
+Sandpaper has a rough texture.
+(cid:78) say teks-chur
 
 theft
 thefts noun
 the act of stealing.
 He reported the theft of the painting to the police.
-
-Sandpaper has a rough texture.
-(cid:78) say teks-chur
 
 thank
 thanks thanking thanked verb
@@ -18526,8 +18495,7 @@ thank you interjection
 thaw
 thaws thawing thawed verb
 to melt or to make something melt.
-The snow started to thaw
-in the sunshine.
+The snow started to thaw in the sunshine.
 thaw noun
 
 theater
@@ -18538,7 +18506,6 @@ a building where plays and shows are performed.
 theme
 themes noun
 a main subject, idea, or topic.
-
 The theme of the costume party was cartoon characters.
 
 theory
@@ -18552,8 +18519,6 @@ thermometers noun
 a device that measures temperature.
 (cid:78) say thur-mom-i-tur
 
-wall thermometer
-thesaurus
 thesaurus
 thesauruses or thesauri noun
 a book that groups words that have similar meanings together.
@@ -18562,9 +18527,7 @@ a book that groups words that have similar meanings together.
 thick
 adjective
 1 large in width or depth.
-
 thick candle
-
 2 packed closely together.
 A thick forest.
 (cid:78) opposite thin
@@ -18580,7 +18543,6 @@ a person who steals things.
 thigh
 thighs noun
 the part of your leg between your knee and your hip.
-
 (cid:78) rhymes with sky
 
 thimble
@@ -18588,9 +18550,18 @@ thimbles noun
 a small, hard covering worn on the end of your ﬁnger 
 when you are sewing. 
 The thimble protects your ﬁnger and helps you push the needle through the fabric.
+
 thin
 adjective
 1 small in width or depth.
+thin candle
+2 hardly covered.
+A thin layer of snow covered the ground.
+(cid:78) opposite thick
+3 not having much fat.
+A thin man.
+(cid:78) opposite fat
+(cid:78) comparisons thinner thinnest
 
 thistle
 thistles noun
@@ -18599,16 +18570,6 @@ a wild plant with prickly leaves and purple, white, or yellow ﬂowers.
 thread
 threads threading threaded verb
 to pass a length of thread or rope through a hole in something.
-
-thin candle
-
-2 hardly covered.
-A thin layer of snow covered the ground.
-(cid:78) opposite thick
-3 not having much fat.
-A thin man.
-(cid:78) opposite fat
-(cid:78) comparisons thinner thinnest
 
 thing
 things noun
@@ -18634,36 +18595,26 @@ thoroughly adverb
 thought
 thoughts noun
 an idea or opinion that you have been thinking about.
+She thought about what she could eat for lunch.
 (cid:78) say thawt
 
 thoughtful
 adjective
 caring about other people’s 
 feelings and needs.
-
-She thought about what she could eat for lunch.
+It was thoughtful of her to help him.
+(cid:78) say thawt-ful
+(cid:78) opposite thoughtless
 
 thirsty
 adjective
 needing something to drink.
-
-It was thoughtful of her to help him.
-(cid:78) say thawt-ful
-(cid:78) opposite thoughtless
 
 thread
 threads noun
 a thin yarn such as cotton or silk, that is used for sewing.
 (cid:78) say thred He was very thirsty after a day without water.
 (cid:78) comparisons thirstier thirstiest
-
-embroidery 
-thread
-
-sewing 
-thread
-
-Threading beads onto a string.
 
 threat
 threats noun
@@ -18700,8 +18651,7 @@ to send something out of your hand and through the air forcefully.
 thud
 thuds noun
 a dull sound made when a heavy object falls on something.
-The book dropped to the ﬂoor 
-with a thud.
+The book dropped to the ﬂoor with a thud.
 
 tick
 ticks noun
@@ -18716,8 +18666,7 @@ a piece of paper that shows that you have paid to do something, such as travel o
 
 thumb
 thumbs noun
-the short, thick ﬁnger set apart from your other ﬁngers 
-at the side of your hand.
+the short, thick ﬁnger set apart from your other ﬁngers at the side of your hand.
 
 tickle
 tickles tickling tickled verb
@@ -18726,14 +18675,11 @@ to touch someone’s skin lightly, making them laugh or squirm.
 tide
 tides noun
 the regular change in the level of the sea that happens twice a day.
-
-(cid:78) say thum
+The tide is out.
 
 thunder
 noun
 a loud, rumbling sound that comes after a ﬂash of lightning during a storm.
-
-The tide is out.
 
 thunderstorm
 thunderstorms noun
@@ -18764,8 +18710,7 @@ a thin piece of decorated baked clay or other material that is used as a wall or
 till
 tills tilling tilled verb
 to prepare land for planting.
-The farmer tilled his ﬁelds 
-before planting the new season’s crops.
+The farmer tilled his ﬁelds before planting the new season’s crops.
 tillable adjective
 
 tilt
@@ -18781,7 +18726,6 @@ He tidied up his room.
 tie
 ties tying tied verb
 1 to fasten something with a knot or bow.
-
 She tied a ribbon in her hair.
 2 to score the same number of points as someone else in a contest.
 They tied for ﬁrst place.
@@ -18795,7 +18739,6 @@ tiger
 tigers noun
 a large, wild mammal that is part of the cat family. Tigers live in many regions of Asia, from tropical forests to cold plains. They hunt at night for their food.
 
-time
 time
 times noun
 1 all of the past, present, and future. 
@@ -18820,24 +18763,25 @@ She tipped the dirty water out of the bucket.
 tissue
 tissues noun
 1 a thin, soft paper used for wiping skin.
-
 He checked the timetable to ﬁnd out when the bus left.
+2 a material that makes up a part of a living thing.
+Brain tissue.
+(cid:78) say tish-yoo
 
 timid
 adjective
 easily frightened or shy.
-The bird was very timid
-and ﬂew away when I moved.
+The bird was very timid and ﬂew away when I moved.
 timidly adverb
 
 tin
 tins noun
 1 a light, soft, silvery metal.
+2 a metal container for putting things in or for preserving food.
 
 tip
 tips noun
 1 the narrow, pointed end of something.
-
 Touching the tip of his nose.
 2 a helpful hint or piece of useful information.
 Do you have any tips for getting rid of stains?
@@ -18847,12 +18791,6 @@ I left the waiter in the restaurant a tip.
 tiptoe
 tiptoes tiptoeing tiptoed verb
 to walk slowly and quietly on your toes.
-
-tin ore
-
-tin can
-
-2 a metal container for putting things in or for preserving food.
 
 tingle
 tingles tingling tingled verb
@@ -18874,10 +18812,6 @@ adjective
 feeling that you would like to sleep or rest.
 She felt tired after working in the garden all day.
 
-2 a material that makes up a part of a living thing.
-Brain tissue.
-(cid:78) say tish-yoo
-
 title
 titles noun
 1 the name of a creative piece of work such as a book, movie, or painting.
@@ -18889,9 +18823,6 @@ toad
 toads noun
 an amphibian similar to a frog, but with a rougher, dryer skin. Toads eat insects, usually live on land, and move along with short hops. 
 They hibernate in winter.
-
-green 
-toad
 
 toadstool
 toadstools noun
@@ -18939,7 +18870,7 @@ Shall we go together?
 toilet
 toilets noun
 a bowl with a seat that is connected to a drain and ﬂushed with water. People use toilets to dispose of waste from the body.
-told
+
 told
 from the verb to tell
 She told her friends what she had done over the weekend.
@@ -18967,12 +18898,9 @@ a piece of equipment that helps you do a job.
 top
 tops noun
 1 the highest point of something.
-
 The bird sat on the very top of the cactus.
 (cid:78) opposite bottom
 2 a lid.
-
-ripe beef tomato
 
 tomorrow
 adverb
@@ -18990,18 +18918,12 @@ tongue
 tongues noun
 a ﬂexible ﬂap of muscle in your mouth that you use to eat, taste, and speak.
 
-hammer
-
 tooth
 teeth noun
 1 one of the hard, white, bonelike structures inside your mouth that you use for biting and chewing.
-
+2 one of the pointed parts on an object such as a saw or a comb.
 3 a spinning toy.
 4 a piece of clothing worn on the upper part of your body.
-
-(cid:78) say tung
-
-2 one of the pointed parts on an object such as a saw or a comb.
 
 tonight
 adverb
@@ -19010,13 +18932,10 @@ Let’s go to the concert tonight.
 tonight noun
 tooth
 
-pajama top
-
 topic
 topics noun
 a subject that is spoken or written about.
-The ﬁre was the main topic
-of conversation for weeks.
+The ﬁre was the main topic of conversation for weeks.
 
 topple
 topples toppling toppled verb
@@ -19026,7 +18945,6 @@ The dominoes toppled over.
 torch
 torches noun
 a burning piece of wood carried as a light.
-
 Olympic torch
 
 tore
@@ -19036,7 +18954,6 @@ She tore her sleeve on a nail.
 tornado
 tornadoes or tornados noun
 a violent, whirling wind that causes great damage to the land and buildings.
-
 (cid:78) say tor-nay-doh
 
 tortoise
@@ -19072,15 +18989,20 @@ Toucans nest in holes in trees and feed on fruit, insects, small lizards, and eg
 touch
 touches touching touched verb
 to put your hand or another part of your body on something.
-
-Can you touch the ﬂoor 
-with your hands, while keeping your legs straight?
+Can you touch the ﬂoor with your hands, while keeping your legs straight?
 (cid:78) say tuch
 touch noun
 
 tough
 adjective
 1 strong and not easy to break or damage.
+Crash helmets are made of tough plastic.
+(cid:78) opposite weak
+2 very difﬁcult.
+A tough problem.
+(cid:78) opposite easy
+(cid:78) say tuff
+(cid:78) comparisons tougher toughest
 
 toward
 preposition
@@ -19089,8 +19011,9 @@ in the direction of.
 trace
 traces tracing traced verb
 1 to copy a picture by placing a sheet of thin paper over it and drawing around the outline.
-
-The horse trotted across the ﬁeld toward her.
+She traced the picture of a tiger from a book.
+2 to follow or discover something by observing marks or clues.
+She traced her family’s history back three centuries.
 
 towel
 towels noun
@@ -19110,21 +19033,10 @@ toy
 toys noun
 an object to play with.
 
-jack-in-the-box
-
-Crash helmets are made of tough plastic.
-(cid:78) opposite weak
-2 very difﬁcult.
-A tough problem.
-(cid:78) opposite easy
-(cid:78) say tuff
-(cid:78) comparisons tougher toughest
-
 tour
 tours noun
 a journey that takes you to see several places.
-We went on a sightseeing tour
-of the city.
+We went on a sightseeing tour of the city.
 (cid:78) say toor
 
 tourist
@@ -19142,20 +19054,14 @@ to pull something along behind.
 The truck towed the car to the garage.
 (cid:78) say toe
 
-She traced the picture of a tiger from a book.
-2 to follow or discover something by observing marks or clues.
-She traced her family’s history back three centuries.
-
 trace
 traces noun
 a small mark or track left behind by something.
-There were traces of a ﬁre 
-in the cave.
+There were traces of a ﬁre in the cave.
 
 track
 tracks noun
 1 a mark or marks left by someone or something that is moving.
-
 The fox left tracks
 in the fresh snow.
 2 a path or rough road. 
@@ -19163,11 +19069,11 @@ They drove the truck up a bumpy track.
 3 a course used for races.
 They did four laps around the running track.
 4 rails laid on the ground for trains to run on.
+
 train 
 trains training trained verb
 1 to practice doing exercises or skills for a sport.
 She trains for three hours a day.
-
 2 to teach or to learn a skill.
 He trained his dog to sit.
 training noun
@@ -19179,15 +19085,13 @@ a person who turns against his or her country or friends by helping an enemy.
 trample
 tramples trampling trampled verb
 to crush something by stepping on it.
-
 The dog trampled all over the ﬂowers.
 
 trampoline
 trampolines noun
 a piece of gymnastic equipment made of strong fabric and attached to a frame by springs.
-
 (cid:78) say tram-puh-leen
-tractor
+
 tractor
 tractors noun
 a farm vehicle with large wheels that is used for pulling heavy loads or machinery over rough ground.
@@ -19206,6 +19110,7 @@ traditional adjective
 trafﬁc
 noun
 vehicles, ships, or aircraft moving along a route.
+There was a lot of trafﬁc on the bridge.
 
 tragic
 adjective
@@ -19217,7 +19122,6 @@ tragically adverb
 trail
 trails trailing trailed verb
 1 to drag something along behind or let something hang loosely.
-
 He trailed his toy train behind him.
 2 to walk or move slowly behind someone.
 The children trailed along behind their mother.
@@ -19227,7 +19131,6 @@ trails noun
 1 a path or track.
 A nature trail.
 2 a track, scent, or other sign left by something that has passed by.
-
 He left a trail of garbage behind him.
 
 trailer
@@ -19236,12 +19139,7 @@ a small vehicle or container that can be towed behind a car, truck, or tractor.
 
 train
 trains noun
-a vehicle that runs on tracks. Train cars are
-pulled along by an
-engine in front.
-
-There was a lot of trafﬁc
-on the bridge.
+a vehicle that runs on tracks. Train cars are pulled along by an engine in front.
 
 tragedy
 tragedies noun
@@ -19250,6 +19148,7 @@ The train crash was a terrible tragedy.
 2 a play with a sad ending.
 Shakespeare’s Romeo and Juliet is a tragedy.
 (cid:78) say traj-i-dee
+
 trance
 trances noun
 a kind of sleep, or a dazed state, when you are not completely conscious.
@@ -19268,7 +19167,6 @@ She translated the French poem into English.
 transparent
 adjective
 able to be seen through.
-
 This pitcher is transparent.
 (cid:78) say trans-pair-unt
 
@@ -19281,10 +19179,11 @@ transportation
 noun
 a way of carrying goods or people from one place to another. Different methods of transportation are used to travel on land, on water, or in the air.
 
-paddle wheel
 travel
 travels traveling traveled verb
 to go from one place to another.
+We traveled around the lakes and mountains on vacation.
+travel noun
 
 tread
 treads noun
@@ -19294,20 +19193,17 @@ the raised part of a tire.
 treat 
 treats noun
 a special thing that gives someone pleasure.
+They were taken to the fair as a birthday treat.
+(cid:78) say treet
 
 tread
 treads treading trod trodden verb
 to put your foot on something.
 
-They were taken to the fair as a birthday treat.
-(cid:78) say treet
-
-transport
 transport
 transports transporting transported verb
 to carry people or things from one place to another.
-The goods were transported
-by train.
+The goods were transported by train.
 transportation noun
 
 trap
@@ -19318,9 +19214,6 @@ trap noun
 trapdoor
 trapdoors noun
 a small door cut into a ﬂoor, on a stage, or in the ceiling.
-
-We traveled around the lakes and mountains on vacation.
-travel noun
 
 trawler
 trawlers noun
@@ -19340,8 +19233,6 @@ tray
 trays noun
 a ﬂat board, often with a rim, that is used for carrying food and drinks.
 
-The elephant trod on his foot.
-
 treason
 noun
 the act of being a traitor to your country by trying to destroy the government or the ruler, or by helping the enemy during a war.
@@ -19358,6 +19249,8 @@ garbage, or something that is worthless or useless.
 treacherous
 adjective
 very dangerous.
+The sea can be treacherous for a small boat.
+(cid:78) say trech-ur-us
 
 traumatic
 adjective
@@ -19365,30 +19258,20 @@ upsetting enough to have a long-lasting effect on someone.
 Giving evidence in the trial was very traumatic.
 (cid:78) say traw-ma-tik
 trauma noun
-(cid:78) say trezh-ur
 
 treasurer
 treasurers noun
 a person who looks after the money and accounts of a government, a club, or a company.
 
-The sea can be treacherous for a small boat.
-(cid:78) say trech-ur-us
-
-She treated the cut on his head.
-treatment noun
-
 treaty
 treaties noun
 an agreement made between countries.
-
 Signing a peace treaty.
 
 tree
 trees noun
 a tall plant with branches, leaves, and a main stem called a trunk. Trees are either deciduous or evergreen.
 
-heartwood
-tremble
 tremble
 trembles trembling trembled verb
 to shake with fear or cold.
@@ -19400,6 +19283,9 @@ She is on trial for theft.
 2 an experiment or test to see what something is like or to see if it works. 
 The new sports car passed its trials successfully.
 (cid:78) say try-ul
+She tried on the gloves.
+3 to decide in a trial, within a court of law, whether someone is innocent or guilty of a crime.
+The court tried him for theft.
 
 triangle
 triangles noun
@@ -19411,7 +19297,6 @@ A triangle is played by hitting one of the metal sides with a small metal rod.
 trick
 tricks noun
 1 a skillful action that is done to entertain someone.
-
 A magic trick.
 2 something done to fool someone.
 trick verb
@@ -19427,7 +19312,6 @@ a frame with three legs that is used as a support for a camera.
 tricycle
 tricycles noun
 a vehicle with three wheels that is moved by turning the pedals around, like a bicycle.
-
 (cid:78) say try-pod
 
 triumph
@@ -19450,18 +19334,10 @@ trombones noun
 a large, brass musical instrument, played by blowing through a mouthpiece. 
 The notes are produced by sliding a long, bent tube backward and forward.
 
-tenor 
-trombone
-
-child’s tricycle
-(cid:78) say try-sik-ul
-
 trim
 trims trimming trimmed verb
 to cut the edges or ends off something, such as hair, in order to make it neat.
-
-The hairdresser trimmed
-his hair.
+The hairdresser trimmed his hair.
 
 trip
 trips tripping tripped verb
@@ -19471,13 +19347,11 @@ I tripped over the book that she’d left on the ﬂoor.
 trip
 trips noun
 a journey.
-We went on a school trip
-to the museum.
+We went on a school trip to the museum.
 
 trophy
 trophies noun
 a cup, medal, or other prize that is given to the winner of a contest.
-
 tennis trophy
 (cid:78) say tro-fee
 
@@ -19489,7 +19363,6 @@ Tropical fruit.
 trot
 trots trotting trotted verb
 to move the way a horse does when it is walking fast. One of the horse’s front hooves and the opposite back hoof are on the ground at the same time.
-
 trot noun
 
 trouble
@@ -19510,6 +19383,7 @@ pants; a piece of clothing that you wear on your legs.
 trout
 trout noun
 a type of edible ﬁsh that is part of the same family as the salmon. Most trout live in fresh water, but some species migrate to the sea after laying their eggs. They feed on insects, small ﬁsh, and shrimp.
+rainbow trout
 
 trumpet
 trumpets noun
@@ -19524,17 +19398,16 @@ He tried to climb up the tree.
 tuck 
 tucks tucking tucked verb
 1 to fold or push into place.
-
-rainbow trout
+Tuck your shirt into your pants.
+2 to cover up in a snug way.
+I like being tucked in bed.
 
 trowel
 trowels noun
 a small hand tool similar to a shovel. 
 Curved trowels are used for gardening. 
 Flat ones are used for spreading cement.
-
 gardening trowel
-
 (cid:78) rhymes with owl
 
 trunk
@@ -19542,21 +19415,14 @@ trunks noun
 1 the main stem of a tree (see 
 tree on page 223).
 2 the main part of the body of a person or animal, not including the head, arms, and legs.
+3 the long nose of an elephant (see mammal on page 124).
+4 a large box with a hinged lid, used for storing things.
 
 truce
 truces noun
-an agreement to stop ﬁghting 
-for a short time.
+an agreement to stop ﬁghting for a short time.
 The armies called a truce.
 (cid:78) rhymes with noose
-
-She tried on the gloves.
-3 to decide in a trial, within a court of law, whether someone is innocent or guilty of a crime.
-The court tried him for theft.
-
-T-shirt
-T-shirts noun
-a shirt made from knitted cotton with short sleeves and no collar.
 
 truck
 trucks noun
@@ -19565,7 +19431,6 @@ a large vehicle used for carrying goods from one place to another.
 trudge
 trudges trudging trudged verb
 to walk in a tired way.
-
 They trudged home through the snow.
 
 true
@@ -19573,9 +19438,6 @@ adjective
 real and accurate.
 A true story.
 (cid:78) opposite false
-
-3 the long nose of an elephant (see mammal on page 124).
-4 a large box with a hinged lid, used for storing things.
 
 trust
 trusts trusting trusted verb
@@ -19600,12 +19462,7 @@ tubes noun
 A cardboard tube.
 2 a long, narrow container made of plastic or thin metal. 
 The contents are removed by squeezing.
-
 tube of toothpaste
-
-Tuck your shirt into your pants.
-2 to cover up in a snug way.
-I like being tucked in bed.
 
 tuft
 tufts noun
@@ -19632,7 +19489,7 @@ tuna or tunas noun
 a large, edible sea ﬁsh. 
 Tuna feed on squid and other ﬁsh. They are fast swimmers and migrate long distances every year.
 (cid:78) say too-nuh
-tune
+
 tune
 tunes noun
 a series of musical notes put together in a certain order to form a melody.
@@ -19668,11 +19525,12 @@ turquoise
 noun
 1 a green-blue 
 stone that is often used in jewelry.
+2 the color of the stone turquoise.
+(cid:78) say tur-koiz
 
 tusk
 tusks noun
-a long, pointed tooth that sticks out of the mouth of certain animals (see 
-mammal on page 124).
+a long, pointed tooth that sticks out of the mouth of certain animals
 
 twig
 twigs noun
@@ -19687,8 +19545,7 @@ twin adjective
 
 twinkle
 twinkles twinkling twinkled verb
-to shine with small ﬂashes 
-of light.
+to shine with small ﬂashes of light.
 The stars twinkled in the sky.
 
 twirl
@@ -19698,7 +19555,6 @@ to spin in a quick, light way.
 twist
 twists twisting twisted verb
 to turn or wind something.
-
 She twisted her head around.
 
 type
@@ -19709,8 +19565,7 @@ to write using the letter and number keys on a typewriter or other keyboard.
 type
 types noun
 1 a group of people or things that are alike in some way.
-The store sold two types
-of boot.
+The store sold two types of boot.
 2 printed letters.
 This book has small type.
 
@@ -19724,30 +19579,23 @@ a large bird that lives wild in the forests of North America.
 Turkeys feed on acorns, seeds, berries, and insects. 
 Turkeys are reared on farms for their meat in many parts of the world.
 
-2 the color of the stone turquoise.
-(cid:78) say tur-koiz
-
 turtle
 turtles noun
 a reptile that is part of the same family as the tortoise. 
 Turtles live in water and feed on plants and small animals. 
 Some turtles lay their eggs on land.
 
-green 
-turtle
-
-She twirled around to show them her new skirt.
 typical
 adjective
 being a good example of something, or showing all its usual qualities.
-They lived in a typical
-city street.
+They lived in a typical city street.
 (cid:78) say tip-i-kul
 typically adverb
 
 under
 preposition
 below or beneath something, or to a lower place.
+She is holding the ball under her arm.
 
 uncle
 uncles noun
@@ -19783,9 +19631,10 @@ The leader was elected by a unanimous vote.
 uncomfortable
 adjective
 1 not able to relax.
-
-She is holding the ball under
-her arm.
+She was too uncomfortable to go to sleep.
+2 causing an unpleasant feeling or slight pain.
+Uncomfortable shoes.
+(cid:78) opposite comfortable
 
 undercover
 adjective
@@ -19799,15 +19648,8 @@ not cooked for long enough.
 underground
 adjective
 below the ground.
-
 An underground cave.
 underground adverb
-
-She was too uncomfortable
-to go to sleep.
-2 causing an unpleasant feeling or slight pain.
-Uncomfortable shoes.
-(cid:78) opposite comfortable
 
 unconscious
 adjective
@@ -19821,9 +19663,7 @@ He has an unconscious habit of scratching his chin.
 uncover
 uncovers uncovering uncovered verb
 to remove the cover, unwrap, or reveal something.
-
-The archeologists uncovered
-a Roman mosaic.
+The archeologists uncovered a Roman mosaic.
 
 underline
 underlines underlining underlined verb
@@ -19832,7 +19672,6 @@ to draw a line under something, usually to stress it or to show that it is impor
 underneath
 preposition
 below something, or in a lower place.
-
 The children played underneath the table.
 underneath adverb
 
@@ -19850,28 +19689,24 @@ understudy verb
 underwater
 adjective
 found under the surface of the water, or used under the surface of the water.
-
 The diver swam among the underwater plants and animals.
 underwater adverb
-underwear
+
 underwear
 noun
 the clothes that you wear next to your skin and under your other clothes.
 
-underpants
-
 undo
 undoes undoing undid undone verb
 to unfasten or untie.
-
 Undoing a knot in a rope.
 (cid:78) say un-doo
 
 undress
 undresses undressing undressed verb
 to take clothes off.
-
 (cid:78) opposite dress
+
 uneasy
 adjective
 not feeling comfortable or happy.
@@ -19881,6 +19716,9 @@ uneasily adverb
 unfortunate
 adjective
 having or bringing bad luck.
+It was unfortunate that he’d  left a roller skate on the ﬂoor.
+(cid:78) opposite fortunate
+unfortunately adverb
 
 unemployed
 adjective
@@ -19892,7 +19730,6 @@ unemployment noun
 uneven
 adjective
 not smooth or level.
-
 The road had a very uneven surface.
 (cid:78) opposite even
 unevenly adverb
@@ -19900,7 +19737,6 @@ unevenly adverb
 unexpected
 adjective
 surprising, or happening when you do not think it will.
-
 The unexpected rain made everyone leave the beach.
 (cid:78) opposite expected
 unexpectedly adverb
@@ -19910,11 +19746,6 @@ adjective
 not right or honest.
 That’s unfair! You have more than me!
 (cid:78) opposite fair
-
-It was unfortunate that he’d 
-left a roller skate on the ﬂoor.
-(cid:78) opposite fortunate
-unfortunately adverb
 
 unhappy
 adjective
@@ -19941,15 +19772,12 @@ unicycle
 unicycles noun
 a machine for riding on, with pedals, a saddle,and one wheel. 
 Unicycles are sometimes used for performing acrobatic tricks.
-
 (cid:78) say yoo-ni-sy-kul
 
 uniform
 uniforms noun
 special clothes worn by members of a group to show that they belong to that group. People in the armed forces, the police force, and some students wear uniforms.
-
 19th-century army general’s uniform
-
 (cid:78) say yoo-ni-form
 
 union
@@ -19962,8 +19790,7 @@ Russia was once a part of the Union of Soviet Socialist Republics.
 unique
 adjective
 being the only one of its kind.
-Every snowﬂake 
-is unique.
+Every snowﬂake is unique.
 (cid:78) say yoo-neek
 
 unit
@@ -19984,23 +19811,23 @@ universe
 noun
 all of space, and everything that exists in it. The universe includes Earth, the other planets, and all the stars.
 
-Neptune
-university
 university
 universities noun
 a place where students go for the highest level of education.
+Graduating from university with advanced degrees.
+(cid:78) say yoo-nuh-vur-si-tee
 
 unlock
 unlocks unlocking unlocked verb
 to open something by undoing a lock.
+He unlocked his bicycle.
+(cid:78) opposite lock
 
 unpack
 unpacks unpacking unpacked verb
 to take things out of a container.
-
-Graduating from university
-with advanced degrees.
-(cid:78) say yoo-nuh-vur-si-tee
+Unpacking a suitcase.
+(cid:78) opposite pack
 
 unkind
 adjective
@@ -20025,11 +19852,8 @@ An unlikely story.
 unload
 unloads unloading unloaded verb
 to take things out of a vehicle or container.
-
 He unloaded the groceries from the shopping cart.
 (cid:78) opposite load
-He unlocked his bicycle.
-(cid:78) opposite lock
 
 unlucky
 adjective
@@ -20049,7 +19873,6 @@ It’s unnecessary to wear a coat in very hot weather.
 unoccupied
 adjective
 vacant, or not being used.
-
 The house had been unoccupied for months.
 (cid:78) opposite occupied
 
@@ -20058,9 +19881,6 @@ adjective
 with no order or plan.
 The trip was very unorganized.
 (cid:78) opposite organized
-
-Unpacking a suitcase.
-(cid:78) opposite pack
 
 unpleasant
 adjective
@@ -20076,12 +19896,12 @@ We were awake until midnight.
 unscrew
 unscrews unscrewing unscrewed verb
 to loosen by turning, or to undo screws.
+She unscrewed the numbers from the door\.
 
 untrue
 adjective
 false or not based on facts.
-The story about the two-tailed 
-dog was untrue.
+The story about the two-tailed dog was untrue.
 (cid:78) opposite true
 
 unused
@@ -20094,7 +19914,6 @@ An unused notebook.
 unusual
 adjective
 rare or not ordinary.
-
 A very unusual guitar.
 (cid:78) say un-yoo-zhoo-al
 
@@ -20103,8 +19922,6 @@ adjective
 foolish or not smart.
 It was unwise to play catch in the house.
 (cid:78) opposite wise
-
-She unscrewed the numbers from the door.
 
 untidy
 adjective
@@ -20116,13 +19933,15 @@ Her room was always untidy.
 untie
 unties untying untied verb
 to undo something that is knotted, such as rope or thread.
-
 She untied the rope and rowed away.
 (cid:78) opposite tie
 
 unwrap
 unwraps unwrapping unwrapped verb
 to take the wrapping or covering off something.
+She unwrapped her present.
+(cid:78) say un-rap
+(cid:78) opposite wrap
 
 upset
 upsets upsetting upset verb
@@ -20135,7 +19954,6 @@ upset adjective
 uranium
 noun
 a silvery white, radioactive metal used for producing nuclear energy.
-
 (cid:78) say yoo-ray-nee-um
 
 urge
@@ -20168,14 +19986,12 @@ to put something into action.
 upside down
 adverb
 with the top part underneath, or turned the wrong way up.
-
 He hung upside down from the bar.
 upside-down adjective
 
 upstairs
 adverb
 to or on an upper story.
-
 The lights are on upstairs.
 (cid:78) opposite downstairs
 upstairs adjective
@@ -20184,10 +20000,8 @@ upward
 adverb
 toward 
 a higher position.
-
-She unwrapped her present.
-(cid:78) say un-rap
-(cid:78) opposite wrap
+She let go and the balloons drifted upward.
+(cid:78) opposite downward
 
 up
 preposition
@@ -20212,7 +20026,6 @@ upright adjective
 use
 uses noun
 1 the value of something for a certain purpose.
-
 This penknife has many uses.
 2 the state of being used.
 Steam trains are still in use
@@ -20238,26 +20051,17 @@ usually adverb
 utensil
 utensils noun
 a tool used for a particular job, especially one used in the kitchen.
+A whisk is a kitchen utensil.
+(cid:78) say yoo-ten-sul
 
 uproar
 noun
 a state of noisy activity.
 The crowd was in an uproar.
 
-She let go and the balloons drifted upward.
-(cid:78) opposite downward
-
-The cat uses a cat ﬂap to come in and go out of the house.
-(cid:78) say yooz
-
-A whisk is a kitchen utensil.
-(cid:78) say yoo-ten-sul
-vacant
-
 valuable
 adjective
 1 precious, or worth a lot of money.
-
 This valuable Chinese ornament once belonged to an emperor.
 2 useful or worthwhile.
 Valuable help.
@@ -20278,7 +20082,6 @@ vanilla
 noun
 a sweet food ﬂavoring 
 made from the pods of a tropical orchid, also called vanilla.
-
 vanilla pods
 
 vanish
@@ -20312,14 +20115,12 @@ I bought various things at the mall.
 varnish
 varnishes noun
 a type of clear paint that makes a surface tough and shiny when it is dry.
-
 wood varnish
 varnish verb
 
 vase
 vases noun
 a jar used as an ornament for displaying ﬂowers.
-
 (cid:78) say vayz
 
 vacuum ﬂask
@@ -20346,6 +20147,7 @@ vainly adverb
 valley
 valleys noun
 an area of lowland between hills, often with a river or stream ﬂowing through it.
+
 vacant
 adjective
 empty or not used.
@@ -20355,7 +20157,6 @@ She parked in the vacant space.
 vaccination
 vaccinations noun
 an injection of a substance called a vaccine that prevents you from getting a particular disease.
-
 (cid:78) say vak-suh-nay-shun
 
 vacuum
@@ -20363,15 +20164,11 @@ vacuums noun
 a space from which all, or almost all, of the air has been removed.
 (cid:78) say vak-yoom
 
-vacuum cleaner
-vacuum cleaners noun
-a machine that cleans by sucking up dirt.
 vegetable
 vegetables noun
 a plant, or part of a plant, that is grown for food. Vegetables contain vitamins and minerals that keep us healthy.
 (cid:78) say vej-tab-bul
 
-vegetarian
 vegetarian
 vegetarians noun
 someone who does not eat meat or ﬁsh.
@@ -20380,30 +20177,28 @@ someone who does not eat meat or ﬁsh.
 vehicle
 vehicles noun
 something that is used to transport people or things on land, in the air, or in space.
-
 (cid:78) say vee-i-kul
 
 veil
 veils noun
 a covering for the face or head that is made of thin fabric.
-
 (cid:78) rhymes with pale
 
 vein
 veins noun
 1 any one of the tubes that carries blood from other parts of the body to the heart. 
 The vena cava is the major vein in the body.
+2 one of the ﬁne tubes in a leaf or in an insect’s wings.
 
 velvet
 noun
 a type of fabric covered in short, soft ﬁbers.
+velvet adjective
 
 version
 versions noun
 A different kind or form of the same thing.
 I like this version of the story.
-
-velvet adjective
 
 ventriloquist
 ventriloquists noun
@@ -20412,7 +20207,6 @@ a person who can speak without moving his or her lips. Most ventriloquists use d
 vertical
 adjective
 standing straight up, at right angles to the horizon.
-
 a vertical line
 
 very
@@ -20423,6 +20217,9 @@ This book is very long.
 vessel
 vessels noun
 1 a craft that is used for water transportation; usually anything larger than a boat.
+2 any kind of hollow container, usually for food.
+When it rained, they ﬁlled the vessels with water.
+(cid:78) say ves-ul
 
 vibrate
 vibrates vibrating vibrated verb
@@ -20445,29 +20242,19 @@ The victim of an accident.
 victory
 victories noun
 success in a contest or battle.
-
-(cid:78) say ven-tril-uh-kwist
+The race-car driver was thrilled with his victory.
+(cid:78) say vik-tor-ee
 
 verb
 verbs noun
 a word that describes what a person or thing is doing. A 
 sentence usually needs a verb in order to make sense.
 
-2 any kind of hollow container, usually for food.
-When it rained, they ﬁlled 
-the vessels with water.
-(cid:78) say ves-ul
-
-The race-car driver was thrilled with his victory.
-(cid:78) say vik-tor-ee
-
 verse
 verses noun
 1 a section of a poem or song.
 2 a general name for poetry.
 He wrote a book of verse.
-
-2 one of the ﬁne tubes in a leaf or in an insect’s wings.
 
 vest
 vests noun
@@ -20476,19 +20263,15 @@ a piece of underwear worn on the top half of the body.
 view
 views noun
 1 everything that you can see from a certain place.
+There was a good view of the city from the window.
+2 an opinion.
+In my view, more people ought to travel by train.
+(cid:78) say vyoo
 
 veterinarian
 veterinarians noun
 a person who is trained to treat sick animals. 
 Veterinarian can be shortened to vet.
-
-vena cava
-(cid:78) say vane
-
-There was a good view of the city from the window.
-2 an opinion.
-In my view, more people ought to travel by train.
-(cid:78) say vyoo
 
 village
 villages noun
@@ -20502,13 +20285,14 @@ Volcanoes sometimes erupt, sending lava and ash down onto the surrounding countr
 visible
 adjective
 able to be seen.
-The mountain was visible
-for miles.
+The mountain was visible for miles.
 (cid:78) opposite invisible
 
 visit
 visits visiting visited verb
 to go to see a person or a place.
+I went to visit her in the hospital.
+visit noun
 
 vomit
 vomits vomiting vomited verb
@@ -20523,7 +20307,6 @@ vinegar
 noun
 a sour liquid used to ﬂavor 
 or preserve food.
-
 (cid:78) say vin-i-gur
 
 vintage
@@ -20537,52 +20320,35 @@ The violent storm threw cars across the street.
 violence noun
 violently adverb
 
-I went to visit her in the hospital.
-visit noun
-
 vitamin
 vitamins noun
 one of a group of natural substances found in foods that we need to eat to keep healthy.
 
-volcanic adjective
-
 volume
 volumes noun
 1 a book, usually one of a series.
-
-The fourth volume
-of an encyclopedia.
+The fourth volume of an encyclopedia.
 2 the amount of space inside something, or the amount of space that something ﬁlls.
+This pitcher’s volume is one quart.
+3 an amount.
+This road has a huge volume of trafﬁc traveling along it.
+4 the loudness of a sound.
+Can you turn up the volume on the television?
 
 violin
 violins noun
 a wooden musical instrument with four strings. The violin body is held below the chin and played with a bow.
-
-violin
 
 virus
 viruses noun
 a type of germ that causes a disease such as the ﬂu.
 (cid:78) say vye-rus
 
-pepper
-
-Foods containing vitamin C.
-
 vocabulary
 vocabularies noun
 1 all the words in a language. 
 2 all the words that are known and used by a person.
 (cid:78) say vo-kab-yoo-lar-ee
-
-This pitcher’s volume
-is one quart.
-3 an amount.
-This road has a huge volume
-of trafﬁc traveling along it.
-4 the loudness of a sound.
-Can you turn up the volume
-on the television?
 
 voice
 voices noun
@@ -20595,9 +20361,6 @@ volunteers noun
 a person who offers to do something without being told or paid to do it.
 volunteer verb
 
-He voted for the candidate by putting an “X” on the paper.
-vote noun
-
 vow
 vows noun
 a solemn promise.
@@ -20606,7 +20369,7 @@ vow verb
 
 vowel
 vowels noun
-a sound represented by the letters a, e, i, o, or u (see alphabet on page 16).
+a sound represented by the letters a, e, i, o, or u
 (cid:78) rhymes with owl
 
 vulture
@@ -20614,10 +20377,7 @@ vultures noun
 a large bird of prey that feeds on dead animals. 
 Vultures have a good sense of smell and good eyesight. 
 Their feet are adapted for walking rather than holding onto branches.
-
-Egyptian 
-vulture
-wade
+Egyptian vulture
 
 wade
 wades wading waded verb
@@ -20637,14 +20397,12 @@ wafﬂe
 wafﬂes noun
 a crisp, thick pancake with squares pressed into it. 
 Wafﬂes are made from eggs and ﬂour.
-
 (cid:78) say wof-ul
 
 wage
 wages noun
 the money paid to some in return for work. 
-He collects his weekly wages
-every Friday.
+He collects his weekly wages every Friday.
 (cid:78) say wayj
 
 wagon
@@ -20659,11 +20417,14 @@ to stay in a place or delay doing something until a certain event happens.
 Wait for me!
 wait noun
 
-waiter / waitress
-waiters / waitresses noun
+waiter
+waitresses noun
 someone whose job it is to serve you with a meal.
-(cid:78) waiter is male and waitress
-is female.
+
+waitress
+waitresses noun
+someone whose job it is to serve you with a meal.
+
 wake
 wakes waking woke woken verb
 to stop sleeping or to stop someone else from sleeping.
@@ -20682,7 +20443,6 @@ a framework, usually waist-high, that a baby or handicapped person might use to 
 wall
 walls noun
 a vertical surface made of stone, brick, or another material. Walls are used to enclose a space or to form the outside structure and inside divisions of a building.
-
 There was a high wall around the garden.
 
 wallaby
@@ -20693,7 +20453,6 @@ a plant-eating marsupial from Australia that looks like a small kangaroo.
 wallet
 wallets noun
 a small, soft case for carrying money.
-
 (cid:78) say wol-it
 
 walrus
@@ -20705,14 +20464,12 @@ wand
 wands noun
 a long, slender stick used for performing magic tricks. 
 In fairy tales, wands are used for casting magic spells.
-
 (cid:78) say wond
 
 wander
 wanders wandering wandered verb
 to go from place to place without any real purpose or destination.
-My friends love to wander
-around the mall.
+My friends love to wander around the mall.
 (cid:78) say won-der
 
 want
@@ -20741,7 +20498,6 @@ a large building used for storing goods.
 warm
 adjective
 1 having a temperature that is between cool and hot.
-
 The hot water bottle felt nice and warm.
 2 friendly and kind.
 She gave us a warm welcome.
@@ -20752,7 +20508,9 @@ warmth noun
 warn
 warns warning warned verb
 to tell or signal to someone that there may be a problem or danger ahead.
-
+The sign on the fence warned of radioactivity in the area.
+(cid:78) say worn
+warning noun
 water cycle
 noun
 the process by which water travels around the Earth and its atmosphere. Water from rivers and oceans evaporates into the air, where it gathers to form clouds. The water then falls as rain to ﬁll 
@@ -20783,25 +20541,18 @@ watch
 watches watching watched verb
 to look at and pay attention to someone or something for a time.
 
-The sign on the fence warned
-of radioactivity in the area.
-(cid:78) say worn
-warning noun
-
 warship
 warships noun
 a ship armed with weapons that is used during a war.
 
-Watching birds.
-
 watch
 watches noun
 a small instrument for telling the time, usually worn on the wrist (see time on page 216).
+Watching birds.
 
 waterproof
 adjective
 not allowing water to pass through it.
-
 A waterproof coat.
 
 wash
@@ -20833,17 +20584,15 @@ waves noun
 wave
 waves waving waved verb
 1 to signal to someone by moving your hand or an object from side to side.
-
 She waved good-bye as the ship sailed away.
 wave noun
 2 to move backward and forward.
-The branches waved
-in the strong wind.
+The branches waved in the strong wind.
 
 wax
 waxes noun
 a solid, oily substance that melts when it is heated. Wax is used to make many things, including furniture polish and candles.
-way
+
 way
 ways noun
 1 a direction or route.
@@ -20870,7 +20619,6 @@ She stared at him in a very rude way.
 weak
 adjective
 having little strength or power.
-
 Baby birds are very weak when they are born.
 (cid:78) comparisons weaker weakest
 (cid:78) opposite strong
@@ -20887,13 +20635,12 @@ wealth noun
 weapon
 weapons noun
 a tool that can be used to hurt someone.
-
 In the past, spears and swords were used as weapons.
 (cid:78) say wep-un
+
 weed
 weeds noun
 a wild plant that grows where it is not wanted.
-
 Burdock is a common weed.
 
 week
@@ -20911,7 +20658,6 @@ to show you are unhappy by crying.
 weigh
 weighs weighing weighed verb
 1 to measure how heavy something is.
-
 He weighed some beans.
 2 to have a certain weight.
 The package weighed
@@ -20924,27 +20670,14 @@ weights noun
 2 a piece of metal with a known heaviness, used with weighing scales to determine how much something weighs.
 (cid:78) say wayt
 
-He is wearing a South American cowboy outﬁt.
-(cid:78) say ware
-
 weary
 adjective
 very tired.
-
-He is weaving a mat out of wool.
-woven adjective
-2 to move in and out between objects.
-The river weaves its way around the hills and down to the sea.
 
 web
 webs noun
 1 a ﬁne net of sticky threads made by a spider to trap ﬂies.
 2 a collection of pages linked electronically via the internet.
-
-She felt weary after her long walk.
-(cid:78) say weer-ee
-(cid:78) comparisons wearier weariest
-weariness noun
 
 wedding
 weddings noun
@@ -20953,7 +20686,6 @@ an occasion when two people get married.
 weather
 noun
 the condition of the atmosphere at a certain place and time, such as the air temperature and whether or not it is raining.
-
 a weather map
 (cid:78) say weth-ur
 
@@ -20972,7 +20704,6 @@ a ﬁlm about cowboys and other people living in the western US, usually during 
 wet
 adjective
 1 covered or soaked with water.
-
 2 rainy.
 Wet weather.
 3 not yet dry.
@@ -20992,8 +20723,7 @@ The tree had a weird shape.
 welcome
 welcomes welcoming welcomed verb
 to show someone that you are glad they have come.
-He went to the door to welcome
-his guests.
+He went to the door to welcome his guests.
 welcoming adjective
 
 welfare
@@ -21023,9 +20753,7 @@ I went to the grocery store to buy some bread.
 
 whale
 whales noun
-a very large sea mammal with a breathing hole in the top of its head. Whales eat ﬁsh or tiny water animals (see mammal
-on page 124).
-
+a very large sea mammal with a breathing hole in the top of its head. Whales eat ﬁsh or tiny water animals
 sperm whale
 
 whine
@@ -21038,9 +20766,7 @@ The toddler whined about going to bed.
 whip
 whips noun
 a rope or strip of leather that is attached to a handle and is used for urging animals to do something.
-
-a cowboy’s 
-whip
+a cowboy’s whip
 whip
 
 wheelchair
@@ -21056,9 +20782,7 @@ What is your favorite color?
 wheat
 noun
 a type of cereal that is grown on farms. The grains from wheat are used for making ﬂour.
-
 durum wheat
-
 (cid:78) say wheet
 
 wheel
@@ -21083,7 +20807,7 @@ which
 adjective
 what particular thing or things out of a selection.
 Which car is yours?
-whirl
+
 whirl
 whirls whirling whirled verb
 to turn yourself or an object around quickly.
@@ -21091,6 +20815,8 @@ to turn yourself or an object around quickly.
 whisper
 whispers whispering whispered verb
 to speak in a very quiet voice.
+She whispered her secret into his ear.
+whisper noun
 
 whizz
 whizzes whizzing whizzed verb
@@ -21106,26 +20832,22 @@ whisks whisking whisked verb
 1 to move quickly and lightly.
 She whisked the child out of the way of the bike.
 2 to beat a mixture lightly and quickly.
-
-She whispered her secret into his ear.
-whisper noun
+Whisk the egg whites until they are stiff.
 
 whistle
 whistles whistling whistled verb
 to make a high, shrill sound by blowing air through your lips.
-
 (cid:78) say hwis-ul
 
 whistle
 whistles noun
 a device that you blow into to make high, shrill sounds.
 
-Whisk the egg whites until they are stiff.
-
 whisker
 whiskers noun
 one of the stiff hairs that grows near the mouth of certain animals (see 
 mammal on page 124 and pet on page 148).
+
 white
 noun
 a color.
@@ -21152,12 +20874,10 @@ wickedness noun
 wide
 adjective
 1 being a large size, or long distance, from one side to the other.
-
-widow / widower
-widows / widowers noun
-a person whose husband or wife has died.
-(cid:78) widow is female and widower
-is male.
+2 having a certain measurement from one side to the other.
+The carpet is ten feet wide.
+wide adverb
+width noun
 
 wife
 wives noun
@@ -21170,12 +20890,9 @@ a false covering of hair for the head (see costume on page 51).
 wild
 adjective
 1 in a natural environment, or not controlled by people.
-
-Meadowsweet 
-is a wild ﬂower.
+Meadowsweet is a wild ﬂower.
 2 uncontrolled, violent, or crazy.
-The children went wild
-at the amusement park.
+The children went wild at the amusement park.
 (cid:78) rhymes with child
 (cid:78) comparisons wilder wildest
 
@@ -21187,10 +20904,6 @@ a wild area of land where no one lives.
 A wide river.
 (cid:78) comparisons wider widest
 (cid:78) opposite narrow
-2 having a certain measurement from one side to the other.
-The carpet is ten feet wide.
-wide adverb
-width noun
 
 will
 verb
@@ -21203,10 +20916,7 @@ will
 wills noun
 1 the power to choose and control your own actions. 
 She forced me to do it against my will.
-2 a document containing instructions about what should happen to a person’s 
-possessions 
-after his or her death.
-
+2 a document containing instructions about what should happen to a person’s possessions after his or her death.
 3 determination.
 She had the will to win.
 
@@ -21218,14 +20928,12 @@ Are you willing to help in the garden?
 win
 wins winning won verb
 to come ﬁrst in a game or competition.
-
 She was very pleased when she won the game.
 (cid:78) opposite lose
 
 wind
 winds noun
 a current of air.
-
 The wind blew his umbrella inside out.
 (cid:78) rhymes with grinned
 windy adjective
@@ -21233,6 +20941,10 @@ windy adjective
 wind
 winds winding wound verb
 1 to twist or coil something up.
+He wound the clock.
+2 to turn in a curving way.
+They could see the car winding its way up the hill.
+(cid:78) rhymes with ﬁnd
 
 wink
 winks winking winked verb
@@ -21252,6 +20964,7 @@ Winter comes between the fall and spring.
 wipe
 wipes wiping wiped verb
 to clean or dry something by rubbing.
+He wiped the mirror’s surface with a cloth.
 
 witch
 witches noun
@@ -21260,22 +20973,16 @@ a woman who practices magic.
 wither
 withers withering withered verb
 to dry up.
-
 Their plant withered while they were away on vacation.
 
 without
 preposition
 not having or not using.
-
-He wiped the mirror’s surface with a cloth.
+He went outside without his shoes.
 
 wire
 wires noun
 a long, thin, metal thread that can be bent. Wires can be used to carry electrical power.
-
-He went outside without
-his shoes.
-
 copper wire
 
 wise
@@ -21294,12 +21001,6 @@ witness verb
 wizard
 wizards noun
 a man who practices magic.
-He wound
-the clock.
-2 to turn in a curving way.
-They could see the car winding
-its way up the hill.
-(cid:78) rhymes with ﬁnd
 
 windmill
 windmills noun
@@ -21316,15 +21017,12 @@ an alcoholic drink made from the juice of grapes.
 wing
 wings noun
 1 one of the parts of a bird, insect, or bat that is used for ﬂying (see bird on page 28, insect on page 108, and mammal on page 124).
-2 one of the large, ﬂat parts on each side of an airplane that acts in a similar way to a bird’s wings (see 
-transportation on page 221).
-wobble
+2 one of the large, ﬂat parts on each side of an airplane that acts in a similar way to a bird’s wings
+
 wobble
 wobbles wobbling wobbled verb
 to move unsteadily.
-
-He wobbled
-on his ice skates.
+He wobbled on his ice skates.
 
 woke
 from the verb to wake
@@ -21352,27 +21050,13 @@ a wild mammal that is part of the dog family and lives in cold regions. Wolves l
 wood
 noun
 1 the hard material from a tree’s trunk or branches used to make furniture and objects or to burn for fuel.
-
-sheep’s wool
-
-wool yarn
+2 a group of trees growing together.
+The train is made of wood.
+wooden adjective
 
 woolen
 adjective
 made from wool.
-
-The train is made of wood.
-wooden adjective
-
-2 a group of trees growing together.
-
-woodwind 
-instrument
-woodwind instruments noun
-one of a group of musical instruments that is played by blowing. 
-Some, such as the clarinet, are made from wood while others, such as the ﬂute, are made from metal.
-
-alto clarinet
 
 woman
 women noun
@@ -21405,9 +21089,6 @@ word processing
 verb
 writing, correcting, and storing documents electronically.
 
-wore
-from the verb to wear He wore a yellow T-shirt.
-
 work
 works working worked verb
 1 to use effort to do something.
@@ -21416,8 +21097,6 @@ I worked hard when I painted the house.
 My father works in a factory.
 work noun
 3 to operate efﬁciently.
-
-This washing machine is not working properly. 
 
 world
 noun
@@ -21442,12 +21121,11 @@ Last week’s weather was bad, but today, it is worse.
 worship
 worships worshiping worshiped verb
 to respect and love, usually in a religious way.
+The ancient Egyptians worshiped many gods.
 
 wound
 wounds noun
 an injury to the body where the skin is torn or cut in some way.
-
-The ancient Egyptians worshiped many gods.
 
 worst
 from the adjective bad
@@ -21457,7 +21135,6 @@ This is the worst storm I’ve ever seen.
 worth
 adjective
 having a value.
-
 The crown was worth a lot of money.
 
 worthless
@@ -21475,10 +21152,6 @@ Would you like some tea?
 (cid:78) opposite would not or wouldn’t
 (cid:78) always used with another verb
 
-She put a dressing on the wound.
-(cid:78) say woond
-wound verb
-
 wound
 from the verb to wind
 He wound the string around the package.
@@ -21492,28 +21165,23 @@ She wove the wool into cloth.
 wrap
 wraps wrapping wrapped verb
 to fold paper or fabric around something.
-
 He wrapped the present in colorful paper.
 (cid:78) say rap
 
 wrapper
 wrappers noun
 a piece of paper, plastic, or foil that is used to cover something you buy.
-
 candies in their wrappers
-
 (cid:78) say rap-ur
 
 wreath
 wreaths noun
 a decoration made from ﬂowers, leaves, or branches tied together in a circle.
-
 (cid:78) say reeth
 
 wreck
 wrecks wrecking wrecked verb
 to destroy or ruin.
-
 He crashed into the stone post, wrecking the car.
 (cid:78) say rek
 
@@ -21531,7 +21199,6 @@ wring
 wrings wringing wrung verb
 to twist something hard using both hands.
 (cid:78) say ring
-
 He wrung the water out of the cloth.
 
 wrinkle
@@ -21542,7 +21209,6 @@ a small crease or fold in skin or fabric.
 wrist
 wrists noun
 the joint between your hand and your arm.
-
 (cid:78) say rist
 
 write
@@ -21560,20 +21226,16 @@ The wrong answer.
 It’s wrong to steal.
 (cid:78) say rong
 (cid:78) opposite right
-X-ray
 
 X-ray
 X-rays noun
 a special photograph that shows your bones and other parts that are inside your body.
-
 chest X-ray
-
 X-ray verb
 
 xylophone
 xylophones noun
 a musical instrument with wooden bars on a frame. Each bar produces a different note when it is struck.
-
 (cid:78) say zy-luh-fone
 
 yacht
@@ -21589,13 +21251,12 @@ yeast
 noun
 a yellow-brown substance made up of tiny fungi. Yeast is used in bread and cakes to help them rise with air.
 
-dried yeast
-
-fresh yeast
-
 yell
 yells yelling yelled verb
 to shout or scream loudly.
+He yelled at the neighbor’s 
+cats that were ﬁghting outside the window.
+yell noun
 
 yak
 yaks noun
@@ -21618,24 +21279,18 @@ wool, cotton, or another material spun into a thread for knitting or weaving.
 yawn
 yawns yawning yawned verb
 to open your mouth and breathe in deeply, usually because you are tired or bored.
-
-He yelled at the neighbor’s 
-cats that were ﬁghting outside the window.
-yell noun
+yawn noun
 
 yellow
 noun
 a color.
-
-(cid:78) say yot
-(cid:78) rhymes with dawn
-yawn noun
 
 yesterday
 adverb
 on the day before today.
 I went to the zoo yesterday.
 yesterday noun
+
 yet
 adverb
 up to the present time.
@@ -21649,14 +21304,11 @@ a system of exercises and deep breathing aimed at making a person healthy and re
 yolk
 yolks noun
 the yellow part of an egg.
-
 (cid:78) say yoke
 
 young
 adjective
 in the early part of life.
-
-Zz
 
 zebra
 zebras noun
@@ -21677,8 +21329,6 @@ a wooden frame that ﬁts
 over the shoulders of two oxen or other work animals so that they can pull a load. 
 The yoke keeps the animals together.
 
-zip verb
-
 zodiac
 noun
 the 12 sections into which astrologers divide the sky. 
@@ -21693,11 +21343,6 @@ A no-parking zone.
 zoo
 zoos noun
 a place where people can observe and learn about animals.
-
-The grandmother held the young child in her arms.
-(cid:78) say yung
-(cid:78) comparisons younger youngest
-(cid:78) opposite old
 
 youth
 noun
@@ -21715,8 +21360,6 @@ zigzag
 zigzags noun
 a line with a series of sharp turns and angles in it.
 zigzag adjective
-
-zigzag verb
 
 yo-yo
 yo-yos noun
