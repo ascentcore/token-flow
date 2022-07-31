@@ -59,10 +59,9 @@ class Context():
         if self.vocabulary.size() > 0:
             self.initialize_nodes()
 
-    
     def add_node(self, token):
         if not self.graph.has_node(token):
-                self.graph.add_node(token, s=0)
+            self.graph.add_node(token, s=0)
 
     def on_new_words(self, words):
         for token in words:
@@ -106,7 +105,7 @@ class Context():
 
         self.vocabulary.add_to_vocabulary(word)
         self.add_node(word)
-        
+
         for sequence in sequences:
             for i in range(0, len(sequence)):
                 for tokens in sequence[i]:
@@ -194,9 +193,9 @@ class Context():
             self.graph.add_edge(int(edge[0]), int(
                 edge[1]), weight=edge[2]['weight'])
 
-    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False):
+    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, figsize=(6, 6), dpi=150):
         if self.plt is None:
-            plt = figure(figsize=(6, 6), dpi=150)
+            plt = figure(figsize=figsize, dpi=dpi)
         else:
             plt = self.plt
 

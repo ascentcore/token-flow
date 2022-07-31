@@ -17,7 +17,6 @@ There were about 300 people at the circus.
 above
 preposition
 over, or higher than something.
-
 Above her head.
 (cid:78) opposite below
 
@@ -1422,8 +1421,8 @@ an insect with hard, often brightly colored wing cases.
 Some beetles eat small insects; others eat wood and plants.
 jewel beetle
 
-beetroot / beet
-beetroots / beets noun
+beetroot
+beetroots noun
 a hard, red root plant with leaves that is eaten as a vegetable
 
 begin
@@ -1558,7 +1557,6 @@ Bicycle can be shortened to bike.
 big
 adjective
 large in width or size.
-
 The jacket is too big for him.
 (cid:78) comparisons bigger biggest
 
@@ -1602,10 +1600,6 @@ birthday
 birthdays noun
 the anniversary of the day you were born.
 
-birthday cake
-birthday cakes noun
-a special cake with candles on top that is baked for your birthday.
-
 bit
 bits noun
 a small piece of something.
@@ -1622,14 +1616,6 @@ a bird that lives in gardens and ﬁelds, and eats insects and seeds. The male h
 blackboard
 blackboards noun
 a hard, dark smooth surface for writing on with chalk in classrooms. 
-
-birthday card
-birthday cards noun
-a card that people send to you on your birthday, to congratulate you on being a year older.
-
-birthday party
-birthday parties noun
-a party to celebrate someone’s birthday.
 
 bitter
 adjective
@@ -1649,10 +1635,6 @@ knife blade
 2 a stem of grass.
 blade
 
-birthday present
-birthday presents noun
-a gift that you give to someone on their birthday.
-
 blackberry
 blackberries noun
 a black or dark purple fruit that grows on prickly stems called brambles.
@@ -1670,7 +1652,6 @@ She always blames me for letting the toast burn.
 blank
 blanks noun
 An empty space.
-
 The last word has been left blank.
 blank adjective
 
@@ -1766,7 +1747,7 @@ to be in the way.
 The road was blocked
 by the fallen tree.
 
-blond / blonde
+blond
 adjective
 having light-colored hair. 
 Blond is used for boys and men, and blonde is used for girls and women.
@@ -1797,8 +1778,8 @@ a very heavy snowstorm.
 blob
 blobs noun
 a small lump of something with no shape.
-
 a blob of face cream
+
 boat
 boats noun
 a small open vessel that carries goods and people across water.
@@ -2664,11 +2645,6 @@ cells noun
 2 the smallest living part of an animal or plant.
 The tomato is in a central position.
 
-cell phone
-noun
-a handheld mobile telephone that connects to other telephones by radio waves.
-She is speaking on her cell phone.
-
 cement
 noun
 a clay powder that becomes hard when mixed with water.
@@ -3248,11 +3224,6 @@ a movie, play, or radio or television program that makes you laugh.
 comet
 comets noun
 a huge ball of dust, ice, and gases that travels around the Sun, often followed by a luminous trail of gases.
-
-common sense
-noun
-the ability to act sensibly in different situations.
-Common sense stopped us from driving in the fog.
 
 communicate
 communicates communicating communicated verb
@@ -4140,7 +4111,6 @@ dark
 adjective
 1 with little or no light.
 The street was dark away from the streetlights.
-
 dark noun
 2 with a lot of black in it.
 Dark blue.
@@ -4285,7 +4255,6 @@ decision noun
 deciduous
 adjective
 losing leaves every year.
-
 (cid:78) opposite evergreen
 (cid:78) say de-sid-yoo-us
 
@@ -4411,7 +4380,6 @@ to leave.
 design
 designs designing designed verb
 to plan what something is going to look like.
-
 The boat departs for the island every hour.
 departure noun
 
@@ -5027,7 +4995,6 @@ drip
 drips dripping dripped verb
 to fall slowly, drop by drop.
 Water dripped from the faucet.
-
 drip noun
 dripping adjective
 
@@ -5227,8 +5194,8 @@ ear
 ears noun
 1 the part of your body that you hear with.
 2 the top of a cereal stalk where the seeds grow.
-
 ear of wheat
+
 Earth
 noun
 the planet that we live on.
@@ -5628,14 +5595,13 @@ Can you think of an example of a plant that has blue ﬂowers?
 excuse
 excuses noun
 a reason you give for not doing what you should have done.
+He had a good excuse for not washing the dishes.
+(cid:78) say ik-skyoos
+excuse verb
 
 excellent
 adjective
 extremely good.
-
-He had a good excuse for not washing the dishes.
-(cid:78) say ik-skyoos
-excuse verb
 
 exercise
 exercises noun
@@ -6256,7 +6222,6 @@ healthy.
 ﬁzzy
 adjective
 full of bubbles.
-
 A ﬁzzy drink.
 ﬁzz verb
 
@@ -7791,7 +7756,6 @@ Hay is often hung in a net for horses to eat.
 hazard
 hazards noun
 a risk or dangerous obstacle.
-
 Icy pavements are a hazard to pedestrians in winter.
 hazardous adjective
 She left her clothes in a heap on the chair.
@@ -7858,6 +7822,9 @@ A herd of bison.
 hibernate
 hibernates hibernating hibernated verb
 to go to sleep for the winter.
+A ﬁeldmouse hibernating.
+(cid:78) say hie-ber-nate
+hibernation noun
 
 height
 heights noun
@@ -7887,10 +7854,6 @@ I held a snake when we went to the zoo yesterday.
 helicopter
 helicopters noun
 a type of aircraft that uses rotating blades to make it ﬂy and hover.
-
-A ﬁeldmouse hibernating.
-(cid:78) say hie-ber-nate
-hibernation noun
 
 hiccup
 hiccups noun
@@ -8249,7 +8212,6 @@ I hung my coat up when I arrived this morning.
 hungry
 adjective
 wanting or needing something to eat.
-
 hungry chicks
 (cid:78) comparisons hungrier hungriest
 hunger noun
@@ -8954,10 +8916,6 @@ jewelry
 noun
 decorative ornaments that people wear. Jewelry is usually made from metals and decorated with jewels.
 
-jigsaw puzzle
-jigsaw puzzles noun
-a puzzle with oddly shaped pieces that ﬁt together to make a picture.
-
 joint
 joints noun
 the place where two pieces of something join together. 
@@ -9462,10 +9420,6 @@ to rest on something or tilt to one side.
 leap
 leaps leaping leaped or leapt verb
 to jump a long distance, or to jump high into the air.
-
-leap year
-leap years noun
-a year that has 366 days, instead of 365. A leap year happens once in every four years. The extra date in a leap year is February 29.
 
 learn
 learns learning learned
@@ -10851,10 +10805,6 @@ mushrooms noun
 a common fungus that grows in warm, damp areas. Some mushrooms 
 can be eaten, but others are poisonous.
 
-ﬁeld mushrooms music
-noun
-the sound that people make when they sing or play musical instruments.
-
 mud
 noun
 soft, wet earth.
@@ -11312,11 +11262,6 @@ Notices on a board.
 2 attention.
 Take no notice of them.
 
-nuclear energy
-noun
-energy that is released by splitting the center, or nucleus, of particular atoms.
-(cid:78) say noo-klee-ur
-
 numb
 adjective
 unable to feel anything.
@@ -11582,10 +11527,6 @@ olive
 olives noun
 a small, oval fruit that grows in countries near the Mediterranean Sea. 
 Olives are eaten in salads and crushed to make olive oil.
-
-Olympic Games
-noun
-a sporting competition for athletes from countries all over the world that is held every four years.
 
 omit
 omits omitting omitted verb
@@ -11885,10 +11826,6 @@ You cannot see, smell, or taste oxygen. All living things need oxygen in order t
 oyster
 oysters noun
 a shellﬁsh that lives in shallow water. Oysters feed on tiny bits of food that they ﬁlter through the edge of their shells.
-
-ozone layer
-noun
-a layer of ozone gas in the Earth’s atmosphere that protects the Earth from the more harmful rays of the Sun.
 
 pack
 packs packing packed verb
@@ -12746,9 +12683,6 @@ point
 points pointing pointed verb
 to show where something is with your ﬁnger.
 
-A deadly poison can be made from this frog’s skin.
-poisonous adjective
-
 poke
 pokes poking poked verb
 to push something with a stick, your ﬁnger, or another pointed object.
@@ -12950,10 +12884,6 @@ a large notice or picture that is displayed on a wall as an ad or for decoration
 potato
 potatoes noun
 a common root vegetable that can be boiled, roasted, fried, or baked.
-
-post ofﬁce
-post ofﬁces noun
-a place where you go to buy stamps and to send letters and packages.
 
 pottery
 noun
@@ -13305,10 +13235,6 @@ propeller
 propellers noun
 a device with revolving blades. 
 Propellers spin around to move a boat through the water, or to power an airplane through the air (see boat on page 31 and transportation on page 221).
-
-This is the proper
-way to hit a golf ball so that it rolls along the ground.
-properly adverb
 
 property
 noun
@@ -13726,10 +13652,6 @@ rainfall
 noun
 the amount of rain that falls over a particular area.
 The chart shows the annual rainfall in South America.
-
-rain forest
-rain forests noun
-a dense, hot, wet jungle that grows in tropical areas.
 
 rally
 rallies noun
@@ -14423,11 +14345,6 @@ My right hand.
 The right answer.
 right noun
 
-right angle
-right angles noun
-an angle that measures 90 degrees, formed by two lines that are perpendicular to one another.
-The four inside corners of a square are right angles.
-
 rim
 rims noun
 the edge or border of something.
@@ -14525,8 +14442,8 @@ rocky adjective
 rock
 rocks rocking rocked verb
 to move gently backward and forward, or from side to side.
-
 rocking chair
+
 roll
 rolls noun
 1 paper, cloth, ﬁlm, or other material that has been wound onto a tube.
@@ -15941,16 +15858,15 @@ sincerely adverb
 sing
 sings singing sang sung verb
 1 to make a musical sound with your voice.
+She likes to sing.
+2 to perform by singing.
+She is singing in an opera.
 
 siren
 sirens noun
 a device that makes a loud noise and is used as a warning signal.
 A ﬁre engine’s siren.
 (cid:78) say sy-run
-
-She likes to sing.
-2 to perform by singing.
-She is singing in an opera.
 
 size
 sizes noun
@@ -16329,8 +16245,8 @@ sneer noun
 sneeze
 sneezes sneezing sneezed verb
 to force air out of your nose in a sudden, uncontrolled way.
-
 sneeze noun
+
 sniff
 sniffs snifﬁng sniffed verb
 1 to breathe in noisily through your nose.
@@ -16697,7 +16613,6 @@ A speck of dust.
 speckled
 adjective
 covered with tiny marks or spots.
-
 A speckled egg.
 
 speak
@@ -16799,7 +16714,6 @@ spins spinning spun verb
 spire
 spires noun
 a tall, pointed structure at the top of a tower.
-
 church spire
 
 spirit
@@ -18233,12 +18147,6 @@ tantrums noun
 a noisy display of bad temper.
 He had a tantrum when he was told to clean his room.
 
-tape measure
-tape measures noun
-a tape marked in centimeters and inches that is used for measuring length.
-She tapped on his shoulder.
-tap noun
-
 tap
 taps tapping tapped verb
 to hit gently with your ﬁngers.
@@ -18275,6 +18183,9 @@ taste
 noun
 1 one of the body’s ﬁve senses that we use to ﬁnd out the ﬂavor of something. 
 2 the ﬂavor of something when you have licked it or put it in your mouth.
+She tried the soup to see if she liked the taste.
+taste verb
+tasty adjective
 
 teach 
 teaches teaching taught verb
@@ -18288,10 +18199,6 @@ a cup used for drinking tea.
 team
 teams noun
 a group of people who work or play sports together.
-
-She tried the soup to see if she liked the taste.
-taste verb
-tasty adjective
 
 tattoo
 tattoos noun
@@ -19325,10 +19232,6 @@ trod
 from the verb to tread
 She trod in a puddle and splashed her clothes.
 
-trolley car
-trolley cars noun
-a vehicle that runs on tracks in streets and is powered by an electric current from an overhead wire.
-
 trombone
 trombones noun
 a large, brass musical instrument, played by blowing through a mouthpiece. 
@@ -19832,7 +19735,6 @@ Unpacking a suitcase.
 unkind
 adjective
 cruel or not caring.
-
 She was very unkind to her little sister.
 (cid:78) opposite kind
 
@@ -19983,12 +19885,6 @@ use
 uses using used verb
 to put something into action.
 
-upside down
-adverb
-with the top part underneath, or turned the wrong way up.
-He hung upside down from the bar.
-upside-down adjective
-
 upstairs
 adverb
 to or on an upper story.
@@ -20019,10 +19915,6 @@ upright
 adverb
 sitting or standing up straight rather than bent over.
 
-The dog stood upright on its hind legs.
-(cid:78) say up-rite
-upright adjective
-
 use
 uses noun
 1 the value of something for a certain purpose.
@@ -20035,7 +19927,6 @@ in some areas.
 useful
 adjective
 able to be used for all kinds of tasks, or good for a certain task.
-
 This gadget is useful for unscrewing lids.
 (cid:78) say yoose-ful
 (cid:78) opposite useless
@@ -20122,11 +20013,6 @@ vase
 vases noun
 a jar used as an ornament for displaying ﬂowers.
 (cid:78) say vayz
-
-vacuum ﬂask
-vacuum ﬂasks noun
-a container used for keeping liquids hot or cold. Flasks have double walls with a vacuum between them. 
-We commonly call this a thermos.
 
 vague
 adjective
@@ -20713,9 +20599,7 @@ Wet paint.
 
 weird
 adjective
-strange 
-and mysterious.
-
+strange and mysterious.
 The tree had a weird shape.
 (cid:78) say weerd
 (cid:78) comparisons weirder weirdest
@@ -20855,7 +20739,6 @@ a color.
 whole
 adjective
 complete, or with nothing missing.
-
 They bought a whole quiche for the party.
 (cid:78) say hole
 whole noun
@@ -20874,6 +20757,9 @@ wickedness noun
 wide
 adjective
 1 being a large size, or long distance, from one side to the other.
+A wide river.
+(cid:78) comparisons wider widest
+(cid:78) opposite narrow
 2 having a certain measurement from one side to the other.
 The carpet is ten feet wide.
 wide adverb
@@ -20901,9 +20787,6 @@ wildernesses noun
 a wild area of land where no one lives.
 (cid:78) say wil-der-ness
 
-A wide river.
-(cid:78) comparisons wider widest
-(cid:78) opposite narrow
 
 will
 verb
@@ -21084,10 +20967,6 @@ word
 words noun
 1 a sound or group of sounds that stands for an idea, an object, or an action.
 2 the group of letters you use to write down these sounds.
-
-word processing
-verb
-writing, correcting, and storing documents electronically.
 
 work
 works working worked verb
