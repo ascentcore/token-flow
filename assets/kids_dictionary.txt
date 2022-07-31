@@ -15780,6 +15780,8 @@ to let out a long, deep breath slowly.
 signal
 signals noun
 1 an action or object that is used to send a message without words.
+He put his right arm out as a signal that he wanted to turn right.
+2 the electrical current by which sounds and pictures are transmitted to radios, televisions, and telephones.
 
 silhouette
 silhouettes noun
@@ -15813,6 +15815,9 @@ The sign for dollar is “$.”
 2 a movement that expresses a meaning.
 He nodded his head as a sign that he wanted to leave.
 3 a public notice that gives information.
+A road sign.
+4 anything that indicates something is going to happen. 
+Is there any sign of snow?
 
 side
 sides noun
@@ -15836,23 +15841,17 @@ the action of surrounding a place to try to force the people inside to surrender
 sieve
 sieves noun
 a container made of plastic or metal that has mesh or small holes for sorting solids from liquids, or ﬁne grains from larger pieces.
-
 (cid:78) say siv
 sieve verb
 
 sift
 sifts sifting sifted verb
 to sort through something carefully in order to separate larger pieces from smaller pieces.
-
 Sifting for gold.
-He put his right arm out as a signal
-that he wanted to turn right.
-2 the electrical current by which sounds and pictures are transmitted to radios, televisions, and telephones.
 
 signature
 signatures noun
 your special way of writing your own name.
-
 (cid:78) say sig-nuh-chur
 
 signiﬁcant
@@ -15875,27 +15874,20 @@ What a silly idea!
 silver
 noun
 1 a precious metal found in the ground that is used in making coins and jewelry.
-
 silver ring
-
 2 the color of the metal silver.
 silver adjective
 
 similar
 adjective
 almost, but not exactly, the same.
-
-A road sign.
-4 anything that indicates something is going to happen. 
-Is there any sign of snow?
+These mugs are similar.
 
 silent
 adjective
 not making any sound.
 silence noun
 silently adverb
-
-These mugs are similar.
 
 single
 adjective
@@ -15913,18 +15905,18 @@ The Sun sank below the horizon.
 sink
 sinks noun
 a basin with a water supply, faucets, and a drain.
-
 kitchen sink
 
 sip
 sips sipping sipped verb
 to drink in small amounts.
+He sipped his coffee slowly.
+sip noun
 
 simmer
 simmers simmering simmered verb
 to cook something so that it bubbles very gently.
-Leave the soup to simmer
-for 20 minutes.
+Leave the soup to simmer for 20 minutes.
 
 simple
 adjective
@@ -15932,16 +15924,11 @@ adjective
 A simple solution.
 (cid:78) opposite complicated
 2 plain.
-
-simple
-earrings
+simple earrings
 (cid:78) comparisons simpler simplest
 
-ornate earrings
-
 simplify
-simpliﬁes simplifying simpliﬁed 
-verb
+simpliﬁes simplifying simpliﬁed verb
 to make something easier.
 
 sincere 
@@ -15954,9 +15941,6 @@ sincerely adverb
 sing
 sings singing sang sung verb
 1 to make a musical sound with your voice.
-
-He sipped his coffee slowly.
-sip noun
 
 siren
 sirens noun
@@ -15971,6 +15955,7 @@ She is singing in an opera.
 size
 sizes noun
 a measurement of how large or small something is.
+These shoes are the wrong size.
 
 sister
 sisters noun
@@ -15979,7 +15964,6 @@ a female person who has the same mother and father as someone else.
 sit
 sits sitting sat verb
 1 to rest your body by supporting your weight on your bottom, rather than on your feet.
-
 2 to rest or be positioned.
 3 to pose for something.
 She sat for her portrait.
@@ -15987,8 +15971,7 @@ She sat for her portrait.
 site
 sites noun
 an area of ground used for a particular purpose.
-
-These shoes are the wrong size.
+A construction site.
 
 sizzle
 sizzles sizzling sizzled verb
@@ -15999,23 +15982,17 @@ skate
 skates skating skated verb
 to slide along on a hard surface wearing special shoes with blades or wheels.
 
-A construction site.
-
 situation
 situations noun
 what is happening in a particular place at a particular time.
-
 He found himself in a desperate situation.
 (cid:78) say sich-oo-ay-shun
 
-skating noun
-
-roller skate
 
 skateboard
 skateboards noun
 a small board on wheels that people stand on to ride along.
-skeleton
+
 skeleton
 skeletons noun
 a group of connected bones that support a person’s or animal’s body. 
@@ -16024,28 +16001,24 @@ There are 206 bones in a human skeleton.
 sketch
 sketches noun
 1 a quick drawing.
-
 A sketch of a ship.
 2 a short play.
 
 ski
 skis skiing skied verb
 to move over snow or ice on two long pieces of wood, metal, or plastic attached to special boots.
-
 (cid:78) say skee
 ski noun
 
 skid
 skids skidding skidded verb
 to slide out of control.
-
 The car skidded on the icy road.
 
 skill
 skills noun
 an ability to do something.
-Juggling is a difﬁcult skill
-to learn.
+Juggling is a difﬁcult skill to learn.
 skilful adjective
 
 skip
@@ -16053,6 +16026,8 @@ skips skipping skipped verb
 1 to move along, hopping lightly from one foot to another.
 She skipped down the road.
 2 to jump over a turning rope.
+3 to pass over or leave something out deliberately. 
+We’ll skip the next question.
 
 sky
 skies noun
@@ -16062,12 +16037,6 @@ Not a cloud in the sky.
 skyscraper
 skyscrapers noun
 a very tall building with many stories.
-
-skipping 
-rope
-
-3 to pass over or leave something out deliberately. 
-We’ll skip the next question.
 
 skirt
 skirts noun
@@ -16085,7 +16054,6 @@ everyday words and phrases that are not normally used in writing or formal speak
 slant
 slants slanting slanted verb
 to slope sideways.
-
 The wooden shelf slanted
 to the right.
 
@@ -16096,9 +16064,7 @@ skins noun
 
 skull
 skulls noun
-the bone frame of the head that protects the brain and supports the face (see skeleton
-on page 188).
-
+the bone frame of the head that protects the brain and supports the face 
 ram’s skull
 
 slap
@@ -16122,19 +16088,15 @@ Seals have sleek fur.
 sleep
 sleeps sleeping slept verb
 to rest your body and mind with your eyes closed.
-
 sleep noun
 
 sleeve
 sleeves noun
 the part of a piece of clothing that covers the arm.
 
-sleeve
-sleigh
 sleigh
 sleighs noun
 a large sled, usually pulled by an animal and used for traveling over snow or ice.
-
 (cid:78) say slay
 
 slender
@@ -16145,10 +16107,7 @@ A slender branch.
 slice
 slices noun
 a thin, ﬂat piece cut from something.
-
-a slice
-of bread
-
+a slice of bread
 slice verb
 
 slide
@@ -16159,8 +16118,8 @@ She slid across the ice on her skates.
 slide
 slides noun
 1 a piece of children’s play equipment for sliding down.
-
 2 a transparent photo in a cardboard or plastic frame.
+
 slight
 adjective
 very small in amount.
@@ -16177,8 +16136,7 @@ fairly thin.
 slime
 noun
 an unpleasantly wet and slippery substance.
-Snails leave a trail of slime
-as they move along.
+Snails leave a trail of slime as they move along.
 slimy adjective
 
 sling
@@ -16204,6 +16162,12 @@ to sit, stand, or walk so that your shoulders are bent over and your back is not
 slow
 adjective
 1 taking a long time, or not hurrying.
+Tortoises are very slow, while rabbits move quickly.
+2 behind the time.
+This watch is 5 minutes slow.
+(cid:78) comparisons slower slowest
+(cid:78) opposite fast
+slowly adverb
 
 slippery
 adjective
@@ -16224,21 +16188,14 @@ over sand.
 slope
 slopes noun
 ground that slants.
-
-They practiced on the artiﬁcial 
-ski slope.
+They practiced on the artiﬁcial ski slope.
 slope verb
 
 slot
 slots noun
 a small, narrow opening for putting something in.
-
-Tortoises are very slow, while rabbits move quickly.
-2 behind the time.
-This watch is 5 minutes slow.
-(cid:78) comparisons slower slowest
-(cid:78) opposite fast
-slowly adverb
+She put a coin in the slot.
+slot verb
 
 sly
 adjective
@@ -16254,26 +16211,21 @@ to open and close your lips noisily.
 small
 adjective
 little in size, or not great or big.
-
-She put a coin in the slot.
-slot verb
-
 small can of paint
 (cid:78) comparisons smaller smallest
 (cid:78) opposite big
-
-big can of paint
 
 smart
 adjective
 1 quick and intelligent.
 A smart idea.
 2 well-dressed.
+He looked very smart in his new suit.
+(cid:78) comparisons smarter smartest
 
 smell
 smells smelling smelled verb
 1 to use your nose to notice odors.
-
 Smelling a rose.
 2 to have an odor.
 The barn smelled of hay.
@@ -16288,22 +16240,19 @@ What a smell!
 smile
 smiles smiling smiled verb
 to show you are happy by widening your mouth and turning up the corners of your lips.
-
-He looked very smart in his new suit.
-(cid:78) comparisons smarter smartest
+smile noun
 
 smash
 smashes smashing smashed verb
 to break something into pieces.
-
-The plates smashed
-on the ground.
+The plates smashed on the ground.
 
 smear
 smears smearing smeared verb
 to spread something sticky or messy.
-
-smile noun
+He smeared glue onto the back of the picture.
+(cid:78) say smeer
+smear noun
 
 smoke
 noun
@@ -16315,10 +16264,6 @@ smolders smoldering smoldered verb
 to burn very slowly, without any ﬂames.
 (cid:78) say smole-dur
 
-He smeared glue onto the back of the picture.
-(cid:78) say smeer
-smear noun
-
 smooth
 adjective
 having an even surface, without sharp edges or lumps.
@@ -16328,15 +16273,12 @@ As smooth as glass.
 smudge
 smudges noun
 a dirty mark made by rubbing or smearing something onto a surface.
-
 She had a smudge of chalk on her cheek.
 smudge verb
 
 smuggle
 smuggles smuggling smuggled verb
 to take something into a place secretly and illegally.
-smuggler
-
 They smuggled their cargo into the country under cover of darkness.
 
 snack
@@ -16350,7 +16292,6 @@ a slow-moving animal with a spiral shell. Snails live on land or in water and ea
 snake
 snakes noun
 a long, thin reptile with no legs. Snakes eat insects, eggs, ﬁsh, or animals. Some snakes are poisonous, while others kill by squeezing their prey tightly.
-
 vine snake
 
 snap
@@ -16358,9 +16299,7 @@ snaps snapping snapped verb
 1 to make a sudden cracking noise.
 Snap your ﬁngers.
 2 to break suddenly.
-
-She snapped
-the stick in half.
+She snapped the stick in half.
 3 to talk in a quick, angry way.
 “Why haven’t you done your homework?” he snapped.
 
@@ -16369,7 +16308,7 @@ snarls snarling snarled verb
 to growl ﬁercely, showing the teeth.
 The guard dog snarled
 at the burglar.
-snatch
+
 snatch
 snatches snatching snatched verb
 to take hold of something suddenly.
@@ -16378,15 +16317,13 @@ I snatched my coat and ran out of the house.
 sneak
 sneaks sneaking sneaked verb
 to move or act in a quiet or secret way.
-
 He sneaked out of the room when no one was looking.
 sneaky adjective
 
 sneer
 sneers sneering sneered verb
 to show scorn about something or someone.
-“My bike is better than yours,” 
-she sneered.
+“My bike is better than yours,” she sneered.
 sneer noun
 
 sneeze
@@ -16404,7 +16341,6 @@ Dogs ﬁnd out about things by snifﬁng them.
 snip
 snips snipping snipped verb
 to cut something with scissors in one, quick movement.
-
 Snipping the top off the box.
 
 snore
@@ -16425,8 +16361,8 @@ an animal’s long nose and jaws (see dinosaur on page 61, mammal on page 124, a
 
 snug
 adjective
-comfortable 
-and warm.
+comfortable and warm.
+The cat looked very snug curled up inside the basket.
 
 snow
 noun
@@ -16458,9 +16394,6 @@ snowstorm
 snowstorms noun
 a storm during which a lot of snow falls.
 
-The cat looked very snug
-curled up inside the basket.
-
 snuggle
 snuggles snuggling snuggled verb
 to lie close together in order to keep warm.
@@ -16468,7 +16401,6 @@ to lie close together in order to keep warm.
 soak
 soaks soaking soaked verb
 to make or become thoroughly wet.
-
 The rain had soaked her hair.
 
 soap
@@ -16478,7 +16410,6 @@ a substance used for washing.
 soar
 soars soaring soared verb
 to ﬂy high in the air.
-
 The eagle soared over the valley.
 
 sob
@@ -16491,11 +16422,15 @@ adjective
 A soft pillow.
 (cid:78) opposite hard
 2 gentle or smooth to the touch.
+A soft ball of yarn.
+(cid:78) opposite rough
+3 not harsh or loud.
+A soft sound.
+(cid:78) comparisons softer softest
 
 soldier
 soldiers noun
 a person who is part of an army.
-
 The little boy was sobbing in the corner.
 
 soccer
@@ -16521,39 +16456,26 @@ sock
 socks noun
 a piece of clothing that covers your foot and the lower part of your leg.
 
-A soft ball of yarn.
-(cid:78) opposite rough
-3 not harsh or loud.
-A soft sound.
-(cid:78) comparisons softer softest
-
 software
 noun
 programs that are put into a computer to make it work.
 
-a Roman soldier
-
-(cid:78) say sole-jur
-
 sole
 soles noun
 1 the bottom part of your foot.
+2 the bottom of a shoe.
+3 an edible type of ﬂat ﬁsh.
 
 soil
 soils noun
 the top layer of earth in which plants can grow.
-
-2 the bottom of a shoe.
-
 You can grow some vegetables in pots of soil.
 
 solar
 adjective
 having to do with the power of the Sun or any other light.
-
 solar panel
-
-3 an edible type of ﬂat ﬁsh.
+A solar-powered calculator.
 
 sole
 adjective
@@ -16565,8 +16487,6 @@ adjective
 serious.
 A solemn promise.
 (cid:78) say sol-em
-
-A solar-powered calculator.
 
 socket
 sockets noun
@@ -16585,7 +16505,6 @@ Ice, rock, and jelly are solids.
 solid
 adjective
 1 made of the same thing all the way through.
-
 This cat is carved from a solid block of wood.
 2 ﬁrm or strongly made.
 They built a solid wall around the castle.
@@ -16593,14 +16512,12 @@ They built a solid wall around the castle.
 solo
 adjective
 on your own.
-She made a solo ﬂight 
-around the world.
+She made a solo ﬂight around the world.
 (cid:78) say so-low
 
 solo
 solos noun
 a piece of music that is played or sung by one person.
-
 She played a violin solo.
 
 solution
@@ -16610,7 +16527,7 @@ The solution to the crossword.
 2 a liquid that has something dissolved in it.
 A solution of salt and water.
 (cid:78) say suh-loo-shun
-solve
+
 solve
 solves solving solved verb
 to ﬁnd the answer to a problem or mystery.
@@ -16629,6 +16546,7 @@ sort
 sorts noun
 a group of similar things, or a type of something. 
 What sort of vacation will you take this year?
+He sorted the socks and put them in pairs.
 
 sour
 adjective
@@ -16648,11 +16566,6 @@ south
 noun
 one of the four main directions on a compass. 
 South is to your right when you are facing the rising Sun.
-
-west
-
-south
-southern adjective
 
 souvenir
 souvenirs noun
@@ -16682,12 +16595,8 @@ I ate some cake.
 somersault
 somersaults somersaulting somersaulted verb
 to roll or leap forward or backward so that your whole body turns over.
-
 (cid:78) say summer-salt
 somersault noun
-(cid:78) say so-nar
-
-He sorted the socks and put them in pairs.
 
 song
 songs noun
@@ -16710,6 +16619,8 @@ something that can be heard.
 soup
 soups noun
 a liquid food made from ﬁsh, meat, or vegetables, cooked in water or milk.
+vegetable soup
+(cid:78) say soop
 
 soon
 adverb
@@ -16719,7 +16630,6 @@ It will soon be lunchtime.
 sore
 adjective
 aching or hurting.
-
 His head was sore where he had bumped it.
 (cid:78) comparisons sorer sorest
 
@@ -16730,12 +16640,6 @@ I am sorry that I stepped on your toe.
 (cid:78) comparisons sorrier sorriest
 (cid:78) opposite pleased
 
-vegetable soup
-(cid:78) say soop
-
-She sowed some seeds in a window box.
-(cid:78) say so
-
 soybean
 noun
 a vegetable seed used for food or crushed for its oil.
@@ -16743,6 +16647,7 @@ a vegetable seed used for food or crushed for its oil.
 spare
 adjective
 more than is needed.
+spare tire
 
 species
 species noun
@@ -16759,15 +16664,12 @@ noun
 spacecraft
 spacecrafts noun
 a vehicle for traveling in space.
-
 Vostok 1 was the ﬁrst 
 manned spacecraft.
 
 spade
 spades noun
 a shovel or tool that is used for digging.
-
-spare tire
 
 spark
 sparks noun
@@ -16833,10 +16735,6 @@ spice
 spices noun
 a substance made from dried parts of a plant and used to add ﬂavor to food.
 
-cayenne pepper
-
-cinnamon stick
-
 spaghetti
 noun
 a type of long, thin pasta.
@@ -16844,8 +16742,6 @@ a type of long, thin pasta.
 spear
 spears noun
 a long weapon with a sharp point that is thrown by hand.
-
-(cid:78) say spu-get-ee
 
 span
 spans noun
@@ -16857,8 +16753,6 @@ adjective
 different from the rest, usually because it is better.
 (cid:78) say spesh-ul
 (cid:78) opposite ordinary
-
-The spectators cheered for their favorite team.
 
 speech
 speeches noun
@@ -16873,15 +16767,16 @@ a measurement of how fast something is moving.
 spicy
 adjective
 strongly ﬂavored with spice.
-spider
+
 spider
 spiders noun
 a small animal with eight legs. Spiders spin nets of thin, sticky threads called webs, which they use to trap insects for food. They kill their prey with poison.
 
 spine
 spines noun
-1 the column of bones that makes up the backbone of a skeleton (see skeleton
-on page 188).
+1 the column of bones that makes up the backbone of a skeleton
+2 one of the stiff, sharp points on an animal, like a porcupine, or on a plant, like a cactus (see ﬁsh on page 79, plant on page 151, and sea life on page 178).
+3 the part of a book where the pages are joined and that holds the book together.
 
 spike
 spikes noun
@@ -16890,19 +16785,16 @@ a sharp point, often made of metal or wood, or a pointed part of an animal or pl
 spill
 spills spilling spilled or spilt verb
 to let something drop or overﬂow from a container.
-
-2 one of the stiff, sharp points on an animal, like a porcupine, or on a plant, like a cactus (see ﬁsh on page 79, plant on page 151, and sea life on page 178).
-3 the part of a book where the pages are joined and that holds the book together.
+She spilled her drink.
 
 spiral
 spirals noun
 an object shaped in a curve that turns around a central point.
 
-She spilled her drink.
-
 spin
 spins spinning spun verb
 1 to turn around quickly, or to make something turn quickly.
+2 to produce threads. Spiders and silkworms spin threads by producing them from their bodies. People spin raw cotton and wool to make threads.
 
 spire
 spires noun
@@ -16917,7 +16809,6 @@ In good spirits.
 spiritual adjective
 2 a being, such as a ghost, that does not have a body.
 
-2 to produce threads. Spiders and silkworms spin threads by producing them from their bodies. People spin raw cotton and wool to make threads.
 spit
 spits spitting spat verb
 to force saliva or something else out of your mouth.
@@ -16932,7 +16823,6 @@ spiteful adjective
 splash
 splashes splashing splashed verb
 to scatter water or another liquid.
-
 The children splashed around in the pool.
 splash noun
 
@@ -16943,7 +16833,6 @@ a thin, sharp piece that has broken off something hard, such as wood or glass.
 split
 splits splitting split verb
 1 to divide into parts.
-
 She split the logs with an ax.
 2 to tear or crack, perhaps by mistake.
 The bag split open.
@@ -16970,8 +16859,6 @@ a soft, ﬂexible material used for washing and cleaning.
 Some sponges are made of plastic, but real sponges are made from the skeletons of sea creatures. 
 (cid:78) say spunj
 
-bath sponge
-
 sponsor
 sponsors sponsoring sponsored verb
 to give money to support a charity or event. Sometimes money is given in return for a person completing an activity.
@@ -16982,13 +16869,10 @@ spoon
 spoons noun
 a small utensil with a curved bowl at one end. Spoons are used for eating or stirring.
 
-
 sport
 sports noun
 an activity or game that requires physical effort or skill. People play sports for exercise or pleasure.
 
-bat
-spot
 spot
 spots noun
 1 a small, round area that is a different color from the area around it.
@@ -17009,18 +16893,15 @@ spout
 spouts noun
 the part of a container that a liquid is poured from.
 
-teapot spout
-
 spray
 sprays spraying sprayed verb
 to scatter a ﬁne shower of liquid onto something.
-
 He sprayed the plant with water.
 spray noun
+
 spread
 spreads spreading spread verb
 to open something out or make it cover a bigger area.
-
 He spread the blanket out on the ground.
 (cid:78) say spred
 
@@ -17028,19 +16909,20 @@ spring
 springs noun
 1 the season between winter and summer when the weather becomes warmer and many plants start to grow.
 2 a coil of thin metal that jumps back into shape after it has been pressed together or pulled apart.
-
-3 a place where water ﬂows 
-out of the ground.
+3 a place where water ﬂows out of the ground.
 
 spring
 springs springing sprang sprung verb
 1 to jump upward in a lively way.
+She sprang over the gymnastic apparatus.
+spring noun
+2 to appear or grow quickly.
+New houses sprang up all over the hillside.
 
 squash
 squashes squashing squashed verb
 1 to crush something so that it becomes ﬂat.
 2 to squeeze together.
-
 We all squashed onto the sofa.
 (cid:78) say skwosh
 
@@ -17052,29 +16934,21 @@ squeak noun
 
 squeal
 squeals squealing squealed verb
-to make a long, high-pitched 
-sound like a piglet.
+to make a long, high-pitched sound like a piglet.
 squeal noun
 
 squeeze
 squeezes squeezing squeezed verb
 to press hard, often in order to push something out.
-
-She sprang over the gymnastic apparatus.
-spring noun
-2 to appear or grow quickly.
-New houses sprang up all over the hillside.
-
+She squeezed the paint out of the tube.
+ 
 sprint
 sprints sprinting sprinted verb
 to run very fast for a short distance.
 
-sprint noun
-
 sprout
 sprouts sprouting sprouted verb
 to begin to grow.
-
 Green shoots sprouted from the bean.
 sprout noun
 
@@ -17087,8 +16961,6 @@ square
 squares noun
 a shape with four equal sides and four right angles (see shape on page 182).
 square adjective
-
-She squeezed the paint out of the tube.
 
 squirm
 squirms squirming squirmed verb
@@ -17103,7 +16975,6 @@ a small, furry rodent. Some types of squirrel live in trees, while others live o
 stack
 stacks noun
 a pile of things, one on top of another.
-
 A stack of plates.
 stack verb
 
@@ -17114,6 +16985,8 @@ a sports ground surrounded by seats for spectators.
 squirt
 squirts squirting squirted verb
 to shoot out a thin jet of liquid.
+He squirted the dishwashing liquid into the bowl.
+(cid:78) rhymes with dirt
 
 stagger
 staggers staggering staggered verb
@@ -17122,20 +16995,18 @@ They staggered home after the long walk.
 
 stain
 stains noun
-a dirty mark that is difﬁcult 
-to remove.
-
+a dirty mark that is difﬁcult to remove.
 coffee stain
 stain verb
 
 stair
 stairs noun
 one of a series of steps, set one after the other.
+A ﬂight of stairs.
 
 staff
 noun
 a group of people who work together in a business, school, or other organization.
-
 The staff at the garage wear uniforms.
 
 stag
@@ -17148,8 +17019,6 @@ stages noun
 2 a point reached in the progress of something.
 They made the long journey in several stages.
 
-A ﬂight of stairs.
-
 stalactite
 stalactites noun
 a spike of rock that is formed from dripping water and hangs down from the roof of a cave.
@@ -17158,11 +17027,7 @@ a spike of rock that is formed from dripping water and hangs down from the roof 
 stalagmite
 stalagmites noun
 a spike of rock that is formed by dripping water and builds up on the ﬂoor of a cave.
-
 (cid:78) say stu-lag-mite
-
-He squirted the dishwashing liquid into the bowl.
-(cid:78) rhymes with dirt
 
 stab
 stabs stabbing stabbed verb
@@ -17172,7 +17037,6 @@ She stabbed the potato with a fork to see if it was cooked.
 stable
 stables noun
 a building where horses or other animals are kept.
-
 a stable for horses
 
 stale
@@ -17187,15 +17051,10 @@ plant on page 151).
 2 a long, thin part of an animal (see 
 sea life on page 178).
 
-leaf 
-stalk
-
 stall
 stalls noun
 1 an area divided off in a stable or barn for one animal.
-
 2 a table used to display and sell goods, usually at a market.
-
 (cid:78) rhymes with call
 
 stall
@@ -17207,7 +17066,7 @@ stammer
 stammers stammering stammered verb
 to stutter or speak with difﬁculty, often stopping in the middle of words and repeating sounds.
 stammer noun
-stamp
+
 stamp
 stamps noun
 a sticker you put on an envelope or package to show that you have paid for it to be delivered.
@@ -17215,13 +17074,11 @@ a sticker you put on an envelope or package to show that you have paid for it to
 stamp
 stamps stamping stamped verb
 to bring your foot down very hard.
-
 stamp noun
 
 stand
 stands standing stood verb
 to be in an upright position.
-
 She stood on a box to look over the fence.
 
 standard
@@ -17232,12 +17089,12 @@ The standard of spelling in this class is very high.
 standard
 adjective
 ordinary or usual.
-Headlights are standard
-equipment on all cars.
+Headlights are standard equipment on all cars.
 
 stank
 from the verb to stink
 The boat stank of ﬁsh.
+
 staple
 staples noun
 a small, thin strip of metal used to join sheets of paper together.
@@ -17247,7 +17104,6 @@ star
 stars noun
 1 an object in the sky that appears as a ball of light. 
 The Sun is the nearest star to Earth.
-
 2 a shape with ﬁve or more points (see shape
 on page 182).
 3 a famous actor, actress, or other performer.
@@ -17255,26 +17111,22 @@ on page 182).
 stare
 stares staring stared verb
 to look for a long time at something with your eyes wide open.
-
 The cat stared at the mouse.
 
 starﬁsh
 starﬁsh noun
 a star-shaped sea animal, usually with ﬁve arms. 
-Starﬁsh eat plants and sea animals, such as crabs and other shellﬁsh. They sense things through tentacles on their arms (see sea life
-on page 178).
+Starﬁsh eat plants and sea animals, such as crabs and other shellﬁsh. They sense things through tentacles on their arms
 
 start
 starts starting started verb
 to begin.
-
 The runners lined up, ready to start the race.
 start noun
 
 startle
 startles startling startled verb
 to give someone a surprise or a shock.
-
 His son startled him.
 
 starve
@@ -17305,10 +17157,7 @@ statue
 statues noun
 a ﬁgure
 of a person or animal made from stone, wood, or another hard material.
-
-Statue
-of Liberty
-
+Statue of Liberty
 (cid:78) say stach-oo
 
 stay
@@ -17326,7 +17175,6 @@ adjective
 He held the ladder steady.
 2 continuous or unchanging.
 A steady fall of snow.
-
 (cid:78) say sted-ee
 (cid:78) comparisons steadier steadiest
 steadily adverb
@@ -17339,7 +17187,6 @@ a thick slice of ﬁsh or meat, usually beef.
 steal
 steals stealing stole stolen verb
 to take something that does not belong to you without the owner’s permission.
-
 Magpies steal shiny things.
 
 steam
@@ -17349,9 +17196,6 @@ the gas that water turns into when it boils. Steam can be used as a source of po
 steel
 noun
 a hard, strong metal made from iron mixed with a small amount of carbon. Steel can also be combined with other metals. Stainless steel is a mixture of steel, chromium, and nickel.
-
-hand whisk
-
 Many kitchen utensils are made of steel.
 
 steep
@@ -17376,7 +17220,6 @@ steps noun
 1 the movement made by lifting your foot and putting it down when you walk along or dance.
 step verb
 2 a level surface for putting your foot on to help you climb up or down, usually as part of a staircase or ladder.
-
 3 a stage in a series of things to do.
 The ﬁrst step in learning to swim is to enjoy being in the water.
 
@@ -17397,10 +17240,8 @@ A stern warning.
 
 stern
 noun
-the back part of a ship or boat (see boat on page 31).
-
-The dinghy was kept at the stern
-of the yacht.
+the back part of a ship or boat
+The dinghy was kept at the stern of the yacht.
 
 stethoscope
 stethoscopes noun
@@ -17423,9 +17264,7 @@ He stuck a pin into the balloon.
 stiff
 adjective
 not easy to bend or move.
-
-This folder is made of stiff
-plastic cardboard.
+This folder is made of stiff plastic cardboard.
 (cid:78) comparisons stiffer stiffest
 
 still
@@ -17444,13 +17283,8 @@ not moving or without sound.
 stilt
 stilts noun
 one of a pair or set of long poles used to support a person or thing high off the ground.
-
 pair of stilts
 
-3 to project out.
-
-The bread stuck out of the basket.
-sting
 sting
 stings stinging stung verb
 to prick the skin, or to cause a sharp pain. Some insects sting when they are frightened or angry, injecting a poison into the skin.
@@ -17468,21 +17302,13 @@ to mix something by moving it around with a spoon or similar tool.
 stitch
 stitches noun
 a loop of thread or wool made with a needle in sewing or knitting.
-
-cross
-stitch
-
-2 the outside part of your body at the front between your ribs and your hips.
-(cid:78) say stum-ik
+cross stitch
 
 stone
 stones noun
 1 the hard material that rocks are made of.
-
 A bird table made of stone.
-
 2 a small, loose piece of rock.
-
 The ﬁeld was full of stones.
 
 stood
@@ -17493,10 +17319,6 @@ stool
 stools noun
 a seat without a back or arms.
 
-kitchen stool
-
-stitch verb
-
 stock
 stocks stocking stocked verb
 to keep a supply of something.
@@ -17506,6 +17328,7 @@ stock noun
 stolen
 from the verb to steal
 A painting was stolen from the gallery.
+
 stomach
 stomachs noun
 1 the part of your body where food goes after you have eaten it, to be partly digested.
@@ -17532,7 +17355,6 @@ a piece of equipment used for cooking or heating.
 straight
 adjective
 not bent or curved.
-
 She drew a straight line.
 (cid:78) say strate
 (cid:78) comparisons straighter straightest
@@ -17544,8 +17366,6 @@ Be careful not to strain yourself when you exercise.
 strain noun
 2 to pass something through a sieve in order to ﬁlter out larger pieces.
 
-The man stopped the boy from running into the road.
-
 stopwatch
 stopwatches noun
 a watch that can be started and stopped to measure how much time something takes (see time on page 216).
@@ -17553,7 +17373,6 @@ a watch that can be started and stopped to measure how much time something takes
 store
 stores storing stored verb
 to put something away for when you need it.
-
 They stored the sports equipment in the cupboard.
 
 store
@@ -17565,9 +17384,6 @@ stork
 storks noun
 a large bird with a long beak and long legs that lives near shallow water. Storks eat ﬁsh, insects, rodents, and snakes. They live in large nests built in trees and on cliffs.
 
-marabou 
-stork
-
 strand
 strands noun
 1 any thread that is twisted together with others to make a stronger line.
@@ -17577,9 +17393,7 @@ A strand of hair.
 stranded
 adjective
 unable to leave somewhere.
-
-He was left stranded
-on the island.
+He was left stranded on the island.
 
 strange
 adjective
@@ -17593,14 +17407,11 @@ a person you have not seen before or who is new to a place.
 strap
 straps noun
 a strip of leather or other material, used for fastening or holding things.
-
-shoulder
-strap
+shoulder strap
 
 stray
 strays straying strayed verb
 to wander away from someone or somewhere.
-
 One duckling strayed from its mother.
 
 streak
@@ -17611,14 +17422,12 @@ After the football game his clothes were covered with streaks of mud.
 stream
 streams noun
 1 a small river.
-
 2 a steady ﬂow of something.
 A stream of cars rushed along the street.
 
 straw
 straws noun
 1 stalks of dried wheat or other cereal plants. Straw is used for farm animals and pets to lie on.
-
 2 a hollow tube used for drinking liquids through.
 
 strawberry
@@ -17633,24 +17442,16 @@ stretch
 stretches stretching stretched verb
 1 to pull something so that it becomes longer or bigger.
 2 to straighten or reach out as much as you can with part of your body.
-This cycling helmet has a streamlined shape.
-streamline verb
+3 to reach one place from another.
 
 street
 streets noun
 a road in a city or town.
-What is the name of the street
-you live in?
+What is the name of the street you live in?
 
 strength
 strengths noun
 the quality of being strong or powerful.
-
-She stretched
-out her arms.
-
-3 to reach one place from another.
-
 The weight lifter had incredible strength in his arms.
 
 strengthen
@@ -17663,7 +17464,6 @@ stresses noun
 1 a strain on a person or thing.
 He is under a lot of stress.
 2 an extra force laid on part of a word when speaking. In the word “stretcher,” the stress is on the ﬁrst syllable.
-
 The road stretches all the way to the mountains.
 
 stretcher
@@ -17675,6 +17475,7 @@ adjective
 keeping closely to the rules.
 The teacher was very strict.
 (cid:78) comparisons stricter strictest
+
 strip
 strips noun
 a long, narrow piece of something.
@@ -17683,7 +17484,6 @@ A strip of paper.
 stripe
 stripes noun
 a long, narrow band of color.
-
 This swimsuit has blue stripes.
 striped adjective
 
@@ -17692,10 +17492,8 @@ strokes stroking stroked verb
 to rub gently with the hand.
 
 stride
-stride
 strides striding strode verb
 to walk with long steps.
-
 stride noun
 
 strike
@@ -17706,8 +17504,9 @@ On strike.
 strike
 strikes striking struck verb
 1 to hit something hard.
-
 He stroked the rabbit.
+The tree was struck by lightning.
+2 to stop work in order to protest about something.
 
 stroll
 strolls strolling strolled verb
@@ -17724,9 +17523,7 @@ Elephants are very strong.
 (cid:78) comparisons stronger strongest
 (cid:78) opposite weak
 
-The tree was struck
-by lightning.
-2 to stop work in order to protest about something.
+
 
 string
 strings noun
@@ -17740,11 +17537,9 @@ structures noun
 study
 studies studying studied verb
 1 to look at something carefully.
-
-The Eiffel Tower is a tall, steel structure.
-
-2 the way that something is put together or organized.
-A company’s structure.
+She studied the ﬂower through a magnifying glass.
+2 to learn about a subject from books and classes.
+She studied for her exams.
 
 struggle
 struggles struggling struggled verb
@@ -17754,7 +17549,6 @@ He struggled with the math problem for a long time.
 stubborn
 adjective
 determined to have your own way.
-
 A stubborn mule.
 (cid:78) say stub-urn
 
@@ -17768,10 +17562,6 @@ students noun
 a person who is studying at some kind of school.
 (cid:78) say stoo-dnt
 
-She studied the ﬂower through a magnifying glass.
-2 to learn about a subject from books and classes.
-She studied for her exams.
-
 stuffy
 adjective
 without fresh air.
@@ -17784,7 +17574,6 @@ to trip and almost fall.
 stump
 stumps noun
 a short part of something left behind after the rest has been cut or worn away.
-
 tree stump
 
 studio
@@ -17792,13 +17581,11 @@ studios noun
 1 a room where an artist or photographer works.
 2 a room or building where television programs or movies are made.
 (cid:78) say stoo-dee-oh
-
 television studio
 
 stunt
 stunts noun
-a dangerous action that is done as part of a ﬁlm 
-or performance.
+a dangerous action that is done as part of a ﬁlm or performance.
 
 subject
 subjects noun
@@ -17807,36 +17594,28 @@ something you are talking, writing, or learning about.
 submarine
 submarines noun
 a vessel that can travel underwater.
-
 (cid:78) say sub-muh-reen
 
 substance
 substances noun
 a material or object that can be seen or felt.
-There was a sticky substance
-on the table.
+There was a sticky substance on the table.
 
 substitute
 substitutes noun
 someone or something that is used in place of another person or thing.
-
-margarine
-
 Margarine is used as a substitute for butter.
 (cid:78) say sub-sti-toot
 
 subtract
 subtracts subtracting subtracted verb
 to take one number away from another number.
-
 Five subtracted from eight equals three.
 subtraction noun
 
 subway
 subways noun
 an underground railroad system.
-
-The stunt involved jumping over the cars on a motorcycle.
 
 stupid
 adjective
@@ -17861,7 +17640,6 @@ styles noun
 1 the way that something is done or made.
 Which style of tennis racket do you prefer, wooden or metal?
 2 a fashion or design.
-
 What style of car is this? 
 (cid:78) say stile
 
@@ -17883,14 +17661,11 @@ adjective
 1 of a particular kind.
 Pins, needles, and such things.
 2 so much.
-
-There was such a lot of decorating to do, that he didn’t 
-know where to begin.
+There was such a lot of decorating to do, that he didn’t know where to begin.
 
 suddenly
 adverb
 quickly and without warning.
-
 Suddenly she had an idea.
 sudden adjective
 
@@ -17911,10 +17686,7 @@ to pull liquid into your mouth, or to hold something in your mouth and lick it.
 sugar
 noun
 a sweet substance made from plants and used in food and drinks.
-
-brown
-sugar
-
+brown sugar
 (cid:78) say shoog-ur
 
 suggest
@@ -17924,7 +17696,7 @@ I suggested going to the park to ride our bikes.
 (cid:78) say sug-jest
 suggestion noun
 He sucked his drink through a straw.
-suicide
+
 suicide
 noun
 killing yourself deliberately.
@@ -17933,7 +17705,6 @@ killing yourself deliberately.
 suit
 suits noun
 a jacket and skirt or pants, designed to be worn together.
-
 (cid:78) rhymes with boot
 
 suit
@@ -17944,10 +17715,6 @@ Does this suit me?
 suitable
 adjective
 right for a particular purpose or occasion.
-
-The sum of 3 and 49 is 52.
-2 an amount of money.
-A new bike will cost you a large sum of money. 
 
 summary
 summaries noun
@@ -17961,16 +17728,12 @@ the warmest season of the year. Summer comes between spring and fall.
 summit
 summits noun
 the highest point of something.
-
-These boots are suitable for walking over rough ground.
-(cid:78) say soo-tuh-bull
-
-The two climbers ﬁnally 
-reached the summit of the mountain.
+The two climbers ﬁnally reached the summit of the mountain.
 
 suitcase
 suitcases noun
 a large bag with a handle that is used for carrying clothing and other things when you travel.
+
 sulk
 sulks sulking sulked verb
 to be silent because you are in a bad mood.
@@ -17990,6 +17753,9 @@ A superb performance.
 sum
 sums noun
 1 a total made by adding two or more numbers together.
+The sum of 3 and 49 is 52.
+2 an amount of money.
+A new bike will cost you a large sum of money. 
 
 sun
 noun
@@ -18010,15 +17776,13 @@ a large store that sells food and other items. People select the goods they want
 supersonic
 adjective
 faster than the speed of sound.
-
 The Concorde was a supersonic aircraft.
 (cid:78) say soo-per-son-ic
 
 superstition
 superstitions noun
 a false belief based on fear or lack of knowledge about something.
-A common superstition
-is that it is unlucky to walk under ladders.
+A common superstition is that it is unlucky to walk under ladders.
 (cid:78) say soo-per-stish-un
 superstitious adjective
 
@@ -18053,35 +17817,30 @@ bright sunlight.
 supply
 supplies noun
 a quantity of something that may be needed.
+The farmer kept a supply of grain in the barn.
+supply verb
 
 surf
 surfs surﬁng surfed verb
 1 to balance on a special board while riding on waves as they begin to break near the seashore.
 2 to explore the internet.
-
 surfer 
-
-The farmer kept a supply
-of grain in the barn.
-supply verb
 
 support
 supports supporting supported verb
 to hold something or someone up to stop it, or them, from falling.
+She supported her friend who had hurt his leg.
+support noun
 
 surface
 surfaces noun
 the outside or top of something.
-
 These buttons have shiny surfaces.
 (cid:78) say sur-fus
 
 surgeon
 surgeons noun
 a doctor who treats patients by doing operations.
-
-She supported her friend who had hurt his leg.
-support noun
 
 suppose
 supposes supposing supposed verb
@@ -18094,8 +17853,6 @@ certain, or with no doubt.
 I am sure you will enjoy your stay here.
 (cid:78) say shoor
 
-(cid:78) say sur-jun
-
 surgery
 surgeries noun
 1 a medical operation that involves cutting open part of a patient’s body.
@@ -18104,8 +17861,7 @@ surgeries noun
 
 surname
 surnames noun
-the last part of someone’s 
-name that shows which family they belong to.
+the last part of someone’s name that shows which family they belong to.
 
 surprise
 surprises noun
@@ -18117,16 +17873,12 @@ surprising adjective
 surrender
 surrenders surrendering surrendered verb
 to give yourself up.
-
-The kidnappers ﬁnally 
-surrendered to the police.
+The kidnappers ﬁnally surrendered to the police.
 
 surround
 surrounds surrounding surrounded verb
 to be or to go on all sides of something.
-
-The bench surrounded
-the tree trunk.
+The bench surrounded the tree trunk.
 
 survive
 survives surviving survived verb
@@ -18136,8 +17888,7 @@ They all survived the crash.
 survivor
 survivors noun
 a person who is still alive after experiencing an event that might have killed them.
-He was one of three survivors
-of the shipwreck.
+He was one of three survivors of the shipwreck.
 (cid:78) say sur-vy-vur
 
 suspect
@@ -18151,7 +17902,6 @@ I suspect it will rain.
 suspend
 suspends suspending suspended verb
 to attach something by its top so that it hangs down.
-
 The baskets are suspended from a hook.
 
 suspense
@@ -18164,9 +17914,9 @@ adjective
 1 suspecting something bad.
 I became suspicious when my friends didn’t answer the telephone for a week.
 2 behaving in a way that makes people suspect you.
-
 A suspicious character was climbing into the house.
 (cid:78) say su-spish-us
+
 swap
 swaps swapping swapped verb
 to give one thing in return for something else.
@@ -18181,21 +17931,18 @@ A swarm of bees.
 sway
 sways swaying swayed verb
 to swing or lean from side to side.
-
 The trees swayed in the wind.
 
 swear
 swears swearing swore sworn verb
 1 to make a solemn promise.
-She swears that she didn’t 
-do it.
+She swears that she didn’t do it.
 2 to speak rude or unpleasant words.
 
 sweat
 noun
 the salty liquid that comes out of your skin when you are hot.
-She was covered in sweat
-after the race.
+She was covered in sweat after the race.
 sweat verb
 
 sweatshirt
@@ -18207,11 +17954,10 @@ swallow
 swallows swallowing swallowed verb
 to make your food go down your throat and into your stomach.
 
-The snake swallowed the egg whole.
-
 swallow
 swallows noun
 a small bird with long wings and a forked tail. Swallows eat mainly insects and are found in most parts of the world.
+The snake swallowed the egg whole.
 
 swam 
 from the verb to swim
@@ -18220,25 +17966,22 @@ I swam across the pool.
 swamp
 swamps noun
 an area of wet or marshy land.
-
 A mangrove swamp.
 
 swan
 swans noun
-a large bird that lives in and around water. Swans feed on water plants, which they grasp with their sharp-edged 
-bills. Swans are related to geese.
-
+a large bird that lives in and around water. Swans feed on water plants, which they grasp with their sharp-edged bills. Swans are related to geese.
 (cid:78) say swon
+
 sweep 
 sweeps sweeping swept verb
 1 to clean up dust, dirt, or other mess using a brush.
+2 to push away.
+The ﬂood swept the car off the road.
 
 swell
 swells swelling swelled swollen verb
 to become larger.
-
-2 to push away.
-The ﬂood swept the car off the road.
 
 sweet
 adjective
@@ -18252,8 +17995,6 @@ sweet
 sweets noun
 a small piece of snack food, made mostly of sugar, and also called candy.
 
-The male frigate bird’s throat swells up to attract females.
-
 swelling
 swellings noun
 a swollen place on the body.
@@ -18262,7 +18003,6 @@ She had a swelling where she had bumped her head.
 swerve 
 swerves swerving swerved verb
 to turn quickly to one side when you are moving.
-
 The cyclist swerved to avoid the hole.
 
 swift
@@ -18273,11 +18013,7 @@ moving quickly.
 swim 
 swims swimming swam swum verb
 to move through water using arms, legs, or ﬁns.
-
 swim noun
-swimming pool
-swimming pools noun
-a large, artiﬁcial area of water for swimming in.
 
 swing
 swings swinging swung verb
@@ -18289,37 +18025,35 @@ a sign or object that reminds you of something else, or represents something els
 
 synthetic
 adjective
-made with artiﬁcial 
-materials, not natural ones.
-
-swing noun
+made with artiﬁcial materials, not natural ones.
+This frog is made from synthetic fur.
+(cid:78) say sin-thet-ik
 
 swirl
 swirls swirling swirled verb
 to move with a twisting or circular motion.
+The boat and leaves swirled around as they ﬂoated downstream.
 
 swoop
 swoops swooping swooped verb
 to move downward through the air in a curving movement.
-
-The boat and leaves swirled around as they ﬂoated downstream.
-
 The stunt plane swooped down out of the sky.
 
 sword
 swords noun
 a weapon with a long blade and a handle.
+18th-century sword
+(cid:78) say sord
 
 switch
 switches noun
 a lever or button used to turn equipment or a machine on and off.
 switch verb
+
 swivel
 swivels swiveling swiveled verb
 to turn around on a central point.
-
-18th-century sword
-(cid:78) say sord
+Swiveling around on a chair.
 
 swore 
 from the verb to swear
@@ -18330,25 +18064,16 @@ syllables noun
 a word or part of a word made up of a single sound. The word “once” has one syllable and the word “single” has two.
 (cid:78) say sil-uh-bul
 
-Swiveling around on a chair.
-
-A dove is a symbol of peace.
-(cid:78) say sim-bul
-
 symmetrical
 adjective
 having two halves that match each other.
-
-This frog is made from synthetic fur.
-(cid:78) say sin-thet-ik
+This cut-out shape is symmetrical through its middle.
+(cid:78) say si-met-ri-kul
+symmetry noun
 
 syringe
 syringes noun
 a tube with a nozzle or hollow needle attached that is used for sucking up and squirting out liquid. Doctors use syringes to give injections.
-
-This cut-out shape is symmetrical through its middle.
-(cid:78) say si-met-ri-kul
-symmetry noun
 
 sympathy
 noun
@@ -18356,21 +18081,16 @@ a caring feeling shown by someone for someone else.
 When you’re hurt, it’s nice to get sympathy.
 (cid:78) say sim-puh-thee
 sympathetic adjective
+
 symptom
 symptoms noun
 a sign that shows you have a particular illness or disease.
 One of the symptoms of measles is red spots.
 (cid:78) say simp-tum
 
-(cid:78) say suh-rinj
-
 syrup
 syrups noun
 a sweet, sticky liquid food, often made from sugar.
-
-maple syrup
-
-(cid:78) say sur-up
 
 synagogue
 synagogues noun
@@ -18381,17 +18101,17 @@ system
 systems noun
 a group of things that work together in an organized way.
 (cid:78) say sis-tum
-table
 
 table
 tables noun
 1 a piece of furniture with a ﬂat surface and legs underneath to support it.
+2 a list of facts or ﬁgures written in columns.
+A multiplication table.
 
 tactics
 noun
 methods used to make something happen.
-The team’s tactics
-helped to win the game.
+The team’s tactics helped to win the game.
 tactical adjective
 
 take
@@ -18407,6 +18127,7 @@ It takes three hours to cook.
 5 to travel by or on something.
 Let’s take the bus.
 6 to remove or steal.
+The thief took a wallet from someone’s coat pocket.
 
 tadpole
 tadpoles noun
@@ -18415,8 +18136,7 @@ a young frog or toad. Tadpoles live in water. As they grow their tails get small
 tail
 tails noun
 the part that sticks out beyond the back end of an animal’s body.
-
-The thief took a wallet from someone’s coat pocket.
+lizard’s tail
 
 tale
 tales noun
@@ -18426,10 +18146,7 @@ A fairy tale.
 talent
 talents noun
 a special natural skill or ability.
-
 She showed a talent for dancing at an early age.
-
-lizard’s tail
 
 tailor
 tailors noun
@@ -18447,10 +18164,6 @@ talkative
 adjective
 talking a lot.
 Our parrot is very talkative.
-
-2 a list of facts or ﬁgures 
-written in columns.
-A multiplication table.
 
 tablet
 tablets noun
