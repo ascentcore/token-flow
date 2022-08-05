@@ -77,7 +77,7 @@ class Context():
             if self.graph.has_edge(from_token, to_token):
                 current_weight = self.graph[from_token][to_token]['weight']
                 current_weight = min(1, current_weight + self.weight_increase)
-                self.graph[from_token][to_token]['weight'] = weight if weight != None else self.initial_weight
+                self.graph[from_token][to_token]['weight'] = current_weight
             else:
                 self.graph.add_edge(from_token, to_token,
                                     weight=weight if weight != None else self.initial_weight)
@@ -98,10 +98,11 @@ class Context():
 
         return sequences
 
-    def add_definition(self, word, definition):
-        print(f'Adding definition of {word}. with {definition}')
+    def add_definition(self, word, definition, one_way = False, debug = False, accept_all = False):
+        if debug:
+            print(f'Adding definition of {word}. with {definition}')
         missing, sequences = self.vocabulary.get_token_sequence(
-            definition, include_start=self.include_start, accept_all=False)
+            definition, include_start=self.include_start, accept_all=accept_all)
 
         self.vocabulary.add_to_vocabulary(word)
         self.add_node(word)
@@ -110,19 +111,40 @@ class Context():
             for i in range(0, len(sequence)):
                 for tokens in sequence[i]:
                     self.connect(word, tokens)
-                    self.connect(tokens, word)
+
+                    if not one_way:
+                        self.connect(tokens, word)
 
         return missing, sequences
 
     def decrease_stimulus(self, decrease=None):
         if decrease is None:
             decrease = self.temp_decrease
+
+        print('###', decrease)
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
 
+    def prune_edges(self, threshold):
+        long_edges = list(filter(lambda e: e[2] < threshold, (e for e in self.graph.edges.data('weight'))))
+        le_ids = list(e[:2] for e in long_edges)
+
+        # remove filtered edges from graph G
+        self.graph.remove_edges_from(le_ids)
+
+    def add_variations(self, text, variations):
+        self.vocabulary.add_to_vocabulary(text)
+        self.add_node(text)
+        for variation in variations:
+            self.vocabulary.add_to_vocabulary(variation)
+            self.add_node(variation)
+            self.connect(text, variation, 1)
+            self.connect(variation, text, 1)
+
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False):
         root = False
+        print(f'Stimulating {token} with {stimulus}')
         if token in self.vocabulary.vocabulary:
             if to_set is None:
                 if not skip_decrease:
@@ -147,14 +169,14 @@ class Context():
 
                 current_stimulus = max(0, min(1, current_stimulus))
                 to_set[token] = {'s':  current_stimulus}
-
-                if pass_message:
-                    node = graph[token]
-                    for sub_key in node.keys():
-                        if sub_key != token:
-                            weight = node[sub_key]['weight']
-                            self.stimulate(sub_key,
-                                           weight * current_stimulus * self.neuron_opening, to_set=to_set)
+                if current_stimulus > self.propagate_threshold:
+                    if pass_message:
+                        node = graph[token]
+                        for sub_key in node.keys():
+                            if sub_key != token:
+                                weight = node[sub_key]['weight']
+                                self.stimulate(sub_key,
+                                            weight * current_stimulus * self.neuron_opening, to_set=to_set)
 
         if root:
             nx.set_node_attributes(self.graph, to_set)
@@ -193,7 +215,14 @@ class Context():
             self.graph.add_edge(int(edge[0]), int(
                 edge[1]), weight=edge[2]['weight'])
 
-    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, figsize=(6, 6), dpi=150):
+    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes = False, figsize=(6, 6), dpi=150):
+        
+        graph = self.graph
+        
+        if skip_empty_nodes:
+            graph = graph.copy()
+            graph.remove_nodes_from(list(nx.isolates(graph)))
+        
         if self.plt is None:
             plt = figure(figsize=figsize, dpi=dpi)
         else:
@@ -204,23 +233,23 @@ class Context():
         else:
             # pos = nx.spring_layout(self.graph, k=0.3, iterations=50)
             # pos = nx.kamada_kawai_layout(self.graph, weight='weight')
-            pos = nx.fruchterman_reingold_layout(self.graph, seed=12345)
+            pos = nx.fruchterman_reingold_layout(graph, seed=12345)
             # pos = nx.circular_layout(self.graph)
 
         edge_width = []
-        for edge in self.graph.edges(data=True):
+        for edge in graph.edges(data=True):
             edge_width.append(edge[2]['weight'] * 0.1)
 
-        stimulus = nx.get_node_attributes(self.graph, 's')
+        stimulus = nx.get_node_attributes(graph, 's')
 
         if consider_stimulus:
             labels = {n: n if stimulus[n] >
-                      self.render_label_size or force_text_rendering else '' for n in self.graph}
+                      self.render_label_size or force_text_rendering else '' for n in graph}
         else:
-            labels = {n: n for n in self.graph}
+            labels = {n: n for n in graph}
 
         node_size = [stimulus[n] *
-                     300 if consider_stimulus else 10 for n in self.graph]
+                     300 if consider_stimulus else stimulus[n] * 100 for n in graph]
 
         ax = plt.gca()
         # ax.set_xlim([-1.4, 1.4])
@@ -228,11 +257,11 @@ class Context():
         ax.set_title(title)
 
         nx.draw_networkx_nodes(
-            self.graph, pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.3)
-        nx.draw_networkx_labels(self.graph, pos, font_size=6, labels=labels,
+            graph, pos=pos, node_size=node_size, node_color='none', edgecolors='red', linewidths=0.3)
+        nx.draw_networkx_labels(graph, pos, font_size=6, labels=labels,
                                 verticalalignment='bottom')
         nx.draw_networkx_edges(
-            self.graph, pos, width=edge_width, arrowsize=arrow_size)
+            graph, pos, width=edge_width, arrowsize=arrow_size)
         plt.tight_layout()
         plt.savefig(path)
         plt.clf()

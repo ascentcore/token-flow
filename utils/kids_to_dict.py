@@ -8,6 +8,7 @@ kids_dict = open('assets/kids_dictionary.txt', 'r')
 
 keyword = None
 keyword_type = None
+variations = None
 
 keywords = {}
 definitions = []
@@ -27,9 +28,11 @@ for line in kids_dict.readlines():
     if line == '':
         if keyword is not None:
             keywords[keyword] = {'type': keyword_type,
+                                 'variations': variations,
                                  'definitions': definitions}
 
         keyword = None
+        variations = None
         keyword_type = None
         definitions = []
         continue
@@ -44,7 +47,10 @@ for line in kids_dict.readlines():
 
     elif keyword != None:
         if keyword_type == None:
-            keyword_type = line
+            # keyword_type = line
+            type_split = line.split(' ')
+            keyword_type = type_split[-1]
+            variations = type_split[:-1]
         elif len(definitions) == 0 or pattern.match(line):
 
             definitions.append(process_def(line))
