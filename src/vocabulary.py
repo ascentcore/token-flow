@@ -36,9 +36,9 @@ class Vocabulary():
         return vocab
 
     @classmethod
-    def from_file(cls, path):
+    def from_file(cls, path, name = 'vocabulary.txt'):
         local = []
-        with open(f'{path}/vocabulary.txt', 'r') as fp:
+        with open(f'{path}/{name}', 'r') as fp:
             for line in fp:
                 local.append(line[:-1])
 
@@ -47,8 +47,8 @@ class Vocabulary():
     def size(self):
         return len(self.vocabulary)
 
-    def save_vocabulary(self, path):
-        with open(f'{path}/vocabulary.txt', 'w') as fp:
+    def save_vocabulary(self, path, file = "vocabulary.txt"):
+        with open(f'{path}/{file}', 'w') as fp:
             fp.write("\n".join(str(item)
                      for item in self.vocabulary))
 

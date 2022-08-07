@@ -6,7 +6,7 @@ from .vocabulary import Vocabulary
 
 class Context():
 
-    render_label_size = 0.01
+    render_label_size = 0.1
 
     def __init__(self, name, directed=True, vocabulary=None,
                  initial_weight=0.1,
@@ -89,16 +89,16 @@ class Context():
                     for to_token in sequence[i + 1]:
                         self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections=False):
+    def add_text(self, text, skip_connections=False, accept_all=True):
         _, sequences = self.vocabulary.add_text(
-            text, include_start=self.include_start)
+            text, include_start=self.include_start, accept_all=accept_all)
 
         if not skip_connections:
             self.from_sequence(sequences)
 
         return sequences
 
-    def add_definition(self, word, definition, one_way = False, debug = False, accept_all = False):
+    def add_definition(self, word, definition, one_way=False, debug=False, accept_all=False):
         if debug:
             print(f'Adding definition of {word}. with {definition}')
         missing, sequences = self.vocabulary.get_token_sequence(
@@ -120,14 +120,13 @@ class Context():
     def decrease_stimulus(self, decrease=None):
         if decrease is None:
             decrease = self.temp_decrease
-
-        print('###', decrease)
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
 
     def prune_edges(self, threshold):
-        long_edges = list(filter(lambda e: e[2] < threshold, (e for e in self.graph.edges.data('weight'))))
+        long_edges = list(filter(
+            lambda e: e[2] < threshold, (e for e in self.graph.edges.data('weight'))))
         le_ids = list(e[:2] for e in long_edges)
 
         # remove filtered edges from graph G
@@ -144,7 +143,6 @@ class Context():
 
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False):
         root = False
-        print(f'Stimulating {token} with {stimulus}')
         if token in self.vocabulary.vocabulary:
             if to_set is None:
                 if not skip_decrease:
@@ -176,7 +174,7 @@ class Context():
                             if sub_key != token:
                                 weight = node[sub_key]['weight']
                                 self.stimulate(sub_key,
-                                            weight * current_stimulus * self.neuron_opening, to_set=to_set)
+                                               weight * current_stimulus * self.neuron_opening, to_set=to_set)
 
         if root:
             nx.set_node_attributes(self.graph, to_set)
@@ -202,27 +200,31 @@ class Context():
         return nx.to_numpy_matrix(self.graph)
 
     def store(self, path):
+        self.vocabulary.save_vocabulary(path, f'{self.name}-vocabulary.txt')
         nx.write_edgelist(self.graph, f'{path}/{self.name}.edgelist')
 
     def load(self, path):
+        self.vocabulary = Vocabulary.from_file(path, f'{self.name}-vocabulary.txt')
         if self.vocabulary.size() == 0:
             raise Exception(
                 'Vocabulary is empty. Please add some tokens before loading a context.')
 
-        edgelist_graph = nx.read_edgelist(
-            f'{path}/dataset/{self.name}.edgelist')
-        for edge in edgelist_graph.edges(data=True):
-            self.graph.add_edge(int(edge[0]), int(
-                edge[1]), weight=edge[2]['weight'])
+        print('Loading from', f'{path}/{self.name}.edgelist')
+        self.graph = nx.read_edgelist(f'{path}/{self.name}.edgelist')
 
-    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes = False, figsize=(6, 6), dpi=150):
-        
+        # for edge in edgelist_graph.edges(data=True):
+        #     print(edge[0], edge[1], edge[2])
+        #     self.graph.add_edge(int(edge[0]), int(
+        #         edge[1]), weight=edge[2]['weight'])
+
+    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150):
+
         graph = self.graph
-        
+
         if skip_empty_nodes:
             graph = graph.copy()
             graph.remove_nodes_from(list(nx.isolates(graph)))
-        
+
         if self.plt is None:
             plt = figure(figsize=figsize, dpi=dpi)
         else:

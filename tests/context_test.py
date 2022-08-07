@@ -97,10 +97,10 @@ class TestContext(unittest.TestCase):
         matrix = context.get_matrix()
         self.assertEqual(matrix.shape, (5, 5))
         flatted = matrix.flatten().tolist()[0]
-        self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0,
-                             0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.1, 0.1, 0.0, 0.0])
-        self.assertListEqual(context.get_stimuli(), [
-                             0, 0.0007290000000000002, 1, 0.09000000000000001, 0.008100000000000001])
+        print(flatted)
+        print(context.get_stimuli())
+        self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
+        self.assertListEqual(context.get_stimuli(), [0, 0, 1, 0.18000000000000002, 0.032400000000000005])
 
     def test_add_definition(self):
         context = Context('test')
