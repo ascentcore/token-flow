@@ -62,8 +62,8 @@ class Vocabulary():
 
         return False
 
-    def process_token(self, token, sequence, missing, append_to_vocab=True, accept_all=False):
-        if accept_all or token.pos_ in self.accepted:
+    def process_token(self, token, sequence, missing, append_to_vocab=True, accept_all=False, include_punct = True):
+        if (include_punct or not token.is_punct) and (accept_all or token.pos_ in self.accepted):
             current = []
             lower = token.text
 

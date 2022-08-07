@@ -90,6 +90,17 @@ class TestContext(unittest.TestCase):
         context.add_text(text)
         context.store('output/tests')
 
+    def test_top_stimuli(self):
+        context = Context('testcontext', initial_weight=0.5)
+        context.add_text(
+            "eclipse is a time when the moon comes between the earth and the sun, hiding the sun's light.")
+        context.add_text(
+            "eclipse is a time when the earth comes between the sun and the moon, hiding the moon's light.")
+
+        context.stimulate('earth')
+
+        self.assertListEqual(context.get_top_stimuli(5), [('earth', 1), ('comes', 0.45), ('come', 0.45), ('and', 0.45), ('the', 0.24300000000000002)])
+
     def test_matrix(self):
         context = Context('test')
         context.add_text('The rain in spain rain in spain the')
@@ -99,8 +110,10 @@ class TestContext(unittest.TestCase):
         flatted = matrix.flatten().tolist()[0]
         print(flatted)
         print(context.get_stimuli())
-        self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
-        self.assertListEqual(context.get_stimuli(), [0, 0, 1, 0.18000000000000002, 0.032400000000000005])
+        self.assertListEqual(flatted, [0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0,
+                             0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.1, 0.1, 0.0, 0.0])
+        self.assertListEqual(context.get_stimuli(), [
+                             0, 0, 1, 0.18000000000000002, 0.032400000000000005])
 
     def test_add_definition(self):
         context = Context('test')
@@ -118,7 +131,6 @@ class TestContext(unittest.TestCase):
         context.add_text("blue is a color")
         context.add_text("a tomato is a fruit")
         context.add_text("a potato is a vegetable")
-
 
         context.stimulate('color', skip_decrease=True)
         context.stimulate('fruit', skip_decrease=True)

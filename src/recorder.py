@@ -13,7 +13,9 @@ class Recorder(Context):
     def stimulate(self, *args, **kwargs):
         super().stimulate(*args, **kwargs)
         if self.writer and 'to_set' not in kwargs.keys():
-            self.capture_frame(args[0])
+            top_stimuli = ",".join([key[0] for key in self.get_top_stimuli(5)])
+            # self.capture_frame(args[0])
+            self.capture_frame(top_stimuli)
 
     def decrease_stimulus(self, *args, **kwargs):
         super().decrease_stimulus(*args, **kwargs)
@@ -31,9 +33,11 @@ class Recorder(Context):
         return res
 
     def capture_frame(self, title=None):
-        print('capturing frame with title', title)
         if title is None:
             title = self.title
+        else:
+            print('capturing frame with title', title)
+            
         if self.recording:
             self.render('./frame.png', title, self.consider_stimulus,
                         self.arrow_size, skip_empty_nodes=self.skip_empty_nodes, figsize=self.figsize, force_text_rendering=self.force_text_rendering)

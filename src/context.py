@@ -196,6 +196,9 @@ class Context():
     def get_stimuli(self):
         return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
+    def get_top_stimuli(self, count=10):
+        return sorted([(token, self.get_stimulus_of(token)) for token in self.vocabulary.vocabulary], key=lambda x: x[1], reverse=True)[:count]
+
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)
 
@@ -204,7 +207,8 @@ class Context():
         nx.write_edgelist(self.graph, f'{path}/{self.name}.edgelist')
 
     def load(self, path):
-        self.vocabulary = Vocabulary.from_file(path, f'{self.name}-vocabulary.txt')
+        self.vocabulary = Vocabulary.from_file(
+            path, f'{self.name}-vocabulary.txt')
         if self.vocabulary.size() == 0:
             raise Exception(
                 'Vocabulary is empty. Please add some tokens before loading a context.')
