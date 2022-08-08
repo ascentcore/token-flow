@@ -40,7 +40,7 @@ class Vocabulary():
         local = []
         with open(f'{path}/{name}', 'r') as fp:
             for line in fp:
-                local.append(line[:-1])
+                local.append(line.strip())
 
         return cls(vocabulary=local)
 

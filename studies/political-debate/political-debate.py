@@ -1,4 +1,7 @@
 import re
+import os
+import sys
+import shutil
 from src.recorder import Recorder
 from src.context import Context
 from src.vocabulary import Vocabulary
@@ -7,7 +10,7 @@ from tqdm import tqdm
 record = True
 
 
-def get_context(name, record=record, 
+def get_context(name, record=record,
                 initial_weight=0.2,
                 weight_increase=0.05,
                 temp_decrease=0.025,
@@ -51,12 +54,19 @@ def prepare_contexts():
     }
 
     def exec(last_speaker, line):
-        contexts[last_speaker].add_text(line, accept_all = False)
+        contexts[last_speaker].add_text(line, accept_all=False)
 
     read(exec)
 
-    # contexts["trump"].store('studies/political-debate/contexts')
-    # contexts["biden"].store('studies/political-debate/contexts')
+    try:
+        shutil.rmtree('studies/political-debate/contexts')                
+    except OSError as e:
+        print("Error: %s - %s." % (e.filename, e.strerror))
+
+    os.mkdir('studies/political-debate/contexts')
+
+    contexts["trump"].store('studies/political-debate/contexts')
+    contexts["biden"].store('studies/political-debate/contexts')
 
     return contexts
 
@@ -69,9 +79,10 @@ def process(contexts):
     # trump.prune_edges(0.12)
     # biden.prune_edges(0.12)
 
-
-    trump.start_recording('output/trump.gif', 'Trump', consider_stimulus = True, skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
-    biden.start_recording('output/biden.gif', 'Biden', consider_stimulus = True, skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
+    trump.start_recording('output/trump.gif', 'Trump', consider_stimulus=True,
+                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
+    biden.start_recording('output/biden.gif', 'Biden', consider_stimulus=True,
+                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
 
     sentence = 'The economy is, I think it’s fair to say, recovering faster than expected from the shutdown'
 
@@ -81,7 +92,7 @@ def process(contexts):
     for _ in range(40):
         trump.decrease_stimulus()
         biden.decrease_stimulus()
-  
+
     trump.stop_recording()
     biden.stop_recording()
     # def exec(last_speaker, line):
@@ -90,6 +101,39 @@ def process(contexts):
 
     # read(exec)
 
+def load():
+    contexts = {
+        "biden": get_context('biden'),
+        "trump": get_context('trump')
+    }
+
+    contexts["trump"].load('studies/political-debate/contexts')
+    contexts["biden"].load('studies/political-debate/contexts')
+
+    trump = contexts['trump']
+    biden = contexts['biden']
+
+    trump.prune_edges(0.12)
+    biden.prune_edges(0.12)
+
+    trump.start_recording('output/trump.gif', 'Trump', consider_stimulus=True,
+                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
+    biden.start_recording('output/biden.gif', 'Biden', consider_stimulus=True,
+                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
+
+    sentence = 'The economy is, I think it’s fair to say, recovering faster than expected from the shutdown'
+
+    trump.stimulate_sequence(sentence)
+    biden.stimulate_sequence(sentence)
+
+    for _ in range(40):
+        trump.decrease_stimulus()
+        biden.decrease_stimulus()
+
+    trump.stop_recording()
+    biden.stop_recording()
 
 
-process(prepare_contexts())
+# prepare_contexts()
+load()
+# process(prepare_contexts())

@@ -208,26 +208,26 @@ class Context():
 
     def load(self, path):
         self.vocabulary = Vocabulary.from_file(
-            path, f'{self.name}-vocabulary.txt')
+            path, f'{self.name}-vocabulary.txt') 
+        
         if self.vocabulary.size() == 0:
             raise Exception(
                 'Vocabulary is empty. Please add some tokens before loading a context.')
 
-        print('Loading from', f'{path}/{self.name}.edgelist')
-        self.graph = nx.read_edgelist(f'{path}/{self.name}.edgelist')
+        self.initialize_nodes()
 
-        # for edge in edgelist_graph.edges(data=True):
-        #     print(edge[0], edge[1], edge[2])
-        #     self.graph.add_edge(int(edge[0]), int(
-        #         edge[1]), weight=edge[2]['weight'])
+        print('Loading from', f'{path}/{self.name}.edgelist')
+        edgelist_graph = nx.read_edgelist(f'{path}/{self.name}.edgelist')
+        for edge in edgelist_graph.edges(data=True):
+            self.graph.add_edge(edge[0], edge[1], weight=edge[2]['weight'])
 
     def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150):
 
         graph = self.graph
 
-        if skip_empty_nodes:
-            graph = graph.copy()
-            graph.remove_nodes_from(list(nx.isolates(graph)))
+        # if skip_empty_nodes:
+        #     graph = graph.copy()
+        #     graph.remove_nodes_from(list(nx.isolates(graph)))
 
         if self.plt is None:
             plt = figure(figsize=figsize, dpi=dpi)
