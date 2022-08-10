@@ -1,6 +1,3 @@
-import networkx as nx
-from matplotlib.pyplot import figure
-
 from .vocabulary import Vocabulary
 from .context import Context
 

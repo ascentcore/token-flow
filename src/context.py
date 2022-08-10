@@ -1,3 +1,4 @@
+import json
 import networkx as nx
 from matplotlib.pyplot import figure
 
@@ -8,14 +9,15 @@ class Context():
 
     render_label_size = 0.1
 
-    def __init__(self, name, directed=True, vocabulary=None,
+    def __init__(self, name,
+                 vocabulary=None,
+                 directed=True,
                  initial_weight=0.1,
                  weight_increase=0.1,
                  neuron_opening=0.9,
                  default_stimulus=1,
                  max_stimulus=1,
                  propagate_threshold=0.1,
-                 include_start=True,
                  decay_if_low_signal=True,
                  temp_decrease=0.1):
 
@@ -44,15 +46,15 @@ class Context():
         # Stimuli decrease over time
         self.temp_decrease = temp_decrease
 
-        self.include_start = include_start
-
         # Threshold of stimulus to trigger a propagation
         self.propagate_threshold = propagate_threshold
 
+        self.directed = directed
+
         self.graph = nx.DiGraph() if directed else nx.Graph()
 
-        self.vocabulary = vocabulary if vocabulary is not None else Vocabulary(
-            include_start=include_start)
+        self.vocabulary = vocabulary
+
         self.vocabulary.register(self.on_new_words)
 
         # If the vocabulary is not empty then we can initialize the graph
@@ -89,20 +91,19 @@ class Context():
                     for to_token in sequence[i + 1]:
                         self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections=False, accept_all=True):
-        _, sequences = self.vocabulary.add_text(
-            text, include_start=self.include_start, accept_all=accept_all)
+    def add_text(self, text, skip_connections=False):
+        _, sequences = self.vocabulary.add_text(text)
 
         if not skip_connections:
             self.from_sequence(sequences)
 
         return sequences
 
-    def add_definition(self, word, definition, one_way=False, debug=False, accept_all=False):
+    def add_definition(self, word, definition, one_way=False, debug=False):
         if debug:
             print(f'Adding definition of {word}. with {definition}')
         missing, sequences = self.vocabulary.get_token_sequence(
-            definition, include_start=self.include_start, accept_all=accept_all)
+            definition)
 
         self.vocabulary.add_to_vocabulary(word)
         self.add_node(word)
@@ -122,6 +123,7 @@ class Context():
             decrease = self.temp_decrease
         nodes = self.graph.nodes
         for node in self.graph.nodes():
+
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
 
     def prune_edges(self, threshold):
@@ -182,8 +184,7 @@ class Context():
         return to_set
 
     def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False):
-        _, sentences = self.vocabulary.get_token_sequence(
-            sequence, include_start=self.include_start)
+        _, sentences = self.vocabulary.get_token_sequence(sequence)
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
@@ -203,23 +204,48 @@ class Context():
         return nx.to_numpy_matrix(self.graph)
 
     def store(self, path):
-        self.vocabulary.save_vocabulary(path, f'{self.name}-vocabulary.txt')
+
+        settings = {
+            'directed': self.directed,
+            'initial_weight': self.initial_weight,
+            'weight_increase': self.weight_increase,
+            'neuron_opening': self.neuron_opening,
+            'default_stimulus': self.default_stimulus,
+            'max_stimulus': self.max_stimulus,
+            'propagate_threshold': self.propagate_threshold,
+            'decay_if_low_signal': self.decay_if_low_signal,
+            'temp_decrease': self.temp_decrease,
+        }
+
+        with open(f'{path}/{self.name}.settings.json', 'w') as outfile:
+            outfile.write(json.dumps(settings, indent=2))
+
         nx.write_edgelist(self.graph, f'{path}/{self.name}.edgelist')
 
-    def load(self, path):
-        self.vocabulary = Vocabulary.from_file(
-            path, f'{self.name}-vocabulary.txt') 
-        
-        if self.vocabulary.size() == 0:
-            raise Exception(
-                'Vocabulary is empty. Please add some tokens before loading a context.')
+    @classmethod
+    def from_file(cls, path, name, vocabulary):
 
-        self.initialize_nodes()
+        settings = json.loads(open(f'{path}/{name}.settings.json').read())
 
-        print('Loading from', f'{path}/{self.name}.edgelist')
-        edgelist_graph = nx.read_edgelist(f'{path}/{self.name}.edgelist')
+        context = cls(name,
+                      vocabulary,
+                      directed=settings['directed'],
+                      initial_weight=settings['initial_weight'],
+                      weight_increase=settings['weight_increase'],
+                      neuron_opening=settings['neuron_opening'],
+                      default_stimulus=settings['default_stimulus'],
+                      max_stimulus=settings['max_stimulus'],
+                      propagate_threshold=settings['propagate_threshold'],
+                      decay_if_low_signal=settings['decay_if_low_signal'],
+                      temp_decrease=settings['temp_decrease'])
+
+        context.initialize_nodes()
+
+        edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist')
         for edge in edgelist_graph.edges(data=True):
-            self.graph.add_edge(edge[0], edge[1], weight=edge[2]['weight'])
+            context.graph.add_edge(edge[0], edge[1], weight=edge[2]['weight'])
+
+        return context
 
     def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150):
 

@@ -1,5 +1,7 @@
 from src.vocabulary import Vocabulary
 import unittest
+import os
+import shutil
 import pathlib as pl
 import itertools
 
@@ -15,6 +17,13 @@ class TestVocabulary(unittest.TestCase):
             'The rain in Spain falls mainly on the plain.')
         print(vocab.vocabulary)
         self.assertEqual(vocab.size(), 11)
+
+    def test_from_string_accept_pref(self):
+        vocab = Vocabulary.from_text(
+            'The rain in Spain falls mainly on the plain.', accept_all = False)
+        print(vocab.vocabulary)
+        self.assertEqual(vocab.size(), 7)
+
 
     def test_puncts_string(self):
         vocab = Vocabulary.from_text(
@@ -102,6 +111,9 @@ class TestVocabulary(unittest.TestCase):
         self.assertIsFile(path)
 
     def test_load_vocabulary(self):
+        
+        self.test_save_vocabulary();
+        
         vocab = Vocabulary.from_file('output/tests', 'vocabulary.json')
         self.assertListEqual(vocab.vocabulary, ['<start>', '<end>', 'the', 'rain', 'in', 'spain',
                              'falls', 'fall', 'mainly', 'on', 'plain', 'helps', 'help', 'plants', 'plant', 'grow'])
@@ -116,6 +128,17 @@ class TestVocabulary(unittest.TestCase):
         vocab.add_text('The child runs fast.')
         self.assertListEqual(vocab.vocabulary, ['the', 'rain', 'in', 'spain', 'falls',
                              'mainly', 'on', 'plain', 'helps', 'plants', 'grow', 'child', 'runs', 'fast'])
+
+    @classmethod
+    def setUpClass(cls):
+        os.mkdir('output/tests')
+
+    @classmethod
+    def tearDownClass(cls):
+        try:
+            shutil.rmtree('output/tests')                
+        except OSError as e:
+            print("Error: %s - %s." % (e.filename, e.strerror))
 
 
 if __name__ == '__main__':

@@ -11,12 +11,14 @@ class Vocabulary():
                  include_start_end=True,
                  include_punctuation=True,
                  accepted=['NOUN', 'PROPN', 'ADJ', 'VERB'],
+                 accept_all=True,
                  use_lemma=True,
                  use_token=True,
                  add_token_to_vocab=True,
                  add_lemma_to_vocab=True):
         self.nlp = spacy.load("en_core_web_sm")
         self.accepted = accepted
+        self.accept_all = accept_all
         self.use_lemma = use_lemma
         self.use_token = use_token
         self.add_token_to_vocab = add_token_to_vocab
@@ -45,6 +47,7 @@ class Vocabulary():
 
         return cls(vocabulary=data['vocabulary'],
                    accepted=data['settings']['accepted'],
+                   accept_all=data['settings']['accept_all'],
                    use_lemma=data['settings']['use_lemma'],
                    include_punctuation=data['settings']['include_punctuation'],
                    use_token=data['settings']['use_token'],
@@ -60,6 +63,7 @@ class Vocabulary():
             'settings': {
                 'accepted': self.accepted,
                 'use_lemma': self.use_lemma,
+                'accept_all': self.accept_all,
                 'include_punctuation': self.include_punctuation,
                 'use_token': self.use_token,
                 'add_token_to_vocab': self.add_token_to_vocab,
@@ -82,8 +86,8 @@ class Vocabulary():
 
         return False
 
-    def process_token(self, token, sequence, missing, append_to_vocab=True, accept_all=False):
-        if accept_all or token.pos_ in self.accepted:
+    def process_token(self, token, sequence, missing, append_to_vocab=True):
+        if self.accept_all or token.pos_ in self.accepted:
             current = []
             lower = token.text
 
@@ -99,7 +103,7 @@ class Vocabulary():
 
             sequence.append(current)
 
-    def get_token_sequence(self, text, append_to_vocab=True, accept_all=True):
+    def get_token_sequence(self, text, append_to_vocab=True):
         doc = self.nlp(text.lower())
         missing = []
         sequences = []
@@ -115,16 +119,17 @@ class Vocabulary():
                     should_start = False
 
                 if token.is_punct:
-                    
                     if self.include_start_end and token.text == '.':
                         sequence.append(['<end>'])
                         should_start = True
                     elif self.include_punctuation:
                         sequence.append([token.text])
                         self.add_to_vocabulary(token.text)
+                        if append_to_vocab and token.text not in missing:
+                            missing.append(token.text)
                 else:
                     self.process_token(
-                        token, sequence, missing, append_to_vocab=append_to_vocab, accept_all=accept_all)
+                        token, sequence, missing, append_to_vocab=append_to_vocab)
 
             sequences.append(sequence)
 
@@ -134,5 +139,5 @@ class Vocabulary():
 
         return missing, sequences
 
-    def add_text(self, text, accept_all=True):
-        return self.get_token_sequence(text, append_to_vocab=True, accept_all=accept_all)
+    def add_text(self, text):
+        return self.get_token_sequence(text, append_to_vocab=True)
