@@ -1,5 +1,5 @@
-from tabnanny import process_tokens
 import spacy
+import json
 
 
 class Vocabulary():
@@ -8,7 +8,8 @@ class Vocabulary():
 
     def __init__(self,
                  vocabulary=None,
-                 include_start=True,
+                 include_start_end=True,
+                 include_punctuation=True,
                  accepted=['NOUN', 'PROPN', 'ADJ', 'VERB'],
                  use_lemma=True,
                  use_token=True,
@@ -20,12 +21,14 @@ class Vocabulary():
         self.use_token = use_token
         self.add_token_to_vocab = add_token_to_vocab
         self.add_lemma_to_vocab = add_lemma_to_vocab
+        self.include_start_end = include_start_end
+        self.include_punctuation = include_punctuation
         self.vocabulary = vocabulary if vocabulary is not None else [
-            '<start>'] if include_start else []
+            '<start>', '<end>'] if include_start_end else []
 
     @classmethod
-    def from_text(cls, text, include_start = True):
-        vocab = cls(include_start = include_start)
+    def from_text(cls, text, *args, **kwargs):
+        vocab = cls(*args, **kwargs)
         vocab.add_text(text)
 
         return vocab
@@ -36,21 +39,38 @@ class Vocabulary():
         return vocab
 
     @classmethod
-    def from_file(cls, path, name = 'vocabulary.txt'):
-        local = []
-        with open(f'{path}/{name}', 'r') as fp:
-            for line in fp:
-                local.append(line.strip())
+    def from_file(cls, path, name='vocabulary.json'):
+        with open(f'{path}/{name}', 'r') as infile:
+            data = json.load(infile)
 
-        return cls(vocabulary=local)
+        return cls(vocabulary=data['vocabulary'],
+                   accepted=data['settings']['accepted'],
+                   use_lemma=data['settings']['use_lemma'],
+                   include_punctuation=data['settings']['include_punctuation'],
+                   use_token=data['settings']['use_token'],
+                   add_token_to_vocab=data['settings']['add_token_to_vocab'],
+                   add_lemma_to_vocab=data['settings']['add_lemma_to_vocab'],
+                   include_start_end=data['settings']['include_start_end'])
 
     def size(self):
         return len(self.vocabulary)
 
-    def save_vocabulary(self, path, file = "vocabulary.txt"):
-        with open(f'{path}/{file}', 'w') as fp:
-            fp.write("\n".join(str(item)
-                     for item in self.vocabulary))
+    def save_vocabulary(self, path, file="vocabulary.json"):
+        save_data = {
+            'settings': {
+                'accepted': self.accepted,
+                'use_lemma': self.use_lemma,
+                'include_punctuation': self.include_punctuation,
+                'use_token': self.use_token,
+                'add_token_to_vocab': self.add_token_to_vocab,
+                'add_lemma_to_vocab': self.add_lemma_to_vocab,
+                'include_start_end': self.include_start_end
+            },
+            'vocabulary': self.vocabulary
+        }
+
+        with open(f'{path}/{file}', 'w') as outfile:
+            outfile.write(json.dumps(save_data, indent=2))
 
     def register(self, listener_fn):
         self.listeners.append(listener_fn)
@@ -62,8 +82,8 @@ class Vocabulary():
 
         return False
 
-    def process_token(self, token, sequence, missing, append_to_vocab=True, accept_all=False, include_punct = True):
-        if (include_punct or not token.is_punct) and (accept_all or token.pos_ in self.accepted):
+    def process_token(self, token, sequence, missing, append_to_vocab=True, accept_all=False):
+        if accept_all or token.pos_ in self.accepted:
             current = []
             lower = token.text
 
@@ -79,16 +99,32 @@ class Vocabulary():
 
             sequence.append(current)
 
-    def get_token_sequence(self, text, append_to_vocab=True, include_start=True, accept_all=True):
+    def get_token_sequence(self, text, append_to_vocab=True, accept_all=True):
         doc = self.nlp(text.lower())
         missing = []
         sequences = []
 
+        should_start = True
+
         for sent in doc.sents:
-            sequence = [['<start>']] if include_start else []
+            sequence = []
             for token in sent:
-                self.process_token(
-                    token, sequence, missing, append_to_vocab=append_to_vocab, accept_all=accept_all)
+
+                if should_start and self.include_start_end:
+                    sequence.append(['<start>'])
+                    should_start = False
+
+                if token.is_punct:
+                    
+                    if self.include_start_end and token.text == '.':
+                        sequence.append(['<end>'])
+                        should_start = True
+                    elif self.include_punctuation:
+                        sequence.append([token.text])
+                        self.add_to_vocabulary(token.text)
+                else:
+                    self.process_token(
+                        token, sequence, missing, append_to_vocab=append_to_vocab, accept_all=accept_all)
 
             sequences.append(sequence)
 
@@ -98,5 +134,5 @@ class Vocabulary():
 
         return missing, sequences
 
-    def add_text(self, text, include_start=True, accept_all=True):
-        return self.get_token_sequence(text, append_to_vocab=True, include_start=include_start, accept_all=accept_all)
+    def add_text(self, text, accept_all=True):
+        return self.get_token_sequence(text, append_to_vocab=True, accept_all=accept_all)
