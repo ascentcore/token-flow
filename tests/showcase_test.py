@@ -1,7 +1,6 @@
-from concurrent.futures import process
-from src.recorder import Recorder
-from src.context import Context
-from src.vocabulary import Vocabulary
+from src.context.recorder import Recorder
+from src.context.context import Context
+from src.context.vocabulary import Vocabulary
 from tqdm import tqdm
 import unittest
 import json

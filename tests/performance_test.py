@@ -1,6 +1,6 @@
-from src.recorder import Recorder
-from src.context import Context
-from src.vocabulary import Vocabulary
+from src.context.recorder import Recorder
+from src.context.context import Context
+from src.context.vocabulary import Vocabulary
 
 import unittest
 import json

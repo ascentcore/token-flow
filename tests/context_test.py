@@ -1,8 +1,8 @@
 import os
 import shutil
 
-from src.context import Context
-from src.vocabulary import Vocabulary
+from src.context.context import Context
+from src.context.vocabulary import Vocabulary
 
 import unittest
 

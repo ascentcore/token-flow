@@ -1,29 +1,29 @@
 import re
-import os
-import sys
-import shutil
-from src.recorder import Recorder
-from src.context import Context
-from src.vocabulary import Vocabulary
+from src.context.dataset import Dataset
+from src.context.context import Context
+from src.context.vocabulary import Vocabulary
 from tqdm import tqdm
+
+from src.net.trainer import Trainer
+
+from src.net.models.autoencoder import AE
+from src.net.models.residual import ResidualModel
 
 record = True
 
 
-def get_context(name, record=record,
-                initial_weight=0.2,
-                weight_increase=0.05,
-                temp_decrease=0.025,
-                arrow_size=0.01,
-                neuron_opening=0.8,
-                one_way=False):
+def get_context(name,
+                vocab,
+                initial_weight=0.1,
+                weight_increase=0.1,
+                temp_decrease=0.1,
+                neuron_opening=0.75):
 
-    if record:
-        context = Recorder(name, include_start=False,
-                           initial_weight=initial_weight, neuron_opening=neuron_opening, weight_increase=weight_increase, temp_decrease=temp_decrease)
-    else:
-        context = Context(name, include_start=False,
-                          initial_weight=initial_weight, neuron_opening=neuron_opening, weight_increase=weight_increase, temp_decrease=temp_decrease)
+    context = Context(name, vocab,
+                      initial_weight=initial_weight,
+                      neuron_opening=neuron_opening,
+                      weight_increase=weight_increase,
+                      temp_decrease=temp_decrease)
 
     return context
 
@@ -31,7 +31,7 @@ def get_context(name, record=record,
 def read(execute):
     pattern = re.compile("^(wallace|biden|trump): (.*)")
 
-    file = open('studies/political-debate/2020-debate-transcript.txt', 'r')
+    file = open('studies/political-debate/2020-debate-transcript-small.txt', 'r')
     last_speaker = None
 
     for line in tqdm(file.readlines()):
@@ -46,94 +46,53 @@ def read(execute):
         execute(last_speaker, line)
 
 
-def prepare_contexts():
-    contexts = {
-        "wallace": get_context('wallace'),
-        "biden": get_context('biden'),
-        "trump": get_context('trump')
-    }
+def prepare_dataset():
 
-    def exec(last_speaker, line):
-        contexts[last_speaker].add_text(line, accept_all=False)
+    vocabulary = Vocabulary(
+        accept_all=True, include_start_end=True, include_punctuation=False, use_lemma=False, add_lemma_to_vocab=False)
+    dataset = Dataset(vocabulary)
 
-    read(exec)
+    dataset.add_context(get_context('biden', vocabulary))
+    dataset.add_context(get_context('trump', vocabulary))
 
-    try:
-        shutil.rmtree('studies/political-debate/contexts')                
-    except OSError as e:
-        print("Error: %s - %s." % (e.filename, e.strerror))
+    def prepare_context(last_speaker, line):
+        if last_speaker != 'wallace':
+            dataset.get_context(last_speaker).add_text(line)
 
-    os.mkdir('studies/political-debate/contexts')
+    def prepare_dataset(last_speaker, line):
+        if last_speaker != 'wallace':
+            dataset.get_dataset(last_speaker).add_text(line)
 
-    contexts["trump"].store('studies/political-debate/contexts')
-    contexts["biden"].store('studies/political-debate/contexts')
+    read(prepare_context)
+    read(prepare_dataset)
 
-    return contexts
+    dataset.store('studies/political-debate/dataset')
 
 
-def process(contexts):
+def train():
 
-    trump = contexts['trump']
-    biden = contexts['biden']
+    vocabulary = Vocabulary.from_file(
+        'studies/political-debate/dataset', 'vocabulary.json')
+    model = AE(vocabulary.size())
+    # model = ResidualModel(vocabulary.size())
 
-    # trump.prune_edges(0.12)
-    # biden.prune_edges(0.12)
+    trainer = Trainer(model, vocabulary, 'government top scientists', generate_length=50,
+                      prevent_convergence_history=2)
 
-    trump.start_recording('output/trump.gif', 'Trump', consider_stimulus=True,
-                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
-    biden.start_recording('output/biden.gif', 'Biden', consider_stimulus=True,
-                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
+    biden_context = Context.from_file(
+        'studies/political-debate/dataset', 'biden', vocabulary)
 
-    sentence = 'The economy is, I think it’s fair to say, recovering faster than expected from the shutdown'
+    trump_context = Context.from_file(
+        'studies/political-debate/dataset', 'biden', vocabulary)
 
-    trump.stimulate_sequence(sentence)
-    biden.stimulate_sequence(sentence)
+    trainer.train(
+        trump_context, 'studies/political-debate/dataset/biden.dataset.json', 50)
 
-    for _ in range(40):
-        trump.decrease_stimulus()
-        biden.decrease_stimulus()
-
-    trump.stop_recording()
-    biden.stop_recording()
-    # def exec(last_speaker, line):
-    #     if last_speaker == 'wallace':
-    #         contexts["trump"].stimulate_sequence(line)
-
-    # read(exec)
-
-def load():
-    contexts = {
-        "biden": get_context('biden'),
-        "trump": get_context('trump')
-    }
-
-    contexts["trump"].load('studies/political-debate/contexts')
-    contexts["biden"].load('studies/political-debate/contexts')
-
-    trump = contexts['trump']
-    biden = contexts['biden']
-
-    trump.prune_edges(0.12)
-    biden.prune_edges(0.12)
-
-    trump.start_recording('output/trump.gif', 'Trump', consider_stimulus=True,
-                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
-    biden.start_recording('output/biden.gif', 'Biden', consider_stimulus=True,
-                          skip_empty_nodes=True, fps=3, arrow_size=.02, force_text_rendering=False)
-
-    sentence = 'The economy is, I think it’s fair to say, recovering faster than expected from the shutdown'
-
-    trump.stimulate_sequence(sentence)
-    biden.stimulate_sequence(sentence)
-
-    for _ in range(40):
-        trump.decrease_stimulus()
-        biden.decrease_stimulus()
-
-    trump.stop_recording()
-    biden.stop_recording()
+    # for i in range(0, 10):
+    #     for context in [biden_context, trump_context]:
+    #         trainer.train(
+    #             context, 'studies/political-debate/dataset/biden.dataset.json', 50)
 
 
-# prepare_contexts()
-load()
-# process(prepare_contexts())
+# prepare_dataset()
+train()
