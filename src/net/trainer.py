@@ -63,6 +63,33 @@ class Trainer():
 
         return loss_all
 
+    def get_sentence(self, context, generate_length=20, prevent_convergence_history=5):
+        history = []
+        sentence = ""
+
+        for _ in range(0, generate_length):
+            x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
+            output = self.model(x)
+            predict_index = output.argmax()
+            predict_value = self.vocabulary.vocabulary[predict_index]
+
+            top_keys = torch.topk(
+                output, k=prevent_convergence_history + 1).indices.tolist()
+            top_keys = [x for x in top_keys if x not in history]
+
+            predict_index = top_keys[0]
+            predict_value = self.vocabulary.vocabulary[predict_index]
+
+            if predict_value == '<start>' and len(history) > 0:
+                break
+
+            history.append(predict_index)
+            history = history[-prevent_convergence_history:]
+            context.stimulate(predict_value)
+            sentence += predict_value + " "
+
+        return sentence.strip()
+
     def generate(self, context, test_sentence="", generate_length=20, prevent_convergence_history=5):
         context.decrease_stimulus(1)
         context.stimulate_sequence(test_sentence)
@@ -100,5 +127,5 @@ class Trainer():
         pbar = tqdm(range(1, epochs))
         for epoch in pbar:
             # for epoch in range(1, epochs):
-            loss = self._inner_train(loader)            
+            loss = self._inner_train(loader)
             pbar.set_description(f"Loss {loss}")

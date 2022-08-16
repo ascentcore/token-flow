@@ -15,9 +15,9 @@ from src.net.models.residual import ResidualModel
 
 def get_context(name,
                 vocab,
-                initial_weight=0.2,
+                initial_weight=0.1,
                 weight_increase=0.1,
-                temp_decrease=0.05,
+                temp_decrease=0.1,
                 neuron_opening=0.95):
 
     context = Context(name, vocab,
@@ -58,21 +58,11 @@ def prepare_dataset():
     vocabulary = Vocabulary(
         accept_all=True,
         include_start_end=True,
-        include_punctuation=False,
+        include_punctuation=True,
         use_lemma=False,
         add_lemma_to_vocab=False)
 
     dataset = Dataset(vocabulary)
-
-    def prepare_context(context_name, line):
-        if not dataset.has_context(context_name):
-            print('Creating context: ', context_name)
-            dataset.add_context(get_context(context_name, vocabulary))
-
-        dataset.get_context(context_name).add_text(line)
-
-    def prepare_dataset(context_name, line):
-        dataset.get_dataset(context_name, context_name).add_text(line)
 
     res = []
     for (dir_path, dir_names, file_names) in os.walk('studies/chat/texts/'):
@@ -90,16 +80,18 @@ def prepare_dataset():
         for context_name, text in tqdm(lines):
             dataset.get_context(context_name).add_text(text)
 
-        # for context in contexts:
-        #     dataset.get_context(context).render(
-        #         f'studies/chat/dataset/{context}.png', context, False)
+        for context in contexts:
+            dataset.get_context(context).render(
+                f'output/{context}.png', context, False, arrow_size=3)
 
         # generate dataset
         for context_name, text in tqdm(lines):
+            dataset.get_dataset(context_name, context_name).add_text(text)
+
             for rest in [context for context in contexts if context != context_name]:
                 dataset.get_context(rest).stimulate_sequence(text)
 
-            dataset.get_dataset(context_name, context_name).add_text(text)
+            
 
     dataset.store('studies/chat/dataset')
 
@@ -129,13 +121,15 @@ def train():
             print(f'############ {context.name} ############')
             trainer.train(
                 context, f'studies/chat/dataset/{context.name}.dataset.json', 50)
-            print('------------------------------------------')
-            trainer.generate(context, 'hello', generate_length=40,
-                             prevent_convergence_history=10)
-            print('------------------------------------------')
 
-        # torch.save(model, f'studies/chat/models/model_{iter}')
+        for i in range(0, 6):
+            responder = contexts[0] if i % 2 == 0 else contexts[1]
+            listener = contexts[1] if i % 2 == 0 else contexts[0]
+
+            text = trainer.get_sentence(responder, generate_length=10)
+            print(f'{responder.name}: {text}')
+            listener.stimulate_sequence(text)
 
 
-# prepare_dataset()
+prepare_dataset()
 train()

@@ -17,6 +17,17 @@ class Vocabulary():
                  add_token_to_vocab=True,
                  add_lemma_to_vocab=True):
         self.nlp = spacy.load("en_core_web_sm")
+
+        prefixes = list(self.nlp.Defaults.prefixes)
+        prefixes.remove('<')
+        prefix_regex = spacy.util.compile_prefix_regex(prefixes)
+        self.nlp.tokenizer.prefix_search = prefix_regex.search
+
+        suffixes = list(self.nlp.Defaults.suffixes)
+        suffixes.remove('>')
+        suffix_regex = spacy.util.compile_suffix_regex(suffixes)
+        self.nlp.tokenizer.suffix_search = suffix_regex.search
+
         self.accepted = accepted
         self.accept_all = accept_all
         self.use_lemma = use_lemma
@@ -104,7 +115,9 @@ class Vocabulary():
             sequence.append(current)
 
     def get_token_sequence(self, text, append_to_vocab=True):
+        text = text.lower().strip()
         doc = self.nlp(text.lower().strip())
+
         missing = []
         sequences = []
 
@@ -136,7 +149,6 @@ class Vocabulary():
         if len(missing) > 0:
             for listener in self.listeners:
                 listener(missing)
-
         return missing, sequences
 
     def add_text(self, text):

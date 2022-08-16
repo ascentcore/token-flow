@@ -22,7 +22,7 @@ class BasicInMemDataset():
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token)
-                    output = self.context.get_stimuli()
+                    output = self.context.get_stimuli()                    
                     self.data.append((input, output))
                     input = output
 
@@ -48,7 +48,6 @@ class Dataset():
         self.settings["contexts"].append(context.name)
 
     def add_text(self, text):
-        print('called?')
         for context in self.contexts.values():
             context.add_text(text)
 
