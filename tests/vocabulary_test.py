@@ -26,6 +26,15 @@ class TestVocabulary(unittest.TestCase):
         print(vocab.vocabulary)
         self.assertEqual(vocab.size(), 7)
 
+    def test_strange_case(self):
+        vocab = Vocabulary(accept_all=True,
+                           include_start_end=True,
+                           include_punctuation=True,
+                           use_lemma=False,
+                           add_lemma_to_vocab=False)
+        missing, seq = vocab.add_text("hello I'm good!")
+        print(missing)
+
     def test_puncts_string(self):
         vocab = Vocabulary.from_text(
             'The rain in Spain; falls, mainly on the plain.', use_lemma=False)

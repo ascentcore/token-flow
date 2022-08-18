@@ -66,6 +66,7 @@ class Context():
             self.graph.add_node(token, s=0)
 
     def on_new_words(self, words):
+        # print(words)
         for token in words:
             self.add_node(token)
 
@@ -99,11 +100,11 @@ class Context():
 
         return sequences
 
-    def add_definition(self, word, definition, one_way=False, debug=False):
+    def add_definition(self, word, definition, one_way=False, debug=False, append_to_vocab=True):
         if debug:
             print(f'Adding definition of {word}. with {definition}')
         missing, sequences = self.vocabulary.get_token_sequence(
-            definition, include_start_end = False)
+            definition, append_to_vocab = append_to_vocab)
 
         self.vocabulary.add_to_vocabulary(word)
         self.add_node(word)
@@ -184,7 +185,8 @@ class Context():
         return to_set
 
     def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False):
-        _, sentences = self.vocabulary.get_token_sequence(sequence)
+        _, sentences = self.vocabulary.get_token_sequence(
+            sequence, append_to_vocab=False)
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
@@ -194,7 +196,7 @@ class Context():
     def get_stimulus_of(self, token):
         return self.graph.nodes[token]['s']
 
-    def get_stimuli(self):        
+    def get_stimuli(self):
         return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
     def get_top_stimuli(self, count=10):
@@ -247,13 +249,13 @@ class Context():
 
         return context
 
-    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150, seed = 12345):
+    def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150, seed=12345):
 
         graph = self.graph
 
-        # if skip_empty_nodes:
-        #     graph = graph.copy()
-        #     graph.remove_nodes_from(list(nx.isolates(graph)))
+        if skip_empty_nodes:
+            graph = graph.copy()
+            graph.remove_nodes_from(list(nx.isolates(graph)))
 
         if self.plt is None:
             plt = figure(figsize=figsize, dpi=dpi)

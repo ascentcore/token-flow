@@ -15,13 +15,13 @@ class BasicInMemDataset():
         self.context = context
         self.data = []
 
-    def add_text(self, text):
+    def add_text(self, text, stimulus = None):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
         input = self.context.get_stimuli()
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
-                    self.context.stimulate(token)
+                    self.context.stimulate(token, stimulus)
                     output = self.context.get_stimuli()                    
                     self.data.append((input, output))
                     input = output

@@ -15,9 +15,9 @@ from src.net.models.residual import ResidualModel
 
 def get_context(name,
                 vocab,
-                initial_weight=0.1,
+                initial_weight=0.5,
                 weight_increase=0.1,
-                temp_decrease=0.1,
+                temp_decrease=0.01,
                 neuron_opening=0.95):
 
     context = Context(name, vocab,
@@ -29,8 +29,8 @@ def get_context(name,
     return context
 
 
-def read(fn):
-    regex = r"([^:]+)*:(.*)"
+def read(fn, authors=None):
+    regex = r"([a-zA-Z0-9^:]+)*:(.*)"
 
     contexts = []
     lines = []
@@ -38,17 +38,21 @@ def read(fn):
     file = open(f'studies/chat/texts/{fn}', 'r')
     for line in tqdm(file.readlines()):
         line = line.strip().lower()
+        if re.match(regex, line):
 
-        matches = re.finditer(regex, line)
+            matches = re.finditer(regex, line)
 
-        for matchNum, match in enumerate(matches, start=1):
-            author = match.group(1)
-            text = match.group(2)
+            for matchNum, match in enumerate(matches, start=1):
+                author = match.group(1)
+                text = match.group(2)
 
-            if author not in contexts:
-                contexts.append(author)
+                if author not in contexts and (authors is None or author in authors):
+                    contexts.append(author)
 
-            lines.append((author, text))
+            if authors is None or author in authors:
+                lines.append((author, text))
+        else:
+            print('>>>', line)
 
     return contexts, lines
 
@@ -75,6 +79,8 @@ def prepare_dataset():
             if not dataset.has_context(context_name):
                 print('Creating context: ', context_name)
                 dataset.add_context(get_context(context_name, vocabulary))
+            # else:
+            #     dataset.get_context(context_name).decrease_stimulus(1)
 
         # create own graph
         for context_name, text in tqdm(lines):
@@ -82,7 +88,7 @@ def prepare_dataset():
 
         for context in contexts:
             dataset.get_context(context).render(
-                f'output/{context}.png', context, False, arrow_size=3)
+                f'output/{context}.png', context, False, arrow_size=3, skip_empty_nodes=True)
 
         # generate dataset
         for context_name, text in tqdm(lines):
@@ -90,8 +96,6 @@ def prepare_dataset():
 
             for rest in [context for context in contexts if context != context_name]:
                 dataset.get_context(rest).stimulate_sequence(text)
-
-            
 
     dataset.store('studies/chat/dataset')
 
@@ -120,15 +124,19 @@ def train():
         for context in contexts:
             print(f'############ {context.name} ############')
             trainer.train(
-                context, f'studies/chat/dataset/{context.name}.dataset.json', 50)
+                context, f'studies/chat/dataset/{context.name}.dataset.json', 150)
 
-        for i in range(0, 6):
-            responder = contexts[0] if i % 2 == 0 else contexts[1]
-            listener = contexts[1] if i % 2 == 0 else contexts[0]
+            for c in contexts:
+                c.decrease_stimulus(1)
 
-            text = trainer.get_sentence(responder, generate_length=10)
-            print(f'{responder.name}: {text}')
-            listener.stimulate_sequence(text)
+            for i in range(0, 10):
+                responder = contexts[0] if i % 2 == 0 else contexts[1]
+                listener = contexts[1] if i % 2 == 0 else contexts[0]
+
+                text = trainer.get_sentence(
+                    responder, generate_length=10)
+                print(f'{responder.name}: {text}')
+                listener.stimulate_sequence(text)
 
 
 prepare_dataset()

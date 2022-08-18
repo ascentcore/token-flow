@@ -137,8 +137,7 @@ class Vocabulary():
                         should_start = True
                     elif self.include_punctuation:
                         sequence.append([token.text])
-                        self.add_to_vocabulary(token.text)
-                        if append_to_vocab and token.text not in missing:
+                        if append_to_vocab and self.add_to_vocabulary(token.text):
                             missing.append(token.text)
                 else:
                     self.process_token(

@@ -9,16 +9,19 @@ import unittest
 
 class TestContext(unittest.TestCase):
 
-    # @classmethod
-    # def setUpClass(cls):
-    #     os.mkdir('output/tests')
+    @classmethod
+    def setUpClass(cls):
+        try:
+            os.mkdir('output/tests')
+        except OSError as e:
+            print("Error: %s - %s." % (e.filename, e.strerror))
 
-    # @classmethod
-    # def tearDownClass(cls):
-    #     try:
-    #         shutil.rmtree('output/tests')
-    #     except OSError as e:
-    #         print("Error: %s - %s." % (e.filename, e.strerror))
+    @classmethod
+    def tearDownClass(cls):
+        try:
+            shutil.rmtree('output/tests')
+        except OSError as e:
+            print("Error: %s - %s." % (e.filename, e.strerror))
 
     def test_initialization_lemma_included(self):
         vocab = Vocabulary.from_text(

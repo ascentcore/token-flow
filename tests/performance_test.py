@@ -29,8 +29,8 @@ dictionary = open('assets/english_dictionary.txt', 'r')
 class TestContext(unittest.TestCase):
 
     def test_vocabulary_showcase(self):
-        context = Recorder('Showcase', include_start=False, initial_weight=0.1)
-        
+        context = Recorder('Showcase', Vocabulary(),  initial_weight=0.1)
+
         context.add_definition(
             'salad', 'a mixture of cold vegetables such as lettuce, tomato, and cucumber, served with a dressing.')
 
@@ -38,18 +38,23 @@ class TestContext(unittest.TestCase):
             'lettuce', 'a plant with large, crisp leaves that can be eaten.'
         )
 
-        context.add_definition('tomato', 'a red or yellow fruit with a juicy pulp. A tomato is eaten either raw or cooked as a vegetable.')
-        context.add_definition('cucumber', 'a plant with a green, round, fleshy fruit that is used in salads, soups, and other dishes.')
-        context.add_definition('vegetbale', 'a plant or part of a plant, such as carrots, beans, or lettuce, that is used for food.')
+        context.add_definition(
+            'tomato', 'a red or yellow fruit with a juicy pulp. A tomato is eaten either raw or cooked as a vegetable.')
+        context.add_definition(
+            'cucumber', 'a plant with a green, round, fleshy fruit that is used in salads, soups, and other dishes.')
+        context.add_definition(
+            'vegetbale', 'a plant or part of a plant, such as carrots, beans, or lettuce, that is used for food.')
 
-        context.add_definition('sausage', 'a mixture of chopped meat and spices stuffed into a casing of animal intestine.')
+        context.add_definition(
+            'sausage', 'a mixture of chopped meat and spices stuffed into a casing of animal intestine.')
 
-        context.add_definition('food', 'the flesh of animals when used as food.')
-
+        context.add_definition(
+            'food', 'the flesh of animals when used as food.')
 
         context.add_definition('favorite', 'food is salad')
-        context.add_definition('greek', 'salad olive oil, tomatoes, lettuce, and cucumber')
-        
+        context.add_definition(
+            'greek', 'salad olive oil, tomatoes, lettuce, and cucumber')
+
         context.add_text('my favorite food is salad')
         context.add_text('I like greek salad')
         context.add_text('my prefference in food are vegetables')
@@ -57,19 +62,19 @@ class TestContext(unittest.TestCase):
 
         print(context.vocabulary.vocabulary)
 
-        context.start_recording('output/tests/output.gif',
+        context.start_recording('output/output.gif',
                                 title="Test Gif", consider_stimulus=True, fps=3, arrow_size=0.5)
-                            
 
-        context.stimulate_sequence('My favorite food is salad. I like vegetables in my salad. Like, lettuce, cucumber and tomatoes')
-        
-        context.render('output/tests/output.png', consider_stimulus=True)
+        context.stimulate_sequence(
+            'My favorite food is salad. I like vegetables in my salad. Like, lettuce, cucumber and tomatoes')
+
+        context.render('output/output.png', consider_stimulus=True)
 
         context.stop_recording()
 
     def test_complex_showcase(self):
 
-        context = Recorder('Showcase', include_start=False, initial_weight=0.2)
+        context = Recorder('Showcase', Vocabulary(), initial_weight=0.2)
         context.add_definition(
             'tomato', 'The tomato is the edible berry commonly known as the tomato plant.')
         context.add_definition(
@@ -90,9 +95,9 @@ class TestContext(unittest.TestCase):
             'salad', 'The salad is a food made from a variety of fresh vegetables.')
 
         _, sequences = context.vocabulary.get_token_sequence(
-            "A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.", include_start=False)
+            "A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.")
 
-        context.start_recording('output/tests/output.gif',
+        context.start_recording('output/output.gif',
                                 title="Test Gif", consider_stimulus=True, fps=5, arrow_size=0.5)
 
         for sequence in sequences:
