@@ -1,5 +1,6 @@
 import json
 import networkx as nx
+import numpy as np
 from matplotlib.pyplot import figure
 
 from .vocabulary import Vocabulary
@@ -204,6 +205,7 @@ class Context():
 
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)
+        # return np.expand_dims(nx.to_numpy_matrix(self.graph), axis=0)
 
     def store(self, path):
 
