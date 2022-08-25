@@ -4,23 +4,23 @@ a: how are you?
 b: I'm fine thanks, and you?
 a: I am also good.
 b: good.
-a: I wanted to ask you about your vacation
-b: sure
-a: where did you go this year
-b: in Greece
-a: and last year
-b: in Austria
+a: I wanted to ask you about your vacation,
+b: sure!
+a: where did you go this year?
+b: in Greece.
+a: and last year?
+b: in Austria.
 a: how was Austria?
 b: it was nice but cold.
 a: and Greece?
-b: too warm for me, but I had the best fish ever
-a: understood
+b: too warm for me, but I had the best fish ever.
+a: understood.
 b: where do you want to go?
-a: in Croatia
-b: Croatia is beautiful, we've been there in 2016
-a: how was it
-b: the water was cold but the weather was nice
-a: where did you stay
-b: in a hotel and then in campings
-a: thank you for the information
-b: anytime
+a: in Croatia.
+b: Croatia is beautiful, we've been there in 2016.
+a: how was it?
+b: the water was cold but the weather was nice.
+a: where did you stay?
+b: in a hotel and then in campings.
+a: thank you for the information.
+b: anytime.

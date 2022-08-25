@@ -28,7 +28,7 @@ def get_context(name,
 
     return context
 
-
+"""
 def read(fn, authors=None):
     regex = r"([a-zA-Z0-9^:]+)*:(.*)"
 
@@ -141,3 +141,4 @@ def train():
 
 prepare_dataset()
 train()
+"""

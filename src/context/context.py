@@ -14,6 +14,7 @@ class Context():
                  vocabulary=None,
                  directed=True,
                  initial_weight=0.1,
+                 definition_weight=0.1,
                  weight_increase=0.1,
                  neuron_opening=0.9,
                  default_stimulus=1,
@@ -31,6 +32,9 @@ class Context():
 
         # Initial weight when a connection is created between 2 tokens
         self.initial_weight = initial_weight
+
+        # Setup the weight between a definition and a word
+        self.definition_weight = definition_weight
 
         # Weight increase factor when a connection is already created
         self.weight_increase = weight_increase
@@ -105,7 +109,7 @@ class Context():
         if debug:
             print(f'Adding definition of {word}. with {definition}')
         missing, sequences = self.vocabulary.get_token_sequence(
-            definition, append_to_vocab = append_to_vocab)
+            definition, append_to_vocab=append_to_vocab)
 
         self.vocabulary.add_to_vocabulary(word)
         self.add_node(word)
@@ -113,10 +117,11 @@ class Context():
         for sequence in sequences:
             for i in range(0, len(sequence)):
                 for tokens in sequence[i]:
-                    self.connect(word, tokens)
+                    self.connect(word, tokens, weight=self.definition_weight)
 
                     if not one_way:
-                        self.connect(tokens, word)
+                        self.connect(
+                            tokens, word, weight=self.definition_weight)
 
         return missing, sequences
 
@@ -226,7 +231,7 @@ class Context():
 
         nx.write_edgelist(self.graph, f'{path}/{self.name}.edgelist')
 
-    @classmethod
+    @ classmethod
     def from_file(cls, path, name, vocabulary):
 
         settings = json.loads(open(f'{path}/{name}.settings.json').read())
@@ -247,7 +252,8 @@ class Context():
 
         edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist')
         for edge in edgelist_graph.edges(data=True):
-            context.graph.add_edge(edge[0], edge[1], weight=edge[2]['weight'])
+            context.graph.add_edge(
+                edge[0], edge[1], weight=edge[2]['weight'])
 
         return context
 

@@ -8,16 +8,17 @@ from src.context.vocabulary import Vocabulary
 
 
 vocabulary = Vocabulary(include_start_end=True,
-                        include_punctuation=False, accept_all=False)
+                        include_punctuation=False,
+                        accept_all=False)
 
-record = True
+record = False
 
 if record:
     context = Recorder('test', vocabulary,
-                       initial_weight=0.2, temp_decrease=0.05)
+                       initial_weight=0.5, definition_weight=0.1, temp_decrease=0.05)
 else:
     context = Context('test', vocabulary,
-                      initial_weight=0.2, temp_decrease=0.05)
+                      initial_weight=0.5, definition_weight=0.1, temp_decrease=0.05)
 
 definitions = json.loads(open('assets/kids_dictionary.json').read())
 
@@ -41,13 +42,6 @@ def expand_from(keyword, counter=3, added=None):
 
     return added
 
-# expand_from('car', 1)
-# expand_from('planet', 1)
-expand_from('car', 1)
-expand_from('wheel', 1)
-expand_from('engine', 1)
-
-# context.prune_edges(0.22)
 
 if record:
     context.start_recording('output/test.gif', 'Test',
@@ -58,21 +52,15 @@ if record:
     context.render_label_size = 0.1
 
 
-if record:
-    for i in range(0, 10):
-        context.decrease_stimulus()
+context.add_text('my favorite coffee is dark roast.')
+context.add_text('my favorite drink is beer.')
+context.add_text('my favorite outfit is a black shirt.')
+# expand_from('coffee', 1)
+context.stimulate_sequence('what is your favorite drink?')
 
-context.consider_stimulus = False
-
-context.stimulate('plastic')
-context.stimulate('bottle')
-
-
-if record:
-    for i in range(0, 10):
-        context.decrease_stimulus()
+print(context.get_top_stimuli(10))
 
 record = False
 if not record:
     context.render('output/test.png', 'Test',
-                   consider_stimulus=False, figsize=(15, 15), arrow_size=0.05)
+                   consider_stimulus=False, figsize=(5, 5), arrow_size=2)
