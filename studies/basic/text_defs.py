@@ -54,11 +54,15 @@ if record:
 
 context.add_text('my favorite coffee is dark roast.')
 context.add_text('my favorite drink is beer.')
-context.add_text('my favorite outfit is a black shirt.')
+# context.add_text('my favorite outfit is a black shirt.')
 # expand_from('coffee', 1)
-context.stimulate_sequence('what is your favorite drink?')
+# context.stimulate_sequence('what is your favorite drink?')
+context.stimulate('favorite')
+context.stimulate('drink')
 
-print(context.get_top_stimuli(10))
+# print(context.get_top_stimuli(10))
+
+print(context.get_stimuli())
 
 record = False
 if not record:

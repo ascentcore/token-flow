@@ -15,16 +15,17 @@ class BasicInMemDataset():
         self.context = context
         self.data = []
 
-    def add_text(self, text, stimulus = None):
+    def add_text(self, text, stimulus=None):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
         input = self.context.get_stimuli()
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token, stimulus)
-                    output = self.context.get_stimuli()                    
+                    output = self.context.get_stimuli()
                     self.data.append((input, output))
                     input = output
+
 
 class Dataset():
 
@@ -90,3 +91,21 @@ class Dataset():
 
         except OSError as e:
             print("Error: %s - %s." % (e.filename, e.strerror))
+
+    @classmethod
+    def load(cls, path):
+        vocabulary = Vocabulary.from_file(
+            path, 'vocabulary.json')
+
+        dataset = cls(vocabulary)
+
+        settings = json.loads(
+            open(f'{path}/dataset.settings.json').read())
+
+        for context_name in settings['contexts']:
+            if context_name != 'default':
+                context = Context.from_file(
+                    path, context_name, vocabulary)
+                dataset.add_context(context)
+
+        return dataset
