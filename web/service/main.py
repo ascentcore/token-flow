@@ -14,18 +14,26 @@ vocabulary = Vocabulary(
     accept_all=True,
     include_start_end=False,
     include_punctuation=False,
-    use_lemma=False,
-    add_lemma_to_vocab=False)
+    use_lemma=True,
+    add_lemma_to_vocab=True)
 
 dataset = Dataset(vocabulary)
 
 
-context1 = Context('context1', vocabulary,
-                   initial_weight=0.4,
-                   neuron_opening=0.95,
-                   weight_increase=0.1,
-                   temp_decrease=0.1)
-dataset.add_context(context1)
+dataset.add_context(Context('Environment', vocabulary,
+                            initial_weight=0.1,
+                            weight_increase=0.1,
+                            neuron_opening=0.95,
+                            temp_decrease=0.05))
+
+dataset.add_context(Context('Pollution', vocabulary,
+                            initial_weight=0.1,
+                            weight_increase=0.1,
+                            neuron_opening=0.95,
+                            temp_decrease=0.05))
+
+dataset.delete_context('default')
+
 
 # context2 = Context('context2', vocabulary,
 #                   initial_weight=0.2,
@@ -66,6 +74,13 @@ async def read_root(request: Request):
     body = await request.json()
     dataset.add_text(body['text'])
 
+    return random.randint(1, 100)
+
+
+@app.post('/add_text/{context}')
+async def read_root(request: Request, context):
+    body = await request.json()
+    dataset.get_context(context).add_text(body['text'])
     return random.randint(1, 100)
 
 

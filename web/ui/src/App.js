@@ -10,13 +10,28 @@ import {
   Checkbox,
   FormControlLabel,
   Grid,
+  Modal,
   Slider,
   TextField,
+  Typography,
 } from '@mui/material';
 
 import Graph from './components/Graph';
 
 const mdTheme = createTheme();
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 600,
+  backgroundColor: '#FFF',
+  boxShadow: 24,
+  pt: 2,
+  px: 4,
+  pb: 3,
+};
 
 function DashboardContent() {
   const [initial, setIntial] = React.useState(false);
@@ -25,6 +40,8 @@ function DashboardContent() {
   const [currentState, setCurrentState] = React.useState('');
   const [stimulate, setStimulate] = React.useState(true);
   const [threshold, setThreshold] = React.useState(0.2);
+  const [selectedContext, setSelectedContext] = React.useState(null);
+  const [knowledge, setKnowledge] = React.useState(null);
 
   React.useEffect(() => {
     axios
@@ -58,6 +75,19 @@ function DashboardContent() {
           });
       }
     }
+  }
+
+  function addKnolwedgeToContext(context, text) {
+    setSelectedContext(null);
+    axios
+      .post(`http://localhost:8081/add_text/${context}`, {
+        text,
+      })
+      .then((response) => {
+        setKnowledge(null);
+        const { data } = response;
+        setCurrentState(data);
+      });
   }
 
   function resetStimuli() {
@@ -122,11 +152,49 @@ function DashboardContent() {
                   threshold={threshold}
                   state={currentState}
                   onNodeClick={onNodeClick}
+                  selectContext={setSelectedContext}
                 />
               </Grid>
             ))}
         </Grid>
       </Box>
+      <Modal open={selectedContext !== null}>
+        <div style={style}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', m: 2 }}>
+            <Typography sx={{ mb: 2 }}>
+              Add information to {selectedContext}
+            </Typography>
+            <TextField
+              label="Knowledge"
+              multiline
+              rows={8}
+              sx={{ mb: 2 }}
+              value={knowledge}
+              onChange={(e) => setKnowledge(e.target.value)}
+            />
+            <Box sx={{ mt: 2, display: 'flex', flexDirection: 'row-reverse' }}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() =>
+                  addKnolwedgeToContext(selectedContext, knowledge)
+                }
+              >
+                Add
+              </Button>
+              <Button
+                variant="link"
+                onClick={() => {
+                  setKnowledge(null);
+                  setSelectedContext(null);
+                }}
+              >
+                Cancel
+              </Button>
+            </Box>
+          </Box>
+        </div>
+      </Modal>
     </ThemeProvider>
   );
 }

@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+svg text {
+  filter: drop-shadow( 0 0 2px rgba(255, 255, 255, 1));
+}

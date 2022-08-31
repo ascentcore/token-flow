@@ -48,6 +48,9 @@ class Dataset():
         self.contexts[context.name] = context
         self.settings["contexts"].append(context.name)
 
+    def delete_context(self, context):
+        del self.contexts[context]
+
     def add_text(self, text):
         for context in self.contexts.values():
             context.add_text(text)

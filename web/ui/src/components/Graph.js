@@ -1,17 +1,21 @@
 import {
   Badge,
+  Button,
   Card,
   CardContent,
+  Checkbox,
   Chip,
+  FormControlLabel,
   Paper,
   Typography,
 } from '@mui/material';
 import * as React from 'react';
 import axios from 'axios';
 import * as d3 from 'd3';
+import { Box } from '@mui/system';
 
 export default function Graph(props) {
-  const { context, state, onNodeClick, threshold } = props;
+  const { context, state, onNodeClick, threshold, selectContext } = props;
   const containerRef = React.useRef(null);
   const [data, setData] = React.useState(null);
   const [svgContainer, setSvgContainer] = React.useState(null);
@@ -195,7 +199,7 @@ export default function Graph(props) {
           const updatedLinks = graph.links.map((d) => Object.assign({}, d));
           sim.nodes(updatedNodes);
           sim.force('link').links(updatedLinks);
-          sim.alpha(0.1).restart();
+          sim.alpha(1).restart();
 
           const newNode = nodes
             .data(updatedNodes, (d) => d.id)
@@ -237,9 +241,25 @@ export default function Graph(props) {
   return (
     <Card>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {context}
-        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Typography gutterBottom variant="h5" component="div">
+            {context}
+          </Typography>
+          <Button
+            size="small"
+            variant="outline"
+            onClick={() => selectContext(context)}
+          >
+            Add Knowledge
+          </Button>
+        </Box>
+
         <svg id="content" width="100%" height="400" ref={containerRef}></svg>
         {topTokens.map((token) => (
           <Chip
