@@ -70,6 +70,13 @@ class TestContext(unittest.TestCase):
         self.assertEqual(context.get_stimulus_of('in'), 1)
         self.assertAlmostEqual(context.get_stimulus_of('falls'), 0.0324)
 
+    def test_stimulus_matrix(self):
+        context = Context('testcontext', Vocabulary(), initial_weight=0.2)
+        context.add_text('The rain in Spain falls mainly on the plain.')
+        context.stimulate('rain')
+        context.stimulate('in')
+        print(context.get_matrix())
+
     def test_fully_weighted(self):
         context = Context('testcontext', Vocabulary(), initial_weight=1)
         context.add_text('The rain in Spain falls mainly on the plain.')

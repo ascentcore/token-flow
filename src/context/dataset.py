@@ -3,6 +3,7 @@ import os
 import json
 import shutil
 import numpy as np
+from tqdm import tqdm
 
 from .vocabulary import Vocabulary
 from .context import Context
@@ -94,6 +95,30 @@ class Dataset():
 
         except OSError as e:
             print("Error: %s - %s." % (e.filename, e.strerror))
+
+    def from_folder(self, folder, get_context):
+        res = []
+        for (dir_path, dir_names, file_names) in os.walk(folder):
+            res.extend(file_names)
+
+        for file_name in res:
+            if not self.has_context(file_name):
+                context = get_context(file_name)
+                self.add_context(context)
+            else:
+                context = self.get_context(file_name)
+
+            file = open(f'{folder}/{file_name}', 'r')
+            for line in tqdm(file.readlines()):
+                line = line.strip().lower()
+                context.add_text(line)
+
+        for file_name in res:
+            dataset = self.get_dataset(file_name, file_name)
+            file = open(f'{folder}/{file_name}', 'r')
+            for line in tqdm(file.readlines()):
+                line = line.strip().lower()
+                dataset.add_text(line)
 
     @classmethod
     def load(cls, path):

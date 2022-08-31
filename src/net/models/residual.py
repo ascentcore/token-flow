@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class Residual(torch.nn.Module):
     def __init__(self, prev_features_count, mid_count, next_features_count):
         super(Residual, self).__init__()
@@ -16,17 +17,17 @@ class Residual(torch.nn.Module):
         residual = x
         x = self.lin1(x)
         # x = F.dropout(x, p=0.5)
-        x = self.relu1(x)        
+        x = self.relu1(x)
         x = self.lin2(x)
         # x = F.dropout(x, p=0.5)
-        # x = F.relu(x)
-         
-       
-        
+        # x = self.relu2(x)
+
         if residual_input != None:
-            # x = self.relu2(x)       
+            # x = self.relu2(x)
             x += residual_input
             # x = F.relu(x)
+
+        x = self.relu2(x)
 
         return x, residual
 
@@ -34,16 +35,30 @@ class Residual(torch.nn.Module):
 class ResidualModel(torch.nn.Module):
     def __init__(self, num_classes):
         super(ResidualModel, self).__init__()
-        
-        self.res1 = Residual(num_classes, int(num_classes*0.75), int(num_classes / 2))
-        self.res2 = Residual(int(num_classes/2), int(num_classes*0.5), int(num_classes / 4))
-        self.res3 = Residual(int(num_classes/4), int(num_classes*5), int(num_classes / 2))
-        self.res4 = Residual(int(num_classes/2), int(num_classes*0.75), num_classes)
+
+        self.res1_down = Residual(num_classes, int(
+            num_classes*0.9), int(num_classes * 0.8))
+        self.res2_down = Residual(int(num_classes * 0.8),
+                                  int(num_classes*0.7), int(num_classes * 0.6))
+        self.res3_down = Residual(int(num_classes * 0.6),
+                                  int(num_classes*0.5), int(num_classes * 0.4))
+
+        self.res3_up = Residual(int(num_classes * 0.4),
+                                int(num_classes*0.5), int(num_classes * 0.6))
+        self.res2_up = Residual(int(num_classes * 0.6),
+                                int(num_classes*0.7), int(num_classes * 0.8))
+        self.res1_up = Residual(int(num_classes * 0.8),
+                                int(num_classes*0.9), num_classes)
+
+        self.last = torch.nn.Sigmoid()
 
     def forward(self, data):
         x = data
-        x, residual_1 = self.res1((x, None))
-        x, residual_2 = self.res2((x, None))
-        x, residual_3 = self.res3((x, residual_2))
-        x, residual_4 = self.res4((x, residual_1))
+        x, residual_1 = self.res1_down((x, None))
+        x, residual_2 = self.res2_down((x, None))
+        x, residual_3 = self.res3_down((x, None))
+        x, _ = self.res3_up((x, residual_3))
+        x, _ = self.res2_up((x, residual_2))
+        x, _ = self.res1_up((x, residual_1))
+        # x = self.last(x)
         return x

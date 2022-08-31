@@ -39,7 +39,7 @@ function DashboardContent() {
   const [textValue, setTextValue] = React.useState('');
   const [currentState, setCurrentState] = React.useState('');
   const [stimulate, setStimulate] = React.useState(true);
-  const [threshold, setThreshold] = React.useState(0.2);
+  const [threshold, setThreshold] = React.useState(0);
   const [selectedContext, setSelectedContext] = React.useState(null);
   const [knowledge, setKnowledge] = React.useState(null);
 

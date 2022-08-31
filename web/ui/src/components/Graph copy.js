@@ -60,26 +60,19 @@ export default function Graph(props) {
           })
         );
 
-        const simulation = d3.forceSimulation().force(
-          'radial',
-          d3.forceRadial(function (d) {
-            return (1 - d.s) * (width / 2);
-          })
-          // .strength(0.1)
-        )
-        // .force('cluster', clustering)
-        .force('charge', d3.forceManyBody().strength(-30))
-        .force(
-          'link',
-          d3
-            .forceLink()
-            .id((d) => d.id)
-            // .distance(30)
-            .strength(0.01)
-        );
-        // // .force('x', d3.forceX())
-        // // .force('y', d3.forceY())
-        // .force('center', d3.forceCenter(width / 2, height / 2));
+        const simulation = d3
+          .forceSimulation()
+          .force('charge', d3.forceManyBody().strength(-30))
+          .force(
+            'link',
+            d3
+              .forceLink()
+              .id((d) => d.id)
+              .distance(30)
+          )
+          // .force('x', d3.forceX())
+          // .force('y', d3.forceY())
+          .force('center', d3.forceCenter(width / 2, height / 2));
 
         var link = svg
           .append('g')
@@ -240,7 +233,6 @@ export default function Graph(props) {
             .join('line');
           setNodes(newNode);
           setLinks(newLinks);
-          sim.alpha(1).restart();
           adjustOpacity();
         }
       });

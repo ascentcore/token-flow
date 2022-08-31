@@ -21,16 +21,16 @@ dataset = Dataset(vocabulary)
 
 
 dataset.add_context(Context('Environment', vocabulary,
-                            initial_weight=0.1,
+                            initial_weight=0.4,
                             weight_increase=0.1,
                             neuron_opening=0.95,
-                            temp_decrease=0.05))
+                            temp_decrease=0.1))
 
 dataset.add_context(Context('Pollution', vocabulary,
-                            initial_weight=0.1,
+                            initial_weight=0.4,
                             weight_increase=0.1,
                             neuron_opening=0.95,
-                            temp_decrease=0.05))
+                            temp_decrease=0.1))
 
 dataset.delete_context('default')
 

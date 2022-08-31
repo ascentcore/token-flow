@@ -126,22 +126,22 @@ class Vocabulary():
         for sent in doc.sents:
             sequence = []
             for token in sent:
+                if token.text.strip() != '':
+                    if should_start and self.include_start_end:
+                        sequence.append(['<start>'])
+                        should_start = False
 
-                if should_start and self.include_start_end:
-                    sequence.append(['<start>'])
-                    should_start = False
-
-                if token.is_punct:
-                    if self.include_start_end and token.text == '.':
-                        sequence.append(['<end>'])
-                        should_start = True
-                    elif self.include_punctuation:
-                        sequence.append([token.text])
-                        if append_to_vocab and self.add_to_vocabulary(token.text):
-                            missing.append(token.text)
-                else:
-                    self.process_token(
-                        token, sequence, missing, append_to_vocab=append_to_vocab)
+                    if token.is_punct:
+                        if self.include_start_end and token.text == '.':
+                            sequence.append(['<end>'])
+                            should_start = True
+                        elif self.include_punctuation:
+                            sequence.append([token.text])
+                            if append_to_vocab and self.add_to_vocabulary(token.text):
+                                missing.append(token.text)
+                    else:
+                        self.process_token(
+                            token, sequence, missing, append_to_vocab=append_to_vocab)
 
             sequences.append(sequence)
 

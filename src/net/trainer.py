@@ -30,14 +30,17 @@ class Trainer():
             'cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device)
 
-        self.loss_function = torch.nn.MSELoss()
-        # self.loss_function = torch.nn.CrossEntropyLoss()
+        # self.loss_function = torch.nn.MSELoss()
+        self.loss_function = torch.nn.CrossEntropyLoss()
+        # self.loss_function = torch.nn.BCELoss()
+        
 
         # self.optimizer = torch.optim.Adam(model.parameters(),
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
         self.optimizer = torch.optim.Adam(model.parameters(),  lr=1e-3)
+        # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
     def _inner_train(self, loader):
         self.model.train()
@@ -63,7 +66,7 @@ class Trainer():
 
         return loss_all
 
-    def get_sentence(self, context, generate_length=20, prevent_convergence_history=5, stimulus = None):
+    def get_sentence(self, context, generate_length=20, prevent_convergence_history=5, stimulus=None):
         history = []
         sentence = ""
 
@@ -80,12 +83,12 @@ class Trainer():
             predict_index = top_keys[0]
             predict_value = self.vocabulary.vocabulary[predict_index]
 
-            if (predict_value == '<start>' or predict_value == '<end>') and len(history) > 0:
-                break
+            # if (predict_value == '<start>' or predict_value == '<end>') and len(history) > 0:
+            #     break
 
             history.append(predict_index)
             history = history[-prevent_convergence_history:]
-            context.stimulate(predict_value, stimulus = stimulus)
+            context.stimulate(predict_value, stimulus=stimulus)
             sentence += predict_value + " "
 
         return sentence.strip()
@@ -122,7 +125,7 @@ class Trainer():
 
         # self.model.train()
         ds = CustomDataset(dataset_file)
-        loader = DataLoader(ds, batch_size=32, shuffle=False)
+        loader = DataLoader(ds, batch_size=64, shuffle=False)
 
         pbar = tqdm(range(1, epochs))
         for epoch in pbar:
