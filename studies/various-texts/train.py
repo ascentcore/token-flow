@@ -68,7 +68,7 @@ def train():
         for context in contexts:
             print(f'\n############ {context.name} ############')
             trainer.train(
-                context, f'studies/various-texts/dataset/{context.name}.dataset.json', 50)
+                context, f'studies/various-texts/dataset/{context.name}.dataset.json', 25)
 
             for c in contexts:
                 c.decrease_stimulus(1)
