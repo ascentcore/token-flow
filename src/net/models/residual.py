@@ -17,7 +17,7 @@ class Residual(torch.nn.Module):
         residual = x
         x = self.lin1(x)
         # x = F.dropout(x, p=0.5)
-        x = self.relu1(x)
+        # x = self.relu1(x)
         x = self.lin2(x)
         # x = F.dropout(x, p=0.5)
         # x = self.relu2(x)
@@ -27,7 +27,7 @@ class Residual(torch.nn.Module):
             x += residual_input
             # x = F.relu(x)
 
-        x = self.relu2(x)
+        # x = self.relu2(x)
 
         return x, residual
 
@@ -50,7 +50,7 @@ class ResidualModel(torch.nn.Module):
         self.res1_up = Residual(int(num_classes * 0.8),
                                 int(num_classes*0.9), num_classes)
 
-        self.last = torch.nn.Sigmoid()
+        # self.last = torch.nn.Sigmoid()
 
     def forward(self, data):
         x = data

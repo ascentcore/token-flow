@@ -1,25 +1,8 @@
 import torch
-import json
 from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
 
 torch.manual_seed(12345)
-
-
-class CustomDataset(Dataset):
-    def __init__(self, dataset_file):
-        self.dataset = json.loads(open(dataset_file).read())
-
-    def __len__(self):
-        return len(self.dataset)
-
-    def __getitem__(self, idx):
-        in_data, out_data = self.dataset[idx]
-
-        input = torch.tensor(in_data, dtype=torch.float32)
-        output = torch.tensor(out_data, dtype=torch.float32)
-
-        return input, output
 
 
 class Trainer():
@@ -33,7 +16,6 @@ class Trainer():
         # self.loss_function = torch.nn.MSELoss()
         self.loss_function = torch.nn.CrossEntropyLoss()
         # self.loss_function = torch.nn.BCELoss()
-        
 
         # self.optimizer = torch.optim.Adam(model.parameters(),
         #                                   lr=1e-1,
@@ -66,18 +48,20 @@ class Trainer():
 
         return loss_all
 
-    def get_sentence(self, context, generate_length=20, prevent_convergence_history=5, stimulus=None):
+    def get_sentence(self, context, input_data, generate_length=20, prevent_convergence_history=5, stimulus=None, num_patches=None):
         history = []
         sentence = ""
 
         for _ in range(0, generate_length):
-            x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
+            # x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
+            x = torch.tensor([input_data[-num_patches:]], dtype=torch.float32)
             output = self.model(x)
-            predict_index = output.argmax()
+            predict_index = output[0].argmax()
             predict_value = self.vocabulary.vocabulary[predict_index]
 
+
             top_keys = torch.topk(
-                output, k=prevent_convergence_history + 1).indices.tolist()
+                output[0], k=prevent_convergence_history + 1).indices.tolist()
             top_keys = [x for x in top_keys if x not in history]
 
             predict_index = top_keys[0]
@@ -89,6 +73,7 @@ class Trainer():
             history.append(predict_index)
             history = history[-prevent_convergence_history:]
             context.stimulate(predict_value, stimulus=stimulus)
+            input_data.append(context.get_stimuli())
             sentence += predict_value + " "
 
         return sentence.strip()
@@ -121,11 +106,10 @@ class Trainer():
 
         print(test_sentence + ' > ' + sentence)
 
-    def train(self, context, dataset_file, epochs=10):
+    def train(self, ds, epochs=10):
 
         # self.model.train()
-        ds = CustomDataset(dataset_file)
-        loader = DataLoader(ds, batch_size=64, shuffle=False)
+        loader = DataLoader(ds, batch_size=32, shuffle=False)
 
         pbar = tqdm(range(1, epochs))
         for epoch in pbar:

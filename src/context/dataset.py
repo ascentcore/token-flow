@@ -24,7 +24,8 @@ class BasicInMemDataset():
                 for token in tokens:
                     self.context.stimulate(token, stimulus)
                     output = self.context.get_stimuli()
-                    self.data.append((input, output))
+                    filtered_output = [1 if x == 1 else 0 for x in output]
+                    self.data.append((input, filtered_output))
                     input = output
 
 
@@ -137,3 +138,17 @@ class Dataset():
                 dataset.add_context(context)
 
         return dataset
+
+    @classmethod
+    def get_sample_data(cls, context, text, stimulus=None):
+        _, sentences = context.vocabulary.get_token_sequence(
+            text, append_to_vocab=False)
+        input = context.get_stimuli()
+        input_data = [input]
+        for sentence in sentences:
+            for tokens in sentence:
+                for token in tokens:
+                    context.stimulate(token, stimulus)
+                    input_data.append(context.get_stimuli())
+
+        return input_data

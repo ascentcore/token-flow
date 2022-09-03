@@ -139,5 +139,5 @@ def train():
                 listener.stimulate_sequence(text)
 
 
-prepare_dataset()
+# prepare_dataset()
 train()
