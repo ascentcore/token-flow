@@ -55,11 +55,11 @@ def train():
         'studies/various-texts/dataset', 'vocabulary.json')
     # model = AE(vocabulary.size())
     # model = ResidualModel(vocabulary.size())
-    num_patches = 10
+    num_patches = 5
 
     model = VisionTransformer(
-        embed_dim=32,
-        hidden_dim=64,
+        embed_dim=64,
+        hidden_dim=128,
         num_channels=1,
         num_heads=8,
         num_layers=6,
@@ -81,27 +81,21 @@ def train():
                 'studies/various-texts/dataset', context_name, vocabulary)
             contexts.append(context)
 
-    # pre = 'A Hare was making fun of the Tortoise one day for'
-    pre = None
+    pre = "What is renewable energy?"
 
-    for iter in range(0, 20):
+    for iter in range(0, 100):
         for context in contexts:
             print(f'\n############ {context.name} ############')
             ds = TransformerDataset(
                 f'studies/various-texts/dataset/{context.name}.dataset.json', num_patches)
-            trainer.train(ds, epochs=10)
-            # trainer.train(
-            #     context, f'studies/various-texts/dataset/{context.name}.dataset.json', 25)
+            trainer.train(ds, epochs=25, batch_size=32)
 
             for c in contexts:
                 c.decrease_stimulus(1)
-                input_data = Dataset.get_sample_data(
-                    c, "wolf house puff red grandmother")
 
-                if pre != None:
-                    c.stimulate_sequence(pre)
+                input_data = Dataset.get_sample_data(c, pre)
                 text = trainer.get_sentence(
-                    c, input_data, generate_length=100, prevent_convergence_history=5, num_patches=num_patches)
+                    c, input_data, generate_length=50, prevent_convergence_history=5, num_patches=num_patches)
                 print(f'\n\n{c.name}: [{pre}] {text}')
 
 

@@ -59,13 +59,12 @@ class Trainer():
             predict_index = output[0].argmax()
             predict_value = self.vocabulary.vocabulary[predict_index]
 
+            # top_keys = torch.topk(
+            #     output[0], k=prevent_convergence_history + 1).indices.tolist()
+            # top_keys = [x for x in top_keys if x not in history]
 
-            top_keys = torch.topk(
-                output[0], k=prevent_convergence_history + 1).indices.tolist()
-            top_keys = [x for x in top_keys if x not in history]
-
-            predict_index = top_keys[0]
-            predict_value = self.vocabulary.vocabulary[predict_index]
+            # predict_index = top_keys[0]
+            # predict_value = self.vocabulary.vocabulary[predict_index]
 
             # if (predict_value == '<start>' or predict_value == '<end>') and len(history) > 0:
             #     break
@@ -106,10 +105,10 @@ class Trainer():
 
         print(test_sentence + ' > ' + sentence)
 
-    def train(self, ds, epochs=10):
+    def train(self, ds, epochs=10, batch_size=64):
 
         # self.model.train()
-        loader = DataLoader(ds, batch_size=32, shuffle=False)
+        loader = DataLoader(ds, batch_size=batch_size, shuffle=False)
 
         pbar = tqdm(range(1, epochs))
         for epoch in pbar:
