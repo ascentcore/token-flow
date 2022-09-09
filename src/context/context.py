@@ -97,11 +97,13 @@ class Context():
                     for to_token in sequence[i + 1]:
                         self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections=False):
+    def add_text(self, text, skip_connections=False, decrease_on_end = None):
         _, sequences = self.vocabulary.add_text(text)
 
         if not skip_connections:
             self.from_sequence(sequences)
+            if decrease_on_end != None:
+                self.decrease_stimulus(decrease_on_end)
 
         return sequences
 

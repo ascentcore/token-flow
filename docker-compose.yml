@@ -4,7 +4,7 @@ services:
   token-flow-service:
     volumes:
       - ./web/service:/app
-      - ./web/contexts:/app/contexts
+      - ./studies:/app/studies
       - ./src:/app/src
     build:
       context: .

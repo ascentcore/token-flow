@@ -38,6 +38,32 @@ export default function Graph(props) {
     }
   }
 
+  function doNode(node) {
+    node.on('click', onClick);
+
+    node.attr('class', 'node');
+    node.attr('opacity', (d) => {
+      return d.s >= threshold ? 1 : 0;
+    });
+    node
+      .append('circle')
+      .attr('class', 'stimulus')
+      .attr('fill', 'rgba(255,0,0,0.2)')
+      .attr('r', (d) => (Math.pow(2, d.s) - 1) * 30);
+    node.append('circle').attr('r', 2);
+    node
+      .append('text')
+      .text((d) => d.id)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 12)
+      .attr('alignment-baseline', 'baseline')
+      .attr('transform', 'translate(0, -6)');
+  }
+
+  function doLine(line) {
+    line.attr('stroke', 'rgba(0,0,0,.2)').attr('stroke-width', (d) => d.weight);
+  }
+
   React.useEffect(() => {
     axios
       .get(`http://localhost:8081/context/${context}/graph`)
@@ -62,17 +88,28 @@ export default function Graph(props) {
 
         const simulation = d3
           .forceSimulation()
-          .force('charge', d3.forceManyBody().strength(-30))
+          .force(
+            'radial',
+            d3.forceRadial(function (d) {
+              return (2 - Math.pow(2, d.s)) * (width / 2);
+            })
+            // .strength(0.1)
+          )
+          .force(
+            'charge',
+            d3.forceManyBody().strength((d) => -d.s * 60)
+          )
           .force(
             'link',
             d3
               .forceLink()
               .id((d) => d.id)
-              .distance(30)
-          )
-          // .force('x', d3.forceX())
-          // .force('y', d3.forceY())
-          .force('center', d3.forceCenter(width / 2, height / 2));
+              // .distance(30)
+              .strength(0.001)
+          );
+        // // .force('x', d3.forceX())
+        // // .force('y', d3.forceY())
+        // .force('center', d3.forceCenter(width / 2, height / 2));
 
         var link = svg
           .append('g')
@@ -82,6 +119,8 @@ export default function Graph(props) {
           .enter()
           .append('line');
 
+        doLine(link);
+
         var node = svg
           .append('g')
           .attr('class', 'nodes')
@@ -90,25 +129,7 @@ export default function Graph(props) {
           .enter()
           .append('g');
 
-        node.on('click', onClick);
-
-        node.attr('class', 'node');
-        node.attr('opacity', (d) => {
-          return d.s >= threshold ? 1 : 0;
-        });
-        node
-          .append('circle')
-          .attr('class', 'stimulus')
-          .attr('fill', 'rgba(255,0,0,0.5)')
-          .attr('r', (d) => d.s * 10);
-        node.append('circle').attr('r', 2);
-        node
-          .append('text')
-          .text((d) => d.id)
-          .attr('text-anchor', 'middle')
-          .attr('font-size', 12)
-          .attr('alignment-baseline', 'baseline')
-          .attr('transform', 'translate(0, -6)');
+        doNode(node);
 
         setNodes(node);
         setLinks(link);
@@ -128,13 +149,9 @@ export default function Graph(props) {
             })
             .attr('y2', function (d) {
               return d.target.y;
-            })
-            .attr('stroke', (d) =>
-              d.source.s >= threshold || d.target.s >= threshold
-                ? '#808080'
-                : 'rgba(0,0,0,.1)'
-            )
-            .attr('stroke-width', (d) => d.weight);
+            });
+
+          //
 
           (svgContainer || svg).selectAll('.node').attr('transform', (d) => {
             return `translate(${d.x}, ${d.y})`;
@@ -149,17 +166,18 @@ export default function Graph(props) {
       .catch((err) => {
         console.log(err);
       });
-    return () => {};
+    return () => {
+      adjustOpacity();
+    };
   }, [context]);
 
   function adjustOpacity() {
     if (svgContainer) {
       svgContainer
-        .selectAll('.node')
+        .selectAll('.node')     
         .transition()
         .duration(300)
         .attr('opacity', (d) => {
-          console.log(d.id.padStart(20), d.s);
           return d.s >= threshold ? 1 : 0;
         });
 
@@ -167,14 +185,16 @@ export default function Graph(props) {
         .selectAll('.stimulus')
         .transition()
         .duration(300)
-        .attr('r', (d) => d.s * 10);
+        .attr('r', (d) => (Math.pow(2, d.s) - 1) * 30);
 
       svgContainer
         .selectAll('line')
         .transition()
         .duration(300)
-        .attr('stroke', (d) =>
-          d.target.s >= threshold ? '#808080' : 'rgba(0,0,0,.1)'
+        .attr('stroke-opacity', (d) =>
+          Math.max(d.source.s, d.target.s) - threshold > 0
+            ? Math.max(d.source.s, d.target.s)
+            : 0
         );
     }
   }
@@ -209,18 +229,7 @@ export default function Graph(props) {
               enter.on('click', onClick);
 
               enter.attr('class', 'node');
-              enter
-                .append('circle')
-                .attr('class', 'stimulus')
-                .attr('fill', 'rgba(255,0,0,0.5)')
-                .attr('r', (d) => d.s * 10);
-              enter.append('circle').attr('r', 2);
-              enter
-                .append('text')
-                .text((d) => d.id)
-                .attr('text-anchor', 'middle')
-                .attr('alignment-baseline', 'baseline')
-                .attr('transform', 'translate(0, -6)');
+              doNode(enter);
 
               return enter;
             });
@@ -231,8 +240,11 @@ export default function Graph(props) {
               d.target = updatedNodes.find((n) => n.id === d.target);
             })
             .join('line');
+
+          doLine(newLinks);
           setNodes(newNode);
           setLinks(newLinks);
+          sim.alpha(1).restart();
           adjustOpacity();
         }
       });
@@ -260,7 +272,7 @@ export default function Graph(props) {
           </Button>
         </Box>
 
-        <svg id="content" width="100%" height="400" ref={containerRef}></svg>
+        <svg id="content" width="100%" height="500" ref={containerRef}></svg>
         {topTokens.map((token) => (
           <Chip
             key={token.id}

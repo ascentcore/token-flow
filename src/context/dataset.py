@@ -16,10 +16,10 @@ class BasicInMemDataset():
         self.context = context
         self.data = []
 
-    def add_text(self, text, stimulus=None):
+    def add_text(self, text, stimulus=None, decrease_on_end=None):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
         input = self.context.get_stimuli()
-        for sentence in sentences:
+        for sentence in sentences:           
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token, stimulus)
@@ -27,6 +27,9 @@ class BasicInMemDataset():
                     filtered_output = [1 if x == 1 else 0 for x in output]
                     self.data.append((input, filtered_output))
                     input = output
+            if decrease_on_end != None:
+                self.context.decrease_stimulus(decrease_on_end)
+                input = self.context.get_stimuli()
 
 
 class Dataset():
@@ -97,7 +100,7 @@ class Dataset():
         except OSError as e:
             print("Error: %s - %s." % (e.filename, e.strerror))
 
-    def from_folder(self, folder, get_context):
+    def from_folder(self, folder, get_context, decrease_on_end=None):
         res = []
         for (dir_path, dir_names, file_names) in os.walk(folder):
             res.extend(file_names)
@@ -112,14 +115,14 @@ class Dataset():
             file = open(f'{folder}/{file_name}', 'r')
             for line in tqdm(file.readlines()):
                 line = line.strip().lower()
-                context.add_text(line)
+                context.add_text(line, decrease_on_end)
 
         for file_name in res:
             dataset = self.get_dataset(file_name, file_name)
             file = open(f'{folder}/{file_name}', 'r')
             for line in tqdm(file.readlines()):
                 line = line.strip().lower()
-                dataset.add_text(line)
+                dataset.add_text(line, decrease_on_end)
 
     @classmethod
     def load(cls, path):

@@ -12,11 +12,13 @@ import {
   Grid,
   Modal,
   Slider,
+  Switch,
   TextField,
   Typography,
 } from '@mui/material';
 
 import Graph from './components/Graph';
+import RadialGraph from './components/RadialGraph';
 
 const mdTheme = createTheme();
 
@@ -39,9 +41,11 @@ function DashboardContent() {
   const [textValue, setTextValue] = React.useState('');
   const [currentState, setCurrentState] = React.useState('');
   const [stimulate, setStimulate] = React.useState(true);
-  const [threshold, setThreshold] = React.useState(0);
+  const [threshold, setThreshold] = React.useState(0.2);
   const [selectedContext, setSelectedContext] = React.useState(null);
   const [knowledge, setKnowledge] = React.useState(null);
+
+  const [radial, setRadial] = React.useState(true);
 
   React.useEffect(() => {
     axios
@@ -141,19 +145,31 @@ function DashboardContent() {
             step={0.01}
             onChange={(e) => setThreshold(e.target.value)}
           ></Slider>
+          <Switch checked={radial} onChange={(e) => setRadial(e.target.checked)} />
         </Box>
         {/* {initial && <NewSession />} */}
         <Grid container spacing={2} sx={{ mt: 2 }}>
           {contexts &&
             contexts.map((context) => (
               <Grid item xs key={context}>
-                <Graph
-                  context={context}
-                  threshold={threshold}
-                  state={currentState}
-                  onNodeClick={onNodeClick}
-                  selectContext={setSelectedContext}
-                />
+                {radial && (
+                  <RadialGraph
+                    context={context}
+                    threshold={threshold}
+                    state={currentState}
+                    onNodeClick={onNodeClick}
+                    selectContext={setSelectedContext}
+                  />
+                )}
+                {!radial && (
+                  <Graph
+                    context={context}
+                    threshold={threshold}
+                    state={currentState}
+                    onNodeClick={onNodeClick}
+                    selectContext={setSelectedContext}
+                  />
+                )}
               </Grid>
             ))}
         </Grid>
