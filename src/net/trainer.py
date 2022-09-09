@@ -85,7 +85,7 @@ class Trainer():
 
         for _ in range(0, generate_length):
             x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
-            output = self.model(x)
+            output = self.model(x.to(self.device))
             predict_index = output.argmax()
             predict_value = self.vocabulary.vocabulary[predict_index]
 
