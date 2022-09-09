@@ -66,8 +66,12 @@ async def read_root(request: Request, context):
 @app.post('/stimulate')
 async def read_root(request: Request):
     body = await request.json()
+    text = body['text']
     for context in dataset.contexts:
-        dataset.get_context(context).stimulate_sequence(body['text'])
+        if " " in text:
+            dataset.get_context(context).stimulate_sequence(text)
+        else:
+            dataset.get_context(context).stimulate(text)
 
     return random.randint(1, 100)
 
