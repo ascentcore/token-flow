@@ -55,7 +55,7 @@ class Trainer():
         for _ in range(0, generate_length):
             # x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
             x = torch.tensor([input_data[-num_patches:]], dtype=torch.float32)
-            output = self.model(x)
+            output = self.model(x.to(self.device))
             predict_index = output[0].argmax()
             predict_value = self.vocabulary.vocabulary[predict_index]
 
