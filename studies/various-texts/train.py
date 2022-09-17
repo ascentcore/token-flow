@@ -22,7 +22,7 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.25
+initial_weight = 0.5
 weight_increase = 0.037
 temp_decrease = 0.08
 neuron_opening = 0.75
@@ -59,11 +59,11 @@ def train():
     num_patches = 12
 
     model = VisionTransformer(
-        embed_dim=64,
-        hidden_dim=128,
+        embed_dim=128,
+        hidden_dim=256,
         num_channels=1,
         num_heads=4,
-        num_layers=12,
+        num_layers=64,
         num_classes=vocabulary.size(),
         patch_size=vocabulary.size(),
         num_patches=num_patches,
@@ -82,7 +82,7 @@ def train():
                 'studies/various-texts/dataset', context_name, vocabulary)
             contexts.append(context)
 
-    pre = "it was sad and did not know what to do"
+    pre = "The engine is a"
 
     for iter in range(0, 100):
         for context in contexts:
