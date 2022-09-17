@@ -22,7 +22,7 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.5
+initial_weight = 0.25
 weight_increase = 0.037
 temp_decrease = 0.08
 neuron_opening = 0.75
@@ -59,11 +59,11 @@ def train():
     num_patches = 12
 
     model = VisionTransformer(
-        embed_dim=256,
-        hidden_dim=512,
+        embed_dim=64,
+        hidden_dim=128,
         num_channels=1,
-        num_heads=8,
-        num_layers=24,
+        num_heads=4,
+        num_layers=12,
         num_classes=vocabulary.size(),
         patch_size=vocabulary.size(),
         num_patches=num_patches,
@@ -82,14 +82,14 @@ def train():
                 'studies/various-texts/dataset', context_name, vocabulary)
             contexts.append(context)
 
-    pre = "an engine is"
+    pre = "it was sad and did not know what to do"
 
     for iter in range(0, 100):
         for context in contexts:
             print(f'\n############ {context.name} ############')
             ds = TransformerDataset(
                 f'studies/various-texts/dataset/{context.name}.dataset.json', num_patches)
-            trainer.train(ds, epochs=50, batch_size=32)
+            trainer.train(ds, epochs=25, batch_size=32)
 
             for c in contexts:
                 c.decrease_stimulus(1)
@@ -101,5 +101,6 @@ def train():
         torch.save(model, f'studies/various-texts/models/model_{iter}')
 
 
-prepare_dataset()
-train()
+if __name__ == '__main__':
+    prepare_dataset()
+    train()

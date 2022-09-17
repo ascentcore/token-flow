@@ -21,7 +21,7 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        self.optimizer = torch.optim.Adam(model.parameters(),  lr=1e-4)
+        self.optimizer = torch.optim.Adam(model.parameters(),  lr=1e-3)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
     def _inner_train(self, loader):
@@ -48,7 +48,7 @@ class Trainer():
 
         return loss_all
 
-    def get_sentence(self, context, input_data, generate_length=20, prevent_convergence_history=5, stimulus=None, num_patches=None):
+    def get_sentence(self, context, input_data, generate_length=20, prevent_convergence_history=5, stimulus=None, num_patches=None, break_on_end=False):
         history = []
         sentence = ""
 
@@ -59,15 +59,16 @@ class Trainer():
             predict_index = output[0].argmax()
             predict_value = self.vocabulary.vocabulary[predict_index]
 
-            # top_keys = torch.topk(
-            #     output[0], k=prevent_convergence_history + 1).indices.tolist()
-            # top_keys = [x for x in top_keys if x not in history]
+            if prevent_convergence_history != None:
+                top_keys = torch.topk(
+                    output[0], k=prevent_convergence_history + 1).indices.tolist()
+                top_keys = [x for x in top_keys if x not in history]
 
-            # predict_index = top_keys[0]
-            # predict_value = self.vocabulary.vocabulary[predict_index]
+                predict_index = top_keys[0]
+                predict_value = self.vocabulary.vocabulary[predict_index]
 
-            # if (predict_value == '<start>' or predict_value == '<end>') and len(history) > 0:
-            #     break
+            if (break_on_end == True and predict_value == '<end>') and len(history) > 0:
+                break
 
             history.append(predict_index)
             history = history[-prevent_convergence_history:]

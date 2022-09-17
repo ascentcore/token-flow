@@ -252,7 +252,11 @@ class Context():
 
         context.initialize_nodes()
 
-        edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist')
+        if settings['directed']:
+            edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist', create_using=nx.DiGraph)
+        else:
+            edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist')
+
         for edge in edgelist_graph.edges(data=True):
             context.graph.add_edge(
                 edge[0], edge[1], weight=edge[2]['weight'])

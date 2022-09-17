@@ -14,7 +14,7 @@ class BasicInMemDataset():
     def __init__(self, context):
         self.name = context.name
         self.context = context
-        self.data = []
+        self.data = []        
 
     def add_text(self, text, stimulus=None, decrease_on_end=None):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
