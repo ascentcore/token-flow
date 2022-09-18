@@ -14,12 +14,12 @@ class BasicInMemDataset():
     def __init__(self, context):
         self.name = context.name
         self.context = context
-        self.data = []        
+        self.data = []
 
     def add_text(self, text, stimulus=None, decrease_on_end=None):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
         input = self.context.get_stimuli()
-        for sentence in sentences:           
+        for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token, stimulus)
@@ -74,6 +74,10 @@ class Dataset():
         else:
             self.datasets[dataset_name] = BasicInMemDataset(context)
             return self.datasets[dataset_name]
+
+    def reset_stimulus(self):
+        for context in self.contexts.values():
+            context.decrease_stimulus(1)
 
     def store(self, path):
         try:

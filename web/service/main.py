@@ -10,7 +10,7 @@ from src.context.context import Context
 
 import networkx as nx
 
-dataset = Dataset.load('/app/studies/various-texts/dataset')
+dataset = Dataset.load('/app/studies/chat/dataset')
 dataset.delete_context('default')
 
 # context2 = Context('context2', vocabulary,

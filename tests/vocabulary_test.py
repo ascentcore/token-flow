@@ -26,6 +26,19 @@ class TestVocabulary(unittest.TestCase):
         print(vocab.vocabulary)
         self.assertEqual(vocab.size(), 7)
 
+    def test_eol(self):
+        vocab = Vocabulary.from_text(
+            'The rain in Spain. Falls mainly on the plain.')
+        self.assertListEqual(vocab.vocabulary, [
+                             '<start>', '<end>', '<eol>', 'the', 'rain', 'in', 'spain', 'falls', 'fall', 'mainly', 'on', 'plain'])
+
+        _, result = vocab.get_token_sequence(
+            'The rain in Spain. Falls mainly on the plain.')
+        result = list(itertools.chain(*result[0]))
+
+        self.assertListEqual(result, ['<start>', 'the', 'rain', 'in', 'spain', '<end>',
+                             '<start>', 'falls', 'fall', 'mainly', 'on', 'the', 'plain', '<end>', '<eol>'])
+
     def test_strange_case(self):
         vocab = Vocabulary(accept_all=True,
                            include_start_end=True,
@@ -43,7 +56,7 @@ class TestVocabulary(unittest.TestCase):
         result = list(itertools.chain(*result[0]))
 
         self.assertListEqual(result, ['<start>', 'thus', ',', 'the', 'capitain', ',', 'was',
-                             'not', 'found', ';', 'but', 'we', 'agreed', 'to', 'resume', 'the', 'search', '<end>'])
+                             'not', 'found', ';', 'but', 'we', 'agreed', 'to', 'resume', 'the', 'search', '<end>', '<eol>'])
 
     def test_no_puncts_string(self):
         vocab = Vocabulary.from_text(

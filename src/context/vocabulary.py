@@ -37,7 +37,7 @@ class Vocabulary():
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
         self.vocabulary = vocabulary if vocabulary is not None else [
-            '<start>', '<end>'] if include_start_end else []
+            '<start>', '<end>', '<eol>'] if include_start_end else []
 
     @classmethod
     def from_text(cls, text, *args, **kwargs):
@@ -144,6 +144,9 @@ class Vocabulary():
                             token, sequence, missing, append_to_vocab=append_to_vocab)
 
             sequences.append(sequence)
+
+        if self.include_start_end and len(sequences) > 0:
+            sequences[-1].append(['<eol>'])
 
         if len(missing) > 0:
             for listener in self.listeners:

@@ -1,0 +1,36 @@
+{
+  "t_bde29ce2-4153-4056-9eb7-f4ad710505fe": {
+    "article_url": "https://www.washingtonpost.com/blogs/compost/wp/2018/04/05/endangered-species-are-the-real-threats/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Hello!",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Hi.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "How are you?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Fine thanks!",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      }
+    ]
+  }
+}
