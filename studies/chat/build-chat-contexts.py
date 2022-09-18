@@ -41,7 +41,7 @@ def build_dataset():
     dataset.delete_context('default')
     
     chat_data = json.loads(
-            open(f'studies/chat/datasets/alexa/train.json').read())
+            open(f'studies/chat/datasets/alexa/train_small.json').read())
 
     for id in tqdm(chat_data.keys()):
         content = chat_data[id]["content"]

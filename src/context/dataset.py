@@ -66,6 +66,9 @@ class Dataset():
     def has_context(self, context_name):
         return context_name in self.contexts.keys()
 
+    def clear_datasets(self):
+        self.datasets = {}
+
     def get_dataset(self, context_name='default', dataset_name='default'):
         context = self.contexts[context_name]
 

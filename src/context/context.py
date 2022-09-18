@@ -97,7 +97,7 @@ class Context():
                     for to_token in sequence[i + 1]:
                         self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections=False, decrease_on_end = None):
+    def add_text(self, text, skip_connections=False, decrease_on_end=None):
         _, sequences = self.vocabulary.add_text(text)
 
         if not skip_connections:
@@ -152,43 +152,44 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False):
-        root = False
-        if token in self.vocabulary.vocabulary:
-            if to_set is None:
-                if not skip_decrease:
-                    self.decrease_stimulus(decrease_factor)
-                to_set = {}
-                root = True
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=3):
+        if max_depth > 0:
+            root = False
+            if token in self.vocabulary.vocabulary:
+                if to_set is None:
+                    if not skip_decrease:
+                        self.decrease_stimulus(decrease_factor)
+                    to_set = {}
+                    root = True
 
-            if stimulus is None:
-                stimulus = self.default_stimulus
+                if stimulus is None:
+                    stimulus = self.default_stimulus
 
-            graph = self.graph
-            node = graph.nodes[token]
-            current_stimulus = node['s']
-            pass_message = False
-            if token not in to_set.keys() or to_set[token]['s'] < stimulus:
-                if current_stimulus < stimulus:
-                    current_stimulus = stimulus
-                    pass_message = True
-                # elif self.decay_if_low_signal:
-                #     current_stimulus = graph.nodes[token]['s'] - \
-                #         self.temp_decrease
+                graph = self.graph
+                node = graph.nodes[token]
+                current_stimulus = node['s']
+                pass_message = False
+                if token not in to_set.keys() or to_set[token]['s'] < stimulus:
+                    if current_stimulus < stimulus:
+                        current_stimulus = stimulus
+                        pass_message = True
+                    # elif self.decay_if_low_signal:
+                    #     current_stimulus = graph.nodes[token]['s'] - \
+                    #         self.temp_decrease
 
-                current_stimulus = max(0, min(1, current_stimulus))
-                to_set[token] = {'s':  current_stimulus}
-                if current_stimulus > self.propagate_threshold:
-                    if pass_message:
-                        node = graph[token]
-                        for sub_key in node.keys():
-                            if sub_key != token:
-                                weight = node[sub_key]['weight']
-                                self.stimulate(sub_key,
-                                               weight * current_stimulus * self.neuron_opening, to_set=to_set)
+                    current_stimulus = max(0, min(1, current_stimulus))
+                    to_set[token] = {'s':  current_stimulus}
+                    if current_stimulus > self.propagate_threshold:
+                        if pass_message:
+                            node = graph[token]
+                            for sub_key in node.keys():
+                                if sub_key != token:
+                                    weight = node[sub_key]['weight']
+                                    self.stimulate(sub_key,
+                                                   weight * current_stimulus * self.neuron_opening, to_set=to_set, max_depth=max_depth - 1)
 
-        if root:
-            nx.set_node_attributes(self.graph, to_set)
+            if root:
+                nx.set_node_attributes(self.graph, to_set)
 
         return to_set
 
@@ -253,9 +254,11 @@ class Context():
         context.initialize_nodes()
 
         if settings['directed']:
-            edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist', create_using=nx.DiGraph)
+            edgelist_graph = nx.read_edgelist(
+                f'{path}/{context.name}.edgelist', create_using=nx.DiGraph)
         else:
-            edgelist_graph = nx.read_edgelist(f'{path}/{context.name}.edgelist')
+            edgelist_graph = nx.read_edgelist(
+                f'{path}/{context.name}.edgelist')
 
         try:
             for edge in edgelist_graph.edges(data=True):
