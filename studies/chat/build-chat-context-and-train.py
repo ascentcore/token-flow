@@ -26,9 +26,9 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.275
-weight_increase = 0.037
-temp_decrease = 0.75
+initial_weight = 0.0275
+weight_increase = 0.00137
+temp_decrease = 0.0175
 neuron_opening = 0.55
 
 count_lines = 8
@@ -54,7 +54,7 @@ def build_dataset():
     dataset.delete_context('default')
 
     chat_data = json.loads(
-        open(f'studies/chat/datasets/alexa/train_small.json').read())
+        open(f'studies/chat/datasets/alexa/train_small_medium.json').read())
 
     agents = []
 
@@ -77,25 +77,24 @@ def build_dataset():
     dataset.store('studies/chat/dataset')
 
     print('Starting training ....')
-    num_patches = 8
+    num_patches = 24
 
     model = VisionTransformer(
         embed_dim=64,
         hidden_dim=128,
         num_channels=1,
         num_heads=4,
-        num_layers=32,
+        num_layers=8,
         num_classes=vocabulary.size(),
         patch_size=vocabulary.size(),
         num_patches=num_patches,
-        dropout=0)
+        dropout=0.02)
 
     trainer = Trainer(model, vocabulary)
 
     stimulate_with = ["What music do you like?",
-                      "I love cat videos!", "The economy is not doing very well."]
-    pre = ""
-
+                      "I love cat videos!",
+                      "The traffic today is really heavy."]
     try:
         os.mkdir('studies/chat/models/')
     except:
@@ -123,17 +122,16 @@ def build_dataset():
             dataset.reset_stimulus()
 
             contexts_list = list(dataset.contexts.values())
-            speaker = contexts_list[0]
-            listener = contexts_list[1]
 
             print("\n\nTraining done, starting to generate ...\n")
             for start_stimulus in stimulate_with:
+                speaker = contexts_list[1]
+                listener = contexts_list[0]
                 print('\nStarting conversation about: \n' + start_stimulus)
-                speaker.stimulate_sequence(start_stimulus)
-
-                input_data = Dataset.get_sample_data(speaker, pre)
+                pre = start_stimulus
 
                 for i in range(count_lines):
+                    input_data = Dataset.get_sample_data(speaker, pre)
                     text = trainer.get_sentence(
                         speaker,
                         input_data,
@@ -141,8 +139,9 @@ def build_dataset():
                         prevent_convergence_history=2,
                         num_patches=num_patches,
                         break_on_eol=True)
-                    print(f'> {speaker.name}: {text}')
-                    listener.stimulate_sequence(text)
+                    print(f'>[{i}] {speaker.name}: {text}')
+                    # listener.stimulate_sequence(text)
+                    pre = text
                     buf = speaker
                     speaker = listener
                     listener = buf

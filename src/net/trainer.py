@@ -21,7 +21,7 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        self.optimizer = torch.optim.Adam(model.parameters(),  lr=1e-3)
+        self.optimizer = torch.optim.Adam(model.parameters(),  lr=6e-6)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
     def _inner_train(self, loader):
