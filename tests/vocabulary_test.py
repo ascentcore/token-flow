@@ -17,14 +17,12 @@ class TestVocabulary(unittest.TestCase):
     def test_from_string(self):
         vocab = Vocabulary.from_text(
             'The rain in Spain falls mainly on the plain.')
-        print(vocab.vocabulary)
-        self.assertEqual(vocab.size(), 11)
+        self.assertEqual(vocab.size(), 12)
 
     def test_from_string_accept_pref(self):
         vocab = Vocabulary.from_text(
             'The rain in Spain falls mainly on the plain.', accept_all=False)
-        print(vocab.vocabulary)
-        self.assertEqual(vocab.size(), 7)
+        self.assertEqual(vocab.size(), 8)
 
     def test_eol(self):
         vocab = Vocabulary.from_text(
@@ -66,7 +64,7 @@ class TestVocabulary(unittest.TestCase):
         result = list(itertools.chain(*result[0]))
 
         self.assertListEqual(result, ['<start>', 'thus', 'the', 'capitain',  'was',
-                             'not', 'found',  'but', 'we', 'agreed', 'to', 'resume', 'the', 'search', '<end>'])
+                             'not', 'found',  'but', 'we', 'agreed', 'to', 'resume', 'the', 'search', '<end>', '<eol>'])
 
     def test_no_puncts_no_start_end_string(self):
         vocab = Vocabulary.from_text(
@@ -99,7 +97,7 @@ class TestVocabulary(unittest.TestCase):
         vocab = Vocabulary(use_token=False)
         vocab.add_text('The rain in Spain falls mainly on the plain.')
         self.assertListEqual(vocab.vocabulary, [
-                             '<start>', '<end>', 'the', 'rain', 'in', 'spain', 'fall', 'mainly', 'on', 'plain'])
+                             '<start>', '<end>', '<eol>', 'the', 'rain', 'in', 'spain', 'fall', 'mainly', 'on', 'plain'])
 
     def test_no_token_vocabulary_no_start_end(self):
         vocab = Vocabulary(include_start_end=False, use_token=False)
@@ -114,7 +112,7 @@ class TestVocabulary(unittest.TestCase):
         self.assertListEqual(
             missing, ['helps', 'help', 'plants', 'plant', 'grow'])
         self.assertListEqual(sequences[0][3], ['helps', 'help'])
-        self.assertEqual(vocab.size(), 16)
+        self.assertEqual(vocab.size(), 17)
 
     def test_sequences(self):
         vocab = Vocabulary()
@@ -123,7 +121,7 @@ class TestVocabulary(unittest.TestCase):
         self.assertEqual(len(added), 14)
         self.assertEqual(len(sequences), 2)
         self.assertEqual(len(sequences[0]), 11)
-        self.assertEqual(len(sequences[1]), 7)
+        self.assertEqual(len(sequences[1]), 8)
 
     def test_save_vocabulary(self):
         vocab = Vocabulary.from_text(
@@ -138,7 +136,7 @@ class TestVocabulary(unittest.TestCase):
         self.test_save_vocabulary()
 
         vocab = Vocabulary.from_file('output/tests', 'vocabulary.json')
-        self.assertListEqual(vocab.vocabulary, ['<start>', '<end>', 'the', 'rain', 'in', 'spain',
+        self.assertListEqual(vocab.vocabulary, ['<start>', '<end>', '<eol>','the', 'rain', 'in', 'spain',
                              'falls', 'fall', 'mainly', 'on', 'plain', 'helps', 'help', 'plants', 'plant', 'grow'])
 
     def test_load_vocabulary_param(self):

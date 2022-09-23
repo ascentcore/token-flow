@@ -1,0 +1,951 @@
+{
+  "t_bde29ce2-4153-4056-9eb7-f4ad710505fe": {
+    "article_url": "https://www.washingtonpost.com/blogs/compost/wp/2018/04/05/endangered-species-are-the-real-threats/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Are you a fan of Google or Microsoft?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Both are excellent technology they are helpful in many ways. For the security purpose both are super.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I'm not  a huge fan of Google, but I use it a lot because I have to. I think they are a monopoly in some sense. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Google provides online related services and products, which includes online ads, search engine and cloud computing.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, their services are good. I'm just not a fan of intrusive they can be on our personal lives. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Google is leading the alphabet subsidiary and will continue to be the Umbrella company for Alphabet internet interest.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Did you know Google had hundreds of live goats to cut the grass in the past? \n",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It is very interesting. Google provide \"Chrome OS\" which is a light weight OS. Google provided a lot of hardware mainly in 2010 to 2015. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I like Google Chrome. Do you use it as well for your browser? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes.Google is the biggest search engine and Google service figure out top 100 website, including Youtube and Blogger.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "By the way, do you like Fish? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes. They form a sister group of tourniquets- they make the sea water clean and remove the dust from it. Fish is the biggest part in the eco-system.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Did you know that a seahorse is the only fish to have a neck? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Freshwater fish only drink water through the skin via Osmosis, Saltwater fish drink water through the mouth. Dolphins are friendly to human beings.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Interesting, they also have gills. Did you know that jellyfish are immortal? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes. Fish is the important resources of human world wide for the commercial and subsistence fish hunts the fish in the wild fisheries.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "What about cats, do you like cats? I'm a dog fan myself. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "The cat is referred as domestic cat and wild cat. They make our world very clean from rats! ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, cats can be cool, but they sure do spend a lot of their time sleeping. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Cats hear the sounds too faint or too high frequency human ears can hear. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I heard that too. Well, it was nice chatting with you. Have a good day. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_1abc9c37-387d-4013-8691-88ef8c010e58": {
+    "article_url": "https://www.washingtonpost.com/entertainment/theater_dance/womens-voices-notes-an-exotic-imogen-and-a-down-home-hound/2018/01/21/559a4ad0-feb2-11e7-bb03-722769454f82_story.html",
+    "config": "B",
+    "content": [
+      {
+        "message": "do you like dance?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes  I do. Did you know Bruce Lee was a cha cha dancer?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes he even won a hardcore cha cha championship in 1958",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah. Did you know Tupac was a ballet dancer?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes and he even was in the production of the nutcracker",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah. Ballet dancer go through 4 pairs of shoes a week",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes that is a lot of shoes and also a lot of money",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah true. Did you know babies are really good at dancing?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes and they smile more when they hit the beat",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah they are much smarter than we give them credit for",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "True Did you know Jackson had a patent on a dancing device?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes it helped him smooth out his dance moves",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Nice. Do you like Shakespeare?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes I do. Do you know that he popularized many phrases",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes like good riddance, in my heart of hearts and such",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes and then he also invented names like Jessica, Olivia and Miranda",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes. And for his works you have to use old english for it to make sense",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes otherwise the rhymes and puns do not seem to work out",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes. He lived at the same time as Pocahontas too",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I wonder if they met how that would go from there",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah interesting point. Nice chat",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_1a600621-5ad4-409c-a812-bc0b2bb03aa6": {
+    "article_url": "https://www.washingtonpost.com/blogs/compost/wp/2018/04/05/endangered-species-are-the-real-threats/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Hey what's up do use Google very often?I really love the company and was surprised to hear that it was founded back in 1998.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i think everyone must use it daily! its become ingrained in every day life",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Agreed. The Google headquarters in Mountain View California is nicknamed the Google Plex.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "thats funny. The current CEO is Sundar Pichai, i didnt know Larry Page was replaced",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Oh yeah I didn't know that either. I also want to go to google Plex to see the goats who mow their lawn by eating it.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "say what now?? they have that??",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yeah apparently lol! They do that instead of hiring people to mow!",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "thats both funny and i guess imaginative. leave it to a huge tech company to employ actual goats!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah exactly I am sure they are cheaper. One thing I bet they couldn't exploit is fish. I think fish are so cool there is actually a breed of jellyfish that is immortal.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i had rememered hearing about that before. Immortatlity is wasted on a jellyfish haha. did you know a seahorse is the only fish that has an actual neck?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is so funny I guess I never considered a seahorse a fish. The black swallower fish sounds a lot like a snake because it can eat pray that is so large.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i guess they live up to their name then!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "It seems they do. I also didn't know that there was a difference with how freshwater and saltwater fish drink.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "thats crazy. i wonder why fresh water ones only use osmosis? ",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah and saltwater fish are lucky because they can do that and drink through their mouth's.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "seems like fresh water fish got the short end of the stick with that one. Have you ever been to a cat cafe?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I have never been to a cat cafe no, what about you? Seems like they are popular in Japan and Taiwan.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "no but I would love to! paying hourly to hang out with adorable cats? im in!",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah that would be a lot of fun. I didn't realize that cats sleep so much. Must be nice.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i guess thats where the phrase \"cat nap\" comes from",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Oh yeah I guess so ha ha. There's even a town in Alaska that has a mayor cat.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_2db5c45b-8e55-4e1e-872d-17576ae625fd": {
+    "article_url": "https://www.washingtonpost.com/goingoutguide/movies/borg-vs-mcenroe-captures-a-historic-match-and-the-inner-lives-of-the-players/2018/04/18/63ea8c44-3e8b-11e8-8d53-eba0ed2371cc_story.html",
+    "config": "C",
+    "content": [
+      {
+        "message": "Hello, do you follow tennis?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "Not really. I just know each player uses a strung racket and they hit a hollow ball.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Did you know Polo shirts were originally invented for tennis?",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I did know. I know Lacoste shirts had the crocodile and it was a symbol for Rene \"the crocodile\" lacoste who was a famous player.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yep. A black man won the first US open tennis title back in 1968 and no black man has won it since.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow! Over 50 years and still holding the record! I think the next year in 1969 they used a helicopter to dry the grass tennis courts for the US open.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I agree. They used a helicopter to dry the grass tennis courts for the 1969 US open.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "Yes, they did. The longest tennis match went on for 11 hours over three days. I bet they were exhausted!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's crazy long! ",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Poor"
+      },
+      {
+        "message": "I agree! It's amazing the facts you can find on Google. Did you know that a single Google search requires more computing power than it took to send Neil Armstrong to the moon?",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's pretty amazing! I saw that Google maps calculates traffic by how fast Android devices are moving on the road.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I never knew that! I wonder whose? I know I heard that back in the day Google used goats to keep the lawn under control instead of hiring people to mow.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's hilarious! Google went down for 5 minutes back in 2013 and took 40% of the web traffic with it.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I can imagine. I use it a lot. It's hard to believe its only been around since 1998.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I agree. When there is a dispute on a border, Google maps tailors the map to the claims of each country where the internet browser is located.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That sounds logical. I wish I would have gotten on board with the 2004 initial public offering to buy stock. I can't even imagine the outcome.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I can't either. Do you like shoes?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I love shoes!! I know that shoes made 5000 years ago perform better than today's shoes!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's pretty amazing they perform better than the shoes of today!",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I agree. I can't see how though. I find it amazing the array of choices like ones that can cost thousands of dollars a pair.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "It was good chatting with you!",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Passable"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Passable",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_d356e4d7-9f7d-4723-a90a-423b20e01bc8": {
+    "article_url": "https://www.washingtonpost.com/goingoutguide/movies/borg-vs-mcenroe-captures-a-historic-match-and-the-inner-lives-of-the-players/2018/04/18/63ea8c44-3e8b-11e8-8d53-eba0ed2371cc_story.html",
+    "config": "A",
+    "content": [
+      {
+        "message": "Hello do you like tennis?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes. Tennis is a racket sport that can be played individually against a single opponent or doubles.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes,  thanks for the explaination.  Did you know that polo shirts were made originally for tennis players?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes, It is more comfortable to wear while playing, and it also make the popular of the shirts.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "They used a helicopter to dry the grass in the 1969 us open lol",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "In 19th century, modern tennis is originated in England as Lawn tennis.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Nice,  sounds fun!  The longest tennis match went on for 3 days!  can you imagine?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "When this match happened ?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think around 2015",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Thanks. The main component of tennis is racket until 1978 a tennis player was allowed to use absolutely any object as racket.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Thats interesting!  ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Google was founded in 1998. It is an American multinational technology company that is specialized in internet-related services.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Seems like a long time ago even though it wasnt.  ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It is the biggest search engine and cloud computing service. It also many application like gmail, youtube, etc...",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes,  I recently read that a google search requires more computing power than it took to send astronauts to the moon lol",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Google is the most valuable brand in 2017. Google announced the new company called Calico.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "wow awesome.  Instead of hiring people to mow the lawn,  they hired goats.  ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "The company moved to mobile android system the Chrome OS is the light weight operating system.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "ok.  I recently read that they calculate the taffic by how fast android phones are moving. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It is very interesting thing. Technology are used to identify were are we. It affect the privacy of person.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I agree.  Its been good chatting. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Good"
+    }
+  },
+  "t_d51a9415-1487-49aa-8135-0ef1e664d36c": {
+    "article_url": "https://www.washingtonpost.com/news/early-lead/wp/2018/03/05/theres-no-wrong-way-to-be-a-woman-serena-williams-drops-a-powerful-message-in-nike-ad/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Do you like tennis? I just love to play the sport.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I've played it a couple time in high school gym class, I wasn't that good",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Poor"
+      },
+      {
+        "message": "i love it! Tennis is a racket sport that can be played individually against a single opponent or in teams",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I watch it sometimes when Serena Williams is playing",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "yeah i like to watch her play. Polo shirts were originally invented for tennis by famous player rene \"the crocodile\" lacoste. i love their colgne for men",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Intresting, the longest match played in a polo shirt was 22 hours",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "yeah if i recall it went over three days or so",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That's a long time, I don't think I've ever done anything for 3 days straight",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "im not sure if its true but Us open quarterfinalist gael monfils beat the \"roger federer of paddle tennis\" after learning how to play just days earlier.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Man that's crazy, almost as crazy as using a helicopter to dry grass tennis courts",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "yeah i have heard that as well and though it sounded really dangerous. i wonder if their were people in the crowd?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I hope not, if I was there I'd be cold",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Poor"
+      },
+      {
+        "message": "yeah. In 1998, serena and venus williams said they could beat any man ranked 200 or worse in a game of tennis. they lost when challenged twice lol",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "lol, well she did win the australian open when she was ranked 95th",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i have heard Serena williams is a co-owner of the miami dolphins",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I didn't know that, she speaks french and italian so I wonder if she owns any sports teams in Europe",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "not sure but In january 2007, serena williams was ranked 95th in the world in tennis",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I never knew she was ever ranked that low",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Not Good"
+      },
+      {
+        "message": "well she reached the No. 1 ranking for the first time on July 8, 2002 but has since fallen",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow, shes so good though, she won a grand slam while pregnant",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I guess in my opinion her and her sister are kinda overated.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I don't know, maybe",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Poor"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Not Good"
+    }
+  }
+}

@@ -27,7 +27,7 @@ class TestContext(unittest.TestCase):
         vocab = Vocabulary.from_text(
             'The rain in Spain falls mainly on the plain.')
         context = Context('testcontext', vocabulary=vocab)
-        self.assertEqual(len(context.graph.nodes), 11)
+        self.assertEqual(len(context.graph.nodes), 12)
         self.assertEqual(context.graph.nodes(data=True)['the']['s'], 0)
 
     def test_initialization_lemma_excluded(self):
@@ -35,7 +35,7 @@ class TestContext(unittest.TestCase):
         vocab.add_text(
             'The rain in Spain falls mainly on the plain.')
         context = Context('testcontext', vocabulary=vocab)
-        self.assertEqual(len(context.graph.nodes), 10)
+        self.assertEqual(len(context.graph.nodes), 11)
         self.assertEqual(context.graph.nodes(data=True)['the']['s'], 0)
 
     def test_add_text(self):
@@ -44,7 +44,7 @@ class TestContext(unittest.TestCase):
         context.add_text('Spain is a country in Europe.')
         context.add_text(
             'Europe is a continent, also recognised as a part of Eurasia.')
-        self.assertEqual(len(context.graph.nodes), 25)
+        self.assertEqual(len(context.graph.nodes), 26)
 
     def test_add_definition_simple(self):
         context = Context('test', Vocabulary(
@@ -72,49 +72,57 @@ class TestContext(unittest.TestCase):
 
     def test_stimulus_matrix(self):
         context = Context('testcontext', Vocabulary(), initial_weight=0.2)
-        context.add_text('The rain in Spain falls mainly on the plain.')
-        context.stimulate('rain')
-        context.stimulate('in')
-        print(context.get_matrix())
+        context.add_text('a b c d e')
+        context.add_text('a b')
+        context.add_text('a b c')
+        context.add_text('a b c d e')
+        context.add_text('c e d')
+        expected = [0., 0., 0., 0.5, 0., 0.2, 0., 0.,
+                    0., 0., 0., 0., 0., 0., 0., 0.,
+                    0., 0., 0., 0., 0., 0., 0., 0.,
+                    0., 0., 0., 0., 0.5, 0., 0., 0.,
+                    0., 0., 0.2, 0., 0., 0.4, 0., 0.,
+                    0., 0., 0.2, 0., 0.,
+                    0., 0.3, 0.2,
+                    0., 0., 0.2, 0., 0., 0., 0., 0.3,
+                    0., 0., 0.3, 0., 0., 0., 0.2, 0.]
+        result = context.get_matrix().flatten().tolist()[0]
+        for i in range(len(expected)):
+            self.assertAlmostEqual(expected[i], result[i])
 
-    def test_fully_weighted(self):
+    def test_fully_weighted_depth(self):
         context = Context('testcontext', Vocabulary(), initial_weight=1)
         context.add_text('The rain in Spain falls mainly on the plain.')
         context.add_text('Spain is a country in Europe.')
         context.add_text(
             'Europe is a continent, also recognised as a part of Eurasia.')
 
-        context.stimulate('rain', decrease_factor=0)
-        print(context.get_stimuli())
+        context.stimulate('rain', decrease_factor=0, max_depth=10)
+        context.stimulate('spain', decrease_factor=0, max_depth=10)
+        # context.pretty_print(sorted=True)
 
-        self.assertListEqual(context.get_stimuli(), [0, 0.7290000000000001, 0.5314410000000002, 1, 0.9, 0.81, 0.7290000000000001, 0.7290000000000001, 0.6561000000000001, 0.5904900000000002, 0.47829690000000014, 0.7290000000000001, 0.7290000000000001,
-                             0.6561000000000001, 0.5904900000000002, 0.81, 0.5904900000000002, 0.5314410000000002, 0.47829690000000014, 0.43046721000000016, 0.43046721000000016, 0.38742048900000015, 0.5904900000000002, 0.5314410000000002, 0.47829690000000014])
+        self.assertListEqual(context.get_stimuli(), [0, 0.7290000000000001, 0.6561000000000001, 0.6561000000000001, 1, 0.9, 1, 0.9, 0.9, 0.81, 0.7290000000000001, 0.5904900000000002, 0.9, 0.9, 0.81, 0.7290000000000001,
+                             0.81, 0.7290000000000001, 0.6561000000000001, 0.5904900000000002, 0.5314410000000002, 0.5314410000000002, 0.47829690000000014, 0.7290000000000001, 0.6561000000000001, 0.5904900000000002])
 
     def test_single_vocab_multiple_contexts(self):
         vocab = Vocabulary()
         context1 = Context('context1', vocabulary=vocab, initial_weight=0.5)
         context2 = Context('context2', vocabulary=vocab, initial_weight=0.2)
-        context3 = Context('context2', vocabulary=vocab, initial_weight=0.5)
 
         context1.add_text(
             'An engine is a computer software')
         context2.add_text(
             'The engine a machine for converting energy into motion')
-        context3.add_text(
-            'The engine a machine for converting energy into motion')
 
         context1.stimulate('engine')
         context2.stimulate('engine')
-        context3.stimulate('engine')
 
         self.assertAlmostEqual(context1.get_stimulus_of('computer'), 0.091125)
         self.assertAlmostEqual(context2.get_stimulus_of('computer'), 0)
-        self.assertAlmostEqual(context3.get_stimulus_of('computer'), 0)
         self.assertAlmostEqual(context1.get_stimulus_of('machine'), 0)
         self.assertAlmostEqual(context2.get_stimulus_of('machine'), 0.0324)
-        self.assertAlmostEqual(context3.get_stimulus_of('machine'), 0.2025)
 
-        self.assertEqual(len(vocab.vocabulary), 17)
+        self.assertEqual(len(vocab.vocabulary), 18)
 
     def test_storage(self):
         text = 'The rain in Spain falls mainly on the plain.'
@@ -134,7 +142,7 @@ class TestContext(unittest.TestCase):
             'output/tests', 'testcontext', vocabulary=vocab)
         context2.stimulate('spain')
         self.assertListEqual(context2.get_stimuli(), [
-                             0, 0, 0, 0, 0, 1, 0.63, 0.63, 0.3969, 0.25004699999999996, 0])
+                             0, 0, 0, 0.15752960999999996, 0, 0, 1, 0.63, 0.63, 0.3969, 0.25004699999999996, 0])
 
     def test_top_stimuli(self):
         context = Context('testcontext', Vocabulary(),  initial_weight=0.5)
@@ -153,20 +161,28 @@ class TestContext(unittest.TestCase):
         context.add_text('The rain in spain rain in spain the')
         context.stimulate('rain')
         matrix = context.get_matrix()
-        self.assertEqual(matrix.shape, (6, 6))
+        self.assertEqual(matrix.shape, (7, 7))
         flatted = matrix.flatten().tolist()[0]
-        self.assertListEqual(flatted, [0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                             0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.1, 0.1, 0.0, 0.0])
+        self.assertAlmostEqual(flatted, [0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                               0.0, 0.0, 0.1, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.1, 0.1, 0.0, 0.0])
         self.assertListEqual(context.get_stimuli(), [
-                             0, 0, 0, 1, 0.18000000000000002, 0.032400000000000005])
+                             0, 0, 0, 0, 1, 0.18000000000000002, 0.032400000000000005])
 
-    def test_add_definition(self):
+    def test_edges_on_add_text(self):
+        context = Context('test', Vocabulary(use_lemma=False))
+        context.add_text(
+            'The tomato is part of fruits family.')
+        self.assertListEqual(list(context.graph.edges), [('<start>', 'the'), ('<end>', '<eol>'), ('the', 'tomato'), (
+            'tomato', 'is'), ('is', 'part'), ('part', 'of'), ('of', 'fruits'), ('fruits', 'family'), ('family', '<end>')])
+
+
+    def test_edges_on_add_definition(self):
         context = Context('test', Vocabulary())
         context.add_definition(
             'tomato', 'The tomato is part of fruits family.')
 
-        self.assertListEqual(list(context.graph.edges), [('<start>', 'tomato'), ('<end>', 'tomato'), ('the', 'tomato'), ('tomato', '<start>'), ('tomato', 'the'), ('tomato', 'is'), ('tomato', 'be'), ('tomato', 'part'), ('tomato', 'of'), (
-            'tomato', 'fruits'), ('tomato', 'fruit'), ('tomato', 'family'), ('tomato', '<end>'), ('is', 'tomato'), ('be', 'tomato'), ('part', 'tomato'), ('of', 'tomato'), ('fruits', 'tomato'), ('fruit', 'tomato'), ('family', 'tomato')])
+        self.assertListEqual(list(context.graph.edges), [('<start>', 'tomato'), ('<end>', 'tomato'), ('<eol>', 'tomato'), ('the', 'tomato'), ('tomato', '<start>'), ('tomato', 'the'), ('tomato', 'is'), ('tomato', 'be'), ('tomato', 'part'), ('tomato', 'of'), (
+            'tomato', 'fruits'), ('tomato', 'fruit'), ('tomato', 'family'), ('tomato', '<end>'),  ('tomato', '<eol>'), ('is', 'tomato'), ('be', 'tomato'), ('part', 'tomato'), ('of', 'tomato'), ('fruits', 'tomato'), ('fruit', 'tomato'), ('family', 'tomato')])
 
 
 if __name__ == '__main__':

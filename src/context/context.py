@@ -1,3 +1,4 @@
+from itertools import count
 import json
 import networkx as nx
 import numpy as np
@@ -152,7 +153,7 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=3):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=5):
         if max_depth > 0:
             root = False
             if token in self.vocabulary.vocabulary:
@@ -270,6 +271,12 @@ class Context():
             raise('Runtime error on edge addition')
 
         return context
+
+    def pretty_print(self, sorted=False):
+        print('|  Stimulus  |               Token               |')
+        for token, value in [(token, self.get_stimulus_of(token)) for token in self.vocabulary.vocabulary]if sorted == False else self.get_top_stimuli(count=len(self.vocabulary.vocabulary)):
+            print(f'  {value:.2f}  | {token}')
+        # return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
     def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150, seed=12345):
 

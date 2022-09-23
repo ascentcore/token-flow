@@ -7,7 +7,7 @@ torch.manual_seed(12345)
 
 class Trainer():
 
-    def __init__(self, model, vocabulary):
+    def __init__(self, model, vocabulary, lr = 1e-3):
         self.vocabulary = vocabulary
         self.device = torch.device(
             'cuda' if torch.cuda.is_available() else 'cpu')
@@ -21,7 +21,7 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        self.optimizer = torch.optim.Adam(model.parameters(),  lr=6e-6)
+        self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
     def _inner_train(self, loader):

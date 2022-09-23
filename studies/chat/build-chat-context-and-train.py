@@ -26,12 +26,18 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.0275
+initial_weight = 0.7
 weight_increase = 0.00137
-temp_decrease = 0.0175
-neuron_opening = 0.55
+temp_decrease = 0.75
+neuron_opening = 0.75
 
-count_lines = 8
+batch_size = 16
+epochs = 50
+lr = 1e-3
+
+dataset_decrease_on_end = None  # 0.85
+
+count_lines = 4
 
 
 def get_context(name,
@@ -54,7 +60,7 @@ def build_dataset():
     dataset.delete_context('default')
 
     chat_data = json.loads(
-        open(f'studies/chat/datasets/alexa/train_small_medium.json').read())
+        open(f'studies/chat/datasets/alexa/train_tiny_small.json').read())
 
     agents = []
 
@@ -90,11 +96,10 @@ def build_dataset():
         num_patches=num_patches,
         dropout=0.02)
 
-    trainer = Trainer(model, vocabulary)
+    trainer = Trainer(model, vocabulary, lr=lr)
 
-    stimulate_with = ["What music do you like?",
-                      "I love cat videos!",
-                      "The traffic today is really heavy."]
+    stimulate_with = ["What do you think about google?",
+                      "Do you like sport?"]
     try:
         os.mkdir('studies/chat/models/')
     except:
@@ -112,12 +117,13 @@ def build_dataset():
                         dataset.get_context(
                             context).stimulate_sequence(message)
                     else:
-                        dataset.get_dataset(context, context).add_text(message)
+                        dataset.get_dataset(context, context).add_text(
+                            message, decrease_on_end=dataset_decrease_on_end)
 
             ds = TransformerRuntimeDataset(dataset, num_patches)
 
             print(f'Training on {id} with length {len(ds)}')
-            trainer.train(ds, epochs=50, batch_size=16)
+            trainer.train(ds, epochs=epochs, batch_size=batch_size)
 
             dataset.reset_stimulus()
 

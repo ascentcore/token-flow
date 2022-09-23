@@ -1,4 +1,3 @@
-import re
 import os
 import json
 import shutil
@@ -16,7 +15,7 @@ class BasicInMemDataset():
         self.context = context
         self.data = []
 
-    def add_text(self, text, stimulus=None, decrease_on_end=None):
+    def add_text(self, text, stimulus=None, decrease_on_end=None, filtered_output=True):
         _, sentences = self.context.vocabulary.get_token_sequence(text)
         input = self.context.get_stimuli()
         for sentence in sentences:
@@ -24,12 +23,22 @@ class BasicInMemDataset():
                 for token in tokens:
                     self.context.stimulate(token, stimulus)
                     output = self.context.get_stimuli()
-                    filtered_output = [1 if x == 1 else 0 for x in output]
-                    self.data.append((input, filtered_output))
+                    if filtered_output:
+                        filtered_output = [1 if x == 1 else 0 for x in output]
+                        self.data.append((input, filtered_output))
+                    else:
+                        self.data.append((input, output))
                     input = output
             if decrease_on_end != None:
-                self.context.decrease_stimulus(decrease_on_end)
                 input = self.context.get_stimuli()
+                self.context.decrease_stimulus(decrease_on_end)
+
+    def pretty_print(self):
+        for input, output in self.data:
+            print('--------------------------------')
+            for i in range(len(input)):
+                print(
+                    f'{(">" if output[i] == 1 and input[i] < output[i] else " ")} {input[i]:.2f} -> {output[i]:.2f} | {self.context.vocabulary.vocabulary[i]}')
 
 
 class Dataset():
@@ -93,9 +102,6 @@ class Dataset():
             self.vocabulary.save_vocabulary(path, 'vocabulary.json')
             for context in self.contexts.values():
                 context.store(path)
-
-            print(self.contexts.keys())
-            print(self.datasets.keys())
 
             for dataset in self.datasets.values():
                 with open(f'{path}/{dataset.name}.dataset.json', 'w') as outfile:

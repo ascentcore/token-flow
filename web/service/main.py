@@ -10,17 +10,28 @@ from src.context.context import Context
 
 import networkx as nx
 
-dataset = Dataset.load('/app/studies/chat/dataset')
+# dataset = Dataset.load('/app/studies/chat/dataset')
+# dataset.delete_context('default')
+
+
+vocabulary = Vocabulary()
+
+context1 = Context('context1', vocabulary,
+                   initial_weight=0.2,
+                   neuron_opening=0.95,
+                   weight_increase=0.1,
+                   temp_decrease=0.05)
+
+context2 = Context('context2', vocabulary,
+                   initial_weight=0.2,
+                   neuron_opening=0.95,
+                   weight_increase=0.1,
+                   temp_decrease=0.05)
+
+dataset = Dataset(vocabulary=vocabulary)
+dataset.add_context(context1)
+dataset.add_context(context2)
 dataset.delete_context('default')
-
-# context2 = Context('context2', vocabulary,
-#                   initial_weight=0.2,
-#                   neuron_opening=0.95,
-#                   weight_increase=0.1,
-#                   temp_decrease=0.05)
-
-# dataset.add_context(context1)
-# dataset.add_context(context2)
 
 # dataset.get_context('context1').add_text(
 #     'The rain in spain falls mainly on the plain')
@@ -41,7 +52,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.get('/contexts')
 def read_root(request: Request):
