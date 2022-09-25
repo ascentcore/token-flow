@@ -1,3 +1,4 @@
+import os
 import spacy
 import json
 
@@ -51,20 +52,37 @@ class Vocabulary():
         vocab = cls(vocabulary=vocabulary)
         return vocab
 
+    def from_folder(self, folder):
+        res = []
+        for (dir_path, dir_names, file_names) in os.walk(folder):
+            res.extend(file_names)
+
+        for file_name in res:
+            file = open(f'{folder}/{file_name}', 'r')
+            for line in file.readlines():
+                self.add_text(line)
+
+        print(f'Added {len(res)} files to vocabulary')
+        print(f'Vocabulary size: {self.size()}')
+
     @classmethod
     def from_file(cls, path, name='vocabulary.json'):
         with open(f'{path}/{name}', 'r') as infile:
             data = json.load(infile)
 
-        return cls(vocabulary=data['vocabulary'],
-                   accepted=data['settings']['accepted'],
-                   accept_all=data['settings']['accept_all'],
-                   use_lemma=data['settings']['use_lemma'],
-                   include_punctuation=data['settings']['include_punctuation'],
-                   use_token=data['settings']['use_token'],
-                   add_token_to_vocab=data['settings']['add_token_to_vocab'],
-                   add_lemma_to_vocab=data['settings']['add_lemma_to_vocab'],
-                   include_start_end=data['settings']['include_start_end'])
+        vocabulary = cls(vocabulary=data['vocabulary'],
+                         accepted=data['settings']['accepted'],
+                         accept_all=data['settings']['accept_all'],
+                         use_lemma=data['settings']['use_lemma'],
+                         include_punctuation=data['settings']['include_punctuation'],
+                         use_token=data['settings']['use_token'],
+                         add_token_to_vocab=data['settings']['add_token_to_vocab'],
+                         add_lemma_to_vocab=data['settings']['add_lemma_to_vocab'],
+                         include_start_end=data['settings']['include_start_end'])
+
+        print(f'Loaded vocabulary. Size: {vocabulary.size()}')
+
+        return vocabulary
 
     def size(self):
         return len(self.vocabulary)
@@ -153,5 +171,5 @@ class Vocabulary():
                 listener(missing)
         return missing, sequences
 
-    def add_text(self, text):
-        return self.get_token_sequence(text, append_to_vocab=True)
+    def add_text(self, text, append_to_vocab = True):
+        return self.get_token_sequence(text, append_to_vocab=append_to_vocab)

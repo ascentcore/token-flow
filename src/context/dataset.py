@@ -15,8 +15,9 @@ class BasicInMemDataset():
         self.context = context
         self.data = []
 
-    def add_text(self, text, stimulus=None, decrease_on_end=None, filtered_output=True):
-        _, sentences = self.context.vocabulary.get_token_sequence(text)
+    def add_text(self, text, stimulus=None, decrease_on_end=None, filtered_output=True, append_to_vocab=False):
+        _, sentences = self.context.vocabulary.get_token_sequence(
+            text, append_to_vocab=append_to_vocab)
         input = self.context.get_stimuli()
         for sentence in sentences:
             for tokens in sentence:
@@ -128,14 +129,14 @@ class Dataset():
             file = open(f'{folder}/{file_name}', 'r')
             for line in tqdm(file.readlines()):
                 line = line.strip().lower()
-                context.add_text(line, decrease_on_end)
+                context.add_text(line, decrease_on_end=decrease_on_end)
 
         for file_name in res:
             dataset = self.get_dataset(file_name, file_name)
             file = open(f'{folder}/{file_name}', 'r')
             for line in tqdm(file.readlines()):
                 line = line.strip().lower()
-                dataset.add_text(line, decrease_on_end)
+                dataset.add_text(line, decrease_on_end=decrease_on_end)
 
     @classmethod
     def load(cls, path):

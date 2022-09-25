@@ -1,14 +1,8 @@
-import re
-import os
 import json
 from src.context.dataset import Dataset
 from src.context.context import Context
 from src.context.vocabulary import Vocabulary
-from src.net.ds.transformer_dataset import TransformerDataset
-from src.net.models.rnntrans import RNNModel, TransformerModel
-from src.net.models.vit import VisionTransformer
-import torch.nn as nn
-import torch
+from src.net.ds.linear_dataset import LinearDataset
 
 from src.net.trainer import Trainer
 
@@ -22,12 +16,13 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.7
+initial_weight = 0.5
 weight_increase = 0.037
-temp_decrease = 0.6
+temp_decrease = 0.25
 neuron_opening = 0.75
 
-lr = 1e-3
+lr = 1e-5
+
 
 def get_context(name,
                 initial_weight=initial_weight,
@@ -47,30 +42,19 @@ def get_context(name,
 def prepare_dataset():
 
     dataset = Dataset(vocabulary)
-    dataset.from_folder('studies/various-texts/texts', get_context)
+    dataset.from_folder('studies/various-texts/texts',
+                        get_context, decrease_on_end=0)
     dataset.store('studies/various-texts/dataset')
 
 
-def train():
+def train_residual():
 
     vocabulary = Vocabulary.from_file(
         'studies/various-texts/dataset', 'vocabulary.json')
-    # model = AE(vocabulary.size())
     # model = ResidualModel(vocabulary.size())
-    num_patches = 6
+    model = AE(vocabulary.size())
 
-    model = VisionTransformer(
-        embed_dim=32,
-        hidden_dim=64,
-        num_channels=1,
-        num_heads=4,
-        num_layers=12,
-        num_classes=vocabulary.size(),
-        patch_size=vocabulary.size(),
-        num_patches=num_patches,
-        dropout=0.02)
-
-    trainer = Trainer(model, vocabulary, lr = lr)
+    trainer = Trainer(model, vocabulary, lr=lr)
 
     settings = json.loads(
         open(f'studies/various-texts/dataset/dataset.settings.json').read())
@@ -83,25 +67,26 @@ def train():
                 'studies/various-texts/dataset', context_name, vocabulary)
             contexts.append(context)
 
-    pre = "Once upon a time"
+    pre = ""
 
     for iter in range(0, 100):
+        print(f'Running iteration {iter}')
         for context in contexts:
             print(f'\n############ {context.name} ############')
-            ds = TransformerDataset(
-                f'studies/various-texts/dataset/{context.name}.dataset.json', num_patches)
-            trainer.train(ds, epochs=25, batch_size=32)
+            ds = LinearDataset(
+                f'studies/various-texts/dataset/{context.name}.dataset.json')
+            trainer.train(ds, epochs=50, batch_size=16)
 
             for c in contexts:
                 c.decrease_stimulus(1)
 
                 input_data = Dataset.get_sample_data(c, pre)
                 text = trainer.get_sentence(
-                    c, input_data, generate_length=150, prevent_convergence_history=5, num_patches=num_patches)
+                    c, input_data, generate_length=150, prevent_convergence_history=5, num_patches=None)
                 print(f'\n\n{c.name}: [{pre}] {text}')
-        torch.save(model, f'studies/various-texts/models/model_{iter}')
+        # torch.save(model, f'studies/various-texts/models/model_{iter}')
 
 
 if __name__ == '__main__':
     prepare_dataset()
-    train()
+    train_residual()

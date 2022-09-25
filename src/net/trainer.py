@@ -7,7 +7,7 @@ torch.manual_seed(12345)
 
 class Trainer():
 
-    def __init__(self, model, vocabulary, lr = 1e-3):
+    def __init__(self, model, vocabulary, lr=1e-3):
         self.vocabulary = vocabulary
         self.device = torch.device(
             'cuda' if torch.cuda.is_available() else 'cpu')
@@ -53,15 +53,28 @@ class Trainer():
         sentence = ""
 
         for _ in range(0, generate_length):
-            # x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
-            x = torch.tensor([input_data[-num_patches:]], dtype=torch.float32)
+            if num_patches is not None:
+                x = torch.tensor([input_data[-num_patches:]],
+                                 dtype=torch.float32)
+            else:
+                x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
+
             output = self.model(x.to(self.device))
-            predict_index = output[0].argmax()
+            if num_patches is not None:
+                predict_index = output[0].argmax()
+            else:
+                predict_index = output.argmax()
+
             predict_value = self.vocabulary.vocabulary[predict_index]
 
             if prevent_convergence_history != None:
-                top_keys = torch.topk(
-                    output[0], k=prevent_convergence_history + 1).indices.tolist()
+                if num_patches is not None:
+                    top_keys = torch.topk(
+                        output[0], k=prevent_convergence_history + 1).indices.tolist()
+                else:
+                    top_keys = torch.topk(
+                        output, k=prevent_convergence_history + 1).indices.tolist()
+                        
                 top_keys = [x for x in top_keys if x not in history]
 
                 predict_index = top_keys[0]

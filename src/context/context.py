@@ -98,8 +98,9 @@ class Context():
                     for to_token in sequence[i + 1]:
                         self.connect(from_token, to_token)
 
-    def add_text(self, text, skip_connections=False, decrease_on_end=None):
-        _, sequences = self.vocabulary.add_text(text)
+    def add_text(self, text, skip_connections=False, decrease_on_end=None, append_to_vocab=True):
+        _, sequences = self.vocabulary.add_text(
+            text, append_to_vocab=append_to_vocab)
 
         if not skip_connections:
             self.from_sequence(sequences)
@@ -153,7 +154,7 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=5):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=10):
         if max_depth > 0:
             root = False
             if token in self.vocabulary.vocabulary:
@@ -271,6 +272,11 @@ class Context():
             raise('Runtime error on edge addition')
 
         return context
+
+    def load_text_file(self, path, append_to_vocab=False):
+        with open(path, 'r') as f:
+            text = f.read()
+            self.add_text(text, append_to_vocab=append_to_vocab)
 
     def pretty_print(self, sorted=False):
         print('|  Stimulus  |               Token               |')
