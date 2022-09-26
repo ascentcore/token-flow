@@ -20,15 +20,16 @@ def build_vocabulary():
         add_lemma_to_vocab=False)
 
     # Build vocabulary from file (contexts will be built on the fly)
-    vocabulary.from_folder('studies/t-ler/data/train')
-    vocabulary.from_folder('studies/t-ler/data/test')
-    vocabulary.save_vocabulary('studies/t-ler/state')
+    vocabulary.from_folder(f'studies/t-ler/data/{cfg.folder}/train')
+    vocabulary.from_folder(f'studies/t-ler/data/{cfg.folder}/test')
+    vocabulary.save_vocabulary(f'studies/t-ler/data/{cfg.folder}')
 
     return vocabulary
 
 
 def restore_vocabulary():
-    vocabulary = Vocabulary.from_file('studies/t-ler/state', 'vocabulary.json')
+    vocabulary = Vocabulary.from_file(
+        f'studies/t-ler/{cfg.folder}', 'vocabulary.json')
     return vocabulary
 
 
@@ -51,11 +52,17 @@ if __name__ == '__main__':
     trainer = Trainer(model, vocabulary, lr=cfg.lr)
 
     test_context = get_context('test', vocabulary)
-    test_context.load_text_file('studies/t-ler/data/test/snow-white.txt')
+    test_context.load_text_file(
+        f'studies/t-ler/data/{cfg.folder}/test/test.txt')
+
+    test_ds = BasicInMemDataset(test_context)
+    test_ds.add_text(cfg.pre)
+
+    # test_ds.pretty_print()
 
     for i in range(cfg.repeats):
         print(f'Running repeatable {i}')
-        for (dir_path, dir_names, file_names) in os.walk('studies/t-ler/data/train'):
+        for (dir_path, dir_names, file_names) in os.walk(f'studies/t-ler/data/{cfg.folder}/train'):
             for file_name in file_names:
                 if file_name.endswith('.txt'):
                     print(f'Bulding context for {file_name}')
@@ -63,19 +70,23 @@ if __name__ == '__main__':
                     train_context.load_text_file(
                         os.path.join(dir_path, file_name))
 
+                    if cfg.render_context and i == 0:
+                        train_context.render(
+                            f'studies/t-ler/data/{cfg.folder}/{train_context.name}.png', train_context.name, consider_stimulus=False, skip_empty_nodes = True)
+
                     print(f'Building dataset for {file_name}')
                     ds = BasicInMemDataset(train_context)
 
                     with open(os.path.join(dir_path, file_name), 'r') as f:
                         text = f.read()
-                        ds.add_text(text, decrease_on_end=cfg.decrease_on_end)
+                        ds.add_text(text, decrease_on_end=cfg.decrease_on_end,
+                                    filtered_output=cfg.filtered_output)
+
+                        # ds.pretty_print()
 
                     dataset = LinearRuntimeInMemDataset(ds)
                     trainer.train(dataset, epochs=cfg.epochs,
                                   batch_size=cfg.batch_size)
-
-                    test_ds = BasicInMemDataset(test_context)
-                    test_ds.add_text(cfg.pre)
 
                     text = trainer.get_sentence(
                         test_context, test_ds.data, generate_length=cfg.generate_size,

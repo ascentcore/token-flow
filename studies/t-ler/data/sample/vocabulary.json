@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "accepted": [
+      "NOUN",
+      "PROPN",
+      "ADJ",
+      "VERB"
+    ],
+    "use_lemma": false,
+    "accept_all": true,
+    "include_punctuation": false,
+    "use_token": true,
+    "add_token_to_vocab": true,
+    "add_lemma_to_vocab": false,
+    "include_start_end": true
+  },
+  "vocabulary": [
+    "<start>",
+    "<end>",
+    "<eol>",
+    "once",
+    "upon",
+    "a",
+    "time",
+    "there",
+    "was",
+    "little",
+    "princess",
+    "the",
+    "living",
+    "in",
+    "castle",
+    "end",
+    "bear",
+    "eating",
+    "honey"
+  ]
+}
