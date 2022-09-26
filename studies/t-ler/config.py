@@ -1,4 +1,5 @@
 create_dataset = True
+save_model = True
 folder = 'stories'
 repeats = 5
 
@@ -13,11 +14,11 @@ filtered_output = True
 
 render_context = False
 
-lr = 1e-4
+lr = 3e-4
 epochs = 1000
 batch_size = 64
 
-pre = "No sooner were the ceremonies of the wedding over but the mother-in-law began to show herself in her true colors."
+pre = ""
 
-generate_size = 300
-prevent_convergence_history = 5
+generate_size = 20
+prevent_convergence_history = None

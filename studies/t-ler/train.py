@@ -93,10 +93,19 @@ def restore_vocabulary():
 
 def row_processer(row):
     full_row = np.array(row, np.float32)
-    return np.array_split(full_row, 2)
+    input = full_row[:-1]
+    out_idx = full_row[-1]
+
+    output = np.zeros(len(input), np.float32)
+    output[int(out_idx)] = 1
+
+    return [input, output]
 
 
 if __name__ == '__main__':
+
+    path = f'studies/t-ler/data/{cfg.folder}'
+
     if cfg.create_dataset == True:
         vocabulary = create_dataset()
     else:
@@ -105,31 +114,43 @@ if __name__ == '__main__':
     model = AE(vocabulary.size())
     trainer = Trainer(model, vocabulary, lr=cfg.lr)
 
-    test_context = get_context('test', vocabulary)
-    test_context.load_text_file(
-        f'studies/t-ler/data/{cfg.folder}/test/test.txt')
+    test_contexts = []
+
+    for (dir_path, dir_names, file_names) in os.walk(f'{path}/test'):
+        for file_name in file_names:
+            if file_name.endswith('.txt'):
+                test_context = get_context(file_name, vocabulary)
+                test_context.load_text_file(os.path.join(dir_path, file_name))
+                test_contexts.append(test_context)
 
     datapipe = dp.iter.FileLister(
         f'studies/t-ler/data/{cfg.folder}/dataset/datasets')
     datapipe = datapipe.open_files(mode='rb')
     datapipe = datapipe.parse_csv(delimiter=",", skip_lines=1)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=cfg.batch_size, num_workers=2)
+    dl = DataLoader(dataset=datapipe, batch_size=cfg.batch_size, num_workers=1)
 
     for i in range(cfg.epochs):
+
         loss_all = 0
+        model.train(True)
         for (batch_idx, batch) in tqdm(enumerate(dl)):
             loss = trainer.batch_train(batch)
             loss_all = loss_all + loss
 
-        print(loss_all)
-
-        text = trainer.get_sentence(
-            test_context, [], generate_length=cfg.generate_size,
-            prevent_convergence_history=cfg.prevent_convergence_history)
+        print(f'Epoch {i} loss: {loss_all}')
+        model.train(False)
+        for context in test_contexts:
+            context.decrease_stimulus(1)
+            context.stimulate_sequence(cfg.pre)
+            text = trainer.get_sentence(
+                context, [], generate_length=cfg.generate_size,
+                prevent_convergence_history=cfg.prevent_convergence_history)
 
         print('#######################################')
         print(text)
         print('#######################################')
-        torch.save(
-            model, f'studies/t-ler/data/{cfg.folder}/dataset/models/model_{i}.pt')
+
+        if cfg.save_model:
+            torch.save(
+                model, f'studies/t-ler/data/{cfg.folder}/dataset/models/model_{i}.pt')

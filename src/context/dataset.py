@@ -43,9 +43,10 @@ class BasicInMemDataset():
 
     def to_csv(self, file):
         with open(file, 'w') as f:
-            # f.write(','.join(self.context.vocabulary.vocabulary)+'\n')
+            f.write(','.join(self.context.vocabulary.vocabulary)+',next\n')
             for input, output in self.data:
-                f.write(','.join([str(x) for x in input + output])+'\n')
+                f.write(','.join([str(x) for x in input]) +
+                        ','+str(np.argmax(output))+'\n')
 
 
 class Dataset():

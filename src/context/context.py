@@ -158,18 +158,28 @@ class Context():
         if max_depth > 0:
             root = False
             if token in self.vocabulary.vocabulary:
+
+                graph = self.graph
+                node = graph.nodes[token]
+                current_stimulus = node['s']
+
+                if stimulus is None:
+                    stimulus = self.default_stimulus
+
                 if to_set is None:
+                    should_stop = False
+
+                    if current_stimulus == stimulus:
+                        should_stop = True
+
                     if not skip_decrease:
                         self.decrease_stimulus(decrease_factor)
                     to_set = {}
                     root = True
 
-                if stimulus is None:
-                    stimulus = self.default_stimulus
+                    if should_stop:
+                        return
 
-                graph = self.graph
-                node = graph.nodes[token]
-                current_stimulus = node['s']
                 pass_message = False
                 if token not in to_set.keys() or to_set[token]['s'] < stimulus:
                     if current_stimulus < stimulus:

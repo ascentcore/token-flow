@@ -21,8 +21,8 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
-        # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+        # self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
+        self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
     def batch_train(self, sample):
         x, y = sample
@@ -95,7 +95,9 @@ class Trainer():
                 predict_value = self.vocabulary.vocabulary[predict_index]
 
             history.append(predict_index)
-            history = history[-prevent_convergence_history:]
+            if prevent_convergence_history != None:
+                history = history[-prevent_convergence_history:]
+            
             context.stimulate(predict_value, stimulus=stimulus)
             input_data.append(context.get_stimuli())
             sentence += predict_value + " "
