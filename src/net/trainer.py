@@ -24,6 +24,20 @@ class Trainer():
         self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
+    def batch_train(self, sample):
+        x, y = sample
+        data = x.to(self.device)
+
+        self.optimizer.zero_grad()
+        output = self.model(data)
+
+        loss = self.loss_function(output, y.to(self.device))
+
+        loss.backward()
+        self.optimizer.step()
+
+        return loss
+
     def _inner_train(self, loader):
         self.model.train()
 

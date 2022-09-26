@@ -41,6 +41,12 @@ class BasicInMemDataset():
                 print(
                     f'{(">" if output[i] == 1 and input[i] < output[i] else " ")} {input[i]:.2f} -> {output[i]:.2f} | {self.context.vocabulary.vocabulary[i]}')
 
+    def to_csv(self, file):
+        with open(file, 'w') as f:
+            # f.write(','.join(self.context.vocabulary.vocabulary)+'\n')
+            for input, output in self.data:
+                f.write(','.join([str(x) for x in input + output])+'\n')
+
 
 class Dataset():
 
