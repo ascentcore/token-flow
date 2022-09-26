@@ -2,9 +2,9 @@ create_dataset = True
 folder = 'stories'
 repeats = 5
 
-initial_weight = 0.375
+initial_weight = 0.575
 weight_increase = 0.073
-temp_decrease = 0.027
+temp_decrease = 0.127
 neuron_opening = 0.75
 decrease_on_end = 0.15
 
@@ -14,7 +14,7 @@ filtered_output = True
 render_context = False
 
 lr = 1e-4
-epochs = 100
+epochs = 1000
 batch_size = 64
 
 pre = "No sooner were the ceremonies of the wedding over but the mother-in-law began to show herself in her true colors."

@@ -1,4 +1,5 @@
 import os
+import torch
 import shutil
 from tqdm import tqdm
 
@@ -48,6 +49,7 @@ def create_dataset():
     os.mkdir(data_path)
     os.mkdir(f'{data_path}/datasets')
     os.mkdir(f'{data_path}/contexts')
+    os.mkdir(f'{data_path}/models')
 
     if cfg.render_context:
         os.mkdir(f'{data_path}/renders')
@@ -114,7 +116,6 @@ if __name__ == '__main__':
     datapipe = datapipe.map(row_processer)
     dl = DataLoader(dataset=datapipe, batch_size=cfg.batch_size, num_workers=2)
 
-    # first = next(iter(dl))
     for i in range(cfg.epochs):
         loss_all = 0
         for (batch_idx, batch) in tqdm(enumerate(dl)):
@@ -130,3 +131,5 @@ if __name__ == '__main__':
         print('#######################################')
         print(text)
         print('#######################################')
+        torch.save(
+            model, f'studies/t-ler/data/{cfg.folder}/dataset/models/model_{i}.pt')
