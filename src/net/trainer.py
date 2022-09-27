@@ -21,8 +21,8 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        # self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
-        self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
+        self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
+        # self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
     def batch_train(self, sample):
         x, y = sample

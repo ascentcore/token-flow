@@ -3,9 +3,9 @@ save_model = True
 folder = 'stories'
 repeats = 5
 
-initial_weight = 0.575
+initial_weight = 0.5
 weight_increase = 0.073
-temp_decrease = 0.127
+temp_decrease = 0.037
 neuron_opening = 0.75
 decrease_on_end = 0.15
 
@@ -14,11 +14,11 @@ filtered_output = True
 
 render_context = False
 
-lr = 3e-4
+lr = 1e-5
 epochs = 1000
 batch_size = 64
 
 pre = ""
 
-generate_size = 20
+generate_size = 60
 prevent_convergence_history = None

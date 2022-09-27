@@ -14,6 +14,7 @@ from src.context.context import Context
 from src.net.ds.linear_runtime_inmem_dataset import LinearRuntimeInMemDataset
 
 from src.net.models.autoencoder import AE
+from src.net.models.residual import ResidualModel
 from src.net.trainer import Trainer
 
 import config as cfg
@@ -87,7 +88,7 @@ def create_dataset():
 
 def restore_vocabulary():
     vocabulary = Vocabulary.from_file(
-        f'studies/t-ler/data/{cfg.folder}', 'vocabulary.json')
+        f'studies/t-ler/data/{cfg.folder}/dataset', 'vocabulary.json')
     return vocabulary
 
 
@@ -112,6 +113,7 @@ if __name__ == '__main__':
         vocabulary = restore_vocabulary()
 
     model = AE(vocabulary.size())
+    # model = ResidualModel(vocabulary.size())
     trainer = Trainer(model, vocabulary, lr=cfg.lr)
 
     test_contexts = []
@@ -153,4 +155,4 @@ if __name__ == '__main__':
 
         if cfg.save_model:
             torch.save(
-                model, f'studies/t-ler/data/{cfg.folder}/dataset/models/model_{i}.pt')
+                model, f'studies/t-ler/data/{cfg.folder}/dataset/models/model.pt')
