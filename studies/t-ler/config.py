@@ -1,4 +1,6 @@
-create_dataset = True
+create_dataset = False
+
+load_model = True
 save_model = True
 folder = 'stories'
 repeats = 5

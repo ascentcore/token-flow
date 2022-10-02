@@ -112,7 +112,20 @@ if __name__ == '__main__':
     else:
         vocabulary = restore_vocabulary()
 
-    model = AE(vocabulary.size())
+    model = None
+
+    try:
+        if cfg.load_model == True:
+            model = torch.load(f'studies/t-ler/data/{cfg.folder}/dataset/models/model.pt')
+            model.eval()        
+    except:
+        print('Error loading model, creating new one')
+        pass
+
+    if model == None:
+        model = AE(vocabulary.size())
+
+
     # model = ResidualModel(vocabulary.size())
     trainer = Trainer(model, vocabulary, lr=cfg.lr)
 
