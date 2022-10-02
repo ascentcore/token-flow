@@ -162,9 +162,9 @@ if __name__ == '__main__':
                 context, [], generate_length=cfg.generate_size,
                 prevent_convergence_history=cfg.prevent_convergence_history)
 
-        print('#######################################')
-        print(text)
-        print('#######################################')
+            print('#######################################')
+            print(text)
+            print('#######################################')
 
         if cfg.save_model:
             torch.save(
