@@ -123,10 +123,9 @@ if __name__ == '__main__':
         pass
 
     if model == None:
-        model = AE(vocabulary.size())
-
-
-    # model = ResidualModel(vocabulary.size())
+        # model = AE(vocabulary.size())
+        model = ResidualModel(vocabulary.size())
+    
     trainer = Trainer(model, vocabulary, lr=cfg.lr)
 
     test_contexts = []

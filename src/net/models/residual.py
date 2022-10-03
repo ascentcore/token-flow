@@ -11,16 +11,18 @@ class Residual(torch.nn.Module):
         self.relu1 = nn.ReLU()
         self.lin2 = nn.Linear(mid_count, next_features_count)
         self.relu2 = nn.ReLU()
+        self.lin3 = nn.Linear(next_features_count, next_features_count)
 
     def forward(self, data):
         x, residual_input = data
         residual = x
         x = self.lin1(x)
         # x = F.dropout(x, p=0.5)
-        # x = self.relu1(x)
+        x = self.relu1(x)
         x = self.lin2(x)
         # x = F.dropout(x, p=0.5)
-        # x = self.relu2(x)
+        x = self.relu2(x)
+        x = self.lin3(x)
 
         if residual_input != None:
             # x = self.relu2(x)
