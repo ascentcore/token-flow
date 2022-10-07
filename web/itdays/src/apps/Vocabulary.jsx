@@ -1,23 +1,31 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import * as d3 from 'd3';
-import { useRef } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { registerListener, triggerEvent, unregisterListener } from '../events';
 
 export default (props) => {
-  const { state } = props;
+  const [state, setState] = useState(0);
   const [data, setData] = useState([]);
 
-  console.log('Props', props)
+  console.log('Props', props);
 
   useEffect(() => {
-    console.log('calll')
     axios.get(`http://localhost:8081/vocabulary`).then((response) => {
-      console.log(response.data);
-      setData(response.data);
+      setData(response.data.reverse());
+      triggerEvent('vocabulary', response.data.length);
     });
   }, [state]);
+
+  useEffect(() => {
+    const callback = (data) => {
+      setState(data);
+    };
+    registerListener('global', callback);
+    return () => {
+      console.log('Unmounting ... ');
+      unregisterListener(callback);
+    };
+  }, []);
 
   return (
     <div className="vocabulary-body">

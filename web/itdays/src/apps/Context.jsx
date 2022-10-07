@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import * as d3 from 'd3';
 import { useRef } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { registerListener } from '../events';
 
 export default (props) => {
-  const { context, state, callBackendForText } = props;
+  const { context, callBackendForText } = props;
 
   const containerRef = useRef(null);
   const [data, setData] = useState(null);
@@ -17,6 +17,18 @@ export default (props) => {
   const [nodes, setNodes] = useState(null);
   const [links, setLinks] = useState(null);
   const [textValue, setTextValue] = useState('');
+  const [state, setState] = useState(0);
+
+  useEffect(() => {
+    const callback = (data) => {
+      setState(data);
+    };
+    registerListener('global', callback);
+    registerListener(context, callback);
+    return () => {
+      unregisterListener(callback);
+    };
+  }, []);
 
   function keyPress(e) {
     if (e.keyCode === 13) {
@@ -125,7 +137,6 @@ export default (props) => {
           svg.attr('transform', event.transform);
         });
 
-        console.log(zoom);
         rootContainer
           .call(zoom)
           .call(
@@ -135,12 +146,12 @@ export default (props) => {
 
         const simulation = d3
           .forceSimulation()
-          // .force(
-          //   'radial',
-          //   d3.forceRadial(function (d) {
-          //     return (2 - Math.pow(2, d.s)) * (width / 2);
-          //   })
-          // )
+          .force(
+            'radial',
+            d3.forceRadial(function (d) {
+              return (2 - Math.pow(2, d.s)) * (width / 2);
+            })
+          )
           .force(
             'charge',
             d3.forceManyBody().strength((d) => -d.s * 60)
@@ -205,11 +216,58 @@ export default (props) => {
 
         setSim(simulation);
       });
+  }, [context]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8081/context/${context}/graph`)
+      .then((response) => {
+        const { data: graph } = response;
+        processTopTokens(graph.nodes);
+        if (nodes) {
+          const old = new Map(nodes.data().map((d) => [d.id, d]));
+          const updatedNodes = graph.nodes.map((d) => {
+            const result = Object.assign(old.get(d.id) || {}, d);
+            result.s = d.s;
+            return result;
+          });
+          const updatedLinks = graph.links.map((d) => Object.assign({}, d));
+          sim.nodes(updatedNodes);
+          sim.force('link').links(updatedLinks);
+          sim.alpha(1).restart();
+
+          const newNode = nodes
+            .data(updatedNodes, (d) => d.id)
+            .join((enter) => {
+              enter = enter.append('g');
+
+              enter.on('click', onClick);
+
+              enter.attr('class', 'node');
+              doNode(enter);
+
+              return enter;
+            });
+
+          const newLinks = links
+            .data(graph.links, (d) => {
+              d.source = updatedNodes.find((n) => n.id === d.source);
+              d.target = updatedNodes.find((n) => n.id === d.target);
+            })
+            .join('line');
+
+          doLine(newLinks);
+          setNodes(newNode);
+          setLinks(newLinks);
+          sim.alpha(1).restart();
+          adjustOpacity();
+        }
+      });
   }, [state]);
 
   return (
-    <div class="context-body">
-      <div class="controls">
+    <div className="context-body">
+      <div className="controls">
         <input
           type="text"
           value={textValue}
@@ -218,7 +276,7 @@ export default (props) => {
         ></input>
         <button onClick={addToContext}>Add to context</button>
       </div>
-      <div class="controls">
+      <div className="controls">
         Threshold
         <input
           type="range"

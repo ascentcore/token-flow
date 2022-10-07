@@ -1,8 +1,6 @@
 import './App.css';
 import 'winbox/dist/winbox.bundle.min.js';
 import * as ReactDOM from 'react-dom/client';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import Profile from './apps/Profile';
 import Icon from './components/icon';
 
@@ -22,15 +20,12 @@ import Contexts from './apps/Contexts';
 import Context from './apps/Context';
 import Exercise from './apps/Exercise';
 import Vocabulary from './apps/Vocabulary';
+import { registerListener, triggerEvent, unregisterListener } from './events';
 function Button() {
   return <button>Openzz</button>;
 }
 
-let count = 0;
-
 function App() {
-  const [state, setState] = useState(Math.floor(Math.random() * 1e4));
-
   function callBackendForText(context, sendValue, stimulate) {
     if (sendValue !== '') {
       axios
@@ -44,8 +39,11 @@ function App() {
         )
         .then((response) => {
           const { data } = response;
-          console.log('setting state from', state, data);
-          setState(data);
+          if (!stimulate) {
+            triggerEvent('global', data);
+          } else {
+            triggerEvent(context, data);
+          }
         });
     }
   }
@@ -86,11 +84,7 @@ function App() {
 
     const root = ReactDOM.createRoot(box.body);
     root.render(
-      <Context
-        context={context}
-        callBackendForText={callBackendForText}
-        state={state}
-      />
+      <Context context={context} callBackendForText={callBackendForText} />
     );
   };
 
@@ -105,11 +99,18 @@ function App() {
       border: 4,
       onclose: () => {
         root.unmount();
+        unregisterListener(callback)
       },
     });
 
+    const callback = (data) => {
+      box.title = `Vocabulary (${data})`;
+    }
+
+    registerListener('vocabulary', callback);
+
     const root = ReactDOM.createRoot(box.body);
-    root.render(<Vocabulary state={state} />);
+    root.render(<Vocabulary />);
   };
 
   const openContexts = () => {
