@@ -58,6 +58,10 @@ def read_root(request: Request):
     return [key for key in dataset.contexts.keys()]
 
 
+@app.get('/vocabulary')
+def read_vocabulary():
+    return vocabulary.vocabulary
+
 @app.post('/add_text')
 async def read_root(request: Request):
     body = await request.json()
@@ -83,6 +87,15 @@ async def read_root(request: Request):
         else:
             dataset.get_context(context).stimulate(text)
 
+    return random.randint(1, 100)
+
+
+
+@app.post('/stimulate/{context}')
+async def read_root(request: Request, context):
+    body = await request.json()
+    text = body['text']
+    dataset.get_context(context).stimulate_sequence(text)
     return random.randint(1, 100)
 
 
