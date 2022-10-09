@@ -4,11 +4,12 @@ import { useEffect } from 'react';
 import { registerListener, triggerEvent, unregisterListener } from '../events';
 
 export default (props) => {
+  const { stimulate } = props;
+  
   const [state, setState] = useState(0);
   const [data, setData] = useState([]);
 
-  console.log('Props', props);
-
+  
   useEffect(() => {
     axios.get(`http://localhost:8081/vocabulary`).then((response) => {
       setData(response.data.reverse());
@@ -37,7 +38,7 @@ export default (props) => {
         </thead>
         <tbody>
           {data.map((token) => (
-            <tr key={token}>
+            <tr key={token} onClick={() => stimulate(null, token)}>
               <td>{token}</td>
             </tr>
           ))}

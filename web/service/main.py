@@ -33,10 +33,10 @@ dataset.add_context(context1)
 dataset.add_context(context2)
 dataset.delete_context('default')
 
-# dataset.get_context('context1').add_text(
-#     'The rain in spain falls mainly on the plain')
-# dataset.get_context('context2').add_text(
-#     'Once upon a time there was a little red riding hood')
+dataset.get_context('context1').add_text(
+    'The rain in spain falls mainly on the plain')
+dataset.get_context('context2').add_text(
+    'Once upon a time there was a little red riding hood')
 
 # dataset.store('contexts/test')
 
@@ -53,6 +53,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get('/contexts')
 def read_root(request: Request):
     return [key for key in dataset.contexts.keys()]
@@ -61,6 +62,7 @@ def read_root(request: Request):
 @app.get('/vocabulary')
 def read_vocabulary():
     return vocabulary.vocabulary
+
 
 @app.post('/add_text')
 async def read_root(request: Request):
@@ -77,11 +79,23 @@ async def read_root(request: Request, context):
     return random.randint(1, 100)
 
 
-@app.post('/stimulate')
+@app.post('/create_context')
 async def read_root(request: Request):
     body = await request.json()
+
+    context = Context(body['name'], vocabulary,
+                      initial_weight=body['initial_weight'],
+                      weight_increase=body['weight_increase'],
+                      temp_decrease=body['temp_decrease'])
+
+    dataset.add_context(context)
+
+
+@app.post('/stimulate')
+async def read_root(request: Request, context=None):
+    body = await request.json()
     text = body['text']
-    for context in dataset.contexts:
+    for context in dataset.contexts if context == None else [dataset.get_context(context)]:
         if " " in text:
             dataset.get_context(context).stimulate_sequence(text)
         else:
@@ -90,12 +104,15 @@ async def read_root(request: Request):
     return random.randint(1, 100)
 
 
-
 @app.post('/stimulate/{context}')
 async def read_root(request: Request, context):
     body = await request.json()
     text = body['text']
-    dataset.get_context(context).stimulate_sequence(text)
+    if " " in text:
+        dataset.get_context(context).stimulate_sequence(text)
+    else:
+        dataset.get_context(context).stimulate(text)
+
     return random.randint(1, 100)
 
 
@@ -103,6 +120,13 @@ async def read_root(request: Request, context):
 async def reset_stimuli():
     for context in dataset.contexts:
         dataset.get_context(context).decrease_stimulus(1)
+
+    return random.randint(1, 100)
+
+
+@app.post('/reset_stimuli/{context}')
+async def reset_stimuli(context):
+    dataset.get_context(context).decrease_stimulus(1)
 
     return random.randint(1, 100)
 
