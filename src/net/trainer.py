@@ -115,7 +115,7 @@ class Trainer():
         context.stimulate_sequence(test_sentence)
         history = []
         sentence = ""
-
+        last_token = None
         for _ in range(0, generate_length):
             x = torch.tensor(context.get_stimuli(), dtype=torch.float32)
             output = self.model(x.to(self.device))
@@ -132,9 +132,12 @@ class Trainer():
 
             history.append(predict_index)
             history = history[-prevent_convergence_history:]
-
-            context.stimulate(predict_value)
+            if last_token == predict_value:
+                context.decrease_stimulus()
+            else:
+                context.stimulate(predict_value)
             sentence += predict_value + " "
+            last_token = predict_value
 
         print(test_sentence + ' > ' + sentence)
 
