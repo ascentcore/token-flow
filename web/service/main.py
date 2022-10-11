@@ -14,34 +14,39 @@ import networkx as nx
 # dataset.delete_context('default')
 
 
-vocabulary = Vocabulary()
+# vocabulary = Vocabulary(include_start_end=False,
+#                         include_punctuation=False,
+#                         accept_all=False,
+#                         use_token=False)
 
-context1 = Context('context1', vocabulary,
-                   initial_weight=0.2,
-                   neuron_opening=0.95,
-                   weight_increase=0.1,
-                   temp_decrease=0.05)
+# context1 = Context('context1', vocabulary,
+#                    initial_weight=0.2,
+#                    neuron_opening=0.95,
+#                    weight_increase=0.1,
+#                    temp_decrease=0.05)
 
-context2 = Context('context2', vocabulary,
-                   initial_weight=0.2,
-                   neuron_opening=0.95,
-                   weight_increase=0.1,
-                   temp_decrease=0.05)
+# context2 = Context('context2', vocabulary,
+#                    initial_weight=0.2,
+#                    neuron_opening=0.95,
+#                    weight_increase=0.1,
+#                    temp_decrease=0.05)
 
-dataset = Dataset(vocabulary=vocabulary)
-dataset.add_context(context1)
-dataset.add_context(context2)
-dataset.delete_context('default')
+# dataset = Dataset(vocabulary=vocabulary)
+# dataset.add_context(context1)
+# dataset.add_context(context2)
+# dataset.delete_context('default')
 
-dataset.get_context('context1').add_text(
-    'The rain in spain falls mainly on the plain')
-dataset.get_context('context2').add_text(
-    'Once upon a time there was a little red riding hood')
+# dataset.get_context('context1').add_text(
+#     'The rain in spain falls mainly on the plain')
+# dataset.get_context('context2').add_text(
+#     'Once upon a time there was a little red riding hood')
+
+# dataset.store('datasets/basic')
 
 # dataset.store('contexts/test')
 
 
-# dataset = Dataset.load('contexts/test')
+dataset = Dataset.load('contexts/test')
 
 
 app = FastAPI()
@@ -61,7 +66,7 @@ def read_root(request: Request):
 
 @app.get('/vocabulary')
 def read_vocabulary():
-    return vocabulary.vocabulary
+    return dataset.vocabulary.vocabulary
 
 
 @app.post('/add_text')

@@ -5,11 +5,11 @@ import { registerListener, triggerEvent, unregisterListener } from '../events';
 
 export default (props) => {
   const { stimulate } = props;
-  
+
   const [state, setState] = useState(0);
   const [data, setData] = useState([]);
+  const [query, setQuery] = useState('');
 
-  
   useEffect(() => {
     axios.get(`http://localhost:8081/vocabulary`).then((response) => {
       setData(response.data.reverse());
@@ -30,6 +30,14 @@ export default (props) => {
 
   return (
     <div className="vocabulary-body">
+      <div>Filter:</div>
+      <input
+        style={{ width: '100%' }}
+        type="text"
+        placeholder="Search"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <table cellSpacing={0}>
         <thead>
           <tr>
@@ -37,11 +45,14 @@ export default (props) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((token) => (
-            <tr key={token} onClick={() => stimulate(null, token)}>
-              <td>{token}</td>
-            </tr>
-          ))}
+          {data.map(
+            (token) =>
+              token.indexOf(query) === 0 && (
+                <tr key={token} onClick={() => stimulate(null, token)}>
+                  <td>{token}</td>
+                </tr>
+              )
+          )}
         </tbody>
       </table>
     </div>

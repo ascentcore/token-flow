@@ -188,7 +188,7 @@ function App() {
       }, 100);
     };
 
-  openContext('context1')()
+  // openContext('context1')()
 
   return (
     <div className="App">

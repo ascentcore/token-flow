@@ -126,7 +126,7 @@ export default (props) => {
           .call(zoom)
           .call(
             zoom.transform,
-            d3.zoomIdentity.translate(width / 2, height / 2).scale(0.7)
+            d3.zoomIdentity.translate(width / 2, height / 2).scale(1.25)
           );
 
         const simulation = d3

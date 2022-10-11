@@ -24,7 +24,7 @@ class Trainer():
         self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
-    def batch_train(self, sample):
+    def batch_train(self, sample):        
         x, y = sample
         data = x.to(self.device)
 

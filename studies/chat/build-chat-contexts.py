@@ -3,19 +3,19 @@ import re
 import json
 
 from tqdm import tqdm
-from src.context.dataset import Dataset
+from src.context.dataset import BasicInMemDataset, Dataset
 from src.context.context import Context
 from src.context.vocabulary import Vocabulary
-
+import config as config
 
 vocabulary = Vocabulary(
     accept_all=True,
     include_start_end=True,
-    include_punctuation=False,
+    include_punctuation=True,
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.5
+initial_weight = 0.2
 weight_increase = 0.037
 temp_decrease = 0.08
 neuron_opening = 0.75
@@ -41,7 +41,7 @@ def build_dataset():
     dataset.delete_context('default')
     
     chat_data = json.loads(
-            open(f'studies/chat/datasets/alexa/train_small.json').read())
+            open(config.file).read())
 
     for id in tqdm(chat_data.keys()):
         content = chat_data[id]["content"]
@@ -55,25 +55,14 @@ def build_dataset():
             else:
                 context = dataset.get_context(agent)
             
-            # print(f'adding to {agent} message: {message}')
             context.add_text(message)
 
-    for id in tqdm(chat_data.keys()):
-        content = chat_data[id]["content"]
-        for data in content:
-            agent = data["agent"]
-            message = data["message"]
-            for context in dataset.contexts.keys():
-                if context != agent:
-                    dataset.get_context(context).stimulate_sequence(message)
-                else:
-                    dataset.get_dataset(context, context).add_text(message)
-                
-        dataset.reset_stimulus()
+    print('Vocabulary size:', len(vocabulary.vocabulary))
 
-    dataset.store('studies/chat/dataset')      
-            
 
+    dataset.store('studies/chat/dataset')
+
+   
 
 if __name__ == '__main__':
     build_dataset()
