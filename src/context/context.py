@@ -154,7 +154,7 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=5):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=10):
         if max_depth > 0:
             root = False
             if token in self.vocabulary.vocabulary:

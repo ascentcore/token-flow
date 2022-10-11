@@ -13,6 +13,7 @@ from src.context.dataset import Dataset
 from src.context.vocabulary import Vocabulary
 
 from src.net.models.residual import ResidualModel
+from src.net.models.autoencoder import AE
 from src.net.trainer import Trainer
 import config as config
 
@@ -31,11 +32,8 @@ class RuntimeDataPipe(IterDataPipe):
             self.chat_data.append((None, None))
 
     def __iter__(self):
-        index = 0
         for (agent, message) in self.chat_data:
-
             if agent is None:
-                index = index + 1
                 for context in self.contexts.values():
                     context.decrease_stimulus(1)
                 continue
@@ -74,6 +72,7 @@ def train():
     vocabulary = Vocabulary.from_file(
         'studies/chat/dataset', 'vocabulary.json')
     res_model = ResidualModel(vocabulary.size())
+    # res_model = AE(vocabulary.size())
     try:
         if config.retrain == True:
             model = res_model
@@ -108,14 +107,16 @@ def train():
         print('Generating text')
         f = open("./chat.txt", "w")
         model.train(False)
-        stimulate_with = ""
+        # stimulate_with = "Hello, do you like cats?"
+        stimulate_with = None
         for c in contexts.values():
             c.decrease_stimulus(1)
-        for _ in range(60):
+        for _ in range(30):
             for c in contexts.values():
-                c.stimulate_sequence(stimulate_with)
+                if stimulate_with != None:
+                    c.stimulate_sequence(stimulate_with)
                 text = trainer.get_sentence(
-                    c, [], generate_length=30, prevent_convergence_history=1,
+                    c, [], generate_length=20, prevent_convergence_history=1,
                     break_on_eol=True)
                 stimulate_with = text
                 f.write(f'{c.name}: {text}\n')
@@ -126,8 +127,8 @@ def train():
 
     datapipe = RuntimeDataPipe(contexts)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=64, num_workers=4)
-   
+    dl = DataLoader(dataset=datapipe, batch_size=32, num_workers=1)
+
     for i in range(1000):
         loss_all = 0
         model.train(True)
