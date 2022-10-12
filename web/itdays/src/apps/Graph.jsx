@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import { registerListener, unregisterListener } from '../events';
 
 export default (props) => {
-  const { context, threshold } = props;
+  const { context, threshold, stimulate } = props;
 
   const containerRef = useRef(null);
   const [data, setData] = useState(null);
@@ -39,7 +39,7 @@ export default (props) => {
     const elems = d3.select(this).data();
     if (elems && elems.length > 0) {
       const { id } = elems[0];
-      onNodeClick(id);
+      stimulate(context, id);
     }
   }
 
@@ -67,7 +67,15 @@ export default (props) => {
   }
 
   function doLine(line) {
-    line.attr('stroke', 'rgba(0,0,0,.2)').attr('stroke-width', (d) => d.weight);
+    line
+      .attr('stroke', 'rgba(0,0,0,0.2)')
+      .attr('stroke-width', (d) => d.weight)
+      .attr('stroke-opacity', (d) => {
+        console.log(d.source.s, d.target.s, threshold);
+        return Math.max(d.source.s, d.target.s) - threshold > 0
+          ? Math.max(d.source.s, d.target.s)
+          : 0;
+      });
   }
 
   function adjustOpacity() {
@@ -157,8 +165,6 @@ export default (props) => {
           .enter()
           .append('line');
 
-        doLine(link);
-
         var node = svg
           .append('g')
           .attr('class', 'nodes')
@@ -167,10 +173,13 @@ export default (props) => {
           .enter()
           .append('g');
 
-        doNode(node);
-
         setNodes(node);
         setLinks(link);
+
+        setTimeout(() => {
+          doNode(node);
+          doLine(link);
+        }, 10);
 
         const ticked = () => {
           (svgContainer || svg)

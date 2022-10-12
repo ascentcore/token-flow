@@ -1,0 +1,11 @@
+{
+  "directed": true,
+  "initial_weight": 0.2,
+  "weight_increase": 0.037,
+  "neuron_opening": 0.75,
+  "default_stimulus": 1,
+  "max_stimulus": 1,
+  "propagate_threshold": 0.1,
+  "decay_if_low_signal": true,
+  "temp_decrease": 0.08
+}

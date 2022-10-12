@@ -51,7 +51,7 @@ class BasicInMemDataset():
 
 class Dataset():
 
-    def __init__(self, vocabulary=None, default_context=None):
+    def __init__(self, vocabulary=None, default_context=None, name = "Default Dataset"):
         self.vocabulary = vocabulary if vocabulary != None else Vocabulary()
 
         self.contexts = {
@@ -59,6 +59,7 @@ class Dataset():
         }
 
         self.settings = {
+            'name': name,
             'contexts': ['default']
         }
 

@@ -28,11 +28,12 @@ class Trainer():
         x, y = sample
         data = x.to(self.device)
 
-        self.optimizer.zero_grad()
+        
         output = self.model(data)
 
         loss = self.loss_function(output, y.to(self.device))
 
+        self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
 

@@ -15,7 +15,7 @@ vocabulary = Vocabulary(
     use_lemma=False,
     add_lemma_to_vocab=False)
 
-initial_weight = 0.5
+initial_weight = 0.2
 weight_increase = 0.037
 temp_decrease = 0.08
 neuron_opening = 0.75

@@ -1489,6 +1489,2023 @@
       "agent_2": "Excellent"
     }
   },
+  "t_a56a9be1-f899-4eec-abaa-d86b7cf02256": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "A",
+    "content": [
+      {
+        "message": "good morning to you",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Good morning! Are a fan of The Simpsons? Fox News once tried to sue to get the show to stop parodying them. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I love the Simpsons! not so much Fox news though, they deserve to parodied",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "They practically ARE a parody! Do you remember their version of the Daily show from 2007? Man, it was terrible. Really, really terrible. It was canceled after 13 episodes. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "with Jon Stewart? the one on Comedy Central?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yeah, fox tried to copy it with their own show called the Half Hour News Hour. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "oh I thought you were saying The Daily Show was bad and got cancelled! yea Fox should not have copied that show. Did you know Fox News and IGN are owned by the same company?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I did not know that. But I'm sure Rupert Murdoch owns dozens of companies I don't know about. Another thing I didn't know -- Hillary Clinton was the president of the You ng Republicans in college. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "wow! her views sure have shifted a lot since then, huh/",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I'd say. Nixon actually proposed a guaranteed minimum wage, the only president to ever do so. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "which surprises me , I always thought that that was something that pretty much everyone had touched upon in their time in office at least a little bit",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, I was surprised too. Another surprising fact: Tea Party/GOP poster child Ayn Rand was on Social Security and Medicare. ",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "wow. I never cared for her books, did you?",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "No. Couldn't even finish the one I started. Canada's first official currency was playing cards! Now that's cool. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "sometimes i wish they still used stuff like that! id be rich! haha",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Haha. Hawaii passed single payer healthcare in 2009, but the governor wouldn't sign it into law. If only the rest of the country would follow suit - and then pass it into law. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "yea I wish we had single payer, my health insurance is so complicated sometimes. people shouldnt go broke over a doctor visit",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Totally agree. It's ridiculous that we don't haver it in this country. Someday, I think. Hopefully. ",
+        "agent": "agent_2",
+        "sentiment": "Angry",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Some candidates are pushing for it! sadly those guys dont win office",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah. In Kentucky, you can't take office if you've ever participated in a duel. Maybe that's what we need more of in politics today -- duels. ",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "imagine that? haha duels in court would be hilarious ",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_fde98fd0-1fde-43ac-affe-4765dd45b1c0": {
+    "article_url": "https://www.washingtonpost.com/news/arts-and-entertainment/wp/2018/05/09/i-went-through-some-really-low-times-taylor-swift-breaks-silence-about-social-media-backlash/",
+    "config": "A",
+    "content": [
+      {
+        "message": "Do you like Taylor Swift?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I liked her country stuff and some of her earlier pop. How about you?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I do like her, specially her performance of the Reputation tour she had in Glendale. AZ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It seems like she and Kanye West have perpetual conflicts of one sort or the other.  First he crashed her award acceptance.  Then she is accused of stealing his music.  Social media was not kind to her over that accusation!",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1", "AS2", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think they were a bit unfair to her, it must be hard to be a celebrity, specially a really famous one like her",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well, they called her a \"snake\".  I like the way she turned it into a positive in her concert with imagery, a snake microphone, and a snake platform.  Snakes in general have an unwarranted bad reputation.  Do you have any experience with snakes?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS3", "FS1", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No not really, but I love them many people are scared of them but I think they are interesting animals",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I live in a rural area, so snakes are not uncommon.  I have a 4-5 foot common garter snake nesting at the base of my fig trees.  I like there because she eats the field mice and other critters who want my figs.  Too many people automatically assume snakes are poisonous.  Did you know that only in Australia do venomous snakes outnumber non-venomous ones?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I didnt know that about Australia, are you afraid of snakes? with what you told me previously I bet you are not afraid of them",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No.  I let them go on their way and I go one mine.  While we do have coral snakes, water moccasins, rattle snakes, I have never been bitten.  Did you know that one man has been bitten so often that the antigens in his blood allow it to be used an anti-venom?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Really? I guess he made a valuable contribution to science and also to medicine, did you hear of that species of flying snakes",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I had not, but I could see it possible to approximate flying.  I know they can climb trees because I see the garter snake in my fig trees.  I guess if she wanted to, she could coil and spring, flinging herself from one tree to another.  Down here, Mardi Gras ended last night.   My ears are still ringing from the concerts put on by local bands.  Did you know that a Fighter Concert was so loud that it was picked up on New Zealand seismic (earthquake) monitors?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I didnt know that, do you have any favorite bands? used to like Linking Park",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "When I lived in Viginia, I liked Dave Matthews when he was starting out in Charlottesville.  Did you know that a woman driving to a Dave Matthews concert picked up a stranded bicyclist who was Dave Matthews himself!",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow, that is amazing, I mean what are the ods, that woman is really lucky, I bet she went crazy in that moment.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I would think so.  I have not been to an major act indoor concert since my high school and college days in the 1970s and the 1980s.  Back then Deep Purple broke the record for the loudest concert ever that rendered 3 people unconscious.  While rendering 3 people unconscious is alarming, I wonder how many people had lifelong hearing damage after that one?",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I bet at least a few of them did, a really bad concert was the one the band Creed gave in 2002, the concert was so bad the band even got sued by some of the concert goers",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well, Creed survived that one to become a major rock act in the early 2000s.  Do you know if Taylor Swift is still on the \"Reputation\" concert tour or has that wrapped up?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I guess its all wrapped up by now, I think this article is a bit old, I think that tour happened around 2016 so yeah.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I glad her reputation survived from the Kanye West feud.  While I not much of a fan of her current music, she is a talented artist.  She also is quite a philanthropist.  Did you know she donated all proceeds from \"Wildest Dream\" song to African wildlife conservation?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS4", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No, I didn't know about that, seems like she has a great great, I will follow her example from now on, anyways it's been cool to chat, thanks for all the facts and knowledge",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well, its time to start cycling to work.  Nice chatting with you.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That will do some favors to the enviroment for sure, nice chatting, have a nice day. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": ""
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Good"
+    }
+  },
+  "t_c8310a7d-addc-4534-8b65-510d44f307e7": {
+    "article_url": "https://www.washingtonpost.com/news/arts-and-entertainment/wp/2018/05/09/i-went-through-some-really-low-times-taylor-swift-breaks-silence-about-social-media-backlash/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Do you like snakes?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "they are kind of gross to me, but do you like them?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah there history is strange. Apparently there is a lizard with no legs and i always though that was what a snake was, lol. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "really? I wonder what separates the two from each other then, i have to imagine they look very similar",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "You would think but that's not what they pay me for, ha. Maybe we should move to new zealand they don't have snakes there.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i agree, snakes are so creepy, they are a very lucky country in my opinion",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Mine too. Apparently fear of snakes is hard wired into our brains and monkeys.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "maybe it is because of the way that they move or the noises that they make? I cannot think of why that may be the case",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Me either. Do you know who Taylor Swift is? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I do, I am a big fan of her music!",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "she was born on December 13 1989. one of her albums won 4 grammy's. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "she is very successful, she also owns a private jet, she is doing very well for herself",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes she is and to be so young it's great! that jet is a Falcon 900 and cost 40 million right? Those are really nice.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "yes, that is more than I will see in my lifetime, but I am glad she was able to make so much in her career before she loses popularity",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Well hopefully she did well with the money she made so far because fame don't last forever. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "that is true, she knows her stuff, she took her music off spotify so it was not free, she is kind of money minded",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Well that's good. Apparently she accidentally released 8 seconds of white noise and topped Canadian itunes charts, lol.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "that is insane, just imagine being that popular, most people never even see that much success",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Right! Her walking backward to avoid picture taking is a ;little weird though. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "i guess i sort of get that, it must be annoying being public so often",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I can't even imagine. Nice chatting with you!",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_4abffd8b-b88b-44e1-9de6-a179e17a66b5": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "D",
+    "content": [
+      {
+        "message": "Where do you source your news? Fox, Cnn, other?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Mostly other. Certainly not Fox. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Did you know that CNN recently raised concern about Fox & Friends?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I had heard something about it. Weren't they concerned about their interviews with Republicans?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes you are correct. Despite the students mourning due to a mass shooting a day earlier, Republicans appeared only a fox where they wouldn't be pressed about gun control",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That's terrible. All of our press should be able to question our representatives. I think some of the people they interviewed were Marco Rubio and Ted Cruz if I remember correctly. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "All they mentioned was that it was a truly heart breaking horror and that evil is sadly always present.",
+        "agent": "agent_1",
+        "sentiment": "Angry",
+        "knowledge_source": ["AS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "We should have known it's bias since it was created by a Republican media strategist and Richard Nixon. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I feel that most news are bias in some way or another. Too bad fox is watched more than cnn and msnbc combined.",
+        "agent": "agent_1",
+        "sentiment": "Sad",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That's sad. Apparently they even threatened to sue the Simpsons for making fun of them for their anti-democratic agenda. They wanted to stop them from continuing that. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I mean usually its kind of funny how they threatened to sue the Simpsons over a fact which is true. I guess their perspective is a given since they were created by Richard ailes and president Richard nixon.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I agree. They would never win because of parody laws anyway. Did you know that every US president with a beard has been a Republican?! How odd. ",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It seems like a strange coincidence? ",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Ha ha. Maybe. Unsurprisingly, there has not been a president that was not a democrat or republican since 1853. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well I believe either Roosevelt or JFK came very close as a uncorrelated 3rd party.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "You may be correct. I was floored to learn that the last time until very recently that a Republican president was elected without a Nixon or Bush on the ticket was 1928!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow! I didn't know the extent to which the Nixons and Bushs were so influential. I also recently found out that the colors of red and blue associated with republicans and democrats was a recent change, only starting in 2000. I wonder if they used any other colors before then?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That is a good question. I would have thought it had been that way for a longer time period than that. Did you know that Truman visited Disneyland and would not be photographed on the Dumbo ride so he wasn't associated with Republicans. ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well for politicians image is everything. At least at some level of politics, the US has been quite progressive. For instance, Texas' first elected female governor came into office even before some states ratified the 19th amendment",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow, I would not have thought that, especially with it being such a conservative state. I was sad when I learned that only one governor was against the internment of Japanese citizens during WWII. ",
+        "agent": "agent_2",
+        "sentiment": "Sad",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I understand the difficulties of a country given it is a melting pot and it can't let spies cause problems in WWII due to conflicting loyalties, but they didn't execute this process well and treated Americans of Japanese heritage unfairly. It is too bad only 1 governor was against their imprisonment. ",
+        "agent": "agent_1",
+        "sentiment": "Sad",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I agree. What a horrible blight on our history.",
+        "agent": "agent_2",
+        "sentiment": "Sad",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Good"
+    }
+  },
+  "t_d57524f0-8c2f-4f10-966d-27afa838bef4": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Did you know that the Beatles song Come Together was written for Timothy Leary? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No I did not, but it wouldn't surprise me since Leary's research was about the use of psychedelic drugs.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, I remember that, he was pretty out there, right? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yeah, he wrote about every drug under the sun haha. Although, a lot of recent evidence has proven some of his theories correct",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Like which ones? I'm not familiar with a lot of them. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think like ecstasy, mushrooms, and LSD, pretty much a lot of the stuff that the government bans.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "OMG, I read about that. Did you know that in 1934 North Dakota's governor declared martial law? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "That's crazy, do you know for what exactly?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I'm not sure. But I know that texas elected their first female governor before some states even ratified the 19th amendment. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yeah, and it's crazy that Texas used to be a blue state until the 1980s, then it turned very red haha",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Interesting, like the ground turned red? Or you mean politics? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No, like in politics. It used to be mostly democratic. More interestingly, the \"blue\" and \"red\" colors tow denote the two parties weren't legitimately used until 2000. ",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Oh, so like a long time ago Democrats were pro slavery I think. Wasn't Honest Abe a republican? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, he was. The parties have flip flopped so much throughout US history. But on a lighter note, every president who has had a beard has been Republican, which is really crazy.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I'm not sure if that is true, sadly I don't know a lot about politics, so I can't call that out if it is wrong. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I'm somewhat interested in politics but they just make me depressed.",
+        "agent": "agent_2",
+        "sentiment": "Sad",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Nah, I think it is at its best now. Most entertainment in years. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Haha that's so true",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "You know there hasn't been a US president who hasn't been a republican or democrat since 1853, who was it? ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I think they were in the Whig Party. But I don't the president. Tyler maybe?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_642a588a-5c50-4a1d-adfd-211d14542b23": {
+    "article_url": "https://www.washingtonpost.com/news/arts-and-entertainment/wp/2018/05/09/i-went-through-some-really-low-times-taylor-swift-breaks-silence-about-social-media-backlash/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Do you own a pet snake?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "No but there are some snakes outside around where I live at.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "They are considered legless lizards. I like lizards but not snakes",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "What is your favorite type of lizard?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Iguana by far. I almost bought a baby one yesterday. I was looking at Chameleons too",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Would you ever consider owning a larger one like a crocodile?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Heck no. They are illegal too, aren't they?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "Oh I didn't realize they were illegal to own.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "They are more closely related to birds and I only like parrots for birds, and the bald eagle of course",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Do you like Taylor Swift?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I do, kinda. I like her as a person. She seems humble and very likeable",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yea, she also walks backwards around paparazzi.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "She was born and raised close to where I grew up in Pennslyvania too",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Do you know about the Tennessee state?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Not too much. How about you?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes, I know more than most would about the state. There are some big snakes there.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "What kind of snakes are common to Tennessee? Rattlers? Bull snakes?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think it's them rattlers!",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I had a bull snake in my yard last year, a big one too.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "What happened?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I let him be and just watched him slither through my backyard",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Was it a big one?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "It appeared as so to me. I stayed far away from him because of how big he was.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Did you ever about them snake whistling people?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "I don't understand the question.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Not Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Not Good",
+      "agent_2": "Good"
+    }
+  },
+  "t_b36ccd45-e125-4433-adf2-f0ea205bf41d": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "D",
+    "content": [
+      {
+        "message": "Hi!  Do you watch the news?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes I love watching the news. How about you?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I love the information, but everything these days is so slanted from both sides sometimes it is hard to get.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Right there is not one source out there that you can trust. I hate the news outlets, but still need to see what's going on.",
+        "agent": "agent_2",
+        "sentiment": "Angry",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Much agreed.  I find that the truth lies somewhere in the middle.  The media tries to create outrage for their ratings.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Exactly. That's why I watch both CNN and Fox. It kind of helps me to sort through the muck.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Fox is watched more than Cnn and MSNBC combined.  Kinda crazy to think that.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I think Fox is slightly more honest than the other two.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Fox news threatened to sue the simpsons over their constant parody.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I didn't know that. I don't watch the Simpsons. I know CNN is whining because they can't get any conservative guests. Why would you want to go on their show and be abused.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Why would a liberal news network want a conservative guest?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I think so that they can attempt to make them look like a liar or a fool or whatever negative thing they can think of.",
+        "agent": "agent_2",
+        "sentiment": "Angry",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is true. Did you hear about that time in 1957 when Truman refused to be photographed with Dumbo",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "No I didn't. That's funny. Maybe Dumbo wasn't crazy about the idea either.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah.  Maybe they should have brought Eeyore out",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Okay you've got me there, who's Eeyore.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "He is the Donkey from winnie the pooh.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Okay now I understand. He'd make a good mascot for the Demos.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Definitely.  Did you know the red and blue colors started being used in 2000?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "No I had no idea. Did you know that every president with a beard has been a Republican?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I heard that.  I wonder how many presidents had beards, I know lincoln, but who else?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I can't think of any. I can't imagine someone getting elected today who even has a mustache.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Very true.  Haha.  Great chat!",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_6b500324-4f4d-4261-bb07-45288fc10f12": {
+    "article_url": "https://www.washingtonpost.com/news/arts-and-entertainment/wp/2018/05/09/i-went-through-some-really-low-times-taylor-swift-breaks-silence-about-social-media-backlash/",
+    "config": "C",
+    "content": [
+      {
+        "message": "Good morning! Do you know anything about snakes? I saw a huge one on reddit the other day!",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I know that they are elongated and legless reptiles covered in scales. Furthermore, they have highly mobile jaws and usually fangs for venom.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's true. My husband pulled one out of my garden. I had never seen it before. It's a rat snake. I guess they are good for killing pests.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think rat snakes aren't poisonous? Did you know that the fear of snakes are wired into human brains? I guess people who hate snakes should live in new Zealand since there aren't any there.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Nope, rat snakes aren't poisonous. They are actually a good kind. I have always believed no snakes should exist, so I believe we are wired for it!",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I wonder what differentiates snakes from legless lizards?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is a good question. Maybe that lizards have eyelids and some snakes dont. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That makes sense. Personally, I don't mind snakes, although I am wary since venom can be quite potent and dangerous. As long as they aren't flying snakes that can launch themselves at prey are around my area and I can spot them well a head of time, I'm okay.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "flying snakes? My worst nightmare!!",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I guess New Zealand would be ideal for you, with no snakes and all",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "True! Do you ever Listen to Taylor Swift?",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3", "FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I have heard bits hear and there and recently read some articles, but I am not completely familiar.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "She writes a lot of her music about herself. Very popular singer. Who do you listen to?",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well I do know Kanye did a self mocking skit 2 years before the infamous Taylor swift incident. Other than that, she is among the worlds contemporary artists.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "And she owns a private jet!",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I recently learn she once accidentally released several seconds of white noise and it somehow topped the Canadian itunes chart.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is funny! But she also thinks music should not be free. I disagree there. I should be able to listen to it all I want.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Well for artists, royalties are a lot part of their revenue, even for moderate artists.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Thats true I suppose. Do you know Swift walks backwards so she wont have her pic taken?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wouldn't walking backwards make her stick out more?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I would think. Do you listen to Linkin park at all? they played 324 concerts in 2001.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Unfortunately, I have never listened to Linkin park. However, I have listened to The Ramones and they played a total of 2,263 concerts.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Wow! I was always a big Pink Floyd fan myself. They played in an empty roman amphitheater once. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Were they recording a music video? Or did they just do it for fun? A ancient roman amphitheater sounds amazing",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I think they did a video there. Thats why there was no audience! The ramones did a lot of concerts. How long did they tour?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I believe they toured for 20 years!. Anyway I think I will check out Linkin park. Thank you for the chat.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_f5b84b09-083b-4b85-a80c-80754521c279": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "D",
+    "content": [
+      {
+        "message": "Do you watch the news?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "A few times a day.  ",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Me too, what do you think about Fox news? Apparently they are watched more than msnbc and cnn combined.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "They are biased and pro republicans. It is okay though.  Free speech is always good.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah your right. Fox was created by republican media strategist and a former president. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Richard Allies and former President Nixon created the fox news.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "The Two Richards that's right..haha!",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Passable"
+      },
+      {
+        "message": "Yes,it was funny.  Do you know that Foxnews tried to sue the Simpsons?",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I heard they were trying to silence a parody of anti-democratic party agenda.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes, you are right.  They want it to stop the Simpsons from parodying its anti democratic party agenda.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "They also discussed creating a channel that would only play the Simpsons.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Yes, I heard about it.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Not sure what they hoped to accomplish since the Simpson's were never going to stop clowning them. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "They own the Simpsons, right?  Why were they against them since the simpsons have been generating money for them for years?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Good question! They also owe IGN the gaming website. Do you game?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "No I do not but I'm aware of the fact.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Ok. On a different note did you know that when Arnold Schwarzenegger was governor he did not live in Sacramento but instead commuted everyday by jet for three hours?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I did not know that.  Do you know that the republican party is also referred to as GOP.  Arnold is a republican.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yup! Speaking of governors, did you know that Ralph Lawrence Carr was the only one to opposed Japanese American interment camps during WW2.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I heard about it.  Good for him.  Those Japanese people were American.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "They were, so sad. Texas elected it's first female governor. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "She was the second female governor in the US.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Your right, nice chatting with you. ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Good",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_1c9b9961-e5e8-434e-98f8-19071e74275c": {
+    "article_url": "https://www.washingtonpost.com/blogs/erik-wemple/wp/2018/02/15/cnn-raises-concerns-about-fox-friends-stranglehold-on-republican-interviews/",
+    "config": "A",
+    "content": [
+      {
+        "message": "Hello, do you ever watch Fox News?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I usually don't watch it. I understand that it's popular.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Fox discussed the possibility of creating a cable channel that would only air the Simpsons.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is an idea that might work, but now I figure people are on the Internet. Maybe a YouTube channel?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Possibly...The gaming website IGN is actually owned by Fox News.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Oh, I didn't know that. I guess Fox owns a lot of things out there. A gaming site? Hm.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yea very interesting. Fox News is watched more than CNN and MSNBC combined.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I believe it. CNN has its own bias, as does MSNBC. People watch what they want to believe.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yep, not a huge fan of CNN because they post so much fake news and are very biased.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I don't watch CNN. What kind of fake news?",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "They just report things that are fake or swayed to the liberal spectrum of politics. Fox News was created by Richard Ailes and Richard Nixon.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "The viewership of Fox skews pretty old. In 2015, the median viewer age was 68 years old. Older people tend to be more conservative.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is very old. Did you know there hasn't been a president who wasn't a rep or dem since 1853?",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "The two party system is frustrating because the choices are limited. The money backs certainly candidates, and there is little possibility for outsiders to get in.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I agree. Every president with a beard has always been a republican.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I guess that imparts a look of sage wisdom and manliness.  ",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I guess so lol. The last time a republican was elected president without a Nixon or Bush on the ticket was back in 1928.",
+        "agent": "agent_1",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's quite a while. I guess Trump might be starting a new dynasty. Will his daughter run? Who knows.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Haha possibly. Who knows what will happen next.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I would like to see some change in gov't. Sometimes old ideas have value. The only president to propose a guaranteed minimum income was a republican, Nixon.. I think that people are worried now and would like some security.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Me too. It was good talking to you.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
+  "t_805af759-bb4d-42cd-91b5-64f3e275f1f3": {
+    "article_url": "https://www.washingtonpost.com/entertainment/books/what-does-it-mean-to-be-native-american-a-new-novel-offers-a-bracing-answer/2018/05/29/a508d0ba-6289-11e8-a768-ed043e33f1dc_story.html",
+    "config": "B",
+    "content": [
+      {
+        "message": "Are you familiar with Native American books?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I read a few in school.  I was raised in Oklahoma and many of my friends were of the Cherokee and Choctaw tribes.  I have heard of Tommy Orange's fiction novel about Native Americans.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "That's interesting!  He is a member of the Cheyenne and Arapaho tribes.  I don't know much about those two tribes.  His book is about a boy?",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yes.  It is fiction however.  It provides insight into the challenges that the boy has in grappling with his identity.  We have a national history where many atrocities and slurs dot the history.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "True!  I went to an indian reservation this past summer in New York.  It was the Seneca nation and I went through one of their museums.  They pretty much got kicked out of their land just like all the other tribes in the nation.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["AS1", "Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "A people divided into tribes cannot stand against a unified enemy.  But, my wife's best friend has a Ph.D. and the government paid for all of her education because she is Cherokee.  But if one knows the facts, a lot of interesting history can be written.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["AS2", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Wow.  That's really interesting.  Hopefully Tommy Orange's book does well.  ",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Books can be fiction with a lot of facts or not so many.  Wiki has an article where they rank fictional characters according to their powers.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Julius Caesar wrote fan fiction in his youth.  Never knew that he did that before.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I wonder how one would find a copy of it.  Imagine Edgar Allen Poe wrote about a cyborg a long time ago",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Interesting!  A judget ried to ban a science fiction comic in the 1950's because it featured a black character. ",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Wow!  We have come a long way, thank goodness.  The FDA also burned 6 tons of literature in an act of censorship.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I think I remember reading about that before.  Literature was an olympic event from 1912 to 1952.  I would like to see one of those gold medals.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I would like to understand the scoring.  I bet it was somewhat like Jeopardy.  I would also like to read the \"best\" of the \"worst opening sentences\" that people used to enter into a contest.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "lol  That would be interesting.  Didn't Sir Winston Churchill win a nobel prize for literature?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That would not be my first guess, but I think you are right!   Based on literature, kissing is a fairly recent development.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "You would think that would have been written about a long time ago.  Switching gears ... id you know that Apple had a clothing line in 1986?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "People did not wear brands on clothing so prominently as they do today back in 1986.  So that was Apple being innovative in another field.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS3", "Personal Knowledge"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "Surprisingly, the Pilgrims wore clothing that was full of color and they only wore black for special occasions.  I'm so used to seeing them stereotyped wearing black and white.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Me too.  You know that every human society has worn clothes.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS2", "FS3"],
+        "turn_rating": "Good"
+      },
+      {
+        "message": "I would hope so.  lol  I guess it depends on your body type, etc.",
+        "agent": "agent_1",
+        "sentiment": "Happy",
+        "knowledge_source": ["AS3"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I suppose if the weather is perfect, a grass skirt might be enough, but it is still clothing.  Clothing is often gender specific.  Nice talking.",
+        "agent": "agent_2",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS3"],
+        "turn_rating": "Good"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Good"
+    }
+  },
+  "t_f528f257-f2a1-433d-8dae-0ef8e94610d8": {
+    "article_url": "https://www.washingtonpost.com/entertainment/books/what-does-it-mean-to-be-native-american-a-new-novel-offers-a-bracing-answer/2018/05/29/a508d0ba-6289-11e8-a768-ed043e33f1dc_story.html",
+    "config": "B",
+    "content": [
+      {
+        "message": "Are you a fan of books?  I personally read a lot, mostly non-fiction though.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I don't really have time to read but when I do I like to read fiction. I find it funny that Julius Caesar wrote fan fiction of Greek mythology.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That is sort of odd.  There is even a wiki that ranks fictional characters by their powers, that would be an interesting read.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "And in Greek literature there wasn't much kissing. Romantic kissing is actually a recent development.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That surprises me, I  guess I always associated it with all love stories.  Even Shakespeare.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah I think there was a lot of romance just kissing wasn't part of it.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I see.  Winston Churchill won a Nobel Prize, for literature.  I always though it was for peace",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Interesting! Literature was an olympic event from 1912 to 1952. I always associate the olympics with sports!",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Same here, I always thought it was part of the ancient games but never made its way to the modern games.  How do you even judge that?",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Yeah, pretty subjective. Speaking of literature contests, there isone that challenges writers to come up with the worst opening sentence for a novel.",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I heard there was, I wonder what the winners were, those would be fun to read.",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Do you think that literature should be censored?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Absolutely not!  That is why I hated to hear that the FDA burned 6 tons of literature",
+        "agent": "agent_1",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "But should fan fiction be allowed? George RR Martin says it is copyright infringement and isn't useful for aspiring writers.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["FS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "i think so.  I think it is a great creative outlet for pepole.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Have you heard of Tommy Orange's debut novel, There There?",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "i havenr, whats is it like?",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "It is about Native Americans in modern history but seems to also touch on how they were treated in the past. It's a fictional story with elements of truth.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I think that might be an interesting read.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "The story follows around different members of a large cast of Native Americans who live in Oakland, CA. I'm not sure if I would like it because I like books that focus on one character.",
+        "agent": "agent_2",
+        "sentiment": "Curious to dive deeper",
+        "knowledge_source": ["AS1"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "I can take several focuses as long as I can put together what is going on.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "That's good! Some of the people speak directly to us and others use the third person, so there are diverse approaches. ",
+        "agent": "agent_2",
+        "sentiment": "Surprised",
+        "knowledge_source": ["AS2"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "It has been good chatting tonight, but my dinner is ready, and I must go.  I have a great night.",
+        "agent": "agent_1",
+        "sentiment": "Neutral",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      },
+      {
+        "message": "Have a good night.",
+        "agent": "agent_2",
+        "sentiment": "Happy",
+        "knowledge_source": ["Personal Knowledge"],
+        "turn_rating": "Excellent"
+      }
+    ],
+    "conversation_rating": {
+      "agent_1": "Excellent",
+      "agent_2": "Excellent"
+    }
+  },
   "t_a5a296f7-5148-4071-83d6-b905edbf1402": {
     "article_url": "https://www.washingtonpost.com/news/voraciously/wp/2018/07/23/how-to-keep-your-cool-when-it-feels-too-hot-to-cook/",
     "config": "A",

@@ -45,8 +45,15 @@ import networkx as nx
 
 # dataset.store('contexts/test')
 
+datasets = [
+    Dataset(vocabulary=Vocabulary(include_start_end=False,
+                                  include_punctuation=False,
+                                  accept_all=True,
+                                  use_token=False), name="Basic Dataset"),
+    Dataset.load('contexts/test')
+]
 
-dataset = Dataset.load('contexts/test')
+dataset = datasets[0]
 
 
 app = FastAPI()
@@ -60,9 +67,18 @@ app.add_middleware(
 
 
 @app.get('/contexts')
-def read_root(request: Request):
+def get_contexts(request: Request):
     return [key for key in dataset.contexts.keys()]
 
+
+@app.get('/datasets')
+def get_datasets(request: Request):
+    return [dataset.settings['name'] for dataset in datasets]
+
+@app.post('/switch/{id}')
+async def read_root(request: Request, id):
+    global dataset
+    dataset = datasets[int(id)]
 
 @app.get('/vocabulary')
 def read_vocabulary():
@@ -88,7 +104,7 @@ async def read_root(request: Request, context):
 async def read_root(request: Request):
     body = await request.json()
 
-    context = Context(body['name'], vocabulary,
+    context = Context(body['name'], dataset.vocabulary,
                       initial_weight=body['initial_weight'],
                       weight_increase=body['weight_increase'],
                       temp_decrease=body['temp_decrease'])

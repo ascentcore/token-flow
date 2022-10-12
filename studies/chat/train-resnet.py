@@ -1,9 +1,9 @@
 import json
 from math import nan
 import torch
+import time
 import os
 from tqdm import tqdm
-
 from torchdata.datapipes.iter import IterDataPipe
 import numpy as np
 from torch.utils.data import DataLoader
@@ -23,13 +23,15 @@ class RuntimeDataPipe(IterDataPipe):
         self.contexts = contexts
         chat_data = json.loads(open(config.file).read())
         self.chat_data = []
-        for id in tqdm(chat_data.keys()):
+        for id in tqdm(list(chat_data.keys())[config.start_index:config.end_index]):
             content = chat_data[id]["content"]
             for data in content:
                 agent = data["agent"]
                 message = data["message"]
                 self.chat_data.append((agent, message))
             self.chat_data.append((None, None))
+
+        print(f'Chat data size: {len(self.chat_data)}')
 
     def __iter__(self):
         for (agent, message) in self.chat_data:
@@ -71,8 +73,8 @@ def train():
 
     vocabulary = Vocabulary.from_file(
         'studies/chat/dataset', 'vocabulary.json')
-    res_model = ResidualModel(vocabulary.size())
-    # res_model = AE(vocabulary.size())
+    res_model = ResidualModel(vocabulary.size(), 10)
+    
     try:
         if config.retrain == True:
             model = res_model
@@ -89,7 +91,7 @@ def train():
     except:
         pass
 
-    trainer = Trainer(model, vocabulary)
+    trainer = Trainer(model, vocabulary, lr=0.001)
 
     settings = json.loads(
         open(f'studies/chat/dataset/dataset.settings.json').read())
@@ -123,7 +125,10 @@ def train():
 
         f.close()
 
-    test_generation()
+        for c in contexts.values():
+            c.decrease_stimulus(1)
+
+    # test_generation()
 
     datapipe = RuntimeDataPipe(contexts)
     datapipe = datapipe.map(row_processer)

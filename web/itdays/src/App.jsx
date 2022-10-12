@@ -24,6 +24,7 @@ import Vocabulary from './apps/Vocabulary';
 import { registerListener, triggerEvent, unregisterListener } from './events';
 import CheatSheets from './apps/CheatSheets';
 import CreateContext from './apps/CreateContext';
+import Datasets from './apps/Datasets';
 function Button() {
   return <button>Openzz</button>;
 }
@@ -212,6 +213,15 @@ function App() {
         name="New Context"
         icon={NewContextIcon}
         onClick={openNewContext}
+      ></Icon>
+      <Icon
+        name="Datasets"
+        icon={FolderIcon}
+        onClick={openGeneric(
+          'Datasets',
+          FolderIcon,
+          <Datasets openContext={openContext} />
+        )}
       ></Icon>
       <Icon
         name="Contexts"

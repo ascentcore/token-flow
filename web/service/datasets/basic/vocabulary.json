@@ -8,17 +8,22 @@
     ],
     "use_lemma": true,
     "accept_all": false,
-    "include_punctuation": true,
-    "use_token": true,
+    "include_punctuation": false,
+    "use_token": false,
     "add_token_to_vocab": true,
     "add_lemma_to_vocab": true,
-    "include_start_end": true
+    "include_start_end": false
   },
   "vocabulary": [
-    "<start>",
-    "<end>",
-    "favorite",
-    "food",
-    "pizza"
+    "rain",
+    "spain",
+    "fall",
+    "plain",
+    "time",
+    "be",
+    "little",
+    "red",
+    "riding",
+    "hood"
   ]
 }

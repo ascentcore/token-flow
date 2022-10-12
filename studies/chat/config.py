@@ -1,4 +1,6 @@
-file = f'studies/chat/datasets/alexa/train_tiny_small.json'
+file = f'studies/chat/datasets/alexa/train_medium.json'
+start_index = 10
+end_index = 14
 filtered_output = True
 decrease_on_end = 0.35
-retrain = False
+retrain = True

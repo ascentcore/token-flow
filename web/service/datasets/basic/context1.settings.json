@@ -1,6 +1,6 @@
 {
   "directed": true,
-  "initial_weight": 0.4,
+  "initial_weight": 0.2,
   "weight_increase": 0.1,
   "neuron_opening": 0.95,
   "default_stimulus": 1,
