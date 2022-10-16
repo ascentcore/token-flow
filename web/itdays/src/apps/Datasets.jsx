@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Icon from '../components/icon';
 import ContextIcon from '/public/context.png';
+import { registerListener, triggerEvent, unregisterListener } from '../events';
 
 export default (props) => {
   const [datasets, setDatasets] = useState([]);
@@ -21,7 +22,9 @@ export default (props) => {
   }, []);
 
   const switchDs = (id) => () => {
-    axios.post(`http://localhost:8081/switch/${id}`);
+    axios.post(`http://localhost:8081/switch/${id}`).then((data) => {
+      triggerEvent('dataset', id);
+    });
   };
 
   return (

@@ -19,15 +19,17 @@ export default (props) => {
       const { nodes, links } = graph;
       const header = nodes.map((item) => item.id);
 
-      if (header.length < 50) {
-        setMultiplier(6);
-      } else if (header.length < 100) {
-        setMultiplier(4);
-      } else if (header.length < 500) {
-        setMultiplier(2);
-      } else {
-        setMultiplier(1);
-      }
+      // if (header.length < 50) {
+      //   setMultiplier(8);
+      // } else if (header.length < 100) {
+      //   setMultiplier(6);
+      // } else if (header.length < 500) {
+      //   setMultiplier(4);
+      // } else {
+      //   setMultiplier(2);
+      // }
+
+      // setMultiplier(4)
 
       for (let i = 0; i < header.length; i++) {
         localData.push(new Array(header.length).fill(0));
@@ -60,17 +62,17 @@ export default (props) => {
 
     for (let i = 0; i < data.length; i++) {
       context.fillStyle = `rgba(255, 125, 125, ${stim[i]})`;
-      context.fillRect(i * multiplier, 0, multiplier, multiplier);
+      context.fillRect(i , 0, multiplier, multiplier);
 
-      context.fillRect(0, i * multiplier, multiplier, multiplier);
+      context.fillRect(0, i , multiplier, multiplier);
     }
 
     for (let i = 0; i < data.length; i++) {
       for (let j = 0; j < data[i].length; j++) {
         context.fillStyle = `rgba(125, 125, 255, ${data[i][j]})`;
         context.fillRect(
-          (i + 1) * multiplier,
-          (j + 1) * multiplier,
+          (i + 1) ,
+          (j + 1) ,
           multiplier,
           multiplier
         );
@@ -82,8 +84,8 @@ export default (props) => {
     <div className="vocabulary-body">
       <canvas
         ref={canvasRef}
-        width={(data.length + 2) * multiplier}
-        height={(data.length + 2) * multiplier}
+        width={(data.length + 2) }
+        height={(data.length + 2)}
       />
     </div>
   );

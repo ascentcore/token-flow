@@ -68,13 +68,14 @@ export default (props) => {
 
   function doLine(line) {
     line
-      .attr('stroke', 'rgba(0,0,0,0.2)')
-      .attr('stroke-width', (d) => d.weight)
+      .attr('stroke', 'rgba(0,0,0,1)')
+      .attr('stroke-width', (d) => d.weight * 2)
       .attr('stroke-opacity', (d) => {
-        console.log(d.source.s, d.target.s, threshold);
-        return Math.max(d.source.s, d.target.s) - threshold > 0
-          ? Math.max(d.source.s, d.target.s)
-          : 0;
+        return threshold > 0
+          ? Math.min(d.source.s, d.target.s) - threshold >= 0
+            ? 1
+            : 0
+          : 1;
       });
   }
 
@@ -99,9 +100,11 @@ export default (props) => {
         .transition()
         .duration(300)
         .attr('stroke-opacity', (d) =>
-          Math.max(d.source.s, d.target.s) - threshold > 0
-            ? Math.max(d.source.s, d.target.s)
-            : 0
+          threshold > 0
+            ? Math.min(d.source.s, d.target.s) - threshold >= 0
+              ? 1
+              : 0
+            : 1
         );
     }
   }

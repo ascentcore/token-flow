@@ -12,6 +12,7 @@ import VocabularyIcon from '/public/vocabulary.png';
 import ExerciseIcon from '/public/exercise.png';
 
 import ComputerIcon from '/public/computer.png';
+import DatasetsIcon from '/public/datasets.png';
 import TrashIcon from '/public/trash.png';
 import FolderIcon from '/public/folder.png';
 import ContextIcon from '/public/context.png';
@@ -25,11 +26,13 @@ import { registerListener, triggerEvent, unregisterListener } from './events';
 import CheatSheets from './apps/CheatSheets';
 import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
+import { useState } from 'react';
 function Button() {
   return <button>Openzz</button>;
 }
 
 function App() {
+
   const resetStimuli = (context) => () => {
     axios
       .post(`http://localhost:8081/reset_stimuli/${context}`)
@@ -119,10 +122,10 @@ function App() {
 
   const openVocabulary = () => {
     const box = new WinBox({
-      x: 'center',
+      x: 'right',
       y: 'center',
-      width: 300,
-      height: 700,
+      width: 200,
+      height: window.innerHeight,
       title: `Vocabulary`,
       icon: VocabularyIcon,
       border: 4,
@@ -216,11 +219,13 @@ function App() {
       ></Icon>
       <Icon
         name="Datasets"
-        icon={FolderIcon}
+        icon={DatasetsIcon}
         onClick={openGeneric(
           'Datasets',
-          FolderIcon,
-          <Datasets openContext={openContext} />
+          DatasetsIcon,
+          <Datasets openContext={openContext} />,
+          500,
+          600
         )}
       ></Icon>
       <Icon
@@ -229,7 +234,7 @@ function App() {
         onClick={openGeneric(
           'Contexts',
           FolderIcon,
-          <Contexts openContext={openContext} />
+          <Contexts openContext={openContext}/>
         )}
       ></Icon>
       <Icon

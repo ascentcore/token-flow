@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { autoType } from 'd3';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { registerListener, triggerEvent, unregisterListener } from '../events';
@@ -12,7 +13,10 @@ export default (props) => {
 
   useEffect(() => {
     axios.get(`http://localhost:8081/vocabulary`).then((response) => {
-      setData(response.data.reverse());
+      setData(
+        response.data
+          .sort((a, b) => a.localeCompare(b))
+      );
       triggerEvent('vocabulary', response.data.length);
     });
   }, [state]);
@@ -38,23 +42,25 @@ export default (props) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <table cellSpacing={0}>
-        <thead>
-          <tr>
-            <th>Token</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(
-            (token) =>
-              token.indexOf(query) === 0 && (
-                <tr key={token} onClick={() => stimulate(null, token)}>
-                  <td>{token}</td>
-                </tr>
-              )
-          )}
-        </tbody>
-      </table>
+      <div className="vocabulary-table">
+        <table cellSpacing={0}>
+          <thead>
+            <tr>
+              <th>Token</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(
+              (token) =>
+                token.indexOf(query) === 0 && (
+                  <tr key={token} onClick={() => stimulate(null, token)}>
+                    <td>{token}</td>
+                  </tr>
+                )
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
