@@ -50,7 +50,7 @@ datasets = [
                                   include_punctuation=False,
                                   accept_all=True,
                                   use_token=False), name="Basic Dataset"),
-    Dataset.load('contexts/test')
+    Dataset.load('contexts/agents')
 ]
 
 dataset = datasets[0]

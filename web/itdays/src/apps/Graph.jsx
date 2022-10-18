@@ -69,13 +69,13 @@ export default (props) => {
   function doLine(line) {
     line
       .attr('stroke', 'rgba(0,0,0,1)')
-      .attr('stroke-width', (d) => d.weight * 2)
+      .attr('stroke-width', (d) => d.weight)
       .attr('stroke-opacity', (d) => {
         return threshold > 0
           ? Math.min(d.source.s, d.target.s) - threshold >= 0
-            ? 1
+            ? 0.5
             : 0
-          : 1;
+          : 0.5;
       });
   }
 
@@ -142,23 +142,17 @@ export default (props) => {
 
         const simulation = d3
           .forceSimulation()
-          .force(
-            'radial',
-            d3.forceRadial(function (d) {
-              return (2 - Math.pow(2, d.s)) * (width / 4);
-            })
-          )
-          .force(
-            'charge',
-            d3.forceManyBody().strength((d) => -d.s * 60)
-          )
+          .force('charge', d3.forceManyBody().strength(-30))
           .force(
             'link',
             d3
               .forceLink()
               .id((d) => d.id)
-              .strength(0.001)
-          );
+              .distance(30)
+          )
+          // .force('x', d3.forceX())
+          // .force('y', d3.forceY())
+          .force('center', d3.forceCenter(width / 2, height / 2));
 
         var link = svg
           .append('g')
@@ -231,7 +225,7 @@ export default (props) => {
           const updatedLinks = graph.links.map((d) => Object.assign({}, d));
           sim.nodes(updatedNodes);
           sim.force('link').links(updatedLinks);
-          sim.alpha(1).restart();
+          sim.alpha(0.001).restart();
 
           const newNode = nodes
             .data(updatedNodes, (d) => d.id)
@@ -246,17 +240,17 @@ export default (props) => {
               return enter;
             });
 
-          const newLinks = links
-            .data(graph.links, (d) => {
-              d.source = updatedNodes.find((n) => n.id === d.source);
-              d.target = updatedNodes.find((n) => n.id === d.target);
-            })
-            .join('line');
+          // const newLinks = links
+          //   .data(graph.links, (d) => {
+          //     d.source = updatedNodes.find((n) => n.id === d.source);
+          //     d.target = updatedNodes.find((n) => n.id === d.target);
+          //   })
+          //   .join('line');
 
-          doLine(newLinks);
+          // doLine(newLinks);
           setNodes(newNode);
-          setLinks(newLinks);
-          sim.alpha(1).restart();
+          // setLinks(newLinks);
+          sim.alpha(0.001).restart();
           adjustOpacity();
         }
       });

@@ -4,18 +4,12 @@ import { useEffect } from 'react';
 import * as d3 from 'd3';
 import { useRef } from 'react';
 import { registerListener, unregisterListener } from '../events';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Graph from './RadialGraph';
-import Stimuli from './Stimuli';
-import Matrix from './Matrix';
-import Canvas from './Canvas';
 
 export default (props) => {
-  const { context, callBackendForText, resetStimuli, stimulate } = props;
+  const { context, threshold, stimulate } = props;
 
   const containerRef = useRef(null);
   const [data, setData] = useState(null);
-  const [threshold, setThreshold] = useState(0);
   const [topTokens, setTopTokens] = useState([]);
   const [svgContainer, setSvgContainer] = useState(null);
   const [sim, setSim] = useState(null);
@@ -35,20 +29,6 @@ export default (props) => {
     };
   }, []);
 
-  function keyPress(e) {
-    if (e.keyCode === 13) {
-      const stimulate = false;
-      const sendValue = e.target.value.trim();
-      setTextValue('');
-      callBackendForText(context, sendValue, true);
-    }
-  }
-
-  function addToContext(e) {
-    setTextValue('');
-    callBackendForText(context, textValue.trim(), false);
-  }
-
   function processTopTokens(nodes) {
     nodes.sort((a, b) => b.s - a.s);
 
@@ -59,7 +39,7 @@ export default (props) => {
     const elems = d3.select(this).data();
     if (elems && elems.length > 0) {
       const { id } = elems[0];
-      onNodeClick(id);
+      stimulate(context, id);
     }
   }
 
@@ -87,7 +67,16 @@ export default (props) => {
   }
 
   function doLine(line) {
-    line.attr('stroke', 'rgba(0,0,0,.2)').attr('stroke-width', (d) => d.weight);
+    line
+      .attr('stroke', 'rgba(0,0,0,1)')
+      .attr('stroke-width', (d) => d.weight * 2)
+      .attr('stroke-opacity', (d) => {
+        return threshold > 0
+          ? Math.min(d.source.s, d.target.s) - threshold >= 0
+            ? 1
+            : 0
+          : 1;
+      });
   }
 
   function adjustOpacity() {
@@ -111,9 +100,11 @@ export default (props) => {
         .transition()
         .duration(300)
         .attr('stroke-opacity', (d) =>
-          Math.max(d.source.s, d.target.s) - threshold > 0
-            ? Math.max(d.source.s, d.target.s)
-            : 0
+          threshold > 0
+            ? Math.min(d.source.s, d.target.s) - threshold >= 0
+              ? 1
+              : 0
+            : 1
         );
     }
   }
@@ -146,7 +137,7 @@ export default (props) => {
           .call(zoom)
           .call(
             zoom.transform,
-            d3.zoomIdentity.translate(width / 2, height / 2).scale(0.7)
+            d3.zoomIdentity.translate(width / 2, height / 2).scale(1.25)
           );
 
         const simulation = d3
@@ -177,8 +168,6 @@ export default (props) => {
           .enter()
           .append('line');
 
-        doLine(link);
-
         var node = svg
           .append('g')
           .attr('class', 'nodes')
@@ -187,10 +176,13 @@ export default (props) => {
           .enter()
           .append('g');
 
-        doNode(node);
-
         setNodes(node);
         setLinks(link);
+
+        setTimeout(() => {
+          doNode(node);
+          doLine(link);
+        }, 10);
 
         const ticked = () => {
           (svgContainer || svg)
@@ -228,63 +220,49 @@ export default (props) => {
       .get(`http://localhost:8081/context/${context}/graph`)
       .then((response) => {
         const { data: graph } = response;
-        setData(graph);
+        processTopTokens(graph.nodes);
+        if (nodes) {
+          const old = new Map(nodes.data().map((d) => [d.id, d]));
+          const updatedNodes = graph.nodes.map((d) => {
+            const result = Object.assign(old.get(d.id) || {}, d);
+            result.s = d.s;
+            return result;
+          });
+          const updatedLinks = graph.links.map((d) => Object.assign({}, d));
+          sim.nodes(updatedNodes);
+          sim.force('link').links(updatedLinks);
+          sim.alpha(1).restart();
+
+          const newNode = nodes
+            .data(updatedNodes, (d) => d.id)
+            .join((enter) => {
+              enter = enter.append('g');
+
+              enter.on('click', onClick);
+
+              enter.attr('class', 'node');
+              doNode(enter);
+
+              return enter;
+            });
+
+          const newLinks = links
+            .data(graph.links, (d) => {
+              d.source = updatedNodes.find((n) => n.id === d.source);
+              d.target = updatedNodes.find((n) => n.id === d.target);
+            })
+            .join('line');
+
+          doLine(newLinks);
+          setNodes(newNode);
+          setLinks(newLinks);
+          sim.alpha(1).restart();
+          adjustOpacity();
+        }
       });
   }, [state]);
 
   return (
-    <div className="context-body">
-      <div className="controls">
-        <input
-          type="text"
-          value={textValue}
-          onKeyDown={keyPress}
-          onChange={(e) => setTextValue(e.target.value)}
-        ></input>
-        <button onClick={addToContext}>Add to context</button>
-        <button onClick={resetStimuli(context)}>Reset stimuli</button>
-      </div>
-      <div className="controls">
-        Threshold
-        <input
-          type="range"
-          value={threshold}
-          min={0}
-          max={1}
-          step={0.01}
-          onChange={(e) => {
-            console.log(e.target.value);
-            setThreshold(parseFloat(e.target.value));
-          }}
-        />
-        <span style={{ width: 50 }}>{Math.floor(threshold * 100) / 100}</span>
-      </div>
-
-      <Tabs>
-        <TabList>
-          <Tab>Graph</Tab>
-          <Tab>Stimuli</Tab>
-          <Tab>Matrix</Tab>
-          <Tab>Overview</Tab>
-        </TabList>
-
-        <TabPanel>
-          <Graph
-            context={context}
-            threshold={threshold}
-            stimulate={stimulate}
-          />
-        </TabPanel>
-        <TabPanel>
-          <Stimuli graph={data} context={context} stimulate={stimulate} />
-        </TabPanel>
-        <TabPanel>
-          <Matrix graph={data} context={context} stimulate={stimulate} />
-        </TabPanel>
-        <TabPanel>
-          <Canvas graph={data} context={context} stimulate={stimulate} />
-        </TabPanel>
-      </Tabs>
-    </div>
+    <svg className="svg" width="100%" height="100%" ref={containerRef}></svg>
   );
 };

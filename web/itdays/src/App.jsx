@@ -26,13 +26,10 @@ import { registerListener, triggerEvent, unregisterListener } from './events';
 import CheatSheets from './apps/CheatSheets';
 import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
-import { useState } from 'react';
-function Button() {
-  return <button>Openzz</button>;
-}
+import Stimulator from './apps/Stimulator';
+
 
 function App() {
-
   const resetStimuli = (context) => () => {
     axios
       .post(`http://localhost:8081/reset_stimuli/${context}`)
@@ -96,9 +93,9 @@ function App() {
     setTimeout(() => {
       const box = new WinBox({
         x: 'center',
-        y: 'center',
-        width: 800,
-        height: 700,
+        y: 10,
+        width: Math.floor(window.innerWidth * 0.5),
+        height: Math.floor(window.innerHeight * 0.7),
         title: `${context} context`,
         icon: ContextIcon,
         border: 4,
@@ -171,12 +168,12 @@ function App() {
   };
 
   const openGeneric =
-    (title, icon, component, width = 600, height = 350) =>
+    (title, icon, component, width = 600, height = 350, x = 'center', y = 'center') =>
     () => {
       setTimeout(() => {
         const box = new WinBox({
-          x: 'center',
-          y: 'center',
+          x,
+          y,
           width,
           height,
           title: title,
@@ -234,7 +231,11 @@ function App() {
         onClick={openGeneric(
           'Contexts',
           FolderIcon,
-          <Contexts openContext={openContext}/>
+          <Contexts openContext={openContext} />,
+          600,
+          150,
+          'center',
+          'bottom'
         )}
       ></Icon>
       <Icon
@@ -244,6 +245,15 @@ function App() {
           'Cheat Sheets',
           FolderIcon,
           <CheatSheets openGeneric={openGeneric} />
+        )}
+      ></Icon>
+      <Icon
+        name="Stimulator"
+        icon={FolderIcon}
+        onClick={openGeneric(
+          'Stimulator',
+          FolderIcon,
+          <Stimulator stimulate={stimulate} />
         )}
       ></Icon>
       <Icon name="Trash" icon={TrashIcon}></Icon>
