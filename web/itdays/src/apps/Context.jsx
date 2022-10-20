@@ -5,7 +5,8 @@ import * as d3 from 'd3';
 import { useRef } from 'react';
 import { registerListener, unregisterListener } from '../events';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Graph from './RadialGraph';
+import RadialGraph from './RadialGraph';
+import Graph from './Graph';
 import Stimuli from './Stimuli';
 import Matrix from './Matrix';
 import Canvas from './Canvas';
@@ -262,12 +263,19 @@ export default (props) => {
 
       <Tabs>
         <TabList>
+          <Tab>RadialGraph</Tab>
           <Tab>Graph</Tab>
           <Tab>Stimuli</Tab>
           <Tab>Matrix</Tab>
           <Tab>Overview</Tab>
         </TabList>
-
+        <TabPanel>
+          <RadialGraph
+            context={context}
+            threshold={threshold}
+            stimulate={stimulate}
+          />
+        </TabPanel>
         <TabPanel>
           <Graph
             context={context}

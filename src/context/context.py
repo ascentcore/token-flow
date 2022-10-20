@@ -288,6 +288,8 @@ class Context():
             text = f.read()
             self.add_text(text, append_to_vocab=append_to_vocab)
 
+        return text
+
     def pretty_print(self, sorted=False):
         print('|  Stimulus  |               Token               |')
         for token, value in [(token, self.get_stimulus_of(token)) for token in self.vocabulary.vocabulary]if sorted == False else self.get_top_stimuli(count=len(self.vocabulary.vocabulary)):

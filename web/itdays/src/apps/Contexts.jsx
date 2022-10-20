@@ -36,6 +36,17 @@ export default (props) => {
           onClick={props.openContext(context)}
         ></Icon>
       ))}
+      <Icon
+        name="All"
+        icon={ContextIcon}
+        onClick={() => {
+          console.log('start...')
+          contexts.forEach((context, index) => {
+            console.log('opening', context)
+            props.openContext(context, index)()
+          });
+        }}
+      ></Icon>
     </div>
   );
 };

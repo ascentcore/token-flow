@@ -225,7 +225,7 @@ export default (props) => {
           const updatedLinks = graph.links.map((d) => Object.assign({}, d));
           sim.nodes(updatedNodes);
           sim.force('link').links(updatedLinks);
-          sim.alpha(0.001).restart();
+          sim.alpha(0.2).restart();
 
           const newNode = nodes
             .data(updatedNodes, (d) => d.id)
@@ -240,17 +240,17 @@ export default (props) => {
               return enter;
             });
 
-          // const newLinks = links
-          //   .data(graph.links, (d) => {
-          //     d.source = updatedNodes.find((n) => n.id === d.source);
-          //     d.target = updatedNodes.find((n) => n.id === d.target);
-          //   })
-          //   .join('line');
+          const newLinks = links
+            .data(graph.links, (d) => {
+              d.source = updatedNodes.find((n) => n.id === d.source);
+              d.target = updatedNodes.find((n) => n.id === d.target);
+            })
+            .join('line');
 
-          // doLine(newLinks);
+          doLine(newLinks);
           setNodes(newNode);
-          // setLinks(newLinks);
-          sim.alpha(0.001).restart();
+          setLinks(newLinks);
+          sim.alpha(0.2).restart();
           adjustOpacity();
         }
       });

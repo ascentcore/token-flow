@@ -40,6 +40,11 @@ class Vocabulary():
         self.vocabulary = vocabulary if vocabulary is not None else [
             '<start>', '<end>', '<eol>'] if include_start_end else []
 
+        self.vectors = []
+
+    def process_vectors(self):
+        self.vectors = [self.token_to_vect(token) for token in self.vocabulary]
+
     @classmethod
     def from_text(cls, text, *args, **kwargs):
         vocab = cls(*args, **kwargs)
@@ -115,6 +120,9 @@ class Vocabulary():
 
         return False
 
+    def token_to_vect(self, token):
+        return self.nlp(token).vector
+
     def process_token(self, token, sequence, missing, append_to_vocab=True):
         if self.accept_all or token.pos_ in self.accepted:
             current = []
@@ -133,7 +141,12 @@ class Vocabulary():
             sequence.append(current)
 
     def get_token_sequence(self, text, append_to_vocab=True):
-        text = text.lower().strip()
+        text = text.lower()
+        
+        
+        
+        text = text.strip()
+
         doc = self.nlp(text.lower().strip())
 
         missing = []

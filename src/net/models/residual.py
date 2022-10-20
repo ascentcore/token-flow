@@ -65,6 +65,8 @@ class ResidualModel(torch.nn.Module):
         #                         int(num_classes*0.9), num_classes)
 
         # self.last = torch.nn.Sigmoid()
+        self.last = torch.nn.Linear(int(num_classes))
+
 
     def forward(self, data):
         x = data
@@ -82,5 +84,5 @@ class ResidualModel(torch.nn.Module):
         # x, _ = self.res3_up((x, residual_3))
         # x, _ = self.res2_up((x, residual_2))
         # x, _ = self.res1_up((x, residual_1))
-        # x = self.last(x)
+        x = self.last(x)
         return x

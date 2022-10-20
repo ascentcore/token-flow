@@ -1,8 +1,8 @@
-create_dataset = False
+create_dataset = True
 
-load_model = True
-save_model = True
-folder = 'stories'
+load_model = False
+save_model = False
+folder = 'sample'
 repeats = 5
 
 initial_weight = 0.5
@@ -16,7 +16,7 @@ filtered_output = True
 
 render_context = False
 
-lr = 1e-5
+lr = 1e-3
 epochs = 1000
 batch_size = 64
 

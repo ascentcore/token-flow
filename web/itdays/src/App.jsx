@@ -16,7 +16,12 @@ import DatasetsIcon from '/public/datasets.png';
 import TrashIcon from '/public/trash.png';
 import FolderIcon from '/public/folder.png';
 import ContextIcon from '/public/context.png';
+import StimulatorIcon from '/public/stimulator.png';
 import NewContextIcon from '/public/new_context.png';
+
+import TheSausage from '/public/sausage.png';
+import ThePolitician from '/public/politician.png';
+import TheNeuralNet from '/public/neuralnet.png';
 
 import Contexts from './apps/Contexts';
 import Context from './apps/Context';
@@ -27,9 +32,11 @@ import CheatSheets from './apps/CheatSheets';
 import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
 import Stimulator from './apps/Stimulator';
-
+import { useState } from 'react';
 
 function App() {
+
+  const [loading, setLoading] = useState(true)
   const resetStimuli = (context) => () => {
     axios
       .post(`http://localhost:8081/reset_stimuli/${context}`)
@@ -89,12 +96,16 @@ function App() {
     }
   }
 
-  const openContext = (context) => () => {
+  const openContext = (context, index) => () => {
     setTimeout(() => {
       const box = new WinBox({
-        x: 'center',
+        x:
+          index === undefined
+            ? 'center'
+            : (Math.floor(window.innerWidth) / 2 - 100) *
+              (index % 2 === 0 ? 0 : 1),
         y: 10,
-        width: Math.floor(window.innerWidth * 0.5),
+        width: Math.floor(window.innerWidth * 0.5 - 100),
         height: Math.floor(window.innerHeight * 0.7),
         title: `${context} context`,
         icon: ContextIcon,
@@ -168,7 +179,15 @@ function App() {
   };
 
   const openGeneric =
-    (title, icon, component, width = 600, height = 350, x = 'center', y = 'center') =>
+    (
+      title,
+      icon,
+      component,
+      width = 600,
+      height = 350,
+      x = 'center',
+      y = 'center'
+    ) =>
     () => {
       setTimeout(() => {
         const box = new WinBox({
@@ -202,7 +221,7 @@ function App() {
       <Icon
         name="Exercise"
         icon={ExerciseIcon}
-        onClick={openGeneric('Exercise', ExerciseIcon, <Exercise />, 500, 600)}
+        onClick={openGeneric('Exercise', ExerciseIcon, <Exercise />, 500, 700)}
       ></Icon>
       <Icon
         name="Vocabulary"
@@ -248,15 +267,23 @@ function App() {
         )}
       ></Icon>
       <Icon
-        name="Stimulator"
-        icon={FolderIcon}
+        name="Player"
+        icon={StimulatorIcon}
         onClick={openGeneric(
-          'Stimulator',
-          FolderIcon,
+          'Player',
+          StimulatorIcon,
           <Stimulator stimulate={stimulate} />
         )}
       ></Icon>
       <Icon name="Trash" icon={TrashIcon}></Icon>
+
+      {loading && (
+        <div className="loading" onClick={() => setLoading(false)}>
+          <img src={ThePolitician} class="loading2"></img>
+          <img src={TheSausage} class="loading1"></img>
+          <img src={TheNeuralNet} class="loading3"></img>
+        </div>
+      )}
     </div>
   );
 }

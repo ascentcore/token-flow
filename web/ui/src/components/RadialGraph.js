@@ -1,12 +1,8 @@
 import {
-  Badge,
   Button,
   Card,
   CardContent,
-  Checkbox,
   Chip,
-  FormControlLabel,
-  Paper,
   Typography,
 } from '@mui/material';
 import * as React from 'react';

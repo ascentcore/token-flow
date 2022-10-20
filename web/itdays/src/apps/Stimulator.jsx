@@ -21,7 +21,7 @@ export default (props) => {
       setSelectedContexts(response.data);
     });
     breakSentence(
-      'Hello , do you follow tennis ? Not really . I just know each player uses a strung racket and they hit a hollow ball . Did you know Polo shirts were originally invented for tennis ?'.toLowerCase()
+      'What is an engine ?'.toLowerCase()
     );
   }, []);
 

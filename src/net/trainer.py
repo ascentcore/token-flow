@@ -13,8 +13,8 @@ class Trainer():
             'cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device)
 
-        # self.loss_function = torch.nn.MSELoss()
-        self.loss_function = torch.nn.CrossEntropyLoss()
+        self.loss_function = torch.nn.MSELoss()
+        # self.loss_function = torch.nn.CrossEntropyLoss()
         # self.loss_function = torch.nn.BCELoss()
 
         # self.optimizer = torch.optim.Adam(model.parameters(),
@@ -62,6 +62,16 @@ class Trainer():
             # pbar.set_description(f"Loss {loss} / {batch_ndx}")
 
         return loss_all
+
+    def predict(self, input_data):
+        self.model.eval()
+        x = torch.tensor(input_data, dtype=torch.float32)
+        return self.model(x.to(self.device))
+        # predict_index = int(output)
+        # predict_value = self.vocabulary.vocabulary[predict_index]
+        # return predict_index, predict_value
+        
+
 
     def get_sentence(self, context, input_data, generate_length=20, prevent_convergence_history=5, stimulus=None, num_patches=None, break_on_end=False, break_on_eol=False):
         history = []
