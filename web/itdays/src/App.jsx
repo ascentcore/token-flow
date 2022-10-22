@@ -37,6 +37,7 @@ import { useState } from 'react';
 function App() {
 
   const [loading, setLoading] = useState(true)
+
   const resetStimuli = (context) => () => {
     axios
       .post(`http://localhost:8081/reset_stimuli/${context}`)

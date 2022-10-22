@@ -241,6 +241,11 @@ button {
   border-radius: 4px;
 }
 
+button.full {
+  width: 100%;
+  padding: 6px;
+}
+
 button:hover {
   background-color: #e9be5a;
   box-shadow: none;

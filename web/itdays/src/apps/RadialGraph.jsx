@@ -73,9 +73,9 @@ export default (props) => {
       .attr('stroke-opacity', (d) => {
         return threshold > 0
           ? Math.min(d.source.s, d.target.s) - threshold >= 0
-            ? 1
+            ? 0.5
             : 0
-          : 1;
+          : 0.5;
       });
   }
 

@@ -2,9 +2,18 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Icon from '../components/icon';
-import ContextIcon from '/public/context.png';
-import { registerListener, triggerEvent, unregisterListener } from '../events';
+import { triggerEvent } from '../events';
+import Baby from '/public/baby.png';
+import MechanicalVsSoftware from '/public/mechanicalvssoftware.png';
+import Politician from '/public/politician.png';
+import Chatbots from '/public/chatbots.png';
+
+const images = [
+  Baby,
+  MechanicalVsSoftware,
+  Politician,  
+  Chatbots,
+];
 
 export default (props) => {
   const [datasets, setDatasets] = useState([]);
@@ -37,10 +46,13 @@ export default (props) => {
         </TabList>
         {datasets.map((ds, index) => (
           <TabPanel key={ds}>
-            <button className="button" onClick={switchDs(index)}>
+            <div className="image-container">
+              <img src={images[index]} />
+            </div>
+
+            <button className="button full" onClick={switchDs(index)}>
               Activate
             </button>
-            <div className="image-container"></div>
           </TabPanel>
         ))}
       </Tabs>

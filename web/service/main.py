@@ -84,9 +84,9 @@ sample2.add_context(macron)
 
 
 datasets = [
-    sample2,
-    sample1,
     Dataset(vocabulary=vocabulary, name="Basic Dataset"),
+    sample1,
+    sample2,        
     Dataset.load('contexts/agents'),
 ]
 
