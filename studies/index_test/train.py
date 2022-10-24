@@ -1,6 +1,4 @@
-import json
 from math import nan
-import torch
 import os
 from tqdm import tqdm
 from torchdata.datapipes.iter import IterDataPipe
@@ -9,17 +7,21 @@ from torch.utils.data import DataLoader
 from src.context.context import Context
 from src.context.embeddings import Embeddings
 
-from src.context.vocabulary import Vocabulary
-
 from src.net.models.residual import ResidualModel
 from src.net.models.autoencoder import AE
-from src.net.models.rnntrans import TransformerModel
-from src.net.models.vit import VisionTransformer
 from src.net.trainer import Trainer
 
 path = f'studies/index_test'
 n_dim = 2
 size = 30
+
+
+def get_input(context):
+    input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus != 0 else np.zeros(
+        n_dim + 1)) for token, stimulus in context.get_top_stimuli(size)]
+    input = np.array(input, np.float32)
+
+    return input
 
 
 class RuntimeDP(IterDataPipe):
@@ -31,7 +33,7 @@ class RuntimeDP(IterDataPipe):
             os.path.join(path, 'test.txt'), append_to_vocab=True)
 
     def __iter__(self):
-        input = np.zeros((self.size, n_dim), dtype=np.float32)
+        input = np.zeros((self.size, n_dim + 1), dtype=np.float32)
         # for line in self.text:
         _, sentences = self.context.vocabulary.get_token_sequence(
             self.text, append_to_vocab=False)
@@ -41,9 +43,7 @@ class RuntimeDP(IterDataPipe):
                     self.context.stimulate(token)
                     output = self.context.vocabulary.get_location(token)
                     yield input, output
-                    input = [(self.context.vocabulary.get_location(token) if stimulus != 0 else np.zeros(
-                        n_dim)) for token, stimulus in self.context.get_top_stimuli(self.size)]
-                    input = np.array(input, np.float32)
+                    input = get_input(self.context)
 
 
 def row_processer(row):
@@ -61,19 +61,19 @@ def train():
         add_lemma_to_vocab=False)
 
     context = Context('test', vocabulary,
-                      initial_weight=0.5,
+                      initial_weight=0.2,
                       weight_increase=0.08,
                       neuron_opening=0.75,
-                      temp_decrease=0.1)
+                      temp_decrease=0.037)
     datapipe = RuntimeDP(context, size)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=32,
+    dl = DataLoader(dataset=datapipe, batch_size=4,
                     num_workers=1)
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
-    model = AE(size, n_dim, steps = 12)
+    model = AE(size, input_channels=n_dim + 1, output_channels=n_dim, steps=16)
     # model = ResidualModel(size, 4, n_dim)
-    trainer = Trainer(model, vocabulary, lr=0.0001)
+    trainer = Trainer(model, vocabulary, lr=0.001)
 
     for i in range(1000):
         loss_all = 0
@@ -88,20 +88,20 @@ def train():
 
         print(f'\n\nEpoch {i} loss: {loss_all}\n')
         context.decrease_stimulus(1)
-        input = np.zeros((1, size, n_dim), dtype=np.float32)
-
 
         sentence = 'the country mouse lives in a cozy nest at the bottom '
         for token in sentence.split(' '):
             context.stimulate(token)
 
+        input = get_input(context)
+
         for i in range(150):
-            vector = trainer.predict(input).detach().numpy()
+            vector = trainer.predict([input]).detach().numpy()
             token = context.vocabulary.closest(vector[0])
             sentence = sentence + token + ' '
             context.stimulate(token)
-            input = np.array([[context.vocabulary.get_location(
-                token[0]) for token in context.get_top_stimuli(size)]], np.float32)
+            input = get_input(context)
+
         print(sentence)
 
 
