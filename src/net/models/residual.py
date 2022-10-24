@@ -35,13 +35,15 @@ class Residual(torch.nn.Module):
 
 
 class ResidualModel(torch.nn.Module):
-    def __init__(self, num_classes, steps=4):
+    def __init__(self, num_classes, steps=4, output_channels=1):
         super(ResidualModel, self).__init__()
         self.steps = steps
 
         self.downs = []
         self.ups = []
-        current = num_classes
+        self.flatten = nn.Flatten()
+        current = num_classes * output_channels
+        
         for i in range(steps):
             self.downs.append(Residual(current, int(
                 current * 0.9), int(current * 0.8)))
@@ -50,27 +52,12 @@ class ResidualModel(torch.nn.Module):
             current = int(current * 0.8)
 
         self.layers = torch.nn.ModuleList(self.downs+self.ups)
-        # self.res1_down = Residual(num_classes, int(
-        #     num_classes*0.9), int(num_classes * 0.8))
-        # self.res2_down = Residual(int(num_classes * 0.8),
-        #                           int(num_classes*0.7), int(num_classes * 0.6))
-        # self.res3_down = Residual(int(num_classes * 0.6),
-        #                           int(num_classes*0.5), int(num_classes * 0.4))
-
-        # self.res3_up = Residual(int(num_classes * 0.4),
-        #                         int(num_classes*0.5), int(num_classes * 0.6))
-        # self.res2_up = Residual(int(num_classes * 0.6),
-        #                         int(num_classes*0.7), int(num_classes * 0.8))
-        # self.res1_up = Residual(int(num_classes * 0.8),
-        #                         int(num_classes*0.9), num_classes)
-
-        # self.last = torch.nn.Sigmoid()
-        self.last = torch.nn.Linear(int(num_classes))
-
+        self.last = torch.nn.Linear(int(num_classes * output_channels), output_channels)
 
     def forward(self, data):
         x = data
         downs = []
+        x = self.flatten(x)
         for i in range(self.steps):
             x, residual = self.downs[i]((x, None))
             downs.insert(0, residual)
@@ -78,11 +65,5 @@ class ResidualModel(torch.nn.Module):
         for i in range(self.steps):
             x, _ = self.ups[i]((x, downs[i]))
 
-        # x, residual_1 = self.res1_down((x, None))
-        # x, residual_2 = self.res2_down((x, None))
-        # x, residual_3 = self.res3_down((x, None))
-        # x, _ = self.res3_up((x, residual_3))
-        # x, _ = self.res2_up((x, residual_2))
-        # x, _ = self.res1_up((x, residual_1))
         x = self.last(x)
         return x

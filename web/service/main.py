@@ -5,23 +5,24 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from starlette.middleware.sessions import SessionMiddleware
 from src.context.dataset import Dataset
+from src.context.embeddings import Embeddings
 from src.context.vocabulary import Vocabulary
 from src.context.context import Context
 
 import networkx as nx
 
-vocabulary = Vocabulary(accept_all=True,
+vocabulary = Embeddings(accept_all=True,
                         include_start_end=False,
                         include_punctuation=False,
                         use_lemma=False,
                         add_lemma_to_vocab=False)
 
 
-for token in 'the rain in spain falls mainly on the plain the rain helps plants to grow'.split():
-    vocabulary.add_to_vocabulary(token)
+# for token in 'the rain in spain falls mainly on the plain the rain helps plants to grow'.split():
+#     vocabulary.add_to_vocabulary(token)
 
 
-sample1 = Dataset(Vocabulary(accept_all=True,
+sample1 = Dataset(Embeddings(accept_all=True,
                              include_start_end=False,
                              include_punctuation=False,
                              use_lemma=False,
@@ -45,7 +46,7 @@ sample1.add_context(mechanical)
 sample1.add_context(software)
 sample1.delete_context('default')
 
-sample2 = Dataset(Vocabulary(accept_all=True,
+sample2 = Dataset(Embeddings(accept_all=True,
                              include_start_end=False,
                              include_punctuation=False,
                              use_lemma=False,
@@ -83,10 +84,13 @@ sample2.delete_context('default')
 sample2.add_context(macron)
 
 
+basic_ds = Dataset(vocabulary=vocabulary, name="Basic Dataset")
+basic_ds.add_text('The rain in spain falls mainly on the plain.')
+basic_ds.add_text('A software engine is a computer program, or part of a computer program, that serves as the core foundation for a larger piece of software. This term is often used in game development, in which it typically refers to either a graphics engine or a game engine around which the rest of a video game is developed. While the term can also be used in other areas of software development, its particular meaning can be more nebulous in those instances. A software engine can be developed by a company that is using it, or may be developed by another company and then licensed to other developers. When used in the general context of computer software development, a software engine typically refers to the core elements of a particular program. This usually does not include features such as the user interface (UI) and numerous art assets added to the core engine itself. For an operating system (OS), for example, the software engine might be the source code that establishes file hierarchy, input and output methods, and how the OS communicates with other software and hardware. The exact contents of such an engine can vary from program to program, however. In computer and console game development, a software engine typically refers to either a game’s graphics engine or the overall game engine. The graphics engine for a game is typically the software used to properly render out the graphics seen by players. This often uses art assets created in other programs, which are then ported into the graphics engine for use during game play. The use of a software engine for the graphics of a game can make rendering much easier, and may also simplify the process of ensuring software and hardware compatibility.')
 datasets = [
-    Dataset(vocabulary=vocabulary, name="Basic Dataset"),
+    basic_ds,
     sample1,
-    sample2,        
+    sample2,
     Dataset.load('contexts/agents'),
 ]
 
@@ -123,6 +127,11 @@ async def read_root(request: Request, id):
 @ app.get('/vocabulary')
 def read_vocabulary():
     return dataset.vocabulary.vocabulary
+
+
+@ app.get('/cache')
+def read_cache():
+    return dataset.vocabulary.cache
 
 
 @ app.post('/add_text')

@@ -42,9 +42,6 @@ class Vocabulary():
 
         self.vectors = []
 
-    def process_vectors(self):
-        self.vectors = [self.token_to_vect(token) for token in self.vocabulary]
-
     @classmethod
     def from_text(cls, text, *args, **kwargs):
         vocab = cls(*args, **kwargs)
@@ -120,9 +117,6 @@ class Vocabulary():
 
         return False
 
-    def token_to_vect(self, token):
-        return self.nlp(token).vector
-
     def process_token(self, token, sequence, missing, append_to_vocab=True):
         if self.accept_all or token.pos_ in self.accepted:
             current = []
@@ -142,8 +136,6 @@ class Vocabulary():
 
     def get_token_sequence(self, text, append_to_vocab=True):
         text = text.lower()
-        
-        
         
         text = text.strip()
 

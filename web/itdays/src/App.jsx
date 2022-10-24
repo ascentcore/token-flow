@@ -33,10 +33,11 @@ import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
 import Stimulator from './apps/Stimulator';
 import { useState } from 'react';
+import Embeddings from './apps/Embeddings';
 
 function App() {
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const resetStimuli = (context) => () => {
     axios
@@ -228,6 +229,11 @@ function App() {
         name="Vocabulary"
         icon={VocabularyIcon}
         onClick={openVocabulary}
+      ></Icon>
+       <Icon
+        name="Embeddings"
+        icon={VocabularyIcon}
+        onClick={openGeneric('Embeddings', VocabularyIcon, <Embeddings />, 600, 700)}
       ></Icon>
       <Icon
         name="New Context"
