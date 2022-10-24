@@ -18,8 +18,8 @@ from src.net.models.vit import VisionTransformer
 from src.net.trainer import Trainer
 
 path = f'studies/index_test'
-n_dim = 3
-size = 40
+n_dim = 2
+size = 30
 
 
 class RuntimeDP(IterDataPipe):
@@ -39,10 +39,11 @@ class RuntimeDP(IterDataPipe):
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token)
-                    output = self.context.vocabulary.get_location(token)                       
+                    output = self.context.vocabulary.get_location(token)
                     yield input, output
-                    input = np.array([self.context.vocabulary.get_location(
-                        token[0]) for token in self.context.get_top_stimuli(self.size)], np.float32)
+                    input = [(self.context.vocabulary.get_location(token) if stimulus != 0 else np.zeros(
+                        n_dim)) for token, stimulus in self.context.get_top_stimuli(self.size)]
+                    input = np.array(input, np.float32)
 
 
 def row_processer(row):
@@ -63,16 +64,16 @@ def train():
                       initial_weight=0.5,
                       weight_increase=0.08,
                       neuron_opening=0.75,
-                      temp_decrease=0.037)
+                      temp_decrease=0.1)
     datapipe = RuntimeDP(context, size)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=16, num_workers=1)
+    dl = DataLoader(dataset=datapipe, batch_size=32,
+                    num_workers=1)
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
-    # model = AE(size, n_dim)
-    model = ResidualModel(size, 4, n_dim)
-    trainer = Trainer(model, vocabulary, lr=0.0008)
-
+    model = AE(size, n_dim, steps = 12)
+    # model = ResidualModel(size, 4, n_dim)
+    trainer = Trainer(model, vocabulary, lr=0.0001)
 
     for i in range(1000):
         loss_all = 0
@@ -89,14 +90,18 @@ def train():
         context.decrease_stimulus(1)
         input = np.zeros((1, size, n_dim), dtype=np.float32)
 
-        sentence = ''
+
+        sentence = 'the country mouse lives in a cozy nest at the bottom '
+        for token in sentence.split(' '):
+            context.stimulate(token)
+
         for i in range(150):
             vector = trainer.predict(input).detach().numpy()
             token = context.vocabulary.closest(vector[0])
             sentence = sentence + token + ' '
             context.stimulate(token)
             input = np.array([[context.vocabulary.get_location(
-                        token[0]) for token in context.get_top_stimuli(size)]], np.float32)
+                token[0]) for token in context.get_top_stimuli(size)]], np.float32)
         print(sentence)
 
 
