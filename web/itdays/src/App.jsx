@@ -34,6 +34,7 @@ import Datasets from './apps/Datasets';
 import Stimulator from './apps/Stimulator';
 import { useState } from 'react';
 import Embeddings from './apps/Embeddings';
+import Motivation from './apps/Motivation';
 
 function App() {
 
@@ -224,6 +225,11 @@ function App() {
         name="Exercise"
         icon={ExerciseIcon}
         onClick={openGeneric('Exercise', ExerciseIcon, <Exercise />, 500, 700)}
+      ></Icon>
+       <Icon
+        name="Motivation"
+        icon={ExerciseIcon}
+        onClick={openGeneric('Motivation', ExerciseIcon, <Motivation />, 700, 700)}
       ></Icon>
       <Icon
         name="Vocabulary"
