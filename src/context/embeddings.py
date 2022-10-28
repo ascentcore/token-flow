@@ -3,7 +3,8 @@ import math
 
 from src.context.vocabulary import Vocabulary
 
-allowed_chars = list(set('abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:’\'"/\|_@#$%^&*~`+-=<>()[]{}'))
+allowed_chars = [
+    letter for letter in 'abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:’\'"/\|_@#$%^&*~`+-=<>()[]{}']
 len_of_allowed_chars = len(allowed_chars)
 class Embeddings(Vocabulary):
 
@@ -75,4 +76,3 @@ if __name__ == '__main__':
         use_lemma=False,
         add_lemma_to_vocab=False, n_dim=2)
 
-    embeddings.add_text('the rain in spain falls mainly on the plain.')

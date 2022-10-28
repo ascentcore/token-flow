@@ -1,11 +1,13 @@
 from math import nan
 import os
+import torch
 from tqdm import tqdm
 from torchdata.datapipes.iter import IterDataPipe
 import numpy as np
 from torch.utils.data import DataLoader
 from src.context.context import Context
 from src.context.embeddings import Embeddings
+from src.net.models.gpt2 import GPT
 
 from src.net.models.residual import ResidualModel
 from src.net.models.autoencoder import AE
@@ -17,8 +19,9 @@ size = 30
 
 
 def get_input(context):
-    input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus != 0 else np.zeros(
-        n_dim + 1)) for token, stimulus in context.get_top_stimuli(size)]
+    null_loc = context.vocabulary.get_location('<null>')
+    input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus !=
+              0 else null_loc + [0]) for token, stimulus in context.get_top_stimuli(size)]
     input = np.array(input, np.float32)
 
     return input
@@ -33,7 +36,11 @@ class RuntimeDP(IterDataPipe):
             os.path.join(path, 'test.txt'), append_to_vocab=True)
 
     def __iter__(self):
-        input = np.zeros((self.size, n_dim + 1), dtype=np.float32)
+        null_loc = self.context.vocabulary.get_location('<null>') + [0]
+        start_arr = []
+        for i in range(0, self.size):
+            start_arr.append(null_loc)
+        input = np.array(start_arr, np.float32)
         # for line in self.text:
         _, sentences = self.context.vocabulary.get_token_sequence(
             self.text, append_to_vocab=False)
@@ -61,14 +68,14 @@ def train():
         add_lemma_to_vocab=False)
 
     context = Context('test', vocabulary,
-                      initial_weight=0.2,
+                      initial_weight=0.5,
                       weight_increase=0.08,
                       neuron_opening=0.75,
                       temp_decrease=0.037)
     datapipe = RuntimeDP(context, size)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=4,
-                    num_workers=1)
+    dl = DataLoader(dataset=datapipe, batch_size=16,
+                    num_workers=1, shuffle=True)
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
     model = AE(size, input_channels=n_dim + 1, output_channels=n_dim, steps=16)
@@ -103,6 +110,8 @@ def train():
             input = get_input(context)
 
         print(sentence)
+
+        torch.save(model, f'studies/index_test/model-with-null.pt')
 
 
 if __name__ == '__main__':

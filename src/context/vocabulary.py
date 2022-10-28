@@ -38,7 +38,7 @@ class Vocabulary():
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
         self.vocabulary = vocabulary if vocabulary is not None else [
-            '<start>', '<end>', '<eol>'] if include_start_end else []
+            '<null>', '<start>', '<end>', '<eol>'] if include_start_end else []
 
         self.vectors = []
 

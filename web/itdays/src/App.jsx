@@ -38,7 +38,7 @@ import Motivation from './apps/Motivation';
 
 function App() {
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const resetStimuli = (context) => () => {
     axios

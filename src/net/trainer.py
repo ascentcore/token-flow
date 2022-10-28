@@ -24,11 +24,12 @@ class Trainer():
         self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
-    def batch_train(self, sample):        
+    def batch_train(self, sample):
         x, y = sample
+        # for line in x:
+        #     print([self.vocabulary.closest(x[:-1]) for x in line])
         data = x.to(self.device)
 
-        
         output = self.model(data)
 
         loss = self.loss_function(output, y.to(self.device))
@@ -48,6 +49,7 @@ class Trainer():
         # for batch_ndx, sample in pbar:
         for batch_ndx, sample in enumerate(loader):
             x, y = sample
+            # print([self.vocabulary.closest(x[:-1]) for x in x])
             data = x.to(self.device)
 
             self.optimizer.zero_grad()
@@ -70,8 +72,6 @@ class Trainer():
         # predict_index = int(output)
         # predict_value = self.vocabulary.vocabulary[predict_index]
         # return predict_index, predict_value
-        
-
 
     def get_sentence(self, context, input_data, generate_length=20, prevent_convergence_history=5, stimulus=None, num_patches=None, break_on_end=False, break_on_eol=False):
         history = []
@@ -99,7 +99,7 @@ class Trainer():
                 else:
                     top_keys = torch.topk(
                         output, k=prevent_convergence_history + 1).indices.tolist()
-                        
+
                 top_keys = [x for x in top_keys if x not in history]
 
                 predict_index = top_keys[0]
@@ -108,7 +108,7 @@ class Trainer():
             history.append(predict_index)
             if prevent_convergence_history != None:
                 history = history[-prevent_convergence_history:]
-            
+
             context.stimulate(predict_value, stimulus=stimulus)
             input_data.append(context.get_stimuli())
             sentence += predict_value + " "
