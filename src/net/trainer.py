@@ -67,7 +67,9 @@ class Trainer():
 
     def predict(self, input_data):
         self.model.eval()
-        x = torch.tensor(input_data, dtype=torch.float32)
+        # Previous version used a float type input
+        # x = torch.tensor(input_data, dtype=torch.int32)
+        x = torch.tensor(input_data, dtype=torch.int32)
         return self.model(x.to(self.device))
         # predict_index = int(output)
         # predict_value = self.vocabulary.vocabulary[predict_index]

@@ -124,7 +124,6 @@ class GPT(nn.Module):
 
     def __init__(self, config):
         super().__init__()
-        print(config)
         assert config.vocab_size is not None
         assert config.block_size is not None
         self.block_size = config.block_size
@@ -155,7 +154,7 @@ class GPT(nn.Module):
                 # I made these tiny models up
                 'gpt-mini':     dict(n_layer=6, n_head=6, n_embd=192),
                 'gpt-micro':    dict(n_layer=4, n_head=4, n_embd=128),
-                'gpt-nano':     dict(n_layer=3, n_head=3, n_embd=6),
+                'gpt-nano':     dict(n_layer=3, n_head=3, n_embd=48),
             }[config.model_type])
 
         self.transformer = nn.ModuleDict(dict(
@@ -283,17 +282,17 @@ class GPT(nn.Module):
 
     def forward(self, idx, targets=None):
         device = idx.device
-        t = idx.shape[1]
+        b, t = idx.size()
         assert t <= self.block_size, f"Cannot forward sequence of length {t}, block size is only {self.block_size}"
         pos = torch.arange(0, t, dtype=torch.long,
                            device=device).unsqueeze(0)  # shape (1, t)
+
         # forward the GPT model itself
-        # self.transformer.wte(idx) # token embeddings of shape (b, t, n_embd)
-        tok_emb = idx
+        # token embeddings of shape (b, t, n_embd)
+        tok_emb = self.transformer.wte(idx)
         # position embeddings of shape (1, t, n_embd)
         pos_emb = self.transformer.wpe(pos)
-        # x = self.transformer.drop(tok_emb + pos_emb)
-        x = idx
+        x = self.transformer.drop(tok_emb + pos_emb)
         for block in self.transformer.h:
             x = block(x)
         x = self.transformer.ln_f(x)

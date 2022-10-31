@@ -21,14 +21,17 @@ include_stimulus = False
 
 
 def get_input(context):
-    null_loc = context.vocabulary.get_location('<null>')
-    if include_stimulus:
-        input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus !=
-                  0 else null_loc + [0]) for token, stimulus in context.get_top_stimuli(size)]
-    else:
-        input = [(context.vocabulary.get_location(token) if token !=
-                  '<null>' else null_loc) for token, stimulus in context.get_top_stimuli(size)]
-    input = np.array(input, np.float32)
+    # null_loc = context.vocabulary.get_location('<null>')
+    null_loc = context.vocabulary.vocabulary.index('<null>')
+    # if include_stimulus:
+    #     input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus !=
+    #               0 else null_loc + [0]) for token, stimulus in context.get_top_stimuli(size)]
+    # else:
+    # input = [(context.vocabulary.get_location(token) if token !=
+    #             '<null>' else null_loc) for token, stimulus in context.get_top_stimuli(size)]
+    input = [int(context.vocabulary.vocabulary.index(token)) if stimulus !=
+             0 else null_loc for token, stimulus in context.get_top_stimuli(size)]
+    input = np.array(input, np.longlong)
 
     return input
 
@@ -47,10 +50,11 @@ class RuntimeDP(IterDataPipe):
         else:
             null_loc = self.context.vocabulary.get_location('<null>')
 
-        start_arr = []
-        for i in range(0, self.size):
-            start_arr.append(null_loc)
-        input = np.array(start_arr, np.float32)
+        # start_arr = []
+        # for i in range(0, self.size):
+        #     start_arr.append(null_loc)
+        # input = np.array(start_arr, np.float32)
+        input = get_input(self.context)
         # for line in self.text:
         _, sentences = self.context.vocabulary.get_token_sequence(
             self.text, append_to_vocab=False)
@@ -59,14 +63,15 @@ class RuntimeDP(IterDataPipe):
                 for token in tokens:
                     self.context.stimulate(token)
                     # output = self.context.vocabulary.get_location(token)
-                    output = np.zeros(self.context.vocabulary.size(), np.float32)
+                    output = np.zeros(
+                        self.context.vocabulary.size(), np.float32)
                     output[int(self.context.vocabulary.vocabulary.index(token))] = 1
                     yield input, output
                     input = get_input(self.context)
 
 
 def row_processer(row):
-    return [np.array(row[0], np.float32), np.array(row[1], np.float32)]
+    return [np.array(row[0], np.longlong), np.array(row[1], np.float32)]
 
 
 def train():
@@ -91,26 +96,34 @@ def train():
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
     model_name = "model-with-null-gpt-2-test"
-    try:
-        model = torch.load(f'studies/index_test/{model_name}.pt')
-    except:
-        print('No model found, creating new one')
-        # model = AE(size, input_channels=n_dim + 1 if include_stimulus else n_dim,
-        #            output_channels=n_dim, steps=16)
-        # model = ResidualModel(size, 4, n_dim)
-        # model = torch.nn.Transformer()
-        config = CfgNode()
-        config.model_type = None
-        config.vocab_size = len(vocabulary.vocabulary)
-        config.block_size = size
-        config.n_embd = n_dim
-        config.n_layer = 10
-        config.n_head = 4
-        config.embd_pdrop = 0
-        config.attn_pdrop = 0
-        config.resid_pdrop = 0
+    # try:
+    #     model = torch.load(f'studies/index_test/{model_name}.pt')
+    # except:
+    # print('No model found, creating new one')
+    # model = AE(size, input_channels=n_dim + 1 if include_stimulus else n_dim,
+    #            output_channels=n_dim, steps=16)
+    # model = ResidualModel(size, 4, n_dim)
+    # model = torch.nn.Transformer()
+    config = CfgNode()
+    config.model_type = None
+    config.vocab_size = len(vocabulary.vocabulary)
+    config.block_size = size
+    config.n_embd = n_dim
+    config.n_layer = 20
+    config.n_head = 8
+    config.embd_pdrop = 0
+    config.attn_pdrop = 0
+    config.resid_pdrop = 0
 
-        model = GPT(config)
+    model = GPT(config)
+    # try:
+    #     model.load_state_dict(torch.load(
+    #         f'studies/index_test/{model_name}.pt'))
+    #     model.eval()
+    # except:
+    #     print('No state saved')
+    #     pass
+
     trainer = Trainer(model, vocabulary, lr=0.001)
 
     for i in range(1000):
@@ -135,7 +148,7 @@ def train():
         input = get_input(context)
 
         last_token = None
-        
+
         for i in range(150):
             # vector = trainer.predict([input]).detach().numpy()
             # token = context.vocabulary.closest(vector[0])
@@ -153,7 +166,8 @@ def train():
 
         print(sentence)
 
-        # torch.save(model, f'studies/index_test/{model_name}.pt')
+        ckpt_path = os.path.join('studies/index_test/', f'{model_name}.pt')
+        torch.save(model.state_dict(), ckpt_path)
 
 
 if __name__ == '__main__':
