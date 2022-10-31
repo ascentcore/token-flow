@@ -11,17 +11,23 @@ from src.net.models.gpt2 import GPT
 
 from src.net.models.residual import ResidualModel
 from src.net.models.autoencoder import AE
+from src.net.models.utils import CfgNode
 from src.net.trainer import Trainer
 
 path = f'studies/index_test'
-n_dim = 2
-size = 30
+n_dim = 8
+size = 40
+include_stimulus = False
 
 
 def get_input(context):
     null_loc = context.vocabulary.get_location('<null>')
-    input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus !=
-              0 else null_loc + [0]) for token, stimulus in context.get_top_stimuli(size)]
+    if include_stimulus:
+        input = [(context.vocabulary.get_location(token) + [stimulus] if stimulus !=
+                  0 else null_loc + [0]) for token, stimulus in context.get_top_stimuli(size)]
+    else:
+        input = [(context.vocabulary.get_location(token) if token !=
+                  '<null>' else null_loc) for token, stimulus in context.get_top_stimuli(size)]
     input = np.array(input, np.float32)
 
     return input
@@ -36,7 +42,11 @@ class RuntimeDP(IterDataPipe):
             os.path.join(path, 'test.txt'), append_to_vocab=True)
 
     def __iter__(self):
-        null_loc = self.context.vocabulary.get_location('<null>') + [0]
+        if include_stimulus:
+            null_loc = self.context.vocabulary.get_location('<null>') + [0]
+        else:
+            null_loc = self.context.vocabulary.get_location('<null>')
+
         start_arr = []
         for i in range(0, self.size):
             start_arr.append(null_loc)
@@ -48,7 +58,9 @@ class RuntimeDP(IterDataPipe):
             for tokens in sentence:
                 for token in tokens:
                     self.context.stimulate(token)
-                    output = self.context.vocabulary.get_location(token)
+                    # output = self.context.vocabulary.get_location(token)
+                    output = np.zeros(self.context.vocabulary.size(), np.float32)
+                    output[int(self.context.vocabulary.vocabulary.index(token))] = 1
                     yield input, output
                     input = get_input(self.context)
 
@@ -68,7 +80,7 @@ def train():
         add_lemma_to_vocab=False)
 
     context = Context('test', vocabulary,
-                      initial_weight=0.5,
+                      initial_weight=0.2,
                       weight_increase=0.08,
                       neuron_opening=0.75,
                       temp_decrease=0.037)
@@ -78,8 +90,27 @@ def train():
                     num_workers=1, shuffle=True)
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
-    model = AE(size, input_channels=n_dim + 1, output_channels=n_dim, steps=16)
-    # model = ResidualModel(size, 4, n_dim)
+    model_name = "model-with-null-gpt-2-test"
+    try:
+        model = torch.load(f'studies/index_test/{model_name}.pt')
+    except:
+        print('No model found, creating new one')
+        # model = AE(size, input_channels=n_dim + 1 if include_stimulus else n_dim,
+        #            output_channels=n_dim, steps=16)
+        # model = ResidualModel(size, 4, n_dim)
+        # model = torch.nn.Transformer()
+        config = CfgNode()
+        config.model_type = None
+        config.vocab_size = len(vocabulary.vocabulary)
+        config.block_size = size
+        config.n_embd = n_dim
+        config.n_layer = 10
+        config.n_head = 4
+        config.embd_pdrop = 0
+        config.attn_pdrop = 0
+        config.resid_pdrop = 0
+
+        model = GPT(config)
     trainer = Trainer(model, vocabulary, lr=0.001)
 
     for i in range(1000):
@@ -96,22 +127,33 @@ def train():
         print(f'\n\nEpoch {i} loss: {loss_all}\n')
         context.decrease_stimulus(1)
 
-        sentence = 'the country mouse lives in a cozy nest at the bottom '
+        sentence = ''
+        # sentence = 'the country mouse lives in a cozy nest at the bottom '
         for token in sentence.split(' '):
             context.stimulate(token)
 
         input = get_input(context)
 
+        last_token = None
+        
         for i in range(150):
-            vector = trainer.predict([input]).detach().numpy()
-            token = context.vocabulary.closest(vector[0])
-            sentence = sentence + token + ' '
-            context.stimulate(token)
+            # vector = trainer.predict([input]).detach().numpy()
+            # token = context.vocabulary.closest(vector[0])
+            logits, loss = trainer.predict([input])
+            result = logits[:, -1, :]
+            result = result.detach().numpy()[0]
+            token = context.vocabulary.vocabulary[result.argmax()]
+            if (token != last_token):
+                sentence = sentence + token + ' '
+                context.stimulate(token)
+            else:
+                context.decrease_stimulus()
+
             input = get_input(context)
 
         print(sentence)
 
-        torch.save(model, f'studies/index_test/model-with-null.pt')
+        # torch.save(model, f'studies/index_test/{model_name}.pt')
 
 
 if __name__ == '__main__':

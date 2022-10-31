@@ -13,8 +13,8 @@ class Trainer():
             'cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device)
 
-        self.loss_function = torch.nn.MSELoss()
-        # self.loss_function = torch.nn.CrossEntropyLoss()
+        # self.loss_function = torch.nn.MSELoss()
+        self.loss_function = torch.nn.CrossEntropyLoss()
         # self.loss_function = torch.nn.BCELoss()
 
         # self.optimizer = torch.optim.Adam(model.parameters(),
@@ -29,10 +29,10 @@ class Trainer():
         # for line in x:
         #     print([self.vocabulary.closest(x[:-1]) for x in line])
         data = x.to(self.device)
+        
+        logits, loss = self.model(data, y)
 
-        output = self.model(data)
-
-        loss = self.loss_function(output, y.to(self.device))
+        # loss = self.loss_function(output, y.to(self.device))
 
         self.optimizer.zero_grad()
         loss.backward()
