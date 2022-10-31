@@ -31,7 +31,7 @@ def get_input(context):
     #             '<null>' else null_loc) for token, stimulus in context.get_top_stimuli(size)]
     input = [int(context.vocabulary.vocabulary.index(token)) if stimulus !=
              0 else null_loc for token, stimulus in context.get_top_stimuli(size)]
-    input = np.array(input, np.longlong)
+    input = np.array(input, np.int64)
 
     return input
 
@@ -71,7 +71,7 @@ class RuntimeDP(IterDataPipe):
 
 
 def row_processer(row):
-    return [np.array(row[0], np.longlong), np.array(row[1], np.float32)]
+    return [np.array(row[0], np.int64), np.array(row[1], np.float32)]
 
 
 def train():
