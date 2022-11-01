@@ -117,6 +117,12 @@ class Vocabulary():
 
         return False
 
+    def index_of(self, token):
+        if token in self.vocabulary:
+            return self.vocabulary.index(token)
+
+        return 0
+
     def process_token(self, token, sequence, missing, append_to_vocab=True):
         if self.accept_all or token.pos_ in self.accepted:
             current = []

@@ -29,12 +29,11 @@ class Trainer():
         # for line in x:
         #     print([self.vocabulary.closest(x[:-1]) for x in line])
         data = x.to(self.device)
-        
+        self.optimizer.zero_grad()
         logits, loss = self.model(data, y)
 
         # loss = self.loss_function(output, y.to(self.device))
 
-        self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
 

@@ -1,4 +1,4 @@
-file = f'studies/chat/datasets/alexa/train_small.json'
+file = f'studies/chat/datasets/alexa/train_medium.json'
 start_index = 10
 end_index = 14
 filtered_output = True

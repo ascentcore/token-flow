@@ -91,19 +91,20 @@ class Context():
                 self.graph.add_edge(from_token, to_token,
                                     weight=weight if weight != None else self.initial_weight)
 
-    def from_sequence(self, sequences):
+    def from_sequence(self, sequences, append_to_vocab=True):
         for sequence in sequences:
             for i in range(len(sequence) - 1):
                 for from_token in sequence[i]:
                     for to_token in sequence[i + 1]:
-                        self.connect(from_token, to_token)
+                        if append_to_vocab or (from_token in self.graph.nodes and to_token in self.graph.nodes):
+                            self.connect(from_token, to_token)
 
     def add_text(self, text, skip_connections=False, decrease_on_end=None, append_to_vocab=True):
         _, sequences = self.vocabulary.add_text(
             text, append_to_vocab=append_to_vocab)
 
         if not skip_connections:
-            self.from_sequence(sequences)
+            self.from_sequence(sequences, append_to_vocab=append_to_vocab)
             if decrease_on_end != None:
                 self.decrease_stimulus(decrease_on_end)
 
@@ -134,8 +135,8 @@ class Context():
             decrease = self.temp_decrease
         nodes = self.graph.nodes
         for node in self.graph.nodes():
-
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
+            
 
     def prune_edges(self, threshold):
         long_edges = list(filter(
