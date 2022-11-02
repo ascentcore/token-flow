@@ -7,7 +7,9 @@ torch.manual_seed(12345)
 
 class Trainer():
 
-    def __init__(self, model, vocabulary, lr=1e-3):
+    
+
+    def __init__(self, model, vocabulary, config, lr=1e-3):
         self.vocabulary = vocabulary
         self.device = torch.device(
             'cuda' if torch.cuda.is_available() else 'cpu')
@@ -21,20 +23,23 @@ class Trainer():
         #                                   lr=1e-1,
         #                                   weight_decay=1e-8)
 
-        self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
+        # self.optimizer = torch.optim.Adam(model.parameters(),  lr=lr)
         # self.optimizer = torch.optim.SGD(model.parameters(), lr=lr)
+        self.grad_norm_clip = config.grad_norm_clip
+        self.optimizer = model.configure_optimizers(config)
 
     def batch_train(self, sample):
         x, y = sample
         # for line in x:
         #     print([self.vocabulary.closest(x[:-1]) for x in line])
         data = x.to(self.device)
-        self.optimizer.zero_grad()
+        
         logits, loss = self.model(data, y)
 
-        # loss = self.loss_function(output, y.to(self.device))
-
+        # self.optimizer.zero_grad()
+        self.model.zero_grad(set_to_none=True)
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.grad_norm_clip)
         self.optimizer.step()
 
         return loss

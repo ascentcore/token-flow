@@ -1,4 +1,5 @@
 import os
+import re
 import spacy
 import json
 
@@ -140,9 +141,15 @@ class Vocabulary():
 
             sequence.append(current)
 
-    def get_token_sequence(self, text, append_to_vocab=True):
+    def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False):
         text = text.lower()
-        
+
+        text = re.sub(r"\.([a-zA-Z0-9])", r'. \1', text)
+        text = re.sub(r"([a-zA-Z0-9])\.", r'\1 .', text)
+        text = re.sub(r"([0-9])", r' \1 ', text)
+        text = re.sub(r"[ ]{2,}", r' ', text)
+        text = re.sub(r"([a-zA-Z0-9])\,", r'\1 ,', text)
+        text = re.sub(r"\?([a-zA-Z0-9])", r'? \1', text)
         text = text.strip()
 
         doc = self.nlp(text.lower().strip())
@@ -174,7 +181,7 @@ class Vocabulary():
 
             sequences.append(sequence)
 
-        if self.include_start_end and len(sequences) > 0:
+        if self.include_start_end and len(sequences) > 0 and skip_eol is False:
             sequences[-1].append(['<eol>'])
 
         if len(missing) > 0:
@@ -182,5 +189,5 @@ class Vocabulary():
                 listener(missing)
         return missing, sequences
 
-    def add_text(self, text, append_to_vocab = True):
+    def add_text(self, text, append_to_vocab=True):
         return self.get_token_sequence(text, append_to_vocab=append_to_vocab)
