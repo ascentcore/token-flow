@@ -206,14 +206,14 @@ class Context():
 
         return to_set
 
-    def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False):
+    def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False, max_depth = 10):
         _, sentences = self.vocabulary.get_token_sequence(
             sequence, append_to_vocab=False)
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
                     self.stimulate(
-                        token, stimulus, decrease_factor=decrease_factor, skip_decrease=skip_decrease)
+                        token, stimulus, decrease_factor=decrease_factor, skip_decrease=skip_decrease, max_depth = max_depth)
 
     def get_stimulus_of(self, token):
         return self.graph.nodes[token]['s']
