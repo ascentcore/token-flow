@@ -34,7 +34,7 @@ class Trainer():
         #     print([self.vocabulary.closest(x[:-1]) for x in line])
         data = x.to(self.device)
         
-        logits, loss = self.model(data, y)
+        logits, loss = self.model(data, y.to(self.device))
 
         # self.optimizer.zero_grad()
         self.model.zero_grad(set_to_none=True)
