@@ -136,7 +136,6 @@ class Context():
         nodes = self.graph.nodes
         for node in self.graph.nodes():
             nodes[node]['s'] = max(0, nodes[node]['s'] - decrease)
-            
 
     def prune_edges(self, threshold):
         long_edges = list(filter(
@@ -155,7 +154,11 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=10):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=10, root_node=True):
+        nodes = self.graph.nodes
+        if root_node:
+            for node in self.graph.nodes():
+                nodes[node]['h'] = -1
         if max_depth > 0:
             root = False
             if token in self.vocabulary.vocabulary:
@@ -163,6 +166,7 @@ class Context():
                 graph = self.graph
                 node = graph.nodes[token]
                 current_stimulus = node['s']
+                node['h'] = 0 if root_node else 1
 
                 if stimulus is None:
                     stimulus = self.default_stimulus
@@ -199,21 +203,21 @@ class Context():
                                 if sub_key != token:
                                     weight = node[sub_key]['weight']
                                     self.stimulate(sub_key,
-                                                   weight * current_stimulus * self.neuron_opening, to_set=to_set, max_depth=max_depth - 1)
+                                                   weight * current_stimulus * self.neuron_opening, to_set=to_set, max_depth=max_depth - 1, root_node=False)
 
             if root:
                 nx.set_node_attributes(self.graph, to_set)
 
         return to_set
 
-    def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False, max_depth = 10):
+    def stimulate_sequence(self, sequence, stimulus=None, decrease_factor=None, skip_decrease=False, max_depth=10, skip_eol = False):
         _, sentences = self.vocabulary.get_token_sequence(
-            sequence, append_to_vocab=False)
+            sequence, append_to_vocab=False, skip_eol = skip_eol)
         for sentence in sentences:
             for tokens in sentence:
                 for token in tokens:
                     self.stimulate(
-                        token, stimulus, decrease_factor=decrease_factor, skip_decrease=skip_decrease, max_depth = max_depth)
+                        token, stimulus, decrease_factor=decrease_factor, skip_decrease=skip_decrease, max_depth=max_depth)
 
     def get_stimulus_of(self, token):
         return self.graph.nodes[token]['s']
@@ -222,7 +226,25 @@ class Context():
         return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
     def get_top_stimuli(self, count=10):
-        return sorted([(token, self.get_stimulus_of(token)) for token in self.vocabulary.vocabulary], key=lambda x: x[1], reverse=True)[:count]
+        half = int(count / 2)
+        past = [('<null>', {'s': 0.0001}) for _ in range(half)]
+        current = '<null>', {'s': 0}
+        future = [('<null>', {'s': 0.0001}) for _ in range(half)]
+        for p in self.graph.nodes(data=True):
+            token, d = p
+            if 'h' not in d.keys():
+                break
+            if d['h'] == -1:
+                past.append(p)
+            elif d['h'] == 0:
+                current = p
+            elif d['h'] == 1:
+                future.append(p)
+
+        
+        past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-half:]
+        future = sorted(future, key=lambda x: x[1]['s'], reverse=True)[:half]
+        return [[token, d['s']] for token, d in past + [current] + future]
 
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)

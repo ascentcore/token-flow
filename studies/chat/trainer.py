@@ -21,9 +21,7 @@ include_stimulus = False
 
 
 def get_input(context):
-    null_loc = context.vocabulary.index_of('<null>')
-    input = [int(context.vocabulary.index_of(token)) if stimulus !=
-             0 else null_loc for token, stimulus in context.get_top_stimuli(size)]
+    input = [int(context.vocabulary.index_of(token)) for token, stimulus in context.get_top_stimuli(size)]
     input = np.array(input, np.int64)
 
     return input
