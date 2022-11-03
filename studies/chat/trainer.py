@@ -63,7 +63,7 @@ class ChatDP(IterDataPipe):
                             yield input, output
                             input = get_input(talker)
 
-                listener.stimulate_sequence(message)
+                listener.stimulate_sequence(message, skip_eol=True)
                 buf = talker
                 talker = listener
                 listener = buf
