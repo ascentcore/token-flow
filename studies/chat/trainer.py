@@ -52,7 +52,7 @@ class ChatDP(IterDataPipe):
                 input = get_input(talker)
 
                 _, sentences = talker.vocabulary.get_token_sequence(
-                    message, append_to_vocab=False)
+                    message, append_to_vocab=False, skip_eol=True)
                 for sentence in sentences:
                     for tokens in sentence:
                         for token in tokens:
