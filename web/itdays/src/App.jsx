@@ -51,6 +51,18 @@ import end1 from '/public/t-b.png'
 import end2 from '/public/t-m.png'
 import Pptx from './apps/Pptx';
 
+import s1 from '/public/states/s1.png'
+import s2 from '/public/states/s2.png'
+import s3 from '/public/states/s3.png'
+import s4 from '/public/states/s4.png'
+import s5 from '/public/states/s5.png'
+import s6 from '/public/states/s6.png'
+import s7 from '/public/states/s7.png'
+import s8 from '/public/states/s8.png'
+import s9 from '/public/states/s9.png'
+import s10 from '/public/states/s10.png'
+import s11 from '/public/states/s11.png'
+
 function App() {
     const [loading, setLoading] = useState(false);
 
@@ -321,6 +333,17 @@ function App() {
                     'Player',
                     StimulatorIcon,
                     <Stimulator stimulate={stimulate} />
+                )}
+            ></Icon>
+             <Icon
+                name="Working Together"
+                icon={PresentationIcon}
+                onClick={openGeneric(
+                    'PowerPixel: Working Together',
+                    PresentationIcon,
+                    <Pptx images={[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11]} />,
+                    700,
+                    800
                 )}
             ></Icon>
             <Icon

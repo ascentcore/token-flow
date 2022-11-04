@@ -11,7 +11,6 @@ import Chatbots from '/public/chatbots.png';
 const images = [
   Baby,
   MechanicalVsSoftware,
-  Politician,  
   Chatbots,
 ];
 
