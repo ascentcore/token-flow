@@ -4,6 +4,8 @@ import m1 from '/public/drive.png';
 import m2 from '/public/narnia.png';
 import m3 from '/public/basic.png';
 import m4 from '/public/context.mp4';
+import m5 from '/public/meaning-of-life.png';
+import m6 from '/public/messages.png';
 
 export default () => (
   <Tabs>
@@ -12,6 +14,8 @@ export default () => (
       <Tab>Behavior</Tab>
       <Tab>Idea</Tab>
       <Tab>Approach</Tab>
+      <Tab>Use Case #1</Tab>
+      <Tab>Use Case #2</Tab>
     </TabList>
 
     <TabPanel>
@@ -44,6 +48,19 @@ export default () => (
         </div>
       </div>
     </TabPanel>
-   
+    <TabPanel>
+      <div class="image-slide">
+        <div class="image-container" style={{marginTop: 20}}>
+          <img src={m5} alt="Logo" />
+        </div>
+      </div>
+    </TabPanel>
+    <TabPanel>
+      <div class="image-slide">
+        <div class="image-container" style={{marginTop: 20}}>
+          <img src={m6} alt="Logo" />
+        </div>
+      </div>
+    </TabPanel>
   </Tabs>
 );
