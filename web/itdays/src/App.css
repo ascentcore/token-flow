@@ -147,7 +147,7 @@ body {
   background: #eab435;
 }
 
-.image-container img {
+.image-container img, .image-container video {
   width: 100%;
   height: auto;
 }
@@ -378,5 +378,43 @@ table thead tr th:last-of-type {
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+.clippy {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+
+.clippy img {
+  width: 180px;
+  height: auto;
+}
+
+.clippy .message {
+  position: absolute;
+  bottom: 200px;
+  right: 10px;
+  width: 200px;
+  border: 2px solid rgb(100,100,100);
+  border-radius: 5px;
+  background-color: #eeecc7;
+  padding: 10px;
+  animation: messageBounce 2s infinite;
+}
+
+
+@keyframes messageBounce {
+  0% {
+    bottom: 200px;
+  }
+  50% {
+    bottom: 210px;
+  }
+  100% {
+    bottom: 200px;
   }
 }

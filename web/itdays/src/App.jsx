@@ -34,8 +34,7 @@ import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
 import Stimulator from './apps/Stimulator';
 import { useState } from 'react';
-import Embeddings from './apps/Embeddings';
-import Motivation from './apps/Motivation';
+
 
 import m1 from '/public/drive.png';
 import m2 from '/public/narnia.png';
@@ -62,6 +61,9 @@ import s8 from '/public/states/s8.png'
 import s9 from '/public/states/s9.png'
 import s10 from '/public/states/s10.png'
 import s11 from '/public/states/s11.png'
+import Clippy from './apps/Clippy';
+
+const height = window.innerHeight
 
 function App() {
     const [loading, setLoading] = useState(false);
@@ -130,6 +132,7 @@ function App() {
     const openContext = (context, index) => () => {
         setTimeout(() => {
             const box = new WinBox({
+                root: document.querySelector('.App'),
                 x:
                     index === undefined
                         ? 'center'
@@ -161,6 +164,7 @@ function App() {
 
     const openVocabulary = () => {
         const box = new WinBox({
+            root: document.querySelector('.App'),
             x: 'right',
             y: 'center',
             width: 200,
@@ -186,6 +190,7 @@ function App() {
 
     const openNewContext = () => {
         const box = new WinBox({
+            root: document.querySelector('.App'),
             x: 'center',
             y: 'center',
             width: 550,
@@ -222,6 +227,7 @@ function App() {
         () => {
             setTimeout(() => {
                 const box = new WinBox({
+                    root: document.querySelector('.App'),
                     x,
                     y,
                     width,
@@ -277,9 +283,9 @@ function App() {
                 onClick={openGeneric(
                     'PowerPixel: Motivation',
                     PresentationIcon,
-                    <Pptx images={[m1, m2, m3, m4, m5, m6]} />,
-                    700,
-                    800
+                    <Pptx images={[m1, m2, m3, m4, m5, m6]} name="motivation"/>,
+                    height - 200,
+                    height - 200
                 )}
             ></Icon>
             <Icon
@@ -341,9 +347,9 @@ function App() {
                 onClick={openGeneric(
                     'PowerPixel: Working Together',
                     PresentationIcon,
-                    <Pptx images={[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11]} />,
-                    700,
-                    800
+                    <Pptx images={[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11]} name="workingtogether"/>,
+                    height - 200,
+                    height - 200
                 )}
             ></Icon>
             <Icon
@@ -352,9 +358,9 @@ function App() {
                 onClick={openGeneric(
                     'PowerPixel: Phone calls with trump',
                     PresentationIcon,
-                    <Pptx images={[endtitle, endm, end1, end2]} />,
-                    700,
-                    800
+                    <Pptx images={[endtitle, endm, end1, end2]} name="phonecalls"/>,
+                    height - 200,
+                    height - 200
                 )}
             ></Icon>
             <Icon name="Trash" icon={TrashIcon}></Icon>
@@ -366,6 +372,7 @@ function App() {
                     <img src={TheNeuralNet} class="loading3"></img>
                 </div>
             )}
+            <Clippy />
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { triggerEvent } from '../events';
 // import 'react-tabs/style/react-tabs.css';
 
-export default ({ images }) => {
+export default ({ images, name }) => {
     const [index, setIndex] = useState(0);
 
     const advance = () => {
@@ -9,6 +10,10 @@ export default ({ images }) => {
             prevState < images.length - 1 ? prevState + 1 : 0
         );
     };
+
+    useEffect(() => {
+        triggerEvent('pptx', `${name}-slide-${index}`);
+    }, [index]);
 
     const handler = (e) => {
         if (e.key === 'ArrowRight' || e.key === ' ') {
@@ -29,7 +34,7 @@ export default ({ images }) => {
                 {images[index].indexOf('mp4') === -1 ? (
                     <img src={images[index]} alt="Slide" />
                 ) : (
-                    <video width="600" height="600" controls>
+                    <video width="600" height="600" autoPlay="1">
                         <source src={images[index]} type="video/mp4" />
                     </video>
                 )}
