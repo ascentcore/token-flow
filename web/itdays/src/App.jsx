@@ -32,11 +32,12 @@ import { registerListener, triggerEvent, unregisterListener } from './events';
 import CheatSheets from './apps/CheatSheets';
 import CreateContext from './apps/CreateContext';
 import Datasets from './apps/Datasets';
-import Stimulator from './apps/Stimulator';
+import Stimulator from './apps/Player';
 import { useState } from 'react';
 
 
 import m1 from '/public/drive.png';
+import m11 from '/public/gpt.mp4';
 import m2 from '/public/narnia.png';
 import m3 from '/public/basic.png';
 import m4 from '/public/context.mp4';
@@ -63,6 +64,11 @@ import s10 from '/public/states/s10.png'
 import s11 from '/public/states/s11.png'
 import Clippy from './apps/Clippy';
 
+import c1 from '/public/conclusion/c-1.png'
+import c2 from '/public/conclusion/c-2.png'
+import c3 from '/public/conclusion/c-3.png'
+import c4 from '/public/conclusion/c-4.png'
+
 const height = window.innerHeight
 
 function App() {
@@ -81,7 +87,7 @@ function App() {
     };
 
     const stimulate = (context, token) => {
-        axios
+        return axios
             .post(
                 `http://localhost:8081/stimulate${
                     context != null ? `/${context}` : ''
@@ -236,6 +242,7 @@ function App() {
                     icon: icon,
                     border: 4,
                     onclose: () => {
+                        triggerEvent('closed', title);
                         root.unmount();
                     },
                 });
@@ -283,9 +290,9 @@ function App() {
                 onClick={openGeneric(
                     'PowerPixel: Motivation',
                     PresentationIcon,
-                    <Pptx images={[m1, m2, m3, m4, m5, m6]} name="motivation"/>,
+                    <Pptx images={[m1, m11, m2, m3, m4, m5, m6]} name="motivation"/>,
                     height - 200,
-                    height - 200
+                    height - 100
                 )}
             ></Icon>
             <Icon
@@ -323,7 +330,7 @@ function App() {
                     'bottom'
                 )}
             ></Icon>
-            <Icon
+            {/* <Icon
                 name="Cheat Sheets"
                 icon={FolderIcon}
                 onClick={openGeneric(
@@ -331,16 +338,8 @@ function App() {
                     FolderIcon,
                     <CheatSheets openGeneric={openGeneric} />
                 )}
-            ></Icon>
-            <Icon
-                name="Player"
-                icon={StimulatorIcon}
-                onClick={openGeneric(
-                    'Player',
-                    StimulatorIcon,
-                    <Stimulator stimulate={stimulate} />
-                )}
-            ></Icon>
+            ></Icon> */}
+            
              <Icon
                 name="Working Together"
                 icon={PresentationIcon}
@@ -348,8 +347,8 @@ function App() {
                     'PowerPixel: Working Together',
                     PresentationIcon,
                     <Pptx images={[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11]} name="workingtogether"/>,
-                    height - 200,
-                    height - 200
+                    height - 150,
+                    height - 50
                 )}
             ></Icon>
             <Icon
@@ -360,16 +359,40 @@ function App() {
                     PresentationIcon,
                     <Pptx images={[endtitle, endm, end1, end2]} name="phonecalls"/>,
                     height - 200,
-                    height - 200
+                    height - 100
                 )}
             ></Icon>
-            <Icon name="Trash" icon={TrashIcon}></Icon>
+             <Icon
+                name="Comparison"
+                icon={PresentationIcon}
+                onClick={openGeneric(
+                    'PowerPixel: Comparison',
+                    PresentationIcon,
+                    <Pptx images={[c1,c2,c3,c4]} name="comparison"/>,
+                    undefined,
+                    height
+                )}
+            ></Icon>
+            <Icon
+                name="Player"
+                icon={StimulatorIcon}
+                onClick={openGeneric(
+                    'Player',
+                    StimulatorIcon,
+                    <Stimulator stimulate={stimulate} />,
+                    362,
+                    211,
+                    undefined,
+                    'bottom'
+                )}
+            ></Icon>
+            <Icon name="Trash" icon={TrashIcon} style={{position: 'fixed', right: 50, bottom: 10}}></Icon>
 
             {loading && (
                 <div className="loading" onClick={() => setLoading(false)}>
-                    <img src={ThePolitician} class="loading2"></img>
-                    <img src={TheSausage} class="loading1"></img>
-                    <img src={TheNeuralNet} class="loading3"></img>
+                    <img src={ThePolitician} className="loading2"></img>
+                    <img src={TheSausage} className="loading1"></img>
+                    <img src={TheNeuralNet} className="loading3"></img>
                 </div>
             )}
             <Clippy />

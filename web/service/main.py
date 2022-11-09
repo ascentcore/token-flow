@@ -46,55 +46,19 @@ sample1.add_context(mechanical)
 sample1.add_context(software)
 sample1.delete_context('default')
 
-sample2 = Dataset(Embeddings(accept_all=True,
-                             include_start_end=False,
-                             include_punctuation=False,
-                             use_lemma=False,
-                             add_lemma_to_vocab=False), name='Politics')
-
-
-macron = Context('Macron', sample2.vocabulary,
-                 initial_weight=0.7,
-                 weight_increase=0.1,
-                 temp_decrease=0.05)
-
-macron.add_text('''French President Emmanuel Macron said on Tuesday his phone calls President Donald Trump were just like sausages: better not explain what’s inside.
-
-During a news conference with Israeli Prime Minister Benjamin Netanyahu, Macron was asked about a CNN report on Monday saying that a phone call between the French leader and Trump last week had been “terrible”.
-
-Borrowing a famous quote from 19th century Prussian statesman Otto von Bismarck, Macron summed up his policy of refraining from making off-the-record comments about his conversations with other world leaders.
-
-“As Bismarck used to say, if we explained to people how sausages were made, it’s unlikely they’d keep eating them,” Macron told reporters.
-
-“So I like it when people see the finished meal, but I’m not convinced the kitchen commentary helps with delivering the meal or eating it,” Macron added.
-
-A readout from the French presidency of Macron’s call with Trump last week said the 40-year old president had told Trump that his decision to slap tariffs on the exports of U.S. allies were both “illegal” and a “mistake”.
-
-The shorter White House readout of the same call said the conversation had focused on trade and immigration, without elaborating.
-
-“Macron thought he would be able to speak his mind, based on the relationship. But Trump can’t handle being criticised like that,” CNN quoted an unidentified source as saying. “Just bad. It was terrible.”
-
-Macron, appalled by his predecessor Francois Hollande’s frequent off-the-record comments to journalists, has kept the press at a distance since his election last year and banned his aides from giving behind-the-scenes accounts of his presidency.
-
-“You can go and ask the people who make comments, but here in Paris we don’t make comments on how it went, or how hot, cold, warm or terrible things are. We just go ahead and do things,” Macron said.
-
-He added that he would have a “useful” and “frank” exchange with Trump at the next G7 summit in Canada on June 7-8 about both issues on which they agree and those where they disagree.''')
-
-sample2.delete_context('default')
-sample2.add_context(macron)
-
 
 basic_ds = Dataset(vocabulary=vocabulary, name="Basic Dataset")
+
+agents = Dataset.load('contexts/agents')
+agents.delete_context('default')
+agents.settings['name'] = "Chatbots"
 # basic_ds.add_text('The rain in spain falls mainly on the plain.')
 # basic_ds.add_text('A software engine is a computer program, or part of a computer program, that serves as the core foundation for a larger piece of software. This term is often used in game development, in which it typically refers to either a graphics engine or a game engine around which the rest of a video game is developed. While the term can also be used in other areas of software development, its particular meaning can be more nebulous in those instances. A software engine can be developed by a company that is using it, or may be developed by another company and then licensed to other developers. When used in the general context of computer software development, a software engine typically refers to the core elements of a particular program. This usually does not include features such as the user interface (UI) and numerous art assets added to the core engine itself. For an operating system (OS), for example, the software engine might be the source code that establishes file hierarchy, input and output methods, and how the OS communicates with other software and hardware. The exact contents of such an engine can vary from program to program, however. In computer and console game development, a software engine typically refers to either a game’s graphics engine or the overall game engine. The graphics engine for a game is typically the software used to properly render out the graphics seen by players. This often uses art assets created in other programs, which are then ported into the graphics engine for use during game play. The use of a software engine for the graphics of a game can make rendering much easier, and may also simplify the process of ensuring software and hardware compatibility.')
 datasets = [
     basic_ds,
     sample1,
-    sample2,
-    Dataset.load('contexts/agents'),
+    agents
 ]
-
-
 dataset = datasets[0]
 
 

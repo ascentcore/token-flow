@@ -15,31 +15,31 @@ export default () => (
     </TabList>
 
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container">
+      <div className="image-slide">
+        <div className="image-container">
           <img src={fox1} alt="Logo" />
         </div>
         <h3>The quick brown fox jumps over the ...</h3>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container">
+      <div className="image-slide">
+        <div className="image-container">
           <img src={fox2} alt="Logo" />
         </div>
         <h3>The quick brown fox jumps over the lazy dog</h3>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
           <img src={fox3} alt="Logo" />
         </div>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
           <img src={fox4} alt="Logo" />
         </div>
       </div>

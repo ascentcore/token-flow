@@ -7,8 +7,10 @@ const messages = [
     'Looks like you are trying to do a presentation. Introduce yourself.',
     'With a high impostor syndrome',
     "Do the exercise! You'll find out who are the geeks and who are the nerds.",
-    'Tell them about the language models',
-    'I am Clippy, your friendly assistant.',
+    'Is there something useful that we can get out of this?',
+    'Looks... kinda dumb.',
+    'We want demo, we want demo, we want demo!',
+    'Uuuu, sarcasm! Can you do that?'
 ];
 
 export default (props) => {
@@ -30,26 +32,59 @@ export default (props) => {
 
         registerListener('tabChange', (e) => {
             setShowMessage((val) => {
+                console.log(e);
                 if (e === 'profile-1') {
                     setIndex(1);
+                    return true;
                 }
-                return true;
+                return false;
+            });
+        });
+
+        registerListener('closed', (e) => {
+            
+            setShowMessage((val) => {
+                console.log(e)
+                if (e === 'Profile') {
+                    setIndex(2);
+                    return true;
+                } else if (e === 'Exercise') {
+                    setIndex(3);
+                    return true;
+                } else if (e === 'PowerPixel: Motivation') {
+                    setIndex(5);
+                    return true;
+                }
+                return false;
             });
         });
 
         registerListener('pptx', (e) => {
+            
             setShowMessage((val) => {
-                console.log(e);
-                // if (e === 'profile-1') {
-                //     setIndex(1);
-                // }
-                // return true;
+                console.log(e)
+                if (e === 'motivation-slide-3') {
+                    setIndex(4);
+                    return true;
+                } else if (e === 'phonecalls-slide-3') {
+                    setIndex(6);
+                    return true;
+                }
+                return false;
             });
         });
+
+
+        registerListener('talk', (e) => {  
+            setShowMessage((val) => {
+                setMessage(e);
+                return true
+            });
+        });
+
     }, []);
 
     useEffect(() => {
-        console.log(idx);
         if (idx < messages.length) {
             setMessage(messages[idx]);
         }

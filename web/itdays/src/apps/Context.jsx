@@ -16,7 +16,7 @@ export default (props) => {
 
   const containerRef = useRef(null);
   const [data, setData] = useState(null);
-  const [threshold, setThreshold] = useState(0);
+  const [threshold, setThreshold] = useState(0.1);
   const [topTokens, setTopTokens] = useState([]);
   const [svgContainer, setSvgContainer] = useState(null);
   const [sim, setSim] = useState(null);

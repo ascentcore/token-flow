@@ -215,7 +215,7 @@ export default function Graph(props) {
           const updatedLinks = graph.links.map((d) => Object.assign({}, d));
           sim.nodes(updatedNodes);
           sim.force('link').links(updatedLinks);
-          sim.alpha(1).restart();
+          // sim.alpha(1).restart();
 
           const newNode = nodes
             .data(updatedNodes, (d) => d.id)
@@ -240,7 +240,7 @@ export default function Graph(props) {
           doLine(newLinks);
           setNodes(newNode);
           setLinks(newLinks);
-          sim.alpha(1).restart();
+          // sim.alpha(1).restart();
           adjustOpacity();
         }
       });

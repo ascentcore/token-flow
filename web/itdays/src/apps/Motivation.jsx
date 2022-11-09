@@ -19,29 +19,29 @@ export default () => (
     </TabList>
 
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container">
+      <div className="image-slide">
+        <div className="image-container">
           <img src={m1} alt="Logo" />
         </div>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container">
+      <div className="image-slide">
+        <div className="image-container">
           <img src={m2} alt="Logo" />
         </div>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
           <img src={m3} alt="Logo" />
         </div>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
         <video width="600" height="600" controls>
           <source src={m4} type="video/mp4"/>
         </video>
@@ -49,15 +49,15 @@ export default () => (
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
           <img src={m5} alt="Logo" />
         </div>
       </div>
     </TabPanel>
     <TabPanel>
-      <div class="image-slide">
-        <div class="image-container" style={{marginTop: 20}}>
+      <div className="image-slide">
+        <div className="image-container" style={{marginTop: 20}}>
           <img src={m6} alt="Logo" />
         </div>
       </div>

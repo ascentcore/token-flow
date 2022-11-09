@@ -20,22 +20,22 @@ export default () => (
         </TabList>
 
         <TabPanel>
-            <div class="image-container">
+            <div className="image-container">
                 <img src={swdev} alt="Logo" />
             </div>
         </TabPanel>
         <TabPanel>
-            <div class="image-container">
+            <div className="image-container">
                 <img src={cto} alt="Logo" />
             </div>
         </TabPanel>
         <TabPanel>
-            <div class="image-container">
+            <div className="image-container">
                 <img src={research} alt="Logo" />
             </div>
         </TabPanel>
         <TabPanel>
-            <div class="image-container">
+            <div className="image-container">
                 <img src={mu} alt="Logo" />
             </div>
         </TabPanel>
