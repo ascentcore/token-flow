@@ -72,7 +72,7 @@ import c4 from '/public/conclusion/c-4.png'
 const height = window.innerHeight
 
 function App() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const resetStimuli = (context) => () => {
         axios
@@ -228,7 +228,8 @@ function App() {
             width = 600,
             height = 350,
             x = 'center',
-            y = 'center'
+            y = 'center',
+            classes = [],
         ) =>
         () => {
             setTimeout(() => {
@@ -241,6 +242,7 @@ function App() {
                     title: title,
                     icon: icon,
                     border: 4,
+                    class: classes,
                     onclose: () => {
                         triggerEvent('closed', title);
                         root.unmount();
@@ -381,9 +383,10 @@ function App() {
                     StimulatorIcon,
                     <Stimulator stimulate={stimulate} />,
                     362,
-                    211,
+                    186,
                     undefined,
-                    'bottom'
+                    'bottom',
+                    ['no-border']
                 )}
             ></Icon>
             <Icon name="Trash" icon={TrashIcon} style={{position: 'fixed', right: 50, bottom: 10}}></Icon>

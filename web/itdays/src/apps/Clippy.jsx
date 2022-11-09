@@ -10,7 +10,10 @@ const messages = [
     'Is there something useful that we can get out of this?',
     'Looks... kinda dumb.',
     'We want demo, we want demo, we want demo!',
-    'Uuuu, sarcasm! Can you do that?'
+    'Uuuu, sarcasm! Can you do that?',
+    '... lazy dog!',
+    'What about the sausage?',
+    'Not that stupid after all ...'
 ];
 
 export default (props) => {
@@ -36,6 +39,9 @@ export default (props) => {
                 if (e === 'profile-1') {
                     setIndex(1);
                     return true;
+                } else if (e === 'exercise-1') {
+                    setIndex(7);
+                    return true;
                 }
                 return false;
             });
@@ -53,6 +59,12 @@ export default (props) => {
                     return true;
                 } else if (e === 'PowerPixel: Motivation') {
                     setIndex(5);
+                    return true;
+                } else if (e === 'PowerPixel: Working Together') {
+                    setIndex(8);
+                    return true;
+                } else if (e === 'PowerPixel: Comparison') {
+                    setIndex(9);
                     return true;
                 }
                 return false;
