@@ -86,6 +86,7 @@ export default (props) => {
         ref={canvasRef}
         width={(data.length + 2) }
         height={(data.length + 2)}
+        style={{width: 400}}
       />
     </div>
   );

@@ -6,14 +6,30 @@ import Clippy from '/public/clippy.png';
 const messages = [
     'Looks like you are trying to do a presentation. Introduce yourself.',
     'With a high impostor syndrome',
-    "Do the exercise! You'll find out who are the geeks and who are the nerds.",
+    "Do the exercise! You'll find out who are the geeks.",
     'Is there something useful that we can get out of this?',
-    'Looks... kinda dumb.',
+    'Looks... kinda dumb. Like somebody I know.',
     'We want demo, we want demo, we want demo!',
     'Uuuu, sarcasm! Can you do that?',
-    '... lazy dog!',
+    'Somebody setup too many printers in its days. Good job.',
     'What about the sausage?',
-    'Not that stupid after all ...'
+    'Not that stupid after all ... unlike you!',
+    'Is that a Simpsons reference? Booo, you are old!',
+    [
+        'Hi!',
+        'Do you have 5 minutes?',
+        'Hello',
+        'Dud',
+        'Dude',
+        'I need help',
+        'I have a question',
+        'What are we eating today?',
+        'Can you please give me feedback',
+        'I need this by the end of the day!',
+        'I\'m stuck!',
+        'Can we skip the meeting today?',
+        'U there?'
+    ],
 ];
 
 export default (props) => {
@@ -42,15 +58,17 @@ export default (props) => {
                 } else if (e === 'exercise-1') {
                     setIndex(7);
                     return true;
+                } else if (e === 'exercise-2') {
+                    setIndex(10);
+                    return true;
                 }
                 return false;
             });
         });
 
         registerListener('closed', (e) => {
-            
             setShowMessage((val) => {
-                console.log(e)
+                console.log(e);
                 if (e === 'Profile') {
                     setIndex(2);
                     return true;
@@ -72,28 +90,28 @@ export default (props) => {
         });
 
         registerListener('pptx', (e) => {
-            
             setShowMessage((val) => {
-                console.log(e)
+                console.log(e);
                 if (e === 'motivation-slide-3') {
                     setIndex(4);
                     return true;
                 } else if (e === 'phonecalls-slide-3') {
                     setIndex(6);
                     return true;
+                } else if (e === 'motivation-slide-6') {
+                    setIndex(11);
+                    return true;
                 }
                 return false;
             });
         });
 
-
-        registerListener('talk', (e) => {  
+        registerListener('talk', (e) => {
             setShowMessage((val) => {
                 setMessage(e);
-                return true
+                return true;
             });
         });
-
     }, []);
 
     useEffect(() => {
@@ -105,7 +123,15 @@ export default (props) => {
     if (message && showMessage)
         return (
             <div className="clippy" onClick={() => setShowMessage(false)}>
-                <div className="message">{message}</div>
+                <div class="messages">
+                    {typeof message === 'string' ? (
+                        <div className="message">{message}</div>
+                    ) : (
+                        message.map((msg) => (
+                            <div className="message">{msg}</div>
+                        ))
+                    )}
+                </div>
                 <img src={Clippy} />
             </div>
         );

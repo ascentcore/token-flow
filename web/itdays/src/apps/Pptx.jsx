@@ -30,6 +30,14 @@ export default ({ images, name }) => {
 
     return (
         <div className="image-slide" onClick={advance}>
+            <div
+                class="progress-bar"
+                style={{
+                    top: 4,
+                    bottom: 'auto',
+                    width: `${(index / (images.length - 1)) * 100}%`,
+                }}
+            ></div>
             <div className="image-container">
                 {images[index].indexOf('mp4') === -1 ? (
                     <img src={images[index]} alt="Slide" />
@@ -39,6 +47,10 @@ export default ({ images, name }) => {
                     </video>
                 )}
             </div>
+            <div
+                class="progress-bar"
+                style={{ width: `${(index / (images.length - 1)) * 100}%` }}
+            ></div>
         </div>
     );
 };

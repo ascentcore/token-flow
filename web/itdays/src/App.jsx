@@ -277,8 +277,8 @@ function App() {
                     'Exercise',
                     ExerciseIcon,
                     <Exercise />,
-                    500,
-                    700
+                    height - 250,
+                    height - 100
                 )}
             ></Icon>
             {/* <Icon
@@ -357,7 +357,7 @@ function App() {
                 name="Phone Calls"
                 icon={PresentationIcon}
                 onClick={openGeneric(
-                    'PowerPixel: Phone calls with trump',
+                    'PowerPixel: Phone call with ...',
                     PresentationIcon,
                     <Pptx images={[endtitle, endm, end1, end2]} name="phonecalls"/>,
                     height - 200,
