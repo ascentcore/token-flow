@@ -1,0 +1,316 @@
+{
+    "t_bde29ce2-4153-4056-9eb7-f4ad710505fe": {
+      "article_url": "https://www.washingtonpost.com/blogs/compost/wp/2018/04/05/endangered-species-are-the-real-threats/",
+      "config": "C",
+      "content": [
+        {
+          "message": "Are you a fan of Google or Microsoft?",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Both are excellent technology they are helpful in many ways. For the security purpose both are super.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "I'm not  a huge fan of Google, but I use it a lot because I have to. I think they are a monopoly in some sense. ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Google provides online related services and products, which includes online ads, search engine and cloud computing.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah, their services are good. I'm just not a fan of intrusive they can be on our personal lives. ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Google is leading the alphabet subsidiary and will continue to be the Umbrella company for Alphabet internet interest.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Did you know Google had hundreds of live goats to cut the grass in the past? \n",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "It is very interesting. Google provide \"Chrome OS\" which is a light weight OS. Google provided a lot of hardware mainly in 2010 to 2015. ",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "I like Google Chrome. Do you use it as well for your browser? ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Yes.Google is the biggest search engine and Google service figure out top 100 website, including Youtube and Blogger.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "By the way, do you like Fish? ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Yes. They form a sister group of tourniquets- they make the sea water clean and remove the dust from it. Fish is the biggest part in the eco-system.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Did you know that a seahorse is the only fish to have a neck? ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Freshwater fish only drink water through the skin via Osmosis, Saltwater fish drink water through the mouth. Dolphins are friendly to human beings.",
+          "agent": "agent_2",
+          "sentiment": "Happy",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Interesting, they also have gills. Did you know that jellyfish are immortal? ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Yes. Fish is the important resources of human world wide for the commercial and subsistence fish hunts the fish in the wild fisheries.",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "What about cats, do you like cats? I'm a dog fan myself. ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS3"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "The cat is referred as domestic cat and wild cat. They make our world very clean from rats! ",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS3"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah, cats can be cool, but they sure do spend a lot of their time sleeping. ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS3"],
+          "turn_rating": "Good"
+        },
+        {
+          "message": "Cats hear the sounds too faint or too high frequency human ears can hear. ",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS3"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "I heard that too. Well, it was nice chatting with you. Have a good day. ",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS3"],
+          "turn_rating": "Excellent"
+        }
+      ],
+      "conversation_rating": {
+        "agent_1": "Excellent",
+        "agent_2": "Excellent"
+      }
+    },
+    "t_1abc9c37-387d-4013-8691-88ef8c010e58": {
+      "article_url": "https://www.washingtonpost.com/entertainment/theater_dance/womens-voices-notes-an-exotic-imogen-and-a-down-home-hound/2018/01/21/559a4ad0-feb2-11e7-bb03-722769454f82_story.html",
+      "config": "B",
+      "content": [
+        {
+          "message": "do you like dance?",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes  I do. Did you know Bruce Lee was a cha cha dancer?",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes he even won a hardcore cha cha championship in 1958",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah. Did you know Tupac was a ballet dancer?",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes and he even was in the production of the nutcracker",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah. Ballet dancer go through 4 pairs of shoes a week",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes that is a lot of shoes and also a lot of money",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah true. Did you know babies are really good at dancing?",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes and they smile more when they hit the beat",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah they are much smarter than we give them credit for",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "True Did you know Jackson had a patent on a dancing device?",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes it helped him smooth out his dance moves",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS1"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Nice. Do you like Shakespeare?",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes I do. Do you know that he popularized many phrases",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes like good riddance, in my heart of hearts and such",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes and then he also invented names like Jessica, Olivia and Miranda",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes. And for his works you have to use old english for it to make sense",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes otherwise the rhymes and puns do not seem to work out",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yes. He lived at the same time as Pocahontas too",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "I wonder if they met how that would go from there",
+          "agent": "agent_2",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["FS2"],
+          "turn_rating": "Excellent"
+        },
+        {
+          "message": "Yeah interesting point. Nice chat",
+          "agent": "agent_1",
+          "sentiment": "Curious to dive deeper",
+          "knowledge_source": ["Personal Knowledge"],
+          "turn_rating": "Excellent"
+        }
+      ],
+      "conversation_rating": {
+        "agent_1": "Excellent",
+        "agent_2": "Excellent"
+      }
+    }
+}

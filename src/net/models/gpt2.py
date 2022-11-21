@@ -158,8 +158,12 @@ class GPT(nn.Module):
                 'gpt-nano':     dict(n_layer=3, n_head=3, n_embd=48),
             }[config.model_type])
 
+        pretrained_wte = nn.Embedding(config.vocab_size, config.n_embd)
+        pretrained_wte.load_state_dict({'weight': config.pretrained_embeddings})
+        pretrained_wte.weight.requires_grad = False
+
         self.transformer = nn.ModuleDict(dict(
-            wte=nn.Embedding(config.vocab_size, config.n_embd),
+            wte=pretrained_wte,
             wpe=nn.Embedding(config.block_size, config.n_embd),
             drop=nn.Dropout(config.embd_pdrop),
             h=nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
@@ -292,8 +296,9 @@ class GPT(nn.Module):
         # token embeddings of shape (b, t, n_embd)
         tok_emb = self.transformer.wte(idx)
         # position embeddings of shape (1, t, n_embd)
-        pos_emb = self.transformer.wpe(pos)
-        x = self.transformer.drop(tok_emb + pos_emb)
+        # pos_emb = self.transformer.wpe(pos)
+        # x = self.transformer.drop(tok_emb + pos_emb)    
+        x = tok_emb
         for block in self.transformer.h:
             x = block(x)
         x = self.transformer.ln_f(x)

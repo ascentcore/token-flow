@@ -225,11 +225,14 @@ class Context():
     def get_stimuli(self):
         return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
-    def get_top_stimuli(self, count=10):
+    def get_top_stimuli(self, count=10, history=None, next=None):
         half = int(count / 2)
-        past = [('<null>', {'s': 0.0001}) for _ in range(half)]
+        history_stimuli = history if history else half
+        next_stimuli = next if next else half
+
+        past = [('<null>', {'s': 0.0001}) for _ in range(history_stimuli)]
         current = '<null>', {'s': 0}
-        future = [('<null>', {'s': 0.0001}) for _ in range(half)]
+        future = [('<null>', {'s': 0.0001}) for _ in range(next_stimuli)]
         for p in self.graph.nodes(data=True):
             token, d = p
             if 'h' not in d.keys():
@@ -242,8 +245,8 @@ class Context():
                 future.append(p)
 
         
-        past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-half:]
-        future = sorted(future, key=lambda x: x[1]['s'], reverse=True)[:half]
+        past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-history_stimuli:]
+        future = sorted(future, key=lambda x: x[1]['s'], reverse=True)[:next_stimuli]
         return [[token, d['s']] for token, d in past + [current] + future]
 
     def get_matrix(self):

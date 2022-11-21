@@ -15,13 +15,14 @@ from src.net.models.residual import ResidualModel
 from src.net.models.autoencoder import AE
 from src.net.models.utils import CfgNode
 from src.net.trainer import Trainer
-from config import n_dim, size, vocabulary, contexts, config, chat_file
+from src.embeddings.embeddings import get_embeddings
+from config import n_dim, size, history, next, vocabulary, contexts, config, chat_file
 path = f'studies/index_test'
 include_stimulus = False
 
 
 def get_input(context):
-    input = [int(context.vocabulary.index_of(token)) for token, stimulus in context.get_top_stimuli(size)]
+    input = [int(context.vocabulary.index_of(token)) for token, stimulus in context.get_top_stimuli(size, history, next)]
     input = np.array(input, np.int64)
 
     return input
@@ -79,12 +80,25 @@ def train():
 
     datapipe = ChatDP(contexts, size)
     datapipe = datapipe.map(row_processer)
-    dl = DataLoader(dataset=datapipe, batch_size=32,
+    dl = DataLoader(dataset=datapipe, batch_size=4,
                     num_workers=4)
     print('###################################')
     print(f'Vocabulary size: {len(vocabulary.vocabulary)}')
     model_name = f"gpt-2-{config.block_size}-{config.vocab_size}-{config.n_embd}-{config.n_layer}-{config.n_head}"
     print(model_name)
+
+    matrix_len = len(vocabulary.vocabulary)
+    pretrained_embeddings = torch.zeros((matrix_len, n_dim))
+    embeddings = get_embeddings()
+
+    for i, word in enumerate(vocabulary.vocabulary):
+        try: 
+            pretrained_embeddings[i] = torch.tensor(embeddings[word])
+        except KeyError:
+            pretrained_embeddings[i] = torch.tensor(np.random.normal(scale=0.6, size=(n_dim, )))
+
+    config.pretrained_embeddings = pretrained_embeddings
+
     model = GPT(config)
     trainer = Trainer(model, vocabulary,  config=config,
                       lr=config.learning_rate)
