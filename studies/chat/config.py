@@ -6,7 +6,7 @@ from src.net.models.gpt2 import GPT
 from src.net.models.utils import CfgNode
 
 
-chat_file = f'studies/chat/datasets/alexa/train_smaller.json'
+chat_file = f'studies/chat/datasets/alexa/train_small.json'
 
 initial_weight = 0.2
 weight_increase = 0.037
