@@ -30,11 +30,33 @@ class Trainer():
 
     def batch_train(self, sample):
         x, y = sample
-        # for line in x:
-        #     print([self.vocabulary.closest(x[:-1]) for x in line])
-        data = x.to(self.device)
+
+        x_indices = []
+        x_stimulus = []
+
+        X = []
+        for lst in x:
+            X.append([list(e) for e in zip(lst[0], lst[1])])
         
-        logits, loss = self.model(data, y.to(self.device))
+        b_s = len(X[0])
+
+        X_s = []
+        for i in range(0, b_s):
+            X_s.append([lst[i] for lst in X])
+        
+        for input in X_s:
+            indices = []
+            stimulus = []
+            indices = [int(i) for i, _ in input]
+            stimulus = [float(s) for _, s in input]
+
+            x_indices.append(indices)
+            x_stimulus.append(stimulus)
+
+        x_indices = torch.tensor(x_indices, dtype=torch.int32)
+        x_stimulus = torch.tensor(x_stimulus, dtype=torch.float32)
+
+        logits, loss = self.model(x_indices, x_stimulus, y.to(self.device))
 
         # self.optimizer.zero_grad()
         self.model.zero_grad(set_to_none=True)
