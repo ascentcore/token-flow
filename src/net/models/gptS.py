@@ -79,13 +79,33 @@ class CausalSelfAttention(nn.Module):
         return y
 
 
+class StimulusSelfAttention(nn.Module):
+    def __init__(self):
+        super().__init__()
+    
+    def forward(self, x, stimulus):
+        b_s = len(x)
+        res = []
+        products = []
+        for i in range(0, b_s):
+            products.append([word_embed * s for word_embed, s in zip(x[i], stimulus[i])])
+
+        for p in products:
+            p_lst = [w.tolist() for w in p]
+            p_lst = torch.tensor(p_lst)
+            res.append(p_lst.sum(axis=0))
+        
+        print('res', res)
+
+        return res
+
 class Block(nn.Module):
     """ an unassuming Transformer block """
 
     def __init__(self, config):
         super().__init__()
         self.ln_1 = nn.LayerNorm(config.n_embd)
-        self.attn = CausalSelfAttention(config)
+        self.attn_stimulus = StimulusSelfAttention()
         self.ln_2 = nn.LayerNorm(config.n_embd)
         self.mlp = nn.ModuleDict(dict(
             c_fc=nn.Linear(config.n_embd, 4 * config.n_embd),
@@ -97,8 +117,8 @@ class Block(nn.Module):
         self.mlpf = lambda x: m.dropout(
             m.c_proj(m.act(m.c_fc(x))))  # MLP forward
 
-    def forward(self, x):
-        x = x + self.attn(self.ln_1(x))
+    def forward(self, x, stimulus):
+        x = x + self.attn_stimulus(self.ln_1(x), stimulus)
         x = x + self.mlpf(self.ln_2(x))
         return x
 
@@ -164,7 +184,6 @@ class GPT(nn.Module):
 
         self.transformer = nn.ModuleDict(dict(
             wte=pretrained_wte,
-            wpe=nn.Embedding(config.block_size, config.n_embd),
             drop=nn.Dropout(config.embd_pdrop),
             h=nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
             ln_f=nn.LayerNorm(config.n_embd),
@@ -286,31 +305,20 @@ class GPT(nn.Module):
         return optimizer
 
     def forward(self, idx, stimulus, targets=None):
-
-        device = idx.device
-        b, t = idx.size()
-        assert t <= self.block_size, f"Cannot forward sequence of length {t}, block size is only {self.block_size}"
-        pos = torch.arange(0, t, dtype=torch.long,
-                           device=device).unsqueeze(0)  # shape (1, t)
-
-        # forward the GPT model itself
-        # token embeddings of shape (b, t, n_embd)
         tok_emb = self.transformer.wte(idx)
-        # position embeddings of shape (1, t, n_embd)
-        # pos_emb = self.transformer.wpe(pos)
-        # x = self.transformer.drop(tok_emb + pos_emb)    
         x = tok_emb
+        print('x', x)
+        print('targets', targets)
+        
         for block in self.transformer.h:
-            x = block(x)
+            x = block(x, stimulus)
+        
         x = self.transformer.ln_f(x)
         logits = self.lm_head(x)
 
-        # if we are given some desired targets also calculate the loss
         loss = None
         if targets is not None:
-            # loss = F.cross_entropy(
-            #     logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
-            loss = F.cross_entropy(logits[:, -1, :], targets)
+            loss = F.cross_entropy(logits, targets)
 
         return logits, loss
 
