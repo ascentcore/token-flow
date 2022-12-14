@@ -12,9 +12,9 @@ temp_decrease = 0.08
 neuron_opening = 0.75
 
 n_dim = 50
-size = 11
-history = 5
-next = 5
+size = 21
+history = 10
+next = 10
 
 def get_training_setup():
     contexts = {}

@@ -1,6 +1,8 @@
-import tqdm
+import os
 import torch
 import numpy as np
+from math import nan
+from tqdm import tqdm
 from torchdata.datapipes.iter import IterDataPipe
 from torch.utils.data import DataLoader
 
@@ -24,13 +26,13 @@ class DataPipeline(IterDataPipe):
         self.size = size
 
     def __iter__(self):
-        print('iter', datetime.now())
+        # print('iter', datetime.now())
         for context in self.contexts.values():
-            print('decreasing stimulus', datetime.now())
+            # print('decreasing stimulus', datetime.now())
             context.decrease_stimulus(1)
-            print('opening file', datetime.now())
+            # print('opening file', datetime.now())
             text = open(f'studies/text/datasets/train/{context.name}.txt').read()
-            print('splitting', datetime.now())
+            # print('splitting', datetime.now())
             for phrase in text.splitlines():
                 if phrase != '':
                     input = get_input(context)
@@ -70,17 +72,48 @@ def train():
     dl = DataLoader(dataset=datapipe, batch_size=4,
                     num_workers=1)
 
+    model_name = f"gpt-2-{config.block_size}-{config.vocab_size}-{config.n_embd}-{config.n_layer}-{config.n_head}"
+    print(model_name)
+
     load_embeddings(vocabulary=vocabulary, config=config)
 
     model = GPT(config)
     trainer = Trainer(model, vocabulary, config=config, lr=config.learning_rate)
 
-    for epoch_idx in range(1):
+    for epoch_idx in range(500):
         loss_all = 0
         batch_loss = 0
-        # model.train(True)
-        for (batch_idx, batch) in enumerate(dl):
+        model.train(True)
+        for (batch_idx, batch) in tqdm(enumerate(dl)):
             loss = trainer.batch_train(batch)
+            loss_all = loss_all + loss
+            batch_loss = batch_loss + loss
+
+            if batch_idx % 100 == 0 and batch_idx > 2:
+                ckpt_path = os.path.join(
+                    'studies/text/models/', f'{model_name}.pt')
+                torch.save({'model_state_dict': model.state_dict(),
+                            'optmizer_state_dict': trainer.optimizer.state_dict()
+                            }, ckpt_path)
+
+                print(f'Batch idx {batch_idx} loss: {loss_all}\n')
+                loss_all = 0
+
+            if loss_all == nan:
+                print('Batch loss is nan, stopping training')
+                break
+
+        if batch_loss == nan:
+            print('Glboal loss is nan, stopping training')
+            break
+
+        ckpt_path = os.path.join(
+            'studies/text/models/', f'{model_name}-epoch-end.pt')
+        torch.save({'model_state_dict': model.state_dict(),
+                    'optmizer_state_dict': trainer.optimizer.state_dict()
+                    }, ckpt_path)
+
+        print(f'%% Epoch {epoch_idx} loss: {batch_loss}\n')
 
 
 if __name__ == '__main__':
