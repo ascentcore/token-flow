@@ -50,6 +50,7 @@ def generate():
     context.decrease_stimulus(1)
 
     print('\n\n --- Test --- \n\n')
+    # sentence = '<start> in a restaurant '
     sentence = ''
     if sentence != '':
         _, sentences = context.vocabulary.get_token_sequence(

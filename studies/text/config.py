@@ -1,10 +1,14 @@
+import os
 import json
 
 from src.context.context import Context
 from src.context.vocabulary import Vocabulary
 from src.net.models.utils import CfgNode
 
-text_file = f'studies/text/datasets/train/city_mouse.txt'
+text_file = f'studies/text/datasets/train/city_mouse.txt' 
+
+dir_path = f'studies/text/datasets/train'
+text_files = os.listdir(dir_path)
 
 initial_weight = 0.2
 weight_increase = 0.037
@@ -15,6 +19,7 @@ n_dim = 50
 size = 21
 history = 10
 next = 10
+
 
 def get_training_setup():
     contexts = {}
@@ -46,3 +51,4 @@ def get_training_setup():
             contexts[context_name] = context
 
     return contexts, vocabulary, config
+    

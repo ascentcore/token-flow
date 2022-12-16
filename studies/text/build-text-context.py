@@ -31,15 +31,19 @@ def get_context(name,
 def build_dataset():
     dataset = Dataset(vocabulary)
     dataset.delete_context('default')
+    
+    text_files = config.text_files
 
-    text_data = open(config.text_file).read()
+    for text_file in text_files:
+        text_data = open(config.dir_path + '/' + text_file).read()
+        file_name = text_file.split('.')
 
-    context = get_context('city_mouse')
-    dataset.add_context(context)
+        context = get_context(file_name[0])
+        dataset.add_context(context)
 
-    for line in text_data.splitlines():
-        if line != '':
-            context.add_text(line)
+        for line in text_data.splitlines():
+            if line != '':
+                context.add_text(line)
 
     print('Vocabulary size:', len(vocabulary.vocabulary))
 
