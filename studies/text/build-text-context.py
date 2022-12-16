@@ -32,9 +32,7 @@ def build_dataset():
     dataset = Dataset(vocabulary)
     dataset.delete_context('default')
     
-    text_files = config.text_files
-
-    for text_file in text_files:
+    for text_file in config.text_files:
         text_data = open(config.dir_path + '/' + text_file).read()
         file_name = text_file.split('.')
 

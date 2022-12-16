@@ -5,8 +5,6 @@ from src.context.context import Context
 from src.context.vocabulary import Vocabulary
 from src.net.models.utils import CfgNode
 
-text_file = f'studies/text/datasets/train/city_mouse.txt' 
-
 dir_path = f'studies/text/datasets/train'
 text_files = os.listdir(dir_path)
 
