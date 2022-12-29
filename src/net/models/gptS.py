@@ -21,10 +21,11 @@ class StimulusSelfAttention(nn.Module):
         for i in range(0, b_s):
             products.append([np.dot(word_embed, s).tolist() for (word_embed, s) in zip(x_lst[i], stimulus_lst[i])])
 
-        res = []        
-        for p in products:
-            res.append(np.array(p).sum(axis=0).tolist())
-        res = torch.tensor(res)
+        res = torch.tensor(products)
+        # res = []        
+        # for p in products:
+        #     res.append(np.array(p).sum(axis=0).tolist())
+        # res = torch.tensor(res)
 
         return res
 
@@ -44,9 +45,10 @@ class GPT(nn.Module):
             dropout=nn.Dropout(config.embd_pdrop),
             ln=nn.LayerNorm(config.n_embd),
             fc=nn.Linear(config.n_embd, 4 * config.n_embd),
+            fc2=nn.Linear(4 * config.n_embd, 4 * config.n_embd),
             proj=nn.Linear(4 * config.n_embd, config.n_embd),
             act=nn.ReLU(),
-            lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
+            lm_head = nn.Linear(config.block_size * config.n_embd, config.vocab_size, bias=False)
         ))
 
         self.apply(self._init_weights)
@@ -56,6 +58,7 @@ class GPT(nn.Module):
                     p, mean=0.0, std=0.02/math.sqrt(2 * config.n_layer))
 
         n_params = sum(p.numel() for p in self.layers.parameters())
+        print('n_params', n_params)
         print("number of parameters: %.2fM" % (n_params/1e6,))
 
 
@@ -110,16 +113,35 @@ class GPT(nn.Module):
         x = self.layers.attn_stimulus(x, stimulus)
         x = self.layers.ln(x)
         x = self.layers.fc(x)
-        x = self.layers.act(x)
+        x = self.layers.dropout(x)
+        x = self.layers.fc2(x)
+        x = self.layers.dropout(x)
+        x = self.layers.fc2(x)
+        x = self.layers.dropout(x)
         x = self.layers.proj(x)
         x = self.layers.ln(x)
+        x = x.reshape([x.size(dim=0), x.size(dim=1) * x.size(dim=2)])
 
         logits = self.layers.lm_head(x)
+
         loss = None
+        final_train_acc = None
         if targets is not None:
             loss = F.cross_entropy(logits, targets)
+        
+            logits_array = logits.detach().numpy()
+            targets_array = targets.numpy()
+            logits_argmax = np.argmax(logits_array, axis=1)
+            targets_argmax = np.argmax(targets_array, axis=1)
 
-        return logits, loss
+            # print('')
+            # print('logits_argmax', logits_argmax)
+            # print('targets_argmax', targets_argmax)
+
+            train_acc = torch.sum(torch.tensor(logits_argmax) == torch.tensor(targets_argmax))
+            final_train_acc = train_acc / x.size(dim=0)
+
+        return logits, loss, final_train_acc
 
     @torch.no_grad()
     def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=None):

@@ -56,7 +56,7 @@ class Trainer():
         x_indices = torch.tensor(x_indices, dtype=torch.int32)
         x_stimulus = torch.tensor(x_stimulus, dtype=torch.float32)
 
-        logits, loss = self.model(x_indices, x_stimulus, y.to(self.device))
+        logits, loss, acc = self.model(x_indices, x_stimulus, y.to(self.device))
 
         # self.optimizer.zero_grad()
         self.model.zero_grad(set_to_none=True)
@@ -64,7 +64,7 @@ class Trainer():
         torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.grad_norm_clip)
         self.optimizer.step()
 
-        return loss
+        return loss, acc
 
     def _inner_train(self, loader):
         self.model.train()

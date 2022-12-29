@@ -14,9 +14,9 @@ temp_decrease = 0.08
 neuron_opening = 0.75
 
 n_dim = 50
-size = 21
-history = 10
-next = 10
+size = 41
+history = 20
+next = 20
 
 
 def get_training_setup():

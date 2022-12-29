@@ -61,7 +61,10 @@ def load_embeddings(vocabulary, config):
         try: 
             pretrained_embeddings[i] = torch.tensor(embeddings[word])
         except KeyError:
-            pretrained_embeddings[i] = torch.tensor(np.random.normal(scale=0.6, size=(config.n_embd, )))
+            if word == '<null>':
+                pretrained_embeddings[i] = torch.tensor(np.zeros(config.n_embd))
+            else:
+                pretrained_embeddings[i] = torch.tensor(np.random.normal(scale=0.6, size=(config.n_embd, )))
 
     config.pretrained_embeddings = pretrained_embeddings
 
@@ -69,7 +72,7 @@ def load_embeddings(vocabulary, config):
 def train():
     contexts, vocabulary, config = get_training_setup()
     datapipe = DataPipeline(contexts, size)
-    dl = DataLoader(dataset=datapipe, batch_size=4,
+    dl = DataLoader(dataset=datapipe, batch_size=32,
                     num_workers=1)
 
     model_name = f"gpt-2-{config.block_size}-{config.vocab_size}-{config.n_embd}-{config.n_layer}-{config.n_head}"
@@ -79,15 +82,20 @@ def train():
 
     model = GPT(config)
     trainer = Trainer(model, vocabulary, config=config, lr=config.learning_rate)
-
+    print('model', model)
+    
     for epoch_idx in range(500):
         loss_all = 0
         batch_loss = 0
         model.train(True)
+        acc_batchs = []
         for (batch_idx, batch) in tqdm(enumerate(dl)):
-            loss = trainer.batch_train(batch)
+            loss, acc = trainer.batch_train(batch)
             loss_all = loss_all + loss
             batch_loss = batch_loss + loss
+    
+            if batch_idx % 10 == 0:
+                acc_batchs.append((batch_idx, acc))
 
             if batch_idx % 100 == 0 and batch_idx > 2:
                 ckpt_path = os.path.join(
@@ -96,7 +104,7 @@ def train():
                             'optmizer_state_dict': trainer.optimizer.state_dict()
                             }, ckpt_path)
 
-                print(f'Batch idx {batch_idx} loss: {loss_all}\n')
+                # print(f'Batch idx {batch_idx} loss: {loss_all}\n')
                 loss_all = 0
 
             if loss_all == nan:
@@ -112,9 +120,12 @@ def train():
         torch.save({'model_state_dict': model.state_dict(),
                     'optmizer_state_dict': trainer.optimizer.state_dict()
                     }, ckpt_path)
-
+        
+        print('')
+        print('---------------------------------------------------------')
         print(f'%% Epoch {epoch_idx} loss: {batch_loss}\n')
-
+        print(f'Accuracy: {acc_batchs}')
+        print('---------------------------------------------------------')
 
 if __name__ == '__main__':
     train()
