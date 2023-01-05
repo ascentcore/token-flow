@@ -22,7 +22,11 @@ class Context():
                  max_stimulus=1,
                  propagate_threshold=0.1,
                  decay_if_low_signal=True,
-                 temp_decrease=0.1):
+                 temp_decrease=0.1,
+                 history_size = 100,):
+
+        self.history = []
+        self.history_size = history_size
 
         self.name = name
 
@@ -157,6 +161,8 @@ class Context():
     def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=3, root_node=True):
         nodes = self.graph.nodes
         if root_node:
+            self.history.append(token)
+            self.history = self.history[-self.history_size:]
             for node in self.graph.nodes():
                 nodes[node]['h'] = -1
         if max_depth > 0:
@@ -229,25 +235,29 @@ class Context():
         half = int(count / 2)
         history_stimuli = history if history else half
         next_stimuli = next if next else half
-
         past = [('<null>', {'s': 0.0001}) for _ in range(history_stimuli)]
+        historical_count = self.history[-history_stimuli-1:-1]
+
+        for index, token in enumerate(historical_count):
+            past[history_stimuli-len(historical_count) + index] = (token, self.graph.nodes[token])
+
         current = '<null>', {'s': 0}
         future = [('<null>', {'s': 0.0001}) for _ in range(next_stimuli)]
         for p in self.graph.nodes(data=True):
             token, d = p
             if 'h' not in d.keys():
                 break
-            if d['h'] == -1:
-                past.append(p)
+          
             elif d['h'] == 0:
                 current = p
             elif d['h'] == 1:
                 future.append(p)
 
         
-        past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-history_stimuli:]
+        # past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-history_stimuli:]
+        
         future = sorted(future, key=lambda x: x[1]['s'], reverse=True)[:next_stimuli]
-        return [[token, d['s']] for token, d in past + [current] + future]
+        return [past + [current] + future]
 
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)
