@@ -257,7 +257,7 @@ class Context():
         # past = sorted(past, key=lambda x: x[1]['s'], reverse=False)[-history_stimuli:]
         
         future = sorted(future, key=lambda x: x[1]['s'], reverse=True)[:next_stimuli]
-        return [past + [current] + future]
+        return [[token, d['s']] for token, d in past + [current] + future]
 
     def get_matrix(self):
         return nx.to_numpy_matrix(self.graph)
