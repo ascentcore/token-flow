@@ -1,5 +1,6 @@
 import os
 import torch
+import random
 import numpy as np
 from math import nan
 from tqdm import tqdm
@@ -16,7 +17,6 @@ import config as cfg
 
 def get_input(context):
     input = [[int(context.vocabulary.index_of(token)), stimulus] for token, stimulus in context.get_top_stimuli(size, history, next)]
-
     return input
 
 
@@ -25,34 +25,41 @@ class DataPipeline(IterDataPipe):
     def __init__(self, contexts, size):
         self.contexts = contexts
         self.size = size
-        self.files = os.listdir('studies/text/datasets/train')
+        self.files = os.listdir('studies/single-context/datasets/train')
+        self.dataset = []
 
     def __iter__(self):
         # print('iter', datetime.now())
         # for context in self.contexts.values():
-        context = self.contexts['default']
-        for file in self.files:
-            # print('decreasing stimulus', datetime.now())
-            context.decrease_stimulus(1)
-            # print('opening file', datetime.now())
-            text = open(f'studies/text/datasets/train/{file}').read()
-            for phrase in text.splitlines():
-                if phrase != '':
-                    input = get_input(context)
+        if len(self.dataset) == 0:
+            context = self.contexts['default']
+            for file in self.files:
+                # print('decreasing stimulus', datetime.now())
+                context.history = []
+                context.decrease_stimulus(1)
+                # print('opening file', datetime.now())
+                text = open(f'studies/single-context/datasets/train/{file}').read()
+                for phrase in text.splitlines():
+                    if phrase != '':
+                        input = get_input(context)
 
-                    _, sentences = context.vocabulary.get_token_sequence(
-                        phrase, append_to_vocab=False, skip_eol=True)
-                    for sentence in sentences:
-                        for tokens in sentence:
-                            for token in tokens:
-                                context.stimulate(token)
-                                output = np.zeros(
-                                    context.vocabulary.size(), np.float32)
-                                output[int(context.vocabulary.index_of(token))] = 1
-                                yield input, output
-                                input = get_input(context)
+                        _, sentences = context.vocabulary.get_token_sequence(
+                            phrase, append_to_vocab=False, skip_eol=True)
+                        for sentence in sentences:
+                            for tokens in sentence:
+                                for token in tokens:
+                                    context.stimulate(token)
+                                    output = np.zeros(
+                                        context.vocabulary.size(), np.float32)
+                                    output[int(context.vocabulary.index_of(token))] = 1
+                                    self.dataset.append( (input, output) )
+                                    yield input, output
+                                    input = get_input(context)
 
-        self.files.shuffle()
+            random.shuffle(self.files)
+        else:
+            for input, output in random.shuffle(self.dataset):
+                yield input, output
 
 
 def load_embeddings(vocabulary, config):
@@ -89,19 +96,19 @@ def train():
     print('model', model)
 
     try:
-        checkpoint = torch.load(f'studies/text/models/{model_name}-epoch-end.pt')
+        checkpoint = torch.load(f'studies/single-context/models/{model_name}-epoch-end.pt')
         model.load_state_dict(checkpoint['model_state_dict'])
         trainer.optimizer.load_state_dict(checkpoint['optmizer_state_dict'])
-        file = open(f'studies/text/models/{model_name}.log', "a")
+        file = open(f'studies/single-context/models/{model_name}.log', "a")
         print('Model loaded')
     except FileNotFoundError:
         print('Model not found - training from scratch')
         pass
     
-    if os.path.exists(f'studies/text/models/{model_name}.log'):
-        file = open(f'studies/text/models/{model_name}.log', "a")
+    if os.path.exists(f'studies/single-context/models/{model_name}.log'):
+        file = open(f'studies/single-context/models/{model_name}.log', "a")
     else:
-        file = open(f'studies/text/models/{model_name}.log', "w")        
+        file = open(f'studies/single-context/models/{model_name}.log', "w")        
         file.write(f'Initial weight:  {cfg.initial_weight}\n')
         file.write(f'Weight increase: {cfg.weight_increase}\n')
         file.write(f'Temp decrease:   {cfg.temp_decrease}\n')
@@ -129,7 +136,7 @@ def train():
 
             if batch_idx % 100 == 0 and batch_idx > 2:
                 ckpt_path = os.path.join(
-                    'studies/text/models/', f'{model_name}.pt')
+                    'studies/single-context/models/', f'{model_name}.pt')
                 torch.save({'model_state_dict': model.state_dict(),
                             'optmizer_state_dict': trainer.optimizer.state_dict()
                             }, ckpt_path)
@@ -147,7 +154,7 @@ def train():
     
        
         ckpt_path = os.path.join(
-            'studies/text/models/', f'{model_name}-epoch-end.pt')
+            'studies/single-context/models/', f'{model_name}-epoch-end.pt')
         torch.save({'model_state_dict': model.state_dict(),
                     'optmizer_state_dict': trainer.optimizer.state_dict()
                     }, ckpt_path)

@@ -5,7 +5,7 @@ from src.context.context import Context
 from src.context.vocabulary import Vocabulary
 from src.net.models.utils import CfgNode
 
-dir_path = f'studies/text/datasets/train'
+dir_path = f'studies/single-context/datasets/train'
 text_files = os.listdir(dir_path)
 
 initial_weight = 0.2
@@ -24,7 +24,7 @@ def get_model_name(config):
 
 def get_training_setup():
     contexts = {}
-    vocabulary = Vocabulary.from_file('studies/text/dataset')
+    vocabulary = Vocabulary.from_file('studies/single-context/dataset')
 
     config = CfgNode()
     config.model_type = None
@@ -42,13 +42,13 @@ def get_training_setup():
     config.learning_rate = 0.001
     config.pretrained_embeddings = None
 
-    settings = json.loads(open(f'studies/text/dataset/dataset.settings.json').read())
+    settings = json.loads(open(f'studies/single-context/dataset/dataset.settings.json').read())
 
     contexts_list = None
 
     for context_name in settings['contexts']:
         if (contexts_list is None or context_name in contexts_list):
-            context = Context.from_file('studies/text/dataset', context_name, vocabulary)
+            context = Context.from_file('studies/single-context/dataset', context_name, vocabulary)
             contexts[context_name] = context
 
     return contexts, vocabulary, config

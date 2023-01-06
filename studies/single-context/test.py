@@ -9,7 +9,7 @@ from src.embeddings.embeddings import get_embeddings
 from config import get_training_setup, get_model_name
 from buildcontext import get_context_for_file
 
-path = f'studies/text'
+path = f'studies/single-context'
 
 
 def load_embeddings(vocabulary, config):
@@ -48,7 +48,7 @@ def generate():
 
     print('model_name', model_name)
     model = GPT(config)
-    model_name = f'studies/text/models/{model_name}{epoch_end}.pt'
+    model_name = f'studies/single-context/models/{model_name}{epoch_end}.pt'
     print(f'Loading model from {model_name}')
     model.load_state_dict(torch.load(model_name)['model_state_dict'])
     model.eval()
@@ -77,7 +77,7 @@ def generate():
 
     input_data = get_input(context)
 
-    for i in range(500):
+    for i in range(150):
         x_data = [[d[0] for d in input_data]]
         stimulus_data = [[d[1] for d in input_data]]
 

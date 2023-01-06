@@ -47,9 +47,9 @@ def build_dataset():
 
     print('Vocabulary size:', len(vocabulary.vocabulary))
 
-    dataset.store('studies/text/dataset/')
+    dataset.store('studies/single-context/dataset/')
 
-    # context.render('studies/text/dataset/graph', force_text_rendering = True, dpi = 600)
+    # context.render('studies/single-context/dataset/graph', force_text_rendering = True, dpi = 600)
 
 
 def get_context_for_file(vocabulary, file_name):
