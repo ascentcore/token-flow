@@ -25,20 +25,18 @@ class DataPipeline(IterDataPipe):
     def __init__(self, contexts, size):
         self.contexts = contexts
         self.size = size
-        self.files = os.listdir('studies/single-context/datasets/train')
+        self.files = os.listdir('studies/single-context/datasets/train_adap')
         self.dataset = []
 
     def __iter__(self):
-        # print('iter', datetime.now())
-        # for context in self.contexts.values():
         if len(self.dataset) == 0:
             context = self.contexts['default']
+            random.shuffle(self.files)
+            print('self.files', self.files)
             for file in self.files:
-                # print('decreasing stimulus', datetime.now())
                 context.history = []
                 context.decrease_stimulus(1)
-                # print('opening file', datetime.now())
-                text = open(f'studies/single-context/datasets/train/{file}').read()
+                text = open(f'studies/single-context/datasets/train_adap/{file}').read()
                 for phrase in text.splitlines():
                     if phrase != '':
                         input = get_input(context)
@@ -82,7 +80,7 @@ def load_embeddings(vocabulary, config):
 def train():
     contexts, vocabulary, config = get_training_setup()
     datapipe = DataPipeline(contexts, size)
-    dl = DataLoader(dataset=datapipe, batch_size=32,
+    dl = DataLoader(dataset=datapipe, batch_size=128,
                     num_workers=1)
 
     model_name = get_model_name(config)
@@ -121,13 +119,23 @@ def train():
         
         file.write('----------------------------------------\n\n\n')
 
-    for epoch_idx in range(500):
+
+    # input_report_file = open(f'studies/single-context/input_report/report.log', "x")
+    # input_report_file.write('INPUT REPORT')
+    # input_report_file.close()
+
+    for epoch_idx in range(300):
         loss_all = 0
         batch_loss = 0
         model.train(True)
         acc_batchs = []
+        # input_report_file = open(f'studies/single-context/input_report/report.log', "a")
+        # input_report_file.write('\n\nNEW EPOCH\n')
+        # input_report_file.close()
         for (batch_idx, batch) in tqdm(enumerate(dl)):
+            # input_report_file = open(f'studies/single-context/input_report/report.log', "a")
             loss, acc = trainer.batch_train(batch)
+            # input_report_file.close()
             loss_all = loss_all + loss
             batch_loss = batch_loss + loss
     
@@ -162,7 +170,9 @@ def train():
         print('')
         print('---------------------------------------------------------')
         print(f'%% Epoch {epoch_idx} loss: {batch_loss}\n')
+        file = open(f'studies/single-context/models/{model_name}.log', "a")
         file.write(f'%% Epoch {epoch_idx} loss: {batch_loss}\n')
+        file.close()
         print(f'Accuracy: {acc_batchs}')
         print('---------------------------------------------------------')
 

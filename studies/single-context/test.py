@@ -10,7 +10,9 @@ from config import get_training_setup, get_model_name
 from buildcontext import get_context_for_file
 
 path = f'studies/single-context'
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+print('Device', device)
 
 def load_embeddings(vocabulary, config):
     matrix_len = len(vocabulary.vocabulary)
@@ -51,10 +53,11 @@ def generate():
     model_name = f'studies/single-context/models/{model_name}{epoch_end}.pt'
     print(f'Loading model from {model_name}')
     model.load_state_dict(torch.load(model_name)['model_state_dict'])
+    model.to(device)
     model.eval()
+    
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+    
     context = contexts['default']
     
     # context = get_context_for_file(vocabulary, 'city_mouse.txt')
@@ -65,7 +68,48 @@ def generate():
     context.decrease_stimulus(1)
 
     print('\n\n --- Test --- \n\n')
+    # CITY MOUSE
     sentence = 'This is a city mouse. He lives '
+    
+    # EMPEROR NEW CLOTHES
+    # sentence = 'Many years ago, there was an Emperor, '
+    
+    # FOX AND CROW
+    # sentence = 'Early one morning, a fox is walking '
+    
+    # FOX AND GRAPES
+    # sentence = 'It was a sunny day and fox was '
+    
+    # FOX AND STORK
+    # sentence = 'A selfish fox once invited a stork to '
+
+    # HARE AND TORTOISE
+    # sentence = 'A tortoise one day met a hare who '
+
+    # JACK AND BEANSTALK ????????????????
+    # sentence = 'Once there was a young man named Jack '
+
+    # MERCHANT AND DONKEY
+    # sentence = 'One beautiful spring morning, a merchant loaded '
+
+    # NEIGHBOUR ??????? problems at ","
+    # sentence = 'There was a green and fresh pasture, '
+
+    # PAID IN FULL
+    # sentence = 'A young man was getting ready to graduate '
+
+    # PENCILMAKER
+    # sentence = 'The Pencil Maker took the pencil aside, '
+
+    # RAPUNZEL 
+    # sentence = 'Once upon a time there was a girl '
+
+    # RED RIDING HOOD ??????? problems at ","
+    # sentence = 'Once upon a time there was a dear '
+
+    # SNOW WHITE 
+    # sentence = 'Once upon a time, a princess named '
+
     # sentence = ''
     if sentence != '':
         _, sentences = context.vocabulary.get_token_sequence(
@@ -77,15 +121,18 @@ def generate():
 
     input_data = get_input(context)
 
-    for i in range(150):
+    # 514 for city_mouse
+    for i in range(514):
         x_data = [[d[0] for d in input_data]]
         stimulus_data = [[d[1] for d in input_data]]
 
         x_data = torch.tensor(x_data)
         stimulus_data = torch.tensor(stimulus_data)
 
-        logits, _, acc = model(x_data.to(device), stimulus_data)
+        logits, _, acc = model(x_data.to(device), stimulus_data.to(device))
         probs = F.softmax(logits, dim=-1)
+        # if (i > 500):
+        # print('probs max', torch.max(probs))
         if topk is None:
             idx_next = torch.multinomial(probs, num_samples=1)
         else:

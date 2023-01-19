@@ -5,7 +5,7 @@ from src.context.context import Context
 from src.context.vocabulary import Vocabulary
 from src.net.models.utils import CfgNode
 
-dir_path = f'studies/single-context/datasets/train'
+dir_path = f'studies/single-context/datasets/train_adap'
 text_files = os.listdir(dir_path)
 
 initial_weight = 0.2
@@ -15,8 +15,8 @@ neuron_opening = 0.75
 
 n_dim = 50
 
-history = 100
-next = 100
+history = 20
+next = 20
 size = history + next + 1
 
 def get_model_name(config):
@@ -39,7 +39,8 @@ def get_training_setup():
     config.betas = (0.9, 0.95)
     config.weight_decay = 0.1 # only applied on matmul weights
     config.grad_norm_clip = 1.0
-    config.learning_rate = 0.001
+    # config.learning_rate = 0.001
+    config.learning_rate = 0.0001
     config.pretrained_embeddings = None
 
     settings = json.loads(open(f'studies/single-context/dataset/dataset.settings.json').read())

@@ -158,7 +158,7 @@ class Context():
             self.connect(text, variation, 1)
             self.connect(variation, text, 1)
 
-    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=3, root_node=True):
+    def stimulate(self, token, stimulus=None, to_set=None, decrease_factor=None, skip_decrease=False, max_depth=2, root_node=True):
         nodes = self.graph.nodes
         if root_node:
             self.history.append(token)

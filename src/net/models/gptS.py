@@ -11,6 +11,8 @@ from .utils import CfgNode as CN
 class StimulusSelfAttention(nn.Module):
     def __init__(self):
         super().__init__()
+        self.device = torch.device(
+            'cuda' if torch.cuda.is_available() else 'cpu')
     
     def forward(self, x, stimulus):
         x_lst = x.tolist()
@@ -21,7 +23,7 @@ class StimulusSelfAttention(nn.Module):
         for i in range(0, b_s):
             products.append([np.dot(word_embed, s).tolist() for (word_embed, s) in zip(x_lst[i], stimulus_lst[i])])
 
-        res = torch.tensor(products)
+        res = torch.tensor(products).to(self.device)
         # res = []        
         # for p in products:
         #     res.append(np.array(p).sum(axis=0).tolist())
@@ -48,7 +50,7 @@ class GPT(nn.Module):
             fc2=nn.Linear(4 * config.n_embd, 4 * config.n_embd),
             proj=nn.Linear(4 * config.n_embd, config.n_embd),
             act=nn.ReLU(),
-            lm_head = nn.Linear(config.block_size * config.n_embd, config.vocab_size, bias=False)
+            lm_head = nn.Linear(config.block_size * config.n_embd, config.vocab_size)
         ))
 
         self.apply(self._init_weights)
@@ -110,7 +112,6 @@ class GPT(nn.Module):
 
     def forward(self, idx, stimulus, targets=None):
         x = self.layers.wte(idx)
-        x = self.layers.attn_stimulus(x, stimulus)
         x = self.layers.ln(x)
         x = self.layers.fc(x)
         x = self.layers.dropout(x)
@@ -129,17 +130,18 @@ class GPT(nn.Module):
         if targets is not None:
             loss = F.cross_entropy(logits, targets)
         
-            logits_array = logits.detach().numpy()
-            targets_array = targets.numpy()
-            logits_argmax = np.argmax(logits_array, axis=1)
-            targets_argmax = np.argmax(targets_array, axis=1)
+            # logits_array = logits.detach().numpy()
+            # targets_array = targets.numpy()
+            # logits_argmax = np.argmax(logits_array, axis=1)
+            # targets_argmax = np.argmax(targets_array, axis=1)
 
             # print('')
             # print('logits_argmax', logits_argmax)
             # print('targets_argmax', targets_argmax)
 
-            train_acc = torch.sum(torch.tensor(logits_argmax) == torch.tensor(targets_argmax))
-            final_train_acc = train_acc / x.size(dim=0)
+            # train_acc = torch.sum(torch.tensor(logits_argmax) == torch.tensor(targets_argmax))
+            # final_train_acc = train_acc / x.size(dim=0)
+            final_train_acc = 0
 
         return logits, loss, final_train_acc
 
