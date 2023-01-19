@@ -9,8 +9,9 @@ vocabulary = Vocabulary(
     accept_all=True,
     include_start_end=True,
     include_punctuation=True,
-    use_lemma=False,
-    add_lemma_to_vocab=False)
+    use_lemma=True,
+    add_lemma_to_vocab=True,
+    lemma_only_as_next=True)
 
 
 def get_context(name,
@@ -46,6 +47,7 @@ def build_dataset():
                 context.add_text(line)
 
     print('Vocabulary size:', len(vocabulary.vocabulary))
+    print('Edges:', len(context.graph.edges))
 
     dataset.store('studies/single-context/dataset/')
 
