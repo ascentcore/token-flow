@@ -140,7 +140,7 @@ class Vocabulary():
             if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
                 missing.append(lower)
 
-        if self.use_lemma and token.pos_ in self.accepted:
+        if self.use_lemma and token.pos_ in self.accepted and skip_lemma == False:
             trim_lower_lemma = token.lemma_.strip().lower()
             current.append(trim_lower_lemma)
             if append_to_vocab and self.add_lemma_to_vocab and self.add_to_vocabulary(trim_lower_lemma):
