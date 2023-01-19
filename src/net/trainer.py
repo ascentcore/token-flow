@@ -57,20 +57,20 @@ class Trainer():
         x_indices = torch.tensor(x_indices, dtype=torch.int32).to(self.device)
         x_stimulus = torch.tensor(x_stimulus, dtype=torch.float32).to(self.device)
 
-        # for (x_i, y_j) in zip(x_indices, y):
-        #     x_words = [self.vocabulary.vocabulary[i] for i in x_i]   
-        #     y_target = self.vocabulary.vocabulary[(y_j == 1).nonzero(as_tuple=True)[0]]
+        for (x_i, y_j) in zip(x_indices, y):
+            x_words = [self.vocabulary.vocabulary[i] for i in x_i]   
+            y_target = self.vocabulary.vocabulary[(y_j == 1).nonzero(as_tuple=True)[0]]
 
-        #     if os.path.exists(f'studies/single-context/input_report/report.log'):
-        #         input_report_file = open(f'studies/single-context/input_report/report.log', "a")
-        #         input_report_file.write(f'history {x_words[0:20]}\n')
-        #         input_report_file.write(f'current {x_words[20]}\n')
-        #         input_report_file.write(f'next {x_words[21:41]}\n')
-        #         # input_report_file.write(f'history {x_words[0:50]}\n')
-        #         # input_report_file.write(f'current {x_words[50]}\n')
-        #         # input_report_file.write(f'next {x_words[51:81]}\n')
-        #         input_report_file.write(f'target {y_target}\n')
-        #         input_report_file.write('-----------------------------------------------------\n\n')
+            if os.path.exists(f'studies/single-context/input_report/report.log'):
+                input_report_file = open(f'studies/single-context/input_report/report.log', "a")
+                input_report_file.write(f'history {x_words[0:20]}\n')
+                input_report_file.write(f'current {x_words[20]}\n')
+                input_report_file.write(f'next {x_words[21:41]}\n')
+                # input_report_file.write(f'history {x_words[0:50]}\n')
+                # input_report_file.write(f'current {x_words[50]}\n')
+                # input_report_file.write(f'next {x_words[51:81]}\n')
+                input_report_file.write(f'target {y_target}\n')
+                input_report_file.write('-----------------------------------------------------\n\n')
 
         
         logits, loss, acc = self.model(x_indices, x_stimulus, y.to(self.device))

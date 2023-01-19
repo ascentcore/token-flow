@@ -42,7 +42,7 @@ class DataPipeline(IterDataPipe):
                         input = get_input(context)
 
                         _, sentences = context.vocabulary.get_token_sequence(
-                            phrase, append_to_vocab=False, skip_eol=True)
+                            phrase, append_to_vocab=False, skip_eol=True, use_lemma_if_present = True)
                         for sentence in sentences:
                             for tokens in sentence:
                                 for token in tokens:
@@ -119,23 +119,27 @@ def train():
         
         file.write('----------------------------------------\n\n\n')
 
+    try:
+        os.remove(f'studies/single-context/input_report/report.log')
+    except:
+        pass
+    
+    input_report_file = open(f'studies/single-context/input_report/report.log', "x")
+    input_report_file.write('INPUT REPORT')
+    input_report_file.close()
 
-    # input_report_file = open(f'studies/single-context/input_report/report.log', "x")
-    # input_report_file.write('INPUT REPORT')
-    # input_report_file.close()
-
-    for epoch_idx in range(300):
+    for epoch_idx in range(2):
         loss_all = 0
         batch_loss = 0
         model.train(True)
         acc_batchs = []
-        # input_report_file = open(f'studies/single-context/input_report/report.log', "a")
-        # input_report_file.write('\n\nNEW EPOCH\n')
-        # input_report_file.close()
+        input_report_file = open(f'studies/single-context/input_report/report.log', "a")
+        input_report_file.write('\n\nNEW EPOCH\n')
+        input_report_file.close()
         for (batch_idx, batch) in tqdm(enumerate(dl)):
-            # input_report_file = open(f'studies/single-context/input_report/report.log', "a")
+            input_report_file = open(f'studies/single-context/input_report/report.log', "a")
             loss, acc = trainer.batch_train(batch)
-            # input_report_file.close()
+            input_report_file.close()
             loss_all = loss_all + loss
             batch_loss = batch_loss + loss
     

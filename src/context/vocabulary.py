@@ -129,27 +129,28 @@ class Vocabulary():
 
         return 0
 
-    def process_token(self, token, sequence, missing, append_to_vocab=True, skip_lemma = False):
+    def process_token(self, token, sequence, missing, append_to_vocab=True, use_lemma_if_present = False):
         # if self.use_token or token.pos_ in self.accepted:
         current = []
         lower = token.text.strip().lower()
 
-        if self.use_token:
-            if (self.lemma_only_as_next == False or skip_lemma == True):
-                current.append(lower)                
-            if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
-                missing.append(lower)
-
-        if self.use_lemma and token.pos_ in self.accepted and skip_lemma == False:
+        if token.pos_ in self.accepted and (self.use_lemma or use_lemma_if_present == True):
             trim_lower_lemma = token.lemma_.strip().lower()
             current.append(trim_lower_lemma)
             if append_to_vocab and self.add_lemma_to_vocab and self.add_to_vocabulary(trim_lower_lemma):
                 missing.append(trim_lower_lemma)
 
+        if self.use_token:
+            if (self.lemma_only_as_next == False and use_lemma_if_present == False) or (use_lemma_if_present == True and len(current) == 0):
+                current.append(lower)                
+            if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
+                missing.append(lower)
+
+       
         if len(current):
             sequence.append(current)
 
-    def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False, skip_lemma = False):
+    def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False, use_lemma_if_present = False):
         text = text.lower()
 
         text = re.sub(r"\.([a-zA-Z0-9])", r'. \1', text)
@@ -186,7 +187,7 @@ class Vocabulary():
                                 missing.append(token.text)
                     else:
                         self.process_token(
-                            token, sequence, missing, append_to_vocab=append_to_vocab, skip_lemma = skip_lemma)
+                            token, sequence, missing, append_to_vocab=append_to_vocab, use_lemma_if_present = use_lemma_if_present)
             sequences.append(sequence)
 
         if self.include_start_end and len(sequences) > 0 and skip_eol is False:
