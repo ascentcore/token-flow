@@ -17,7 +17,8 @@ class Vocabulary():
                  use_lemma=True,
                  use_token=True,
                  add_token_to_vocab=True,
-                 add_lemma_to_vocab=True):
+                 add_lemma_to_vocab=True,
+                 lemma_only_as_next=False):
         self.nlp = spacy.load("en_core_web_sm")
 
         prefixes = list(self.nlp.Defaults.prefixes)
@@ -38,6 +39,7 @@ class Vocabulary():
         self.add_lemma_to_vocab = add_lemma_to_vocab
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
+        self.lemma_only_as_next = lemma_only_as_next
         self.vocabulary = vocabulary if vocabulary is not None else [
             '<null>', '<start>', '<end>', '<eol>'] if include_start_end else []
 
@@ -125,21 +127,23 @@ class Vocabulary():
         return 0
 
     def process_token(self, token, sequence, missing, append_to_vocab=True):
-        if self.accept_all or token.pos_ in self.accepted:
-            current = []
-            lower = token.text
+        # if self.use_token or token.pos_ in self.accepted:
+        current = []
+        lower = token.text.strip().lower()
 
-            if self.use_token:
-                current.append(lower)
-                if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
-                    missing.append(lower)
+        if self.use_token:
+            if (self.lemma_only_as_next == False):
+                current.append(lower)                
+            if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
+                missing.append(lower)
 
-            if self.use_lemma and (lower != token.lemma_ or not self.use_token):
-                current.append(token.lemma_)
-                if append_to_vocab and self.add_lemma_to_vocab and self.add_to_vocabulary(token.lemma_):
-                    missing.append(token.lemma_)
+        if self.use_lemma and token.pos_ in self.accepted:
+            trim_lower_lemma = token.lemma_.strip().lower()
+            current.append(trim_lower_lemma)
+            if append_to_vocab and self.add_lemma_to_vocab and self.add_to_vocabulary(trim_lower_lemma):
+                missing.append(trim_lower_lemma)
 
-            sequence.append(current)
+        sequence.append(current)
 
     def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False):
         text = text.lower()

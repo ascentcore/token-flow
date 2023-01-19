@@ -332,6 +332,9 @@ class Context():
             print(f'  {value:.2f}  | {token}')
         # return [self.get_stimulus_of(token) for token in self.vocabulary.vocabulary]
 
+        for (u, v, w) in self.graph.edges.data('weight'):
+            print(f'{u} -> {v} : {w}')
+
     def render(self, path, title="Graph Context", consider_stimulus=True, arrow_size=3, pre_pos=None, force_text_rendering=False, skip_empty_nodes=False, figsize=(14, 14), dpi=150, seed=12345):
 
         graph = self.graph
