@@ -11,7 +11,8 @@ vocabulary = Vocabulary(
     include_punctuation=True,
     use_lemma=True,
     add_lemma_to_vocab=True,
-    lemma_only_as_next=True)
+    lemma_only_as_next=True,
+    link_punctuation=False)
 
 
 def get_context(name,

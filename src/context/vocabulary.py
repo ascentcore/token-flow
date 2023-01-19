@@ -18,6 +18,7 @@ class Vocabulary():
                  use_token=True,
                  add_token_to_vocab=True,
                  add_lemma_to_vocab=True,
+                 link_punctuation=True,
                  lemma_only_as_next=False):
         self.nlp = spacy.load("en_core_web_sm")
 
@@ -40,6 +41,7 @@ class Vocabulary():
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
         self.lemma_only_as_next = lemma_only_as_next
+        self.link_punctuation = link_punctuation
         self.vocabulary = vocabulary if vocabulary is not None else self.custom_tokens.copy() if include_start_end else []
 
         self.vectors = []
@@ -101,7 +103,9 @@ class Vocabulary():
                 'use_token': self.use_token,
                 'add_token_to_vocab': self.add_token_to_vocab,
                 'add_lemma_to_vocab': self.add_lemma_to_vocab,
-                'include_start_end': self.include_start_end
+                'include_start_end': self.include_start_end,
+                'link_punctuation': self.link_punctuation,
+                'lemma_only_as_next': self.lemma_only_as_next
             },
             'vocabulary': self.vocabulary
         }
@@ -125,13 +129,13 @@ class Vocabulary():
 
         return 0
 
-    def process_token(self, token, sequence, missing, append_to_vocab=True):
+    def process_token(self, token, sequence, missing, append_to_vocab=True, skip_lemma = False):
         # if self.use_token or token.pos_ in self.accepted:
         current = []
         lower = token.text.strip().lower()
 
         if self.use_token:
-            if (self.lemma_only_as_next == False):
+            if (self.lemma_only_as_next == False or skip_lemma == True):
                 current.append(lower)                
             if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
                 missing.append(lower)
@@ -145,7 +149,7 @@ class Vocabulary():
         if len(current):
             sequence.append(current)
 
-    def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False):
+    def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False, skip_lemma = False):
         text = text.lower()
 
         text = re.sub(r"\.([a-zA-Z0-9])", r'. \1', text)
@@ -176,12 +180,13 @@ class Vocabulary():
                             sequence.append(['<end>'])
                             should_start = True
                         elif self.include_punctuation:
-                            sequence.append([token.text])
+                            if self.link_punctuation:
+                                sequence.append([token.text])
                             if append_to_vocab and self.add_to_vocabulary(token.text):
                                 missing.append(token.text)
                     else:
                         self.process_token(
-                            token, sequence, missing, append_to_vocab=append_to_vocab)
+                            token, sequence, missing, append_to_vocab=append_to_vocab, skip_lemma = skip_lemma)
             sequences.append(sequence)
 
         if self.include_start_end and len(sequences) > 0 and skip_eol is False:

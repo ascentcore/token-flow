@@ -38,7 +38,7 @@ class DataPipeline(IterDataPipe):
                     input = get_input(context)
 
                     _, sentences = context.vocabulary.get_token_sequence(
-                        phrase, append_to_vocab=False, skip_eol=True)
+                        phrase, append_to_vocab=False, skip_eol=True, skip_lemma=True)
                     for sentence in sentences:
                         for tokens in sentence:
                             for token in tokens:
