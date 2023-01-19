@@ -40,7 +40,7 @@ class Vocabulary():
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
         self.lemma_only_as_next = lemma_only_as_next
-        self.vocabulary = vocabulary if vocabulary is not None else self.custom_tokens if include_start_end else []
+        self.vocabulary = vocabulary if vocabulary is not None else self.custom_tokens.copy() if include_start_end else []
 
         self.vectors = []
 
@@ -131,7 +131,7 @@ class Vocabulary():
         lower = token.text.strip().lower()
 
         if self.use_token:
-            if (self.lemma_only_as_next == False or lower in self.custom_tokens):
+            if (self.lemma_only_as_next == False):
                 current.append(lower)                
             if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
                 missing.append(lower)
@@ -142,7 +142,8 @@ class Vocabulary():
             if append_to_vocab and self.add_lemma_to_vocab and self.add_to_vocabulary(trim_lower_lemma):
                 missing.append(trim_lower_lemma)
 
-        sequence.append(current)
+        if len(current):
+            sequence.append(current)
 
     def get_token_sequence(self, text, append_to_vocab=True, skip_eol=False):
         text = text.lower()
@@ -181,11 +182,11 @@ class Vocabulary():
                     else:
                         self.process_token(
                             token, sequence, missing, append_to_vocab=append_to_vocab)
-
             sequences.append(sequence)
 
         if self.include_start_end and len(sequences) > 0 and skip_eol is False:
             sequences[-1].append(['<eol>'])
+            
 
         if len(missing) > 0:
             for listener in self.listeners:
