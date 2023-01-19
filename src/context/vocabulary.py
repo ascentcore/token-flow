@@ -30,7 +30,7 @@ class Vocabulary():
         suffixes.remove('>')
         suffix_regex = spacy.util.compile_suffix_regex(suffixes)
         self.nlp.tokenizer.suffix_search = suffix_regex.search
-
+        self.custom_tokens = ['<null>', '<start>', '<end>', '<eol>']
         self.accepted = accepted
         self.accept_all = accept_all
         self.use_lemma = use_lemma
@@ -40,8 +40,7 @@ class Vocabulary():
         self.include_start_end = include_start_end
         self.include_punctuation = include_punctuation
         self.lemma_only_as_next = lemma_only_as_next
-        self.vocabulary = vocabulary if vocabulary is not None else [
-            '<null>', '<start>', '<end>', '<eol>'] if include_start_end else []
+        self.vocabulary = vocabulary if vocabulary is not None else self.custom_tokens if include_start_end else []
 
         self.vectors = []
 
@@ -132,7 +131,7 @@ class Vocabulary():
         lower = token.text.strip().lower()
 
         if self.use_token:
-            if (self.lemma_only_as_next == False):
+            if (self.lemma_only_as_next == False or lower in self.custom_tokens):
                 current.append(lower)                
             if append_to_vocab and self.add_token_to_vocab and self.add_to_vocabulary(lower):
                 missing.append(lower)
